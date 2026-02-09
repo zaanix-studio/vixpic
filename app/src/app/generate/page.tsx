@@ -62,7 +62,7 @@ export default function GeneratePage() {
     }
   };
 
-  // Generate image (stub - will implement API calls)
+  // Generate image using the API route
   const handleGenerate = async () => {
     if (!prompt.trim()) {
       setError('Please enter a prompt');
@@ -73,21 +73,46 @@ export default function GeneratePage() {
       return;
     }
 
+    const apiKey = keys[selectedProvider];
+    if (!apiKey) {
+      setError('API key not found');
+      return;
+    }
+
     setIsGenerating(true);
     setError(null);
     setGeneratedImage(null);
 
     try {
-      // TODO: Implement actual API calls
-      // For now, simulate a generation
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Placeholder image (will be replaced with actual generation)
-      const placeholderUrl = `https://picsum.photos/${dimensions.width}/${dimensions.height}?random=${Date.now()}`;
+      const response = await fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          apiKey,
+          params: {
+            prompt,
+            negativePrompt: negativePrompt || undefined,
+            model: selectedModel,
+            provider: selectedProvider,
+            width: dimensions.width,
+            height: dimensions.height,
+            steps,
+            guidance,
+          },
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Generation failed');
+      }
+
+      const imageUrl = data.imageUrl;
       
       const image: GeneratedImage = {
         id: crypto.randomUUID(),
-        url: placeholderUrl,
+        url: imageUrl,
         prompt: prompt,
         model: selectedModel,
         provider: selectedProvider,
@@ -97,7 +122,7 @@ export default function GeneratePage() {
         cost: model ? model.costPer1k / 1000 : 0
       };
       
-      setGeneratedImage(placeholderUrl);
+      setGeneratedImage(imageUrl);
       addImage(image);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Generation failed');
@@ -204,13 +229,44 @@ export default function GeneratePage() {
                     className="max-w-full max-h-[500px] mx-auto rounded-lg shadow-lg"
                   />
                   <div className="flex justify-center gap-3 mt-4">
-                    <Button variant="outline" size="sm">
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      onClick={async () => {
+                        try {
+                          const response = await fetch(generatedImage);
+                          const blob = await response.blob();
+                          const url = URL.createObjectURL(blob);
+                          const a = document.createElement('a');
+                          a.href = url;
+                          a.download = `vixpic-${Date.now()}.webp`;
+                          document.body.appendChild(a);
+                          a.click();
+                          document.body.removeChild(a);
+                          URL.revokeObjectURL(url);
+                        } catch (e) {
+                          // Fallback: open in new tab
+                          window.open(generatedImage, '_blank');
+                        }
+                      }}
+                    >
                       📥 Download
                     </Button>
-                    <Button variant="outline" size="sm">
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      onClick={handleGenerate}
+                      disabled={isGenerating}
+                    >
                       🔄 Regenerate
                     </Button>
-                    <Button variant="outline" size="sm">
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      onClick={() => {
+                        navigator.clipboard.writeText(prompt);
+                      }}
+                    >
                       📋 Copy Prompt
                     </Button>
                   </div>
