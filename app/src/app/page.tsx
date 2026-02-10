@@ -17,6 +17,7 @@ export default function Home() {
             <a href="#features" className="text-gray-600 hover:text-gray-900 hidden sm:block">Features</a>
             <a href="#pricing" className="text-gray-600 hover:text-gray-900 hidden sm:block">Pricing</a>
             <a href="#faq" className="text-gray-600 hover:text-gray-900 hidden sm:block">FAQ</a>
+            <Link href="/gallery" className="text-gray-600 hover:text-gray-900 hidden sm:block">Gallery</Link>
             <Link href="/generate"><Button>Get Started</Button></Link>
           </div>
         </div>

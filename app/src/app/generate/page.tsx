@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -10,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { useToast } from '@/components/ui/toast';
 import { useApiKeys, useHistory, usePreferences } from '@/lib/store';
 import { PROVIDERS, getProvider, getModel, type Provider, type Model, type GeneratedImage } from '@/lib/types';
 
@@ -26,6 +28,8 @@ export default function GeneratePage() {
   const { keys, hasKey, isLoaded: keysLoaded } = useApiKeys();
   const { history, addImage } = useHistory();
   const { prefs } = usePreferences();
+  const { addToast } = useToast();
+  const searchParams = useSearchParams();
 
   // Generation state
   const [prompt, setPrompt] = useState('');
@@ -36,8 +40,17 @@ export default function GeneratePage() {
   const [steps, setSteps] = useState(25);
   const [guidance, setGuidance] = useState(7.5);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [generationStatus, setGenerationStatus] = useState<string>('');
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // Load prompt from URL params (for "Regenerate" from gallery)
+  useEffect(() => {
+    const urlPrompt = searchParams.get('prompt');
+    if (urlPrompt) {
+      setPrompt(urlPrompt);
+    }
+  }, [searchParams]);
 
   // Get current provider and model
   const provider = useMemo(() => getProvider(selectedProvider), [selectedProvider]);
@@ -65,25 +78,28 @@ export default function GeneratePage() {
   // Generate image using the API route
   const handleGenerate = async () => {
     if (!prompt.trim()) {
-      setError('Please enter a prompt');
+      addToast('Please enter a prompt', 'error');
       return;
     }
     if (!hasProviderKey) {
-      setError('Please configure your API key first');
+      addToast('Please configure your API key first', 'error');
       return;
     }
 
     const apiKey = keys[selectedProvider];
     if (!apiKey) {
-      setError('API key not found');
+      addToast('API key not found', 'error');
       return;
     }
 
     setIsGenerating(true);
     setError(null);
     setGeneratedImage(null);
+    setGenerationStatus('Connecting to ' + getProviderName(selectedProvider) + '...');
 
     try {
+      setGenerationStatus('Generating image...');
+      
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -108,6 +124,7 @@ export default function GeneratePage() {
         throw new Error(data.error || 'Generation failed');
       }
 
+      setGenerationStatus('Processing result...');
       const imageUrl = data.imageUrl;
       
       const image: GeneratedImage = {
@@ -124,11 +141,20 @@ export default function GeneratePage() {
       
       setGeneratedImage(imageUrl);
       addImage(image);
+      addToast('Image generated! Cost: $' + image.cost.toFixed(4), 'success');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Generation failed');
+      const errorMessage = err instanceof Error ? err.message : 'Generation failed';
+      setError(errorMessage);
+      addToast(errorMessage, 'error');
     } finally {
       setIsGenerating(false);
+      setGenerationStatus('');
     }
+  };
+
+  // Helper to get provider name
+  const getProviderName = (id: Provider) => {
+    return PROVIDERS.find(p => p.id === id)?.name || id;
   };
 
   if (!keysLoaded) {
@@ -149,6 +175,11 @@ export default function GeneratePage() {
             <span className="font-bold text-xl">VixPic</span>
           </Link>
           <div className="flex items-center gap-4">
+            <Link href="/gallery">
+              <Button variant="ghost" size="sm">
+                🖼️ Gallery
+              </Button>
+            </Link>
             <Link href="/settings">
               <Button variant="outline" size="sm">
                 ⚙️ Settings
@@ -218,7 +249,8 @@ export default function GeneratePage() {
               {isGenerating && (
                 <div className="text-center">
                   <div className="w-16 h-16 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                  <p className="text-gray-600">Creating your image...</p>
+                  <p className="text-gray-600 font-medium">{generationStatus || 'Creating your image...'}</p>
+                  <p className="text-sm text-gray-400 mt-2">This may take 5-30 seconds depending on the model</p>
                 </div>
               )}
               {!isGenerating && !error && generatedImage && (
@@ -265,6 +297,7 @@ export default function GeneratePage() {
                       size="sm"
                       onClick={() => {
                         navigator.clipboard.writeText(prompt);
+                        addToast('Prompt copied to clipboard', 'success');
                       }}
                     >
                       📋 Copy Prompt

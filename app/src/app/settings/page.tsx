@@ -55,6 +55,11 @@ export default function SettingsPage() {
             <span className="font-bold text-xl">VixPic</span>
           </Link>
           <div className="flex items-center gap-4">
+            <Link href="/gallery">
+              <Button variant="ghost" size="sm">
+                🖼️ Gallery
+              </Button>
+            </Link>
             <Link href="/generate">
               <Button size="sm">
                 ← Back to Generate
