@@ -14,6 +14,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/components/ui/toast';
 import { useApiKeys, useHistory, usePreferences } from '@/lib/store';
 import { PROVIDERS, getProvider, getModel, type Provider, type Model, type GeneratedImage } from '@/lib/types';
+import { PROMPT_TEMPLATES, CATEGORIES, type PromptTemplate } from '@/lib/prompts';
 
 // Aspect ratio presets
 const ASPECT_RATIOS = [
@@ -44,6 +45,10 @@ export default function GeneratePage() {
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  // Template selection state
+  const [showTemplates, setShowTemplates] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>('photography');
+
   // Load prompt from URL params (for "Regenerate" from gallery)
   useEffect(() => {
     const urlPrompt = searchParams.get('prompt');
@@ -51,6 +56,33 @@ export default function GeneratePage() {
       setPrompt(urlPrompt);
     }
   }, [searchParams]);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ctrl/Cmd + Enter to generate
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault();
+        if (!isGenerating && hasProviderKey && prompt.trim()) {
+          handleGenerate();
+        }
+      }
+      // Escape to close templates
+      if (e.key === 'Escape' && showTemplates) {
+        setShowTemplates(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isGenerating, hasProviderKey, prompt, showTemplates]);
+
+  // Apply template
+  const applyTemplate = (template: PromptTemplate) => {
+    setPrompt(template.prompt);
+    setShowTemplates(false);
+    addToast(`Applied "${template.name}" template`, 'success');
+  };
 
   // Get current provider and model
   const provider = useMemo(() => getProvider(selectedProvider), [selectedProvider]);
@@ -210,9 +242,54 @@ export default function GeneratePage() {
           <div className="space-y-6">
             {/* Prompt Input */}
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <Label htmlFor="prompt" className="text-lg font-semibold mb-3 block">
-                Describe your image
-              </Label>
+              <div className="flex items-center justify-between mb-3">
+                <Label htmlFor="prompt" className="text-lg font-semibold">
+                  Describe your image
+                </Label>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => setShowTemplates(!showTemplates)}
+                >
+                  📝 Templates
+                </Button>
+              </div>
+              
+              {/* Templates Panel */}
+              {showTemplates && (
+                <div className="mb-4 p-4 bg-gray-50 rounded-lg border">
+                  <div className="flex gap-2 mb-3 overflow-x-auto pb-2">
+                    {CATEGORIES.map(cat => (
+                      <Button
+                        key={cat.id}
+                        variant={selectedCategory === cat.id ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setSelectedCategory(cat.id)}
+                        className="whitespace-nowrap"
+                      >
+                        {cat.icon} {cat.name}
+                      </Button>
+                    ))}
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {PROMPT_TEMPLATES
+                      .filter(t => t.category === selectedCategory)
+                      .map(template => (
+                        <button
+                          key={template.id}
+                          onClick={() => applyTemplate(template)}
+                          className="text-left p-3 rounded-lg border bg-white hover:border-purple-300 hover:bg-purple-50 transition-colors"
+                        >
+                          <p className="font-medium text-sm">{template.name}</p>
+                          <p className="text-xs text-gray-500 line-clamp-2 mt-1">
+                            {template.prompt.slice(0, 80)}...
+                          </p>
+                        </button>
+                      ))}
+                  </div>
+                </div>
+              )}
+              
               <Textarea
                 id="prompt"
                 placeholder="A serene Japanese garden with cherry blossoms, koi pond reflecting moonlight, traditional stone lanterns, photorealistic..."
@@ -221,7 +298,10 @@ export default function GeneratePage() {
                 className="min-h-[120px] text-base resize-none"
               />
               <div className="flex items-center justify-between mt-3">
-                <span className="text-sm text-gray-500">{prompt.length} characters</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-sm text-gray-500">{prompt.length} characters</span>
+                  <span className="text-xs text-gray-400 hidden sm:block">⌘/Ctrl + Enter to generate</span>
+                </div>
                 <Button
                   onClick={handleGenerate}
                   disabled={isGenerating || !hasProviderKey || !prompt.trim()}
