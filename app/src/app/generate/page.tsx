@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
@@ -25,7 +25,27 @@ const ASPECT_RATIOS = [
   { id: '3:4', width: 896, height: 1152, label: 'Tall' },
 ];
 
+// Wrapper component for Suspense boundary (Next.js 16+ requirement for useSearchParams)
 export default function GeneratePage() {
+  return (
+    <Suspense fallback={<GeneratePageLoading />}>
+      <GeneratePageContent />
+    </Suspense>
+  );
+}
+
+function GeneratePageLoading() {
+  return (
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-8 h-8 border-2 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    </div>
+  );
+}
+
+function GeneratePageContent() {
   const { keys, hasKey, isLoaded: keysLoaded } = useApiKeys();
   const { history, addImage } = useHistory();
   const { prefs } = usePreferences();
@@ -48,6 +68,17 @@ export default function GeneratePage() {
   // Template selection state
   const [showTemplates, setShowTemplates] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('photography');
+
+  // Get current provider and model
+  const provider = useMemo(() => getProvider(selectedProvider), [selectedProvider]);
+  const model = useMemo(() => getModel(selectedProvider, selectedModel), [selectedProvider, selectedModel]);
+  const dimensions = useMemo(() => ASPECT_RATIOS.find(ar => ar.id === aspectRatio) || ASPECT_RATIOS[0], [aspectRatio]);
+
+  // Cost estimate
+  const estimatedCost = model ? (model.costPer1k / 1000).toFixed(3) : '0.00';
+
+  // Check if we have API key for selected provider
+  const hasProviderKey = hasKey(selectedProvider);
 
   // Load prompt from URL params (for "Regenerate" from gallery)
   useEffect(() => {
@@ -83,17 +114,6 @@ export default function GeneratePage() {
     setShowTemplates(false);
     addToast(`Applied "${template.name}" template`, 'success');
   };
-
-  // Get current provider and model
-  const provider = useMemo(() => getProvider(selectedProvider), [selectedProvider]);
-  const model = useMemo(() => getModel(selectedProvider, selectedModel), [selectedProvider, selectedModel]);
-  const dimensions = useMemo(() => ASPECT_RATIOS.find(ar => ar.id === aspectRatio) || ASPECT_RATIOS[0], [aspectRatio]);
-
-  // Cost estimate
-  const estimatedCost = model ? (model.costPer1k / 1000).toFixed(3) : '0.00';
-
-  // Check if we have API key for selected provider
-  const hasProviderKey = hasKey(selectedProvider);
 
   // Available providers (ones with keys configured)
   const configuredProviders = PROVIDERS.filter(p => hasKey(p.id));

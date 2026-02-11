@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { CostCalculator } from "@/components/cost-calculator";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4">
             <a href="#features" className="text-gray-600 hover:text-gray-900 hidden sm:block">Features</a>
+            <a href="#calculator" className="text-gray-600 hover:text-gray-900 hidden sm:block">Calculator</a>
             <a href="#pricing" className="text-gray-600 hover:text-gray-900 hidden sm:block">Pricing</a>
             <a href="#faq" className="text-gray-600 hover:text-gray-900 hidden sm:block">FAQ</a>
             <Link href="/gallery" className="text-gray-600 hover:text-gray-900 hidden sm:block">Gallery</Link>
@@ -174,72 +176,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Cost Comparison */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4">Save 80%+ vs Subscriptions</h2>
-          <p className="text-gray-600 text-center mb-12">
-            See how much you could save generating 1,000 images/month
+      {/* Cost Calculator */}
+      <section id="calculator" className="py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4">Calculate Your Savings</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            See exactly how much you&apos;d save by switching from expensive subscriptions to BYOK.
+            Adjust the sliders to match your usage.
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-2 border-red-200 bg-red-50">
-              <CardHeader>
-                <CardTitle className="text-red-700">With Subscriptions</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex justify-between">
-                    <span>Midjourney Pro</span>
-                    <span className="font-semibold">$30/mo</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>DALL-E via ChatGPT</span>
-                    <span className="font-semibold">$20/mo</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>Leonardo Pro</span>
-                    <span className="font-semibold">$24/mo</span>
-                  </li>
-                </ul>
-                <div className="mt-6 pt-4 border-t border-red-200">
-                  <div className="flex justify-between text-lg">
-                    <span className="font-semibold">Annual Cost</span>
-                    <span className="font-bold text-red-700">$240-360/year</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="border-2 border-green-200 bg-green-50">
-              <CardHeader>
-                <CardTitle className="text-green-700">With VixPic + BYOK</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex justify-between">
-                    <span>VixPic License</span>
-                    <span className="font-semibold">$59 one-time</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span>1,000 FLUX images/mo</span>
-                    <span className="font-semibold">~$10/mo</span>
-                  </li>
-                  <li className="flex justify-between text-gray-500">
-                    <span>(at ~$0.01/image)</span>
-                    <span></span>
-                  </li>
-                </ul>
-                <div className="mt-6 pt-4 border-t border-green-200">
-                  <div className="flex justify-between text-lg">
-                    <span className="font-semibold">Year 1 Cost</span>
-                    <span className="font-bold text-green-700">~$179</span>
-                  </div>
-                  <div className="text-sm text-green-600 mt-1">
-                    Year 2+: Just ~$120/year
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <CostCalculator />
         </div>
       </section>
 
