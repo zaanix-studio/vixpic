@@ -10,11 +10,13 @@ import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
 import { useApiKeys, usePreferences, useHistory } from '@/lib/store';
 import { PROVIDERS, type Provider } from '@/lib/types';
+import { useOnboarding } from '@/components/onboarding';
 
 export default function SettingsPage() {
   const { keys, setKey, clearKey, hasKey, isLoaded: keysLoaded } = useApiKeys();
   const { prefs, setPreference, isLoaded: prefsLoaded } = usePreferences();
   const { history, totalCost, clearHistory } = useHistory();
+  const { resetOnboarding } = useOnboarding();
 
   const [showKeys, setShowKeys] = useState<Record<Provider, boolean>>({} as Record<Provider, boolean>);
   const [tempKeys, setTempKeys] = useState<Record<Provider, string>>({} as Record<Provider, string>);
@@ -250,6 +252,25 @@ export default function SettingsPage() {
           <h2 className="text-xl font-semibold mb-6">Help & Resources</h2>
           
           <div className="grid md:grid-cols-2 gap-4">
+            <Card className="hover:shadow-md transition-shadow">
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">🎓 Show Tutorial Again</h3>
+                <p className="text-sm text-gray-600 mb-3">
+                  Replay the setup walkthrough to learn the basics.
+                </p>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => {
+                    resetOnboarding();
+                    window.location.href = '/generate';
+                  }}
+                >
+                  Start Tutorial
+                </Button>
+              </CardContent>
+            </Card>
+            
             <Card className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <h3 className="font-semibold mb-2">📖 Getting Started Guide</h3>

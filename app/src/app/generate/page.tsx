@@ -15,6 +15,7 @@ import { useToast } from '@/components/ui/toast';
 import { useApiKeys, useHistory, usePreferences } from '@/lib/store';
 import { PROVIDERS, getProvider, getModel, type Provider, type Model, type GeneratedImage } from '@/lib/types';
 import { PROMPT_TEMPLATES, CATEGORIES, type PromptTemplate } from '@/lib/prompts';
+import { Onboarding, useOnboarding } from '@/components/onboarding';
 
 // Aspect ratio presets
 const ASPECT_RATIOS = [
@@ -46,11 +47,12 @@ function GeneratePageLoading() {
 }
 
 function GeneratePageContent() {
-  const { keys, hasKey, isLoaded: keysLoaded } = useApiKeys();
+  const { keys, hasKey, setKey, isLoaded: keysLoaded } = useApiKeys();
   const { history, addImage } = useHistory();
   const { prefs } = usePreferences();
   const { addToast } = useToast();
   const searchParams = useSearchParams();
+  const { showOnboarding, completeOnboarding, isLoaded: onboardingLoaded } = useOnboarding();
 
   // Generation state
   const [prompt, setPrompt] = useState('');
@@ -209,7 +211,7 @@ function GeneratePageContent() {
     return PROVIDERS.find(p => p.id === id)?.name || id;
   };
 
-  if (!keysLoaded) {
+  if (!keysLoaded || !onboardingLoaded) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-pulse">Loading...</div>
@@ -217,8 +219,22 @@ function GeneratePageContent() {
     );
   }
 
+  // Check if user has any API keys configured
+  const hasAnyKey = PROVIDERS.some(p => hasKey(p.id));
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Onboarding Modal for first-time users */}
+      {showOnboarding && (
+        <Onboarding
+          onComplete={completeOnboarding}
+          onAddKey={(provider, key) => {
+            setKey(provider, key);
+            addToast(`${provider.charAt(0).toUpperCase() + provider.slice(1)} API key saved!`, 'success');
+          }}
+          hasAnyKey={hasAnyKey}
+        />
+      )}
       {/* Header */}
       <header className="bg-white border-b sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">

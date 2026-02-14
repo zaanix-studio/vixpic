@@ -15,11 +15,10 @@ export default function Home() {
             <span className="font-bold text-xl">VixPic</span>
           </div>
           <div className="flex items-center gap-4">
+            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">Free Tools</Link>
             <a href="#features" className="text-gray-600 hover:text-gray-900 hidden sm:block">Features</a>
-            <a href="#calculator" className="text-gray-600 hover:text-gray-900 hidden sm:block">Calculator</a>
             <a href="#pricing" className="text-gray-600 hover:text-gray-900 hidden sm:block">Pricing</a>
             <a href="#faq" className="text-gray-600 hover:text-gray-900 hidden sm:block">FAQ</a>
-            <Link href="/gallery" className="text-gray-600 hover:text-gray-900 hidden sm:block">Gallery</Link>
             <Link href="/generate"><Button>Get Started</Button></Link>
           </div>
         </div>
