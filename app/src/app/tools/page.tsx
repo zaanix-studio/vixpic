@@ -5,6 +5,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function FreeTools() {
   const tools = [
     {
+      title: "Image Compressor",
+      description: "Reduce file size by up to 90% without visible quality loss. Works entirely in your browser.",
+      icon: "📦",
+      href: "/tools/compress",
+      cost: "Free forever",
+      features: ["Adjustable quality", "Instant results", "No upload needed"],
+      isFree: true,
+    },
+    {
+      title: "Format Converter",
+      description: "Convert between PNG, JPG, and WebP formats instantly. 100% client-side processing.",
+      icon: "🔄",
+      href: "/tools/convert",
+      cost: "Free forever",
+      features: ["PNG, JPG, WebP", "Quality control", "No server upload"],
+      isFree: true,
+    },
+    {
       title: "Background Remover",
       description: "Remove backgrounds from any image instantly using AI. Perfect for product photos, portraits, and more.",
       icon: "✂️",
@@ -90,6 +108,11 @@ export default function FreeTools() {
                     {tool.isPremium && (
                       <span className="bg-purple-100 text-purple-700 text-xs font-medium px-2 py-1 rounded">
                         Pro Feature
+                      </span>
+                    )}
+                    {tool.isFree && (
+                      <span className="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">
+                        No API Key
                       </span>
                     )}
                   </div>
@@ -178,8 +201,10 @@ export default function FreeTools() {
         <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
           <p>
             <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
-            Free Tools: <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
-            <Link href="/tools/upscaler" className="hover:underline">Image Upscaler</Link>
+            Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
+            <Link href="/tools/convert" className="hover:underline">Converter</Link> • 
+            <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
+            <Link href="/tools/upscaler" className="hover:underline">Upscaler</Link>
           </p>
           <p className="mt-2">© 2026 VixPic. All rights reserved.</p>
         </div>
