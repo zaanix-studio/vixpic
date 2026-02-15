@@ -14,6 +14,15 @@ export default function FreeTools() {
       isFree: true,
     },
     {
+      title: "Image Resizer",
+      description: "Resize images by pixels, percentage, or social media presets. Supports Instagram, Twitter, Facebook sizes.",
+      icon: "📐",
+      href: "/tools/resize",
+      cost: "Free forever",
+      features: ["Custom dimensions", "Percentage scaling", "Social media presets"],
+      isFree: true,
+    },
+    {
       title: "Format Converter",
       description: "Convert between PNG, JPG, and WebP formats instantly. 100% client-side processing.",
       icon: "🔄",
@@ -202,6 +211,7 @@ export default function FreeTools() {
           <p>
             <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
+            <Link href="/tools/resize" className="hover:underline">Resizer</Link> • 
             <Link href="/tools/convert" className="hover:underline">Converter</Link> • 
             <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
             <Link href="/tools/upscaler" className="hover:underline">Upscaler</Link>
