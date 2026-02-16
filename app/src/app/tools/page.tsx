@@ -23,6 +23,15 @@ export default function FreeTools() {
       isFree: true,
     },
     {
+      title: "Image Cropper",
+      description: "Crop images with custom aspect ratios or social media presets. Perfect for profile pictures and thumbnails.",
+      icon: "✂️",
+      href: "/tools/crop",
+      cost: "Free forever",
+      features: ["Aspect ratio lock", "Social media presets", "Drag & resize"],
+      isFree: true,
+    },
+    {
       title: "Format Converter",
       description: "Convert between PNG, JPG, and WebP formats instantly. 100% client-side processing.",
       icon: "🔄",
@@ -34,7 +43,7 @@ export default function FreeTools() {
     {
       title: "Background Remover",
       description: "Remove backgrounds from any image instantly using AI. Perfect for product photos, portraits, and more.",
-      icon: "✂️",
+      icon: "🪄",
       href: "/tools/background-remover",
       cost: "~$0.005/image",
       features: ["Instant processing", "Transparent PNG output", "High accuracy edges"],
@@ -211,7 +220,8 @@ export default function FreeTools() {
           <p>
             <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
-            <Link href="/tools/resize" className="hover:underline">Resizer</Link> • 
+            <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
+            <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 
             <Link href="/tools/convert" className="hover:underline">Converter</Link> • 
             <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
             <Link href="/tools/upscaler" className="hover:underline">Upscaler</Link>
