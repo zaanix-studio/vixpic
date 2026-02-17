@@ -41,6 +41,15 @@ export default function FreeTools() {
       isFree: true,
     },
     {
+      title: "Color Picker",
+      description: "Extract colors from any image. Click anywhere to get HEX, RGB, and HSL values with one click.",
+      icon: "🎨",
+      href: "/tools/color-picker",
+      cost: "Free forever",
+      features: ["HEX, RGB, HSL", "Color history palette", "Click to copy"],
+      isFree: true,
+    },
+    {
       title: "Background Remover",
       description: "Remove backgrounds from any image instantly using AI. Perfect for product photos, portraits, and more.",
       icon: "🪄",
@@ -222,7 +231,8 @@ export default function FreeTools() {
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 
-            <Link href="/tools/convert" className="hover:underline">Converter</Link> • 
+            <Link href="/tools/convert" className="hover:underline">Converter</Link> •
+            <Link href="/tools/color-picker" className="hover:underline">Color Picker</Link> • 
             <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
             <Link href="/tools/upscaler" className="hover:underline">Upscaler</Link>
           </p>
