@@ -50,6 +50,24 @@ export default function FreeTools() {
       isFree: true,
     },
     {
+      title: "Blur & Sharpen",
+      description: "Apply blur effects or sharpen images for better clarity. Perfect for depth effects or enhancing details.",
+      icon: "🔍",
+      href: "/tools/blur-sharpen",
+      cost: "Free forever",
+      features: ["Gaussian blur", "Sharpen filter", "Compare mode"],
+      isFree: true,
+    },
+    {
+      title: "Add Watermark",
+      description: "Protect your images with custom text watermarks. Choose position, size, color, and opacity.",
+      icon: "💧",
+      href: "/tools/watermark",
+      cost: "Free forever",
+      features: ["Custom text", "Tile patterns", "Adjustable opacity"],
+      isFree: true,
+    },
+    {
       title: "Background Remover",
       description: "Remove backgrounds from any image instantly using AI. Perfect for product photos, portraits, and more.",
       icon: "🪄",
@@ -232,7 +250,9 @@ export default function FreeTools() {
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 
             <Link href="/tools/convert" className="hover:underline">Converter</Link> •
-            <Link href="/tools/color-picker" className="hover:underline">Color Picker</Link> • 
+            <Link href="/tools/color-picker" className="hover:underline">Color Picker</Link> •
+            <Link href="/tools/blur-sharpen" className="hover:underline">Blur/Sharpen</Link> •
+            <Link href="/tools/watermark" className="hover:underline">Watermark</Link> • 
             <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
             <Link href="/tools/upscaler" className="hover:underline">Upscaler</Link>
           </p>

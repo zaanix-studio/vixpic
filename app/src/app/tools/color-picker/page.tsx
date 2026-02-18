@@ -346,7 +346,8 @@ export default function ColorPickerTool() {
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 
             <Link href="/tools/convert" className="hover:underline">Converter</Link> •
-            <Link href="/tools/color-picker" className="hover:underline">Color Picker</Link> • 
+            <Link href="/tools/color-picker" className="hover:underline">Color Picker</Link> •
+            <Link href="/tools/blur-sharpen" className="hover:underline">Blur/Sharpen</Link> • 
             <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
             <Link href="/tools/upscaler" className="hover:underline">Upscaler</Link>
           </p>
