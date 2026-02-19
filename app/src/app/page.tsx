@@ -16,7 +16,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4">
             <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">Free Tools</Link>
-            <a href="#features" className="text-gray-600 hover:text-gray-900 hidden sm:block">Features</a>
+            <Link href="/use-cases" className="text-gray-600 hover:text-gray-900 hidden sm:block">Use Cases</Link>
             <a href="#pricing" className="text-gray-600 hover:text-gray-900 hidden sm:block">Pricing</a>
             <a href="#faq" className="text-gray-600 hover:text-gray-900 hidden sm:block">FAQ</a>
             <Link href="/generate"><Button>Get Started</Button></Link>
