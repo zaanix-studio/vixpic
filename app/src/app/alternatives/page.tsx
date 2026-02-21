@@ -36,7 +36,6 @@ const alternatives = [
     pricing: "$12-60/month subscription",
     painPoints: ["Token system complexity", "Credits expire monthly", "Limited free tier", "Slow generation queue"],
     vixpicWins: ["Simple API pricing", "No expiration", "Generous free tools", "Direct API = fast"],
-    comingSoon: true,
   },
   {
     name: "Stable Diffusion",
@@ -46,7 +45,6 @@ const alternatives = [
     pricing: "$0-500+/month (hardware/cloud)",
     painPoints: ["Complex setup", "Hardware requirements", "Maintenance overhead", "No support"],
     vixpicWins: ["Zero setup", "No hardware needed", "Managed providers", "Just add API key"],
-    comingSoon: true,
   },
   {
     name: "Adobe Firefly",
@@ -56,7 +54,6 @@ const alternatives = [
     pricing: "$22-59/month with Creative Cloud",
     painPoints: ["Requires Adobe subscription", "Limited standalone use", "Generative credits cap", "Enterprise-focused"],
     vixpicWins: ["No subscription lock-in", "Independent tool", "Pay per image", "Creator-focused"],
-    comingSoon: true,
   },
   {
     name: "Canva AI",
