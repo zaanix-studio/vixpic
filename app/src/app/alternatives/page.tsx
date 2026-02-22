@@ -63,7 +63,6 @@ const alternatives = [
     pricing: "$12.99/month with Canva Pro",
     painPoints: ["Tied to Canva ecosystem", "Basic generation options", "Limited model access", "Design-tool first"],
     vixpicWins: ["Dedicated image tool", "Multiple AI models", "Developer API", "Image-first features"],
-    comingSoon: true,
   },
 ];
 
