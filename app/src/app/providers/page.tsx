@@ -1,0 +1,304 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI Image Providers — OpenAI, Replicate, FAL & More | VixPic",
+  description: "Compare AI image generation providers supported by VixPic. Learn about OpenAI DALL-E, Replicate, FAL, and choose the best API for your needs.",
+  keywords: ["AI image API", "Replicate API", "FAL AI", "OpenAI DALL-E API", "BYOK AI image", "AI image provider comparison"],
+};
+
+const providers = [
+  {
+    name: "OpenAI",
+    description: "Home of DALL-E 3, the most capable AI image model for prompt understanding and text rendering.",
+    icon: "🤖",
+    href: "/providers/openai",
+    models: ["DALL-E 3", "DALL-E 2"],
+    costPer: "~$0.04-0.12/image",
+    strengths: ["Best text-in-image", "Excellent prompt adherence", "Safe & reliable", "Easy API setup"],
+    bestFor: "Logos, text-heavy images, realistic photos, commercial use",
+    color: "green",
+  },
+  {
+    name: "Replicate",
+    description: "Run thousands of open-source AI models via API, including SDXL, Flux, and community fine-tunes.",
+    icon: "🔄",
+    href: "/providers/replicate",
+    models: ["SDXL", "Flux", "Stable Diffusion", "1000+ community models"],
+    costPer: "~$0.01-0.10/image",
+    strengths: ["Cheapest option", "Most model variety", "Community fine-tunes", "LoRA support"],
+    bestFor: "Budget users, style variety, anime, artistic effects",
+    color: "blue",
+  },
+  {
+    name: "FAL",
+    description: "Ultra-fast inference platform optimized for speed. Get images in seconds, not minutes.",
+    icon: "⚡",
+    href: "/providers/fal",
+    models: ["Flux Pro", "SDXL Lightning", "Fast SDXL", "AuraFlow"],
+    costPer: "~$0.02-0.08/image",
+    strengths: ["Fastest generation", "Flux Pro access", "Real-time models", "Developer-friendly"],
+    bestFor: "Speed-critical workflows, batch jobs, real-time applications",
+    color: "purple",
+  },
+];
+
+export default function ProvidersPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+            <span className="font-bold text-xl">VixPic</span>
+          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">Free Tools</Link>
+            <Link href="/use-cases" className="text-gray-600 hover:text-gray-900 hidden sm:block">Use Cases</Link>
+            <Link href="/alternatives" className="text-gray-600 hover:text-gray-900 hidden sm:block">Alternatives</Link>
+            <Link href="/providers" className="text-purple-600 font-medium hidden sm:block">Providers</Link>
+            <Link href="/generate"><Button>Get Started</Button></Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="pt-32 pb-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            Choose Your{" "}
+            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              AI Provider
+            </span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            VixPic connects to multiple AI providers via BYOK. Choose based on your priorities: 
+            quality, speed, price, or model variety.
+          </p>
+        </div>
+      </section>
+
+      {/* Quick Comparison */}
+      <section className="py-8 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-center mb-6">Quick Decision Guide</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="text-center bg-white p-4 rounded-xl border">
+              <p className="text-sm text-gray-600 mb-2">Best Quality</p>
+              <p className="font-bold text-lg">OpenAI (DALL-E 3)</p>
+            </div>
+            <div className="text-center bg-white p-4 rounded-xl border">
+              <p className="text-sm text-gray-600 mb-2">Best Price</p>
+              <p className="font-bold text-lg">Replicate (SDXL)</p>
+            </div>
+            <div className="text-center bg-white p-4 rounded-xl border">
+              <p className="text-sm text-gray-600 mb-2">Best Speed</p>
+              <p className="font-bold text-lg">FAL (Lightning)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Provider Cards */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4">Supported Providers</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Add your API key from any of these providers. Your keys stay local — we use edge proxies for privacy.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {providers.map((provider) => (
+              <Card key={provider.href} className="border-2 hover:border-purple-200 transition-all hover:shadow-lg">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className={`w-14 h-14 bg-${provider.color}-100 rounded-xl flex items-center justify-center text-3xl`}>
+                      {provider.icon}
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">{provider.name}</CardTitle>
+                      <p className="text-sm text-green-600 font-medium">{provider.costPer}</p>
+                    </div>
+                  </div>
+                  <CardDescription className="text-base">
+                    {provider.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-xs font-semibold text-gray-500 uppercase mb-2">Models</p>
+                      <div className="flex flex-wrap gap-1">
+                        {provider.models.map((model, i) => (
+                          <span key={i} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                            {model}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-green-600 uppercase mb-2">Strengths</p>
+                      <ul className="space-y-1">
+                        {provider.strengths.slice(0, 3).map((strength, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                            <span className="text-green-600">✓</span>
+                            {strength}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Best For</p>
+                      <p className="text-sm text-gray-700">{provider.bestFor}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-4 border-t">
+                    <Link href={provider.href}>
+                      <Button variant="outline" className="w-full">
+                        Learn About {provider.name} →
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Provider Comparison</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full bg-white rounded-xl shadow-sm">
+              <thead>
+                <tr className="border-b-2">
+                  <th className="py-4 px-4 text-left">Feature</th>
+                  <th className="py-4 px-4 text-center">OpenAI</th>
+                  <th className="py-4 px-4 text-center">Replicate</th>
+                  <th className="py-4 px-4 text-center">FAL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-4 px-4 font-medium">Cheapest option</td>
+                  <td className="py-4 px-4 text-center">$0.04</td>
+                  <td className="py-4 px-4 text-center text-green-600 font-medium">$0.01</td>
+                  <td className="py-4 px-4 text-center">$0.02</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-4 px-4 font-medium">Best model</td>
+                  <td className="py-4 px-4 text-center text-green-600 font-medium">DALL-E 3</td>
+                  <td className="py-4 px-4 text-center">Flux</td>
+                  <td className="py-4 px-4 text-center">Flux Pro</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-4 px-4 font-medium">Generation speed</td>
+                  <td className="py-4 px-4 text-center">5-15s</td>
+                  <td className="py-4 px-4 text-center">3-10s</td>
+                  <td className="py-4 px-4 text-center text-green-600 font-medium">1-5s</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-4 px-4 font-medium">Model variety</td>
+                  <td className="py-4 px-4 text-center">2</td>
+                  <td className="py-4 px-4 text-center text-green-600 font-medium">1000+</td>
+                  <td className="py-4 px-4 text-center">10+</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-4 px-4 font-medium">Text in images</td>
+                  <td className="py-4 px-4 text-center text-green-600 font-medium">Excellent</td>
+                  <td className="py-4 px-4 text-center">Good</td>
+                  <td className="py-4 px-4 text-center">Good</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-4 px-4 font-medium">Setup difficulty</td>
+                  <td className="py-4 px-4 text-center text-green-600 font-medium">Easiest</td>
+                  <td className="py-4 px-4 text-center">Easy</td>
+                  <td className="py-4 px-4 text-center">Easy</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-4 font-medium">Free credits</td>
+                  <td className="py-4 px-4 text-center">$5 (new accounts)</td>
+                  <td className="py-4 px-4 text-center">None</td>
+                  <td className="py-4 px-4 text-center text-green-600 font-medium">$10 (new)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* BYOK Explainer */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4">How BYOK Works</h2>
+          <p className="text-xl text-gray-600 text-center mb-12">
+            Bring Your Own Key means direct access to AI providers at wholesale prices.
+          </p>
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
+                1️⃣
+              </div>
+              <h3 className="font-bold mb-2">Get an API Key</h3>
+              <p className="text-sm text-gray-600">Create a free account with OpenAI, Replicate, or FAL</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
+                2️⃣
+              </div>
+              <h3 className="font-bold mb-2">Add to VixPic</h3>
+              <p className="text-sm text-gray-600">Paste your key in Settings. Stored locally in your browser.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
+                3️⃣
+              </div>
+              <h3 className="font-bold mb-2">Generate Images</h3>
+              <p className="text-sm text-gray-600">VixPic calls the API via edge proxy. Your key never touches our servers.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
+                4️⃣
+              </div>
+              <h3 className="font-bold mb-2">Pay Provider Direct</h3>
+              <p className="text-sm text-gray-600">Get billed by OpenAI/Replicate/FAL at wholesale rates. No VixPic markup.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Start Generating?</h2>
+          <p className="text-xl opacity-90 mb-8">
+            Try our free tools first, then add your API key for unlimited generation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/generate">
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
+                Start Free
+              </Button>
+            </Link>
+            <Link href="/settings">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+                Configure API Keys
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t py-12 px-4 bg-white">
+        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+          © 2026 VixPic. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  );
+}
