@@ -41,9 +41,27 @@ export default function FreeTools() {
       isFree: true,
     },
     {
+      title: "Rotate & Flip",
+      description: "Rotate images by any angle or flip them horizontally and vertically. Fix orientation instantly.",
+      icon: "🔃",
+      href: "/tools/rotate",
+      cost: "Free forever",
+      features: ["Any rotation angle", "Flip H/V", "Quick presets"],
+      isFree: true,
+    },
+    {
+      title: "Photo Filters",
+      description: "Apply beautiful filters to your photos. Sepia, grayscale, vintage, vivid, and more — all instant.",
+      icon: "🎨",
+      href: "/tools/filters",
+      cost: "Free forever",
+      features: ["12+ preset filters", "Brightness/Contrast", "Fine-tune controls"],
+      isFree: true,
+    },
+    {
       title: "Color Picker",
       description: "Extract colors from any image. Click anywhere to get HEX, RGB, and HSL values with one click.",
-      icon: "🎨",
+      icon: "🖌️",
       href: "/tools/color-picker",
       cost: "Free forever",
       features: ["HEX, RGB, HSL", "Color history palette", "Click to copy"],
@@ -68,6 +86,24 @@ export default function FreeTools() {
       isFree: true,
     },
     {
+      title: "Metadata Viewer",
+      description: "View image metadata and strip EXIF data for privacy. See dimensions, file info, and more.",
+      icon: "📋",
+      href: "/tools/metadata",
+      cost: "Free forever",
+      features: ["View all metadata", "Strip EXIF data", "Privacy protection"],
+      isFree: true,
+    },
+    {
+      title: "Image Splitter",
+      description: "Split images into grid tiles for Instagram carousels and seamless profile layouts.",
+      icon: "🔲",
+      href: "/tools/splitter",
+      cost: "Free forever",
+      features: ["Instagram 3×3 grids", "Custom grid sizes", "Batch download"],
+      isFree: true,
+    },
+    {
       title: "Background Remover",
       description: "Remove backgrounds from any image instantly using AI. Perfect for product photos, portraits, and more.",
       icon: "🪄",
@@ -78,7 +114,7 @@ export default function FreeTools() {
     {
       title: "Image Upscaler",
       description: "Enhance image resolution up to 4x with AI upscaling. Preserve details while increasing size.",
-      icon: "🔍",
+      icon: "🔎",
       href: "/tools/upscaler",
       cost: "~$0.01/image",
       features: ["2x or 4x upscaling", "Face enhancement", "Detail preservation"],
@@ -86,7 +122,7 @@ export default function FreeTools() {
     {
       title: "AI Image Generator",
       description: "Generate images with DALL-E, FLUX, and Stable Diffusion using your own API keys.",
-      icon: "🎨",
+      icon: "✨",
       href: "/generate",
       cost: "$0.003-0.08/image",
       features: ["Multiple AI models", "Style presets", "Batch generation"],
@@ -249,10 +285,11 @@ export default function FreeTools() {
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 
+            <Link href="/tools/rotate" className="hover:underline">Rotate</Link> •
+            <Link href="/tools/filters" className="hover:underline">Filters</Link> •
             <Link href="/tools/convert" className="hover:underline">Converter</Link> •
-            <Link href="/tools/color-picker" className="hover:underline">Color Picker</Link> •
-            <Link href="/tools/blur-sharpen" className="hover:underline">Blur/Sharpen</Link> •
-            <Link href="/tools/watermark" className="hover:underline">Watermark</Link> • 
+            <Link href="/tools/metadata" className="hover:underline">Metadata</Link> •
+            <Link href="/tools/splitter" className="hover:underline">Splitter</Link> • 
             <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
             <Link href="/tools/upscaler" className="hover:underline">Upscaler</Link>
           </p>
