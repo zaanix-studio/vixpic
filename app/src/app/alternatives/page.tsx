@@ -9,7 +9,18 @@ export const metadata: Metadata = {
   keywords: ["Midjourney alternative", "DALL-E alternative", "AI image generator comparison", "BYOK AI tools", "cheap AI image generator"],
 };
 
-const alternatives = [
+interface Alternative {
+  name: string;
+  description: string;
+  icon: string;
+  href: string;
+  pricing: string;
+  painPoints: string[];
+  vixpicWins: string[];
+  comingSoon?: boolean;
+}
+
+const alternatives: Alternative[] = [
   {
     name: "Midjourney",
     description: "Discord-based AI art generator known for artistic, stylized outputs.",

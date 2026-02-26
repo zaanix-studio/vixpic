@@ -69,42 +69,63 @@ export default function ImageToPdf() {
     // Dynamic import of jspdf
     const { jsPDF } = await import("jspdf");
     
+    // Process first image to determine initial page size
+    const firstImg = new Image();
+    firstImg.src = images[0].preview;
+    
+    await new Promise<void>((resolve) => {
+      firstImg.onload = () => resolve();
+    });
+
+    const getPageDimensions = (img: HTMLImageElement) => {
+      let pageWidth: number;
+      let pageHeight: number;
+      
+      if (pageSize === "a4") {
+        pageWidth = 210;
+        pageHeight = 297;
+      } else if (pageSize === "letter") {
+        pageWidth = 215.9;
+        pageHeight = 279.4;
+      } else {
+        // Fit to image
+        const maxDim = 210;
+        const ratio = img.width / img.height;
+        if (ratio > 1) {
+          pageWidth = maxDim;
+          pageHeight = maxDim / ratio;
+        } else {
+          pageHeight = maxDim;
+          pageWidth = maxDim * ratio;
+        }
+      }
+      return { pageWidth, pageHeight };
+    };
+
+    const firstDims = getPageDimensions(firstImg);
+    
     const pdf = new jsPDF({
-      orientation: "portrait",
+      orientation: firstDims.pageWidth > firstDims.pageHeight ? "landscape" : "portrait",
       unit: "mm",
+      format: pageSize === "fit" ? [firstDims.pageWidth, firstDims.pageHeight] : (pageSize === "a4" ? "a4" : "letter"),
     });
 
     for (let i = 0; i < images.length; i++) {
-      if (i > 0) pdf.addPage();
-      
       const img = new Image();
       img.src = images[i].preview;
       
       await new Promise<void>((resolve) => {
         img.onload = () => {
-          let pageWidth: number;
-          let pageHeight: number;
+          const { pageWidth, pageHeight } = getPageDimensions(img);
           
-          if (pageSize === "a4") {
-            pageWidth = 210;
-            pageHeight = 297;
-          } else if (pageSize === "letter") {
-            pageWidth = 215.9;
-            pageHeight = 279.4;
-          } else {
-            // Fit to image
-            const maxDim = 210; // A4 width as max
-            const ratio = img.width / img.height;
-            if (ratio > 1) {
-              pageWidth = maxDim;
-              pageHeight = maxDim / ratio;
+          if (i > 0) {
+            if (pageSize === "fit") {
+              pdf.addPage([pageWidth, pageHeight]);
             } else {
-              pageHeight = maxDim;
-              pageWidth = maxDim * ratio;
+              pdf.addPage();
             }
           }
-
-          // Calculate dimensions to fit image
+          
           const imgRatio = img.width / img.height;
           const pageRatio = pageWidth / pageHeight;
           
@@ -116,8 +137,6 @@ export default function ImageToPdf() {
           if (pageSize === "fit") {
             imgWidth = pageWidth;
             imgHeight = pageHeight;
-            pdf.internal.pageSize.setWidth(pageWidth);
-            pdf.internal.pageSize.setHeight(pageHeight);
           } else {
             if (imgRatio > pageRatio) {
               imgWidth = pageWidth - 20;
