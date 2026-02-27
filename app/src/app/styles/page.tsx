@@ -59,7 +59,6 @@ const styles = [
     models: ["SDXL", "Flux", "DALL-E 3"],
     difficulty: "Beginner",
     popularity: "High",
-    comingSoon: true,
   },
   {
     name: "Cyberpunk",
@@ -70,7 +69,6 @@ const styles = [
     models: ["SDXL", "Flux", "Midjourney"],
     difficulty: "Beginner",
     popularity: "High",
-    comingSoon: true,
   },
   {
     name: "Watercolor",
@@ -81,7 +79,6 @@ const styles = [
     models: ["SDXL", "DALL-E 3"],
     difficulty: "Intermediate",
     popularity: "Medium",
-    comingSoon: true,
   },
   {
     name: "3D Render",
@@ -92,7 +89,6 @@ const styles = [
     models: ["DALL-E 3", "Flux Pro"],
     difficulty: "Advanced",
     popularity: "High",
-    comingSoon: true,
   },
 ];
 
@@ -171,15 +167,8 @@ export default function StylesPage() {
             {styles.map((style) => (
               <Card 
                 key={style.slug}
-                className={`border-2 hover:border-purple-200 transition-all hover:shadow-lg relative ${
-                  style.comingSoon ? "opacity-60" : ""
-                }`}
+                className="border-2 hover:border-purple-200 transition-all hover:shadow-lg"
               >
-                {style.comingSoon && (
-                  <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs font-medium">
-                    Coming Soon
-                  </div>
-                )}
                 <CardHeader className="pb-2">
                   <div className="text-4xl mb-2">{style.icon}</div>
                   <CardTitle className="text-xl">{style.name}</CardTitle>
@@ -216,17 +205,11 @@ export default function StylesPage() {
                       ))}
                     </div>
                   </div>
-                  {style.comingSoon ? (
-                    <Button variant="outline" className="w-full" disabled>
-                      Guide Coming Soon
+                  <Link href={`/styles/${style.slug}`}>
+                    <Button variant="outline" className="w-full">
+                      View Style Guide →
                     </Button>
-                  ) : (
-                    <Link href={`/styles/${style.slug}`}>
-                      <Button variant="outline" className="w-full">
-                        View Style Guide →
-                      </Button>
-                    </Link>
-                  )}
+                  </Link>
                 </CardContent>
               </Card>
             ))}
