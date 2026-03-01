@@ -4,13 +4,31 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const posts = [
   {
+    slug: "ai-image-tools-2026",
+    title: "The State of AI Image Generation in 2026",
+    description: "How the landscape has changed, what's working, and where things are headed for creators and businesses.",
+    category: "News",
+    date: "2026-03-01",
+    readTime: "6 min",
+    featured: true,
+  },
+  {
+    slug: "free-ai-image-tools",
+    title: "15+ Free Image Tools Every Creator Needs",
+    description: "Resize, compress, convert, remove backgrounds, and more — all in your browser, completely free. No signup required.",
+    category: "Guide",
+    date: "2026-03-01",
+    readTime: "5 min",
+    featured: true,
+  },
+  {
     slug: "byok-explained",
     title: "BYOK Explained: Why Bring Your Own Key Changes Everything",
     description: "Learn how BYOK (Bring Your Own Key) AI tools save you money and give you full control over your image generation.",
     category: "Guide",
     date: "2026-02-28",
     readTime: "5 min",
-    featured: true,
+    featured: false,
   },
   {
     slug: "dalle-vs-stable-diffusion-vs-flux",
@@ -19,7 +37,7 @@ const posts = [
     category: "Comparison",
     date: "2026-02-27",
     readTime: "8 min",
-    featured: true,
+    featured: false,
   },
   {
     slug: "save-money-ai-images",
