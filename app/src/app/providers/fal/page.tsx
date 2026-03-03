@@ -66,23 +66,7 @@ const pricingTiers = [
 
 export default function FalProviderPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
-            <span className="font-bold text-xl">VixPic</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">Free Tools</Link>
-            <Link href="/providers" className="text-purple-600 font-medium hidden sm:block">Providers</Link>
-            <Link href="/alternatives" className="text-gray-600 hover:text-gray-900 hidden sm:block">Alternatives</Link>
-            <Link href="/generate"><Button>Get Started</Button></Link>
-          </div>
-        </div>
-      </nav>
-
+    <>
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -451,12 +435,6 @@ export default function FalProviderPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t py-12 px-4 bg-white">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
-          © 2026 VixPic. All rights reserved. FAL is a trademark of FAL AI.
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }

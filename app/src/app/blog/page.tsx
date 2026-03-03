@@ -84,22 +84,7 @@ export default function BlogPage() {
   const regularPosts = posts.filter(p => !p.featured);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 bg-white/80 backdrop-blur-md border-b z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
-            <span className="font-bold text-xl">VixPic</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">Free Tools</Link>
-            <Link href="/blog" className="text-purple-600 font-medium hidden sm:block">Blog</Link>
-            <Link href="/generate"><Button>Get Started</Button></Link>
-          </div>
-        </div>
-      </nav>
-
+    <>
       {/* Header */}
       <section className="pt-16 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -228,21 +213,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 border-t">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-gradient-to-br from-purple-600 to-blue-600 rounded" />
-            <span className="font-semibold">VixPic</span>
-          </div>
-          <div className="flex gap-6 text-sm text-gray-600">
-            <Link href="/tools" className="hover:text-gray-900">Free Tools</Link>
-            <Link href="/blog" className="hover:text-gray-900">Blog</Link>
-            <Link href="/alternatives" className="hover:text-gray-900">Alternatives</Link>
-          </div>
-          <p className="text-sm text-gray-500">© 2026 VixPic. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }

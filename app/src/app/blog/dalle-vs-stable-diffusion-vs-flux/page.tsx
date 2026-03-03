@@ -4,21 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function ModelComparisonPost() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 bg-white/80 backdrop-blur-md border-b z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
-            <span className="font-bold text-xl">VixPic</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/blog" className="text-gray-600 hover:text-gray-900">← Back to Blog</Link>
-            <Link href="/generate"><Button>Try VixPic</Button></Link>
-          </div>
-        </div>
-      </nav>
-
+    <>
       {/* Article */}
       <article className="max-w-3xl mx-auto px-4 py-12">
         {/* Header */}
@@ -409,16 +395,6 @@ export default function ModelComparisonPost() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 border-t">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-gradient-to-br from-purple-600 to-blue-600 rounded" />
-            <span className="font-semibold">VixPic</span>
-          </div>
-          <p className="text-sm text-gray-500">© 2026 VixPic. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }

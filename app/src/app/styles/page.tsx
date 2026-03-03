@@ -94,24 +94,7 @@ const styles = [
 
 export default function StylesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
-            <span className="font-bold text-xl">VixPic</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">Free Tools</Link>
-            <Link href="/use-cases" className="text-gray-600 hover:text-gray-900 hidden sm:block">Use Cases</Link>
-            <Link href="/styles" className="text-purple-600 font-medium hidden sm:block">Styles</Link>
-            <Link href="/#pricing" className="text-gray-600 hover:text-gray-900 hidden sm:block">Pricing</Link>
-            <Link href="/generate"><Button>Get Started</Button></Link>
-          </div>
-        </div>
-      </nav>
-
+    <>
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -355,48 +338,6 @@ export default function StylesPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 bg-gray-900 text-gray-400">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
-                <span className="font-bold text-xl text-white">VixPic</span>
-              </div>
-              <p className="text-sm">BYOK AI Image Generation. Your keys, your rules, your savings.</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-white mb-4">Product</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/generate" className="hover:text-white">Generate Images</Link></li>
-                <li><Link href="/tools" className="hover:text-white">Free Tools</Link></li>
-                <li><Link href="/gallery" className="hover:text-white">Gallery</Link></li>
-                <li><Link href="/#pricing" className="hover:text-white">Pricing</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-white mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/styles" className="hover:text-white">Style Guides</Link></li>
-                <li><Link href="/providers" className="hover:text-white">AI Providers</Link></li>
-                <li><Link href="/use-cases" className="hover:text-white">Use Cases</Link></li>
-                <li><Link href="/alternatives" className="hover:text-white">Alternatives</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-white mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="hover:text-white">Terms of Service</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-sm">
-            <p>© 2026 VixPic. Built with ❤️ for creators who refuse to overpay.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }

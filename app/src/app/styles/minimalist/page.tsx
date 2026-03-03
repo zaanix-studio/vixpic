@@ -138,22 +138,7 @@ const colorPalettes = [
 
 export default function MinimalistStylePage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
-            <span className="font-bold text-xl">VixPic</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">Free Tools</Link>
-            <Link href="/styles" className="text-purple-600 font-medium hidden sm:block">Styles</Link>
-            <Link href="/generate"><Button>Get Started</Button></Link>
-          </div>
-        </div>
-      </nav>
-
+    <>
       {/* Breadcrumb */}
       <div className="pt-24 px-4 max-w-6xl mx-auto">
         <div className="flex items-center gap-2 text-sm text-gray-500">
@@ -478,17 +463,6 @@ export default function MinimalistStylePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 bg-gray-950 text-gray-500">
-        <div className="max-w-6xl mx-auto text-center text-sm">
-          <p>© 2026 VixPic. Built with ❤️ for creators who refuse to overpay.</p>
-          <div className="mt-4 flex justify-center gap-6">
-            <Link href="/styles" className="hover:text-white">All Styles</Link>
-            <Link href="/tools" className="hover:text-white">Free Tools</Link>
-            <Link href="/providers" className="hover:text-white">Providers</Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }

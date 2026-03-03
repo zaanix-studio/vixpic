@@ -140,22 +140,7 @@ const colorPalettes = [
 
 export default function CyberpunkStylePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md border-b border-cyan-500/20 z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
-            <span className="font-bold text-xl text-white">VixPic</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-400 hover:text-white hidden sm:block">Free Tools</Link>
-            <Link href="/styles" className="text-cyan-400 font-medium hidden sm:block">Styles</Link>
-            <Link href="/generate"><Button className="bg-cyan-500 hover:bg-cyan-600">Get Started</Button></Link>
-          </div>
-        </div>
-      </nav>
-
+    <>
       {/* Breadcrumb */}
       <div className="pt-24 px-4 max-w-6xl mx-auto">
         <div className="flex items-center gap-2 text-sm text-gray-500">
@@ -425,17 +410,6 @@ export default function CyberpunkStylePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 bg-gray-900 text-gray-400">
-        <div className="max-w-6xl mx-auto text-center text-sm">
-          <p>© 2026 VixPic. Built with ❤️ for creators who refuse to overpay.</p>
-          <div className="mt-4 flex justify-center gap-6">
-            <Link href="/styles" className="hover:text-cyan-400">All Styles</Link>
-            <Link href="/tools" className="hover:text-cyan-400">Free Tools</Link>
-            <Link href="/providers" className="hover:text-cyan-400">Providers</Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
