@@ -159,7 +159,7 @@ export default function GalleryPage() {
                 />
               </div>
               <div className="flex gap-3">
-                <Select value={providerFilter} onValueChange={(v) => setProviderFilter(v as Provider | 'all')}>
+                <Select value={providerFilter} onValueChange={(v) => v && setProviderFilter(v as Provider | 'all')}>
                   <SelectTrigger className="w-[140px]">
                     <SelectValue placeholder="Provider" />
                   </SelectTrigger>
@@ -171,7 +171,7 @@ export default function GalleryPage() {
                   </SelectContent>
                 </Select>
                 
-                <Select value={sortBy} onValueChange={(v) => setSortBy(v as 'date' | 'cost')}>
+                <Select value={sortBy} onValueChange={(v) => v && setSortBy(v as 'date' | 'cost')}>
                   <SelectTrigger className="w-[120px]">
                     <SelectValue placeholder="Sort by" />
                   </SelectTrigger>

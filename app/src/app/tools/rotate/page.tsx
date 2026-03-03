@@ -226,7 +226,7 @@ export default function ImageRotator() {
                     </div>
                     <Slider
                       value={[rotation]}
-                      onValueChange={([val]) => setRotation(val)}
+                      onValueChange={(v) => setRotation(Array.isArray(v) ? v[0] : v)}
                       min={-180}
                       max={180}
                       step={1}

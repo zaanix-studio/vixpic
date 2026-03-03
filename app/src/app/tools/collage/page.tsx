@@ -331,7 +331,7 @@ export default function CollageMaker() {
                     </div>
                     <Slider
                       value={[gap]}
-                      onValueChange={([val]) => setGap(val)}
+                      onValueChange={(v) => setGap(Array.isArray(v) ? v[0] : v)}
                       min={0}
                       max={32}
                       step={2}
@@ -347,7 +347,7 @@ export default function CollageMaker() {
                     </div>
                     <Slider
                       value={[borderRadius]}
-                      onValueChange={([val]) => setBorderRadius(val)}
+                      onValueChange={(v) => setBorderRadius(Array.isArray(v) ? v[0] : v)}
                       min={0}
                       max={32}
                       step={2}

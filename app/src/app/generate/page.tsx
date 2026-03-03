@@ -459,7 +459,7 @@ function GeneratePageContent() {
                   {/* Provider */}
                   <div>
                     <Label className="text-sm text-gray-600">Provider</Label>
-                    <Select value={selectedProvider} onValueChange={(v) => handleProviderChange(v as Provider)}>
+                    <Select value={selectedProvider} onValueChange={(v) => v && handleProviderChange(v as Provider)}>
                       <SelectTrigger className="mt-1">
                         <SelectValue />
                       </SelectTrigger>
@@ -483,7 +483,7 @@ function GeneratePageContent() {
                   {/* Model */}
                   <div>
                     <Label className="text-sm text-gray-600">Model</Label>
-                    <Select value={selectedModel} onValueChange={setSelectedModel}>
+                    <Select value={selectedModel} onValueChange={(v) => v && setSelectedModel(v)}>
                       <SelectTrigger className="mt-1">
                         <SelectValue />
                       </SelectTrigger>
@@ -565,7 +565,7 @@ function GeneratePageContent() {
                       </div>
                       <Slider
                         value={[steps]}
-                        onValueChange={(v) => setSteps(v[0])}
+                        onValueChange={(v) => setSteps(Array.isArray(v) ? v[0] : v)}
                         min={10}
                         max={50}
                         step={5}
@@ -580,7 +580,7 @@ function GeneratePageContent() {
                       </div>
                       <Slider
                         value={[steps]}
-                        onValueChange={(v) => setSteps(v[0])}
+                        onValueChange={(v) => setSteps(Array.isArray(v) ? v[0] : v)}
                         min={10}
                         max={50}
                         step={5}
@@ -593,7 +593,7 @@ function GeneratePageContent() {
                       </div>
                       <Slider
                         value={[guidance]}
-                        onValueChange={(v) => setGuidance(v[0])}
+                        onValueChange={(v) => setGuidance(Array.isArray(v) ? v[0] : v)}
                         min={1}
                         max={20}
                         step={0.5}

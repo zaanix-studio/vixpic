@@ -226,6 +226,7 @@ export default function FormatConverter() {
                     <RadioGroup
                       value={outputFormat}
                       onValueChange={(v) => {
+                        if (!v) return;
                         setOutputFormat(v as OutputFormat);
                         setConvertedImage(null);
                       }}
@@ -259,7 +260,7 @@ export default function FormatConverter() {
                       </div>
                       <Slider
                         value={quality}
-                        onValueChange={setQuality}
+                        onValueChange={(v) => setQuality(Array.isArray(v) ? [...v] : [v])}
                         min={10}
                         max={100}
                         step={5}

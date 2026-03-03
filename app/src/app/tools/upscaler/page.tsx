@@ -270,7 +270,7 @@ export default function ImageUpscaler() {
                   {!processedImage && processingState !== "processing" && (
                     <div className="flex items-center justify-center gap-4">
                       <Label>Upscale Factor:</Label>
-                      <Select value={scale} onValueChange={setScale}>
+                      <Select value={scale} onValueChange={(v) => v && setScale(v)}>
                         <SelectTrigger className="w-32">
                           <SelectValue />
                         </SelectTrigger>

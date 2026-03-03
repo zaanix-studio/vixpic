@@ -338,7 +338,7 @@ export default function MemeMaker() {
                       </div>
                       <Slider
                         value={[fontSize]}
-                        onValueChange={([val]) => setFontSize(val)}
+                        onValueChange={(v) => setFontSize(Array.isArray(v) ? v[0] : v)}
                         min={24}
                         max={96}
                         step={2}
@@ -393,7 +393,7 @@ export default function MemeMaker() {
                     </div>
                     <Slider
                       value={[strokeWidth]}
-                      onValueChange={([val]) => setStrokeWidth(val)}
+                      onValueChange={(v) => setStrokeWidth(Array.isArray(v) ? v[0] : v)}
                       min={0}
                       max={8}
                       step={1}

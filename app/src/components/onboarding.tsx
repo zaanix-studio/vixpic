@@ -126,7 +126,7 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
 
   return (
     <Dialog open={true} onOpenChange={() => {}}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto" onPointerDownOutside={(e) => e.preventDefault()}>
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
         {/* Progress Bar */}
         <div className="h-1 bg-gray-200 rounded-full overflow-hidden mb-6">
           <div 

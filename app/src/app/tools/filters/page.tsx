@@ -259,7 +259,7 @@ export default function PhotoFilters() {
                         </div>
                         <Slider
                           value={[customAdjustments.brightness]}
-                          onValueChange={([val]) => setCustomAdjustments(p => ({ ...p, brightness: val }))}
+                          onValueChange={(v) => { const val = Array.isArray(v) ? v[0] : v; setCustomAdjustments(p => ({ ...p, brightness: val })); }}
                           min={50}
                           max={150}
                           step={1}
@@ -273,7 +273,7 @@ export default function PhotoFilters() {
                         </div>
                         <Slider
                           value={[customAdjustments.contrast]}
-                          onValueChange={([val]) => setCustomAdjustments(p => ({ ...p, contrast: val }))}
+                          onValueChange={(v) => { const val = Array.isArray(v) ? v[0] : v; setCustomAdjustments(p => ({ ...p, contrast: val })); }}
                           min={50}
                           max={150}
                           step={1}
@@ -287,7 +287,7 @@ export default function PhotoFilters() {
                         </div>
                         <Slider
                           value={[customAdjustments.saturation]}
-                          onValueChange={([val]) => setCustomAdjustments(p => ({ ...p, saturation: val }))}
+                          onValueChange={(v) => { const val = Array.isArray(v) ? v[0] : v; setCustomAdjustments(p => ({ ...p, saturation: val })); }}
                           min={0}
                           max={200}
                           step={1}
@@ -301,7 +301,7 @@ export default function PhotoFilters() {
                         </div>
                         <Slider
                           value={[customAdjustments.blur]}
-                          onValueChange={([val]) => setCustomAdjustments(p => ({ ...p, blur: val }))}
+                          onValueChange={(v) => { const val = Array.isArray(v) ? v[0] : v; setCustomAdjustments(p => ({ ...p, blur: val })); }}
                           min={0}
                           max={10}
                           step={0.5}

@@ -1,55 +1,76 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  TrendingDownIcon,
+  TrendingUpIcon,
+} from "lucide-react";
 
 const SUBSCRIPTIONS = {
   midjourney: { name: "Midjourney Pro", monthly: 30, imagesIncluded: 900 },
   dalleChat: { name: "ChatGPT Plus", monthly: 20, imagesIncluded: 100 },
   leonardo: { name: "Leonardo Pro", monthly: 24, imagesIncluded: 8500 },
   ideogram: { name: "Ideogram Plus", monthly: 20, imagesIncluded: 1000 },
-  adobe: { name: "Adobe Firefly Premium", monthly: 23, imagesIncluded: 100 },
+  adobe: {
+    name: "Adobe Firefly Premium",
+    monthly: 23,
+    imagesIncluded: 100,
+  },
 } as const;
 
 const BYOK_MODELS = {
-  fluxSchnell: { name: "FLUX Schnell", costPer: 0.003, quality: "Fast/Draft" },
+  fluxSchnell: {
+    name: "FLUX Schnell",
+    costPer: 0.003,
+    quality: "Fast/Draft",
+  },
   fluxDev: { name: "FLUX Dev", costPer: 0.025, quality: "High Quality" },
   fluxPro: { name: "FLUX Pro", costPer: 0.05, quality: "Best" },
   dalle3Hd: { name: "DALL-E 3 HD", costPer: 0.08, quality: "OpenAI Best" },
-  dalle3Std: { name: "DALL-E 3 Standard", costPer: 0.04, quality: "OpenAI Fast" },
+  dalle3Std: {
+    name: "DALL-E 3 Standard",
+    costPer: 0.04,
+    quality: "OpenAI Fast",
+  },
   sdxl: { name: "SDXL", costPer: 0.002, quality: "Open Source" },
 } as const;
 
 export function CostCalculator() {
   const [imagesPerMonth, setImagesPerMonth] = useState(500);
-  const [currentSub, setCurrentSub] = useState<keyof typeof SUBSCRIPTIONS>("midjourney");
-  const [byokModel, setByokModel] = useState<keyof typeof BYOK_MODELS>("fluxDev");
+  const [currentSub, setCurrentSub] =
+    useState<keyof typeof SUBSCRIPTIONS>("midjourney");
+  const [byokModel, setByokModel] =
+    useState<keyof typeof BYOK_MODELS>("fluxDev");
   const [vixpicTier, setVixpicTier] = useState<29 | 59 | 149>(59);
 
   const calculations = useMemo(() => {
     const sub = SUBSCRIPTIONS[currentSub];
     const model = BYOK_MODELS[byokModel];
-    
-    // Subscription costs (annual)
+
     const subAnnual = sub.monthly * 12;
-    
-    // BYOK costs (annual) = VixPic license + API costs
     const apiCostMonthly = imagesPerMonth * model.costPer;
     const apiCostAnnual = apiCostMonthly * 12;
     const byokYear1 = vixpicTier + apiCostAnnual;
     const byokYear2Plus = apiCostAnnual;
-    
-    // Savings
     const savingsYear1 = subAnnual - byokYear1;
-    const savingsYear2Plus = subAnnual - byokYear2Plus;
     const savingsPercent = Math.round((savingsYear1 / subAnnual) * 100);
-    
-    // 3-year comparison
     const sub3Year = subAnnual * 3;
-    const byok3Year = vixpicTier + (apiCostAnnual * 3);
+    const byok3Year = vixpicTier + apiCostAnnual * 3;
     const savings3Year = sub3Year - byok3Year;
 
     return {
@@ -60,7 +81,7 @@ export function CostCalculator() {
       byokYear1,
       byokYear2Plus,
       savingsYear1,
-      savingsYear2Plus,
+      savingsYear2Plus: subAnnual - byokYear2Plus,
       savingsPercent,
       sub3Year,
       byok3Year,
@@ -70,55 +91,66 @@ export function CostCalculator() {
   }, [imagesPerMonth, currentSub, byokModel, vixpicTier]);
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(amount);
   };
 
   const formatCurrencyPrecise = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }).format(amount);
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {/* Controls */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card>
+      <div className="grid md:grid-cols-2 gap-4">
+        <Card className="bg-white/[0.03] border-white/[0.06]">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg">Your Usage</CardTitle>
+            <CardTitle className="text-lg text-white">Your Usage</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-sm font-medium">Images per month</label>
-                <span className="text-sm font-bold text-purple-600">{imagesPerMonth.toLocaleString()}</span>
+                <label className="text-sm font-medium text-stone-300">
+                  Images per month
+                </label>
+                <span className="text-sm font-bold text-[#c9a87c]">
+                  {imagesPerMonth.toLocaleString()}
+                </span>
               </div>
               <Slider
                 value={[imagesPerMonth]}
-                onValueChange={([v]) => setImagesPerMonth(v)}
+                onValueChange={(v) => setImagesPerMonth(Array.isArray(v) ? v[0] : v)}
                 min={50}
                 max={5000}
                 step={50}
                 className="py-2"
               />
-              <div className="flex justify-between text-xs text-gray-500 mt-1">
+              <div className="flex justify-between text-xs text-stone-500 mt-1">
                 <span>50</span>
                 <span>5,000</span>
               </div>
             </div>
-            
+
             <div>
-              <label className="text-sm font-medium block mb-2">Current subscription</label>
-              <Select value={currentSub} onValueChange={(v) => setCurrentSub(v as keyof typeof SUBSCRIPTIONS)}>
-                <SelectTrigger>
+              <label className="text-sm font-medium text-stone-300 block mb-2">
+                Current subscription
+              </label>
+              <Select
+                value={currentSub}
+                onValueChange={(v) =>
+                  v && setCurrentSub(v as keyof typeof SUBSCRIPTIONS)
+                }
+              >
+                <SelectTrigger className="bg-white/[0.03] border-white/[0.08]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -133,15 +165,22 @@ export function CostCalculator() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-white/[0.03] border-white/[0.06]">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg">VixPic Setup</CardTitle>
+            <CardTitle className="text-lg text-white">VixPic Setup</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <label className="text-sm font-medium block mb-2">AI Model</label>
-              <Select value={byokModel} onValueChange={(v) => setByokModel(v as keyof typeof BYOK_MODELS)}>
-                <SelectTrigger>
+              <label className="text-sm font-medium text-stone-300 block mb-2">
+                AI Model
+              </label>
+              <Select
+                value={byokModel}
+                onValueChange={(v) =>
+                  v && setByokModel(v as keyof typeof BYOK_MODELS)
+                }
+              >
+                <SelectTrigger className="bg-white/[0.03] border-white/[0.08]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -155,16 +194,18 @@ export function CostCalculator() {
             </div>
 
             <div>
-              <label className="text-sm font-medium block mb-2">VixPic License</label>
+              <label className="text-sm font-medium text-stone-300 block mb-2">
+                VixPic License
+              </label>
               <div className="flex gap-2">
                 {([29, 59, 149] as const).map((tier) => (
                   <button
                     key={tier}
                     onClick={() => setVixpicTier(tier)}
-                    className={`flex-1 py-2 px-3 rounded-lg border-2 text-sm font-medium transition-colors ${
+                    className={`flex-1 py-2 px-3 rounded-lg border text-sm font-medium transition-all ${
                       vixpicTier === tier
-                        ? "border-purple-600 bg-purple-50 text-purple-700"
-                        : "border-gray-200 hover:border-gray-300"
+                        ? "border-[#c9a87c]/50 bg-[#c9a87c]/10 text-[#c9a87c]"
+                        : "border-white/[0.08] text-stone-400 hover:border-white/[0.15] hover:text-stone-300"
                     }`}
                   >
                     ${tier}
@@ -177,64 +218,93 @@ export function CostCalculator() {
       </div>
 
       {/* Results */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="border-2 border-red-200 bg-red-50">
+      <div className="grid md:grid-cols-2 gap-4">
+        <Card className="border-red-500/20 bg-red-500/[0.04]">
           <CardHeader>
-            <CardTitle className="text-red-700 flex items-center gap-2">
-              <span>🔴</span> Current Subscription
+            <CardTitle className="text-red-400 flex items-center gap-2">
+              <TrendingUpIcon size={20} strokeWidth={2} />
+              Current Subscription
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-stone-400">
               {SUBSCRIPTIONS[currentSub].name}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="flex justify-between">
+              <div className="flex justify-between text-stone-300">
                 <span>Monthly cost</span>
-                <span className="font-semibold">{formatCurrency(calculations.subMonthly)}/mo</span>
+                <span className="font-semibold">
+                  {formatCurrency(calculations.subMonthly)}/mo
+                </span>
               </div>
               <div className="flex justify-between text-lg">
-                <span className="font-semibold">Year 1 Total</span>
-                <span className="font-bold text-red-700">{formatCurrency(calculations.subAnnual)}</span>
+                <span className="font-semibold text-stone-200">
+                  Year 1 Total
+                </span>
+                <span className="font-bold text-red-400">
+                  {formatCurrency(calculations.subAnnual)}
+                </span>
               </div>
               <div className="flex justify-between text-lg">
-                <span className="font-semibold">3-Year Total</span>
-                <span className="font-bold text-red-700">{formatCurrency(calculations.sub3Year)}</span>
+                <span className="font-semibold text-stone-200">
+                  3-Year Total
+                </span>
+                <span className="font-bold text-red-400">
+                  {formatCurrency(calculations.sub3Year)}
+                </span>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="border-2 border-green-200 bg-green-50">
+        <Card className="border-emerald-500/20 bg-emerald-500/[0.04]">
           <CardHeader>
-            <CardTitle className="text-green-700 flex items-center gap-2">
-              <span>🟢</span> VixPic + BYOK
+            <CardTitle className="text-emerald-400 flex items-center gap-2">
+              <TrendingDownIcon size={20} strokeWidth={2} />
+              VixPic + BYOK
             </CardTitle>
-            <CardDescription>
-              {BYOK_MODELS[byokModel].name} at {formatCurrencyPrecise(calculations.costPerImage)}/image
+            <CardDescription className="text-stone-400">
+              {BYOK_MODELS[byokModel].name} at{" "}
+              {formatCurrencyPrecise(calculations.costPerImage)}/image
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-sm text-stone-300">
                 <span>VixPic license (one-time)</span>
-                <span className="font-semibold">{formatCurrency(vixpicTier)}</span>
+                <span className="font-semibold">
+                  {formatCurrency(vixpicTier)}
+                </span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span>API costs ({imagesPerMonth.toLocaleString()} imgs/mo)</span>
-                <span className="font-semibold">{formatCurrencyPrecise(calculations.apiCostMonthly)}/mo</span>
+              <div className="flex justify-between text-sm text-stone-300">
+                <span>
+                  API costs ({imagesPerMonth.toLocaleString()} imgs/mo)
+                </span>
+                <span className="font-semibold">
+                  {formatCurrencyPrecise(calculations.apiCostMonthly)}/mo
+                </span>
               </div>
-              <div className="flex justify-between text-lg pt-2 border-t">
-                <span className="font-semibold">Year 1 Total</span>
-                <span className="font-bold text-green-700">{formatCurrency(calculations.byokYear1)}</span>
+              <div className="flex justify-between text-lg pt-2 border-t border-white/[0.06]">
+                <span className="font-semibold text-stone-200">
+                  Year 1 Total
+                </span>
+                <span className="font-bold text-emerald-400">
+                  {formatCurrency(calculations.byokYear1)}
+                </span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between text-stone-300">
                 <span>Year 2+ (no license)</span>
-                <span className="font-semibold text-green-600">{formatCurrency(calculations.byokYear2Plus)}/yr</span>
+                <span className="font-semibold text-emerald-400">
+                  {formatCurrency(calculations.byokYear2Plus)}/yr
+                </span>
               </div>
-              <div className="flex justify-between text-lg pt-2 border-t">
-                <span className="font-semibold">3-Year Total</span>
-                <span className="font-bold text-green-700">{formatCurrency(calculations.byok3Year)}</span>
+              <div className="flex justify-between text-lg pt-2 border-t border-white/[0.06]">
+                <span className="font-semibold text-stone-200">
+                  3-Year Total
+                </span>
+                <span className="font-bold text-emerald-400">
+                  {formatCurrency(calculations.byok3Year)}
+                </span>
               </div>
             </div>
           </CardContent>
@@ -242,37 +312,44 @@ export function CostCalculator() {
       </div>
 
       {/* Savings Banner */}
-      <Card className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+      <Card className="bg-[#c9a87c] border-0">
         <CardContent className="py-8">
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold">
+              <div className="text-3xl md:text-4xl font-bold text-[#08080a]">
                 {formatCurrency(calculations.savingsYear1)}
               </div>
-              <div className="text-purple-100 mt-1">Saved in Year 1</div>
+              <div className="text-[#08080a]/60 mt-1 text-sm">
+                Saved in Year 1
+              </div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold">
+              <div className="text-3xl md:text-4xl font-bold text-[#08080a]">
                 {calculations.savingsPercent}%
               </div>
-              <div className="text-purple-100 mt-1">Lower Cost</div>
+              <div className="text-[#08080a]/60 mt-1 text-sm">Lower Cost</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold">
+              <div className="text-3xl md:text-4xl font-bold text-[#08080a]">
                 {formatCurrency(calculations.savings3Year)}
               </div>
-              <div className="text-purple-100 mt-1">Saved Over 3 Years</div>
+              <div className="text-[#08080a]/60 mt-1 text-sm">
+                Saved Over 3 Years
+              </div>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Model Comparison Table */}
-      <Card>
+      {/* Model Comparison */}
+      <Card className="bg-white/[0.03] border-white/[0.06]">
         <CardHeader>
-          <CardTitle className="text-lg">API Cost Reference</CardTitle>
-          <CardDescription>
-            What you'd pay directly to AI providers for {imagesPerMonth.toLocaleString()} images/month
+          <CardTitle className="text-lg text-white">
+            API Cost Reference
+          </CardTitle>
+          <CardDescription className="text-stone-400">
+            What you&apos;d pay directly to AI providers for{" "}
+            {imagesPerMonth.toLocaleString()} images/month
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -284,18 +361,20 @@ export function CostCalculator() {
                 <button
                   key={key}
                   onClick={() => setByokModel(key as keyof typeof BYOK_MODELS)}
-                  className={`p-3 rounded-lg border-2 text-left transition-all ${
+                  className={`p-3 rounded-xl border text-left transition-all ${
                     isSelected
-                      ? "border-purple-600 bg-purple-50"
-                      : "border-gray-200 hover:border-gray-300"
+                      ? "border-[#c9a87c]/50 bg-[#c9a87c]/10"
+                      : "border-white/[0.08] hover:border-white/[0.15]"
                   }`}
                 >
-                  <div className="font-semibold text-sm truncate">{model.name}</div>
-                  <div className="text-xs text-gray-500">{model.quality}</div>
-                  <div className="text-lg font-bold mt-1 text-purple-600">
+                  <div className="font-semibold text-sm truncate text-stone-200">
+                    {model.name}
+                  </div>
+                  <div className="text-xs text-stone-500">{model.quality}</div>
+                  <div className="text-lg font-bold mt-1 text-[#c9a87c]">
                     {formatCurrencyPrecise(monthlyCost)}
                   </div>
-                  <div className="text-xs text-gray-500">/month</div>
+                  <div className="text-xs text-stone-500">/month</div>
                 </button>
               );
             })}

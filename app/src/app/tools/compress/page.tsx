@@ -195,7 +195,7 @@ export default function ImageCompressor() {
                     </div>
                     <Slider
                       value={quality}
-                      onValueChange={setQuality}
+                      onValueChange={(v) => setQuality(Array.isArray(v) ? [...v] : [v])}
                       min={10}
                       max={100}
                       step={5}

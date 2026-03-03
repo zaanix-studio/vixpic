@@ -253,7 +253,7 @@ export default function PaletteExtractor() {
                     </div>
                     <Slider
                       value={[colorCount]}
-                      onValueChange={([val]) => setColorCount(val)}
+                      onValueChange={(v) => setColorCount(Array.isArray(v) ? v[0] : v)}
                       min={3}
                       max={12}
                       step={1}
