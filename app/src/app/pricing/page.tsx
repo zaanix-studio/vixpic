@@ -106,37 +106,21 @@ const faqs = [
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
-            <span className="font-bold text-xl">VixPic</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">Free Tools</Link>
-            <Link href="/use-cases" className="text-gray-600 hover:text-gray-900 hidden sm:block">Use Cases</Link>
-            <Link href="/alternatives" className="text-gray-600 hover:text-gray-900 hidden sm:block">Alternatives</Link>
-            <Link href="/generate"><Button>Get Started</Button></Link>
-          </div>
-        </div>
-      </nav>
-
+    <>
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Simple Pricing.{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               One-Time Payment.
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
             Pay once, own forever. Use your own API keys with zero markup.
             Most users save 70-90% compared to monthly subscriptions.
           </p>
-          <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
+          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <span className="flex items-center gap-1">✓ 14-day money-back guarantee</span>
             <span>•</span>
             <span className="flex items-center gap-1">✓ No subscription required</span>
@@ -150,43 +134,43 @@ export default function PricingPage() {
       <section className="pb-20 px-4">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
           {/* Starter */}
-          <Card className="border-2 hover:border-purple-200 transition-colors">
+          <Card className="border-2 hover:border-brand/20 transition-colors">
             <CardHeader>
               <CardTitle className="text-xl">Starter</CardTitle>
               <CardDescription>Perfect for hobbyists and side projects</CardDescription>
               <div className="mt-4">
                 <span className="text-5xl font-bold">$29</span>
-                <span className="text-gray-500 ml-2">one-time</span>
+                <span className="text-muted-foreground ml-2">one-time</span>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>Unlimited BYOK generation</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>All AI providers (DALL-E, Flux, SDXL)</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>Background removal</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>2K image upscaling</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>20+ free image tools</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>5 concurrent jobs</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>Email support</span>
                 </li>
               </ul>
@@ -199,8 +183,8 @@ export default function PricingPage() {
           </Card>
 
           {/* Pro */}
-          <Card className="border-2 border-purple-500 relative shadow-lg scale-105">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+          <Card className="border-2 border-brand/60 relative shadow-lg scale-105">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand to-info text-brand-foreground px-4 py-1 rounded-full text-sm font-medium">
               Most Popular
             </div>
             <CardHeader>
@@ -208,86 +192,86 @@ export default function PricingPage() {
               <CardDescription>For serious creators and professionals</CardDescription>
               <div className="mt-4">
                 <span className="text-5xl font-bold">$59</span>
-                <span className="text-gray-500 ml-2">one-time</span>
+                <span className="text-muted-foreground ml-2">one-time</span>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span className="font-medium">Everything in Starter, plus:</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>4K image upscaling</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>Batch processing (100+ images)</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>Style presets & templates</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>20 concurrent jobs</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>Priority support</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>All future updates</span>
                 </li>
               </ul>
             </CardContent>
             <CardFooter>
-              <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700" size="lg">
+              <Button className="w-full bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90" size="lg">
                 Get Pro
               </Button>
             </CardFooter>
           </Card>
 
           {/* Team */}
-          <Card className="border-2 hover:border-purple-200 transition-colors">
+          <Card className="border-2 hover:border-brand/20 transition-colors">
             <CardHeader>
               <CardTitle className="text-xl">Team</CardTitle>
               <CardDescription>For agencies, studios, and teams</CardDescription>
               <div className="mt-4">
                 <span className="text-5xl font-bold">$149</span>
-                <span className="text-gray-500 ml-2">5 seats</span>
+                <span className="text-muted-foreground ml-2">5 seats</span>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span className="font-medium">Everything in Pro, plus:</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>5 team member seats</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>Shared workspace</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>Team asset library</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>Admin controls</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>API access</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-success font-bold">✓</span>
                   <span>White-label option</span>
                 </li>
               </ul>
@@ -300,17 +284,17 @@ export default function PricingPage() {
           </Card>
         </div>
 
-        <p className="text-center text-gray-500 mt-8">
+        <p className="text-center text-muted-foreground mt-8">
           💳 Secure payment via Stripe • 14-day money-back guarantee • Instant access
         </p>
       </section>
 
       {/* Cost Calculator */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Calculate Your Savings</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               See exactly how much you'll save compared to subscription services.
               Adjust the sliders to match your usage.
             </p>
@@ -324,7 +308,7 @@ export default function PricingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">How Subscriptions Really Cost You</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Monthly fees add up fast. Here's what popular AI image services actually charge.
             </p>
           </div>
@@ -332,7 +316,7 @@ export default function PricingPage() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-muted">
                   <th className="text-left p-4 font-semibold">Service</th>
                   <th className="text-center p-4 font-semibold">Monthly</th>
                   <th className="text-center p-4 font-semibold">Annual</th>
@@ -345,76 +329,76 @@ export default function PricingPage() {
                   <tr key={i} className="border-b">
                     <td className="p-4">{row.service}</td>
                     <td className="text-center p-4">${row.monthly}</td>
-                    <td className="text-center p-4 text-red-600 font-semibold">${row.annual}</td>
+                    <td className="text-center p-4 text-destructive font-semibold">${row.annual}</td>
                     <td className="text-center p-4">{row.images}</td>
                     <td className="text-center p-4">{row.perImage}</td>
                   </tr>
                 ))}
-                <tr className="bg-green-50 font-semibold">
-                  <td className="p-4 text-green-700">VixPic + BYOK</td>
-                  <td className="text-center p-4 text-green-700">$0*</td>
-                  <td className="text-center p-4 text-green-700">$59 one-time</td>
-                  <td className="text-center p-4 text-green-700">Unlimited</td>
-                  <td className="text-center p-4 text-green-700">$0.002-$0.08</td>
+                <tr className="bg-success-muted/50 font-semibold">
+                  <td className="p-4 text-success-muted-foreground">VixPic + BYOK</td>
+                  <td className="text-center p-4 text-success-muted-foreground">$0*</td>
+                  <td className="text-center p-4 text-success-muted-foreground">$59 one-time</td>
+                  <td className="text-center p-4 text-success-muted-foreground">Unlimited</td>
+                  <td className="text-center p-4 text-success-muted-foreground">$0.002-$0.08</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="text-center text-sm text-gray-500 mt-4">
+          <p className="text-center text-sm text-muted-foreground mt-4">
             *Plus API costs paid directly to providers. Most users spend $5-20/month.
           </p>
         </div>
       </section>
 
       {/* Feature Comparison Table */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Detailed Feature Comparison</h2>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               Everything included in each tier, side by side.
             </p>
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white rounded-lg overflow-hidden shadow-sm">
+            <table className="w-full border-collapse bg-card rounded-lg overflow-hidden shadow-sm">
               <thead>
-                <tr className="bg-gray-800 text-white">
+                <tr className="bg-inverted text-inverted-foreground">
                   <th className="text-left p-4 font-semibold">Feature</th>
                   <th className="text-center p-4 font-semibold">Starter ($29)</th>
-                  <th className="text-center p-4 font-semibold bg-purple-700">Pro ($59)</th>
+                  <th className="text-center p-4 font-semibold bg-brand">Pro ($59)</th>
                   <th className="text-center p-4 font-semibold">Team ($149)</th>
                 </tr>
               </thead>
               <tbody>
                 {features.starter.map((item, i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                  <tr key={i} className={i % 2 === 0 ? "bg-muted" : "bg-card"}>
                     <td className="p-4 font-medium">{item.feature}</td>
                     <td className="text-center p-4">
                       {item.value ? (
-                        <span className="text-gray-700">{item.value}</span>
+                        <span className="text-foreground">{item.value}</span>
                       ) : item.included ? (
-                        <span className="text-green-600 text-xl">✓</span>
+                        <span className="text-success text-xl">✓</span>
                       ) : (
-                        <span className="text-gray-300 text-xl">—</span>
+                        <span className="text-muted-foreground text-xl">—</span>
                       )}
                     </td>
-                    <td className="text-center p-4 bg-purple-50">
+                    <td className="text-center p-4 bg-brand-muted/50">
                       {features.pro[i].value ? (
-                        <span className="text-gray-700 font-medium">{features.pro[i].value}</span>
+                        <span className="text-foreground font-medium">{features.pro[i].value}</span>
                       ) : features.pro[i].included ? (
-                        <span className="text-green-600 text-xl">✓</span>
+                        <span className="text-success text-xl">✓</span>
                       ) : (
-                        <span className="text-gray-300 text-xl">—</span>
+                        <span className="text-muted-foreground text-xl">—</span>
                       )}
                     </td>
                     <td className="text-center p-4">
                       {features.team[i].value ? (
-                        <span className="text-gray-700">{features.team[i].value}</span>
+                        <span className="text-foreground">{features.team[i].value}</span>
                       ) : features.team[i].included ? (
-                        <span className="text-green-600 text-xl">✓</span>
+                        <span className="text-success text-xl">✓</span>
                       ) : (
-                        <span className="text-gray-300 text-xl">—</span>
+                        <span className="text-muted-foreground text-xl">—</span>
                       )}
                     </td>
                   </tr>
@@ -430,29 +414,29 @@ export default function PricingPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+              <div className="w-16 h-16 bg-success-muted rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
                 🛡️
               </div>
               <h3 className="font-semibold text-lg mb-2">14-Day Guarantee</h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Not happy? Get a full refund within 14 days. No questions, no hassle.
               </p>
             </div>
             <div>
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+              <div className="w-16 h-16 bg-info-muted rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
                 🔒
               </div>
               <h3 className="font-semibold text-lg mb-2">Secure & Private</h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Your API keys stay local. We never see your credentials or generated images.
               </p>
             </div>
             <div>
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-muted rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
                 ∞
               </div>
               <h3 className="font-semibold text-lg mb-2">Lifetime Updates</h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Pro and Team licenses include all future features and improvements.
               </p>
             </div>
@@ -461,22 +445,22 @@ export default function PricingPage() {
       </section>
 
       {/* FAQs */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               Everything you need to know about VixPic pricing and BYOK.
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion className="space-y-4">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="bg-white rounded-lg px-6 border">
+              <AccordionItem key={i} className="bg-card rounded-lg px-6 border">
                 <AccordionTrigger className="text-left font-semibold py-4 hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 pb-4">
+                <AccordionContent className="text-muted-foreground pb-4">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -489,12 +473,12 @@ export default function PricingPage() {
       <section className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Save 80% on AI Images?</h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
             Join thousands of creators who've switched to BYOK. Pay once, create forever.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90">
                 Start Creating Free
               </Button>
             </Link>
@@ -504,58 +488,12 @@ export default function PricingPage() {
               </Button>
             </Link>
           </div>
-          <p className="text-sm text-gray-500 mt-4">
+          <p className="text-sm text-muted-foreground mt-4">
             No credit card required • Use free tools instantly
           </p>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
-                <span className="font-bold text-xl">VixPic</span>
-              </div>
-              <p className="text-gray-600 text-sm">
-                Professional AI image generation with your own API keys.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link href="/generate" className="hover:text-gray-900">Generate</Link></li>
-                <li><Link href="/tools" className="hover:text-gray-900">Free Tools</Link></li>
-                <li><Link href="/pricing" className="hover:text-gray-900">Pricing</Link></li>
-                <li><Link href="/styles" className="hover:text-gray-900">Styles</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link href="/blog" className="hover:text-gray-900">Blog</Link></li>
-                <li><Link href="/providers" className="hover:text-gray-900">Providers</Link></li>
-                <li><Link href="/use-cases" className="hover:text-gray-900">Use Cases</Link></li>
-                <li><Link href="/alternatives" className="hover:text-gray-900">Alternatives</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Compare</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link href="/alternatives/midjourney" className="hover:text-gray-900">vs Midjourney</Link></li>
-                <li><Link href="/alternatives/dalle" className="hover:text-gray-900">vs DALL-E</Link></li>
-                <li><Link href="/alternatives/stable-diffusion" className="hover:text-gray-900">vs Stable Diffusion</Link></li>
-                <li><Link href="/alternatives/leonardo" className="hover:text-gray-900">vs Leonardo</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t mt-12 pt-8 text-center text-sm text-gray-500">
-            © {new Date().getFullYear()} VixPic. All rights reserved.
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
