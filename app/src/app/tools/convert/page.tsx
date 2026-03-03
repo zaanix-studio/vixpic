@@ -137,22 +137,22 @@ export default function FormatConverter() {
   const currentFormat = formatOptions.find(f => f.value === outputFormat)!;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       <canvas ref={canvasRef} className="hidden" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Free Tools</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Free Tools</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground hidden sm:block">
               All Tools
             </Link>
             <Link href="/generate">
@@ -165,20 +165,20 @@ export default function FormatConverter() {
       {/* Hero */}
       <section className="pt-28 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             ✨ 100% Free • No API Key Needed • Client-Side
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Convert Image{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Format Instantly
             </span>
           </h1>
-          <p className="text-lg text-gray-600 mb-2 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-2 max-w-2xl mx-auto">
             Convert between PNG, JPG, and WebP formats. 
             All processing happens in your browser — your images stay private.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             Free forever • Works offline
           </p>
         </div>
@@ -195,16 +195,16 @@ export default function FormatConverter() {
                   onDrop={handleDrop}
                   onDragOver={(e) => e.preventDefault()}
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center cursor-pointer hover:border-purple-400 hover:bg-purple-50/50 transition-colors"
+                  className="border-2 border-dashed border-input rounded-lg p-12 text-center cursor-pointer hover:border-brand hover:bg-brand-muted/50 transition-colors"
                 >
                   <div className="text-5xl mb-4">🔄</div>
-                  <p className="text-lg font-medium text-gray-700 mb-2">
+                  <p className="text-lg font-medium text-foreground mb-2">
                     Drop your image here
                   </p>
-                  <p className="text-sm text-gray-500 mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     or click to browse
                   </p>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-muted-foreground">
                     PNG, JPG, WEBP, GIF, BMP
                   </p>
                   <input
@@ -221,7 +221,7 @@ export default function FormatConverter() {
               {selectedImage && (
                 <div className="space-y-6">
                   {/* Format Selection */}
-                  <div className="p-4 bg-gray-50 rounded-lg">
+                  <div className="p-4 bg-muted rounded-lg">
                     <Label className="font-medium mb-3 block">Convert To</Label>
                     <RadioGroup
                       value={outputFormat}
@@ -241,10 +241,10 @@ export default function FormatConverter() {
                           />
                           <Label
                             htmlFor={format.value}
-                            className="flex flex-col items-center justify-between rounded-lg border-2 border-gray-200 bg-white p-4 hover:bg-gray-50 cursor-pointer peer-data-[state=checked]:border-purple-600 peer-data-[state=checked]:bg-purple-50"
+                            className="flex flex-col items-center justify-between rounded-lg border-2 border-border bg-card p-4 hover:bg-muted cursor-pointer peer-data-[state=checked]:border-brand peer-data-[state=checked]:bg-brand-muted/50"
                           >
                             <span className="text-lg font-bold">{format.label}</span>
-                            <span className="text-xs text-gray-500 text-center mt-1">{format.desc}</span>
+                            <span className="text-xs text-muted-foreground text-center mt-1">{format.desc}</span>
                           </Label>
                         </div>
                       ))}
@@ -253,10 +253,10 @@ export default function FormatConverter() {
 
                   {/* Quality Slider (for formats that support it) */}
                   {currentFormat.supportsQuality && (
-                    <div className="p-4 bg-gray-50 rounded-lg">
+                    <div className="p-4 bg-muted rounded-lg">
                       <div className="flex items-center justify-between mb-3">
                         <Label className="font-medium">Quality</Label>
-                        <span className="text-sm text-gray-600 font-mono">{quality[0]}%</span>
+                        <span className="text-sm text-muted-foreground font-mono">{quality[0]}%</span>
                       </div>
                       <Slider
                         value={quality}
@@ -266,7 +266,7 @@ export default function FormatConverter() {
                         step={5}
                         className="w-full"
                       />
-                      <div className="flex justify-between text-xs text-gray-500 mt-2">
+                      <div className="flex justify-between text-xs text-muted-foreground mt-2">
                         <span>Smaller file</span>
                         <span>Better quality</span>
                       </div>
@@ -277,12 +277,12 @@ export default function FormatConverter() {
                     {/* Original */}
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <Label className="text-sm text-gray-500">
+                        <Label className="text-sm text-muted-foreground">
                           Original ({getOriginalFormat()})
                         </Label>
-                        <span className="text-sm font-mono text-gray-600">{formatBytes(originalSize)}</span>
+                        <span className="text-sm font-mono text-muted-foreground">{formatBytes(originalSize)}</span>
                       </div>
-                      <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                      <div className="relative aspect-square bg-muted rounded-lg overflow-hidden">
                         <img
                           src={selectedImage}
                           alt="Original"
@@ -294,21 +294,21 @@ export default function FormatConverter() {
                     {/* Converted */}
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <Label className="text-sm text-gray-500">
+                        <Label className="text-sm text-muted-foreground">
                           Converted ({currentFormat.label})
                         </Label>
                         {convertedSize > 0 && (
                           <span className="text-sm font-mono">
-                            <span className={parseInt(sizeDiff!) <= 0 ? "text-green-600" : "text-amber-600"}>
+                            <span className={parseInt(sizeDiff!) <= 0 ? "text-success" : "text-warning"}>
                               {formatBytes(convertedSize)}
                             </span>
-                            <span className="text-gray-400 ml-2">
+                            <span className="text-muted-foreground ml-2">
                               ({parseInt(sizeDiff!) <= 0 ? sizeDiff : `+${sizeDiff}`}%)
                             </span>
                           </span>
                         )}
                       </div>
-                      <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                      <div className="relative aspect-square bg-muted rounded-lg overflow-hidden">
                         {convertedImage ? (
                           <img
                             src={convertedImage}
@@ -317,11 +317,11 @@ export default function FormatConverter() {
                           />
                         ) : processing ? (
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="animate-spin w-12 h-12 border-4 border-purple-600 border-t-transparent rounded-full" />
+                            <div className="animate-spin w-12 h-12 border-4 border-brand border-t-transparent rounded-full" />
                           </div>
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <p className="text-gray-400">Click convert to preview</p>
+                            <p className="text-muted-foreground">Click convert to preview</p>
                           </div>
                         )}
                       </div>
@@ -334,7 +334,7 @@ export default function FormatConverter() {
                       <Button 
                         onClick={convertImage}
                         disabled={processing}
-                        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                        className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
                         size="lg"
                       >
                         {processing ? "Converting..." : `Convert to ${currentFormat.label}`}
@@ -344,7 +344,7 @@ export default function FormatConverter() {
                       <>
                         <Button 
                           onClick={downloadImage}
-                          className="bg-green-600 hover:bg-green-700"
+                          className="bg-success hover:bg-success/90"
                           size="lg"
                         >
                           Download {currentFormat.label}
@@ -370,30 +370,30 @@ export default function FormatConverter() {
       </section>
 
       {/* Format Comparison */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">When to Use Each Format</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6">
                 <div className="text-center mb-4">
-                  <span className="text-2xl font-bold text-blue-600">JPG</span>
+                  <span className="text-2xl font-bold text-info">JPG</span>
                 </div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span className="text-success mt-0.5">✓</span>
                     <span>Photos and complex images</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span className="text-success mt-0.5">✓</span>
                     <span>Smallest file size</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span className="text-success mt-0.5">✓</span>
                     <span>Universal compatibility</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-0.5">✗</span>
+                    <span className="text-destructive mt-0.5">✗</span>
                     <span>No transparency</span>
                   </li>
                 </ul>
@@ -402,23 +402,23 @@ export default function FormatConverter() {
             <Card>
               <CardContent className="p-6">
                 <div className="text-center mb-4">
-                  <span className="text-2xl font-bold text-purple-600">PNG</span>
+                  <span className="text-2xl font-bold text-brand">PNG</span>
                 </div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span className="text-success mt-0.5">✓</span>
                     <span>Graphics and logos</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span className="text-success mt-0.5">✓</span>
                     <span>Transparency support</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span className="text-success mt-0.5">✓</span>
                     <span>Lossless quality</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-0.5">✗</span>
+                    <span className="text-destructive mt-0.5">✗</span>
                     <span>Larger file sizes</span>
                   </li>
                 </ul>
@@ -427,23 +427,23 @@ export default function FormatConverter() {
             <Card>
               <CardContent className="p-6">
                 <div className="text-center mb-4">
-                  <span className="text-2xl font-bold text-green-600">WebP</span>
+                  <span className="text-2xl font-bold text-success">WebP</span>
                 </div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span className="text-success mt-0.5">✓</span>
                     <span>Best of both worlds</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span className="text-success mt-0.5">✓</span>
                     <span>Transparency support</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span className="text-success mt-0.5">✓</span>
                     <span>Small + high quality</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-amber-500 mt-0.5">~</span>
+                    <span className="text-warning mt-0.5">~</span>
                     <span>Some old browsers</span>
                   </li>
                 </ul>
@@ -454,8 +454,8 @@ export default function FormatConverter() {
       </section>
 
       {/* Upsell */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-brand to-info">
+        <div className="max-w-4xl mx-auto text-center text-brand-foreground">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Need AI-Powered Image Editing?
           </h2>
@@ -473,9 +473,9 @@ export default function FormatConverter() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            Part of <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            Part of <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/convert" className="hover:underline">Format Converter</Link> • 
             <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link>

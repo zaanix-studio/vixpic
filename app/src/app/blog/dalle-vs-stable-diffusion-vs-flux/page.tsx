@@ -10,18 +10,18 @@ export default function ModelComparisonPost() {
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm font-medium px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
+            <span className="text-sm font-medium px-3 py-1 bg-info-muted text-info-muted-foreground rounded-full">
               Comparison
             </span>
-            <span className="text-sm text-gray-500">8 min read</span>
+            <span className="text-sm text-muted-foreground">8 min read</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             DALL-E vs Stable Diffusion vs Flux: Complete 2026 Comparison
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-xl text-muted-foreground mb-6">
             An honest comparison of the three major AI image models. Which one should you use for your projects?
           </p>
-          <div className="flex items-center gap-4 text-sm text-gray-500 border-t border-b py-4">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground border-t border-b py-4">
             <span>February 27, 2026</span>
             <span>•</span>
             <span>By VixPic Team</span>
@@ -57,7 +57,7 @@ export default function ModelComparisonPost() {
                       <th className="pb-3 font-semibold">Flux Pro</th>
                     </tr>
                   </thead>
-                  <tbody className="text-gray-600">
+                  <tbody className="text-muted-foreground">
                     <tr className="border-b">
                       <td className="py-3 font-medium">Prompt Following</td>
                       <td className="py-3">⭐⭐⭐⭐⭐</td>
@@ -249,32 +249,32 @@ export default function ModelComparisonPost() {
 
           <h2 className="text-2xl font-bold mt-12 mb-4">Decision Framework: Which Model When?</h2>
 
-          <Card className="my-8 bg-gradient-to-r from-purple-50 to-blue-50 border-purple-200">
+          <Card className="my-8 bg-gradient-to-r from-brand-muted/50 to-info-muted/50 border-brand/20">
             <CardContent className="pt-6">
               <h3 className="font-bold text-lg mb-4">Quick Decision Guide</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-purple-600 font-bold">→</span>
+                  <span className="text-brand font-bold">→</span>
                   <span><strong>Need text in your image?</strong> DALL-E 3</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-purple-600 font-bold">→</span>
+                  <span className="text-brand font-bold">→</span>
                   <span><strong>Specific artistic style?</strong> SDXL + relevant LoRA</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-purple-600 font-bold">→</span>
+                  <span className="text-brand font-bold">→</span>
                   <span><strong>Photorealistic product shots?</strong> Flux Pro</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-purple-600 font-bold">→</span>
+                  <span className="text-brand font-bold">→</span>
                   <span><strong>High volume, budget matters?</strong> SDXL</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-purple-600 font-bold">→</span>
+                  <span className="text-brand font-bold">→</span>
                   <span><strong>Complex prompt, need accuracy?</strong> DALL-E 3</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-purple-600 font-bold">→</span>
+                  <span className="text-brand font-bold">→</span>
                   <span><strong>Best overall quality, no fuss?</strong> Flux Pro</span>
                 </li>
               </ul>
@@ -320,14 +320,14 @@ export default function ModelComparisonPost() {
             This workflow gives me the best quality for each task while keeping costs minimal.
           </p>
 
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8 my-12">
+          <div className="bg-gradient-to-r from-brand-muted/50 to-info-muted/50 rounded-xl p-8 my-12">
             <h3 className="text-xl font-bold mb-3">Try All Three Models</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               VixPic gives you DALL-E, SDXL, and Flux in one interface. Switch between models 
               with a click, pay only for what you generate.
             </p>
             <Link href="/generate">
-              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+              <Button className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90">
                 Start Creating Free →
               </Button>
             </Link>
@@ -349,18 +349,18 @@ export default function ModelComparisonPost() {
             The smartest approach? Use all three. With BYOK pricing, there's no reason not to.
           </p>
 
-          <p className="text-gray-500 mt-8 pt-8 border-t">
+          <p className="text-muted-foreground mt-8 pt-8 border-t">
             <em>
               Want to dive deeper into each model? Check our style guides:{" "}
-              <Link href="/styles/photorealistic" className="text-purple-600 hover:underline">
+              <Link href="/styles/photorealistic" className="text-brand hover:underline">
                 Photorealistic
               </Link>{" "}
               |{" "}
-              <Link href="/styles/anime" className="text-purple-600 hover:underline">
+              <Link href="/styles/anime" className="text-brand hover:underline">
                 Anime
               </Link>{" "}
               |{" "}
-              <Link href="/styles/fantasy-art" className="text-purple-600 hover:underline">
+              <Link href="/styles/fantasy-art" className="text-brand hover:underline">
                 Fantasy Art
               </Link>
             </em>
@@ -369,25 +369,25 @@ export default function ModelComparisonPost() {
       </article>
 
       {/* Related Posts */}
-      <section className="border-t py-12 px-4 bg-gray-50">
+      <section className="border-t py-12 px-4 bg-muted">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Link href="/blog/byok-explained">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Guide</span>
+                  <span className="text-xs font-medium text-brand">Guide</span>
                   <h3 className="font-semibold mt-2">BYOK Explained: Why Bring Your Own Key Changes Everything</h3>
-                  <p className="text-sm text-gray-500 mt-2">How BYOK saves you money and gives you control.</p>
+                  <p className="text-sm text-muted-foreground mt-2">How BYOK saves you money and gives you control.</p>
                 </CardContent>
               </Card>
             </Link>
             <Link href="/blog/perfect-prompts-product-photos">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Tutorial</span>
+                  <span className="text-xs font-medium text-brand">Tutorial</span>
                   <h3 className="font-semibold mt-2">Perfect Prompts for E-commerce Product Photos</h3>
-                  <p className="text-sm text-gray-500 mt-2">Copy-paste prompt templates that convert.</p>
+                  <p className="text-sm text-muted-foreground mt-2">Copy-paste prompt templates that convert.</p>
                 </CardContent>
               </Card>
             </Link>

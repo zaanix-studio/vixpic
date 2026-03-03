@@ -38,7 +38,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="dark min-h-screen bg-[#08080a] text-stone-100 overflow-x-hidden">
+    <div className="dark min-h-screen bg-[#08080a] text-foreground overflow-x-hidden">
       {/* ============================== NAVIGATION ============================== */}
       <nav className="fixed top-0 w-full z-50 bg-[#08080a]/80 backdrop-blur-xl border-b border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -53,25 +53,25 @@ export default function Home() {
           <div className="flex items-center gap-1">
             <Link
               href="/tools"
-              className="hidden sm:inline-flex px-3 py-1.5 text-sm text-stone-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]"
+              className="hidden sm:inline-flex px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/[0.04]"
             >
               Free Tools
             </Link>
             <Link
               href="/use-cases"
-              className="hidden sm:inline-flex px-3 py-1.5 text-sm text-stone-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]"
+              className="hidden sm:inline-flex px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/[0.04]"
             >
               Use Cases
             </Link>
             <Link
               href="/alternatives"
-              className="hidden md:inline-flex px-3 py-1.5 text-sm text-stone-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]"
+              className="hidden md:inline-flex px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/[0.04]"
             >
               Compare
             </Link>
             <a
               href="#pricing"
-              className="hidden sm:inline-flex px-3 py-1.5 text-sm text-stone-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.04]"
+              className="hidden sm:inline-flex px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/[0.04]"
             >
               Pricing
             </a>
@@ -135,7 +135,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p
-            className="animate-fade-in-up text-lg sm:text-xl text-stone-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="animate-fade-in-up text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
             Create stunning images with DALL-E, Stable Diffusion, and Flux —
@@ -161,7 +161,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-base px-8 h-12 border-white/10 bg-white/[0.03] text-stone-300 hover:bg-white/[0.06] hover:text-white hover:border-white/20 transition-all"
+                className="text-base px-8 h-12 border-white/10 bg-white/[0.03] text-muted-foreground hover:bg-white/[0.06] hover:text-foreground hover:border-white/20 transition-all"
               >
                 View Pricing
               </Button>
@@ -170,7 +170,7 @@ export default function Home() {
 
           {/* Trust line */}
           <p
-            className="animate-fade-in-up text-sm text-stone-500"
+            className="animate-fade-in-up text-sm text-muted-foreground"
             style={{ animationDelay: "0.4s" }}
           >
             Join 1,000+ creators · No credit card required · 14-day money-back
@@ -191,10 +191,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <div className="text-3xl md:text-4xl font-display font-bold text-white">
+              <div className="text-3xl md:text-4xl font-display font-bold text-foreground">
                 80%
               </div>
-              <div className="text-sm text-stone-500 mt-1">
+              <div className="text-sm text-muted-foreground mt-1">
                 Cheaper than subscriptions
               </div>
             </div>
@@ -206,10 +206,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <div className="text-3xl md:text-4xl font-display font-bold text-white">
+              <div className="text-3xl md:text-4xl font-display font-bold text-foreground">
                 &infin;
               </div>
-              <div className="text-sm text-stone-500 mt-1">No rate limits</div>
+              <div className="text-sm text-muted-foreground mt-1">No rate limits</div>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[#c9a87c]/10 mb-3">
@@ -219,10 +219,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <div className="text-3xl md:text-4xl font-display font-bold text-white">
+              <div className="text-3xl md:text-4xl font-display font-bold text-foreground">
                 5+
               </div>
-              <div className="text-sm text-stone-500 mt-1">AI Providers</div>
+              <div className="text-sm text-muted-foreground mt-1">AI Providers</div>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[#c9a87c]/10 mb-3">
@@ -232,10 +232,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <div className="text-3xl md:text-4xl font-display font-bold text-white">
+              <div className="text-3xl md:text-4xl font-display font-bold text-foreground">
                 100%
               </div>
-              <div className="text-sm text-stone-500 mt-1">
+              <div className="text-sm text-muted-foreground mt-1">
                 Private & Secure
               </div>
             </div>
@@ -250,7 +250,7 @@ export default function Home() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
               Why VixPic?
             </h2>
-            <p className="text-stone-400 max-w-2xl mx-auto text-lg">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Most AI image tools lock you into expensive subscriptions with
               hidden limits. VixPic gives you full control.
             </p>
@@ -264,10 +264,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <h3 className="font-semibold text-white text-lg mb-2">
+              <h3 className="font-semibold text-foreground text-lg mb-2">
                 No Monthly Fees
               </h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Pay only for the images you create — typically 80% less than
                 subscriptions.
               </p>
@@ -280,10 +280,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <h3 className="font-semibold text-white text-lg mb-2">
+              <h3 className="font-semibold text-foreground text-lg mb-2">
                 No Rate Limits
               </h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Generate unlimited images with your own API key. No daily caps
                 or throttling.
               </p>
@@ -296,10 +296,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <h3 className="font-semibold text-white text-lg mb-2">
+              <h3 className="font-semibold text-foreground text-lg mb-2">
                 100% Private
               </h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Your images never touch our servers. Direct API connection,
                 complete data ownership.
               </p>
@@ -312,10 +312,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <h3 className="font-semibold text-white text-lg mb-2">
+              <h3 className="font-semibold text-foreground text-lg mb-2">
                 Multi-Provider
               </h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Switch between DALL-E, Stable Diffusion, and Flux anytime. Use
                 the best model for each task.
               </p>
@@ -331,7 +331,7 @@ export default function Home() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
               How It Works
             </h2>
-            <p className="text-stone-400 max-w-2xl mx-auto text-lg">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Get started in under 2 minutes. No complex setup required.
             </p>
           </div>
@@ -347,10 +347,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <h3 className="font-semibold text-white text-lg mb-2">
+              <h3 className="font-semibold text-foreground text-lg mb-2">
                 Get Your API Key
               </h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Sign up with OpenAI, Replicate, or Together AI. Takes 2
                 minutes.
               </p>
@@ -366,10 +366,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <h3 className="font-semibold text-white text-lg mb-2">
+              <h3 className="font-semibold text-foreground text-lg mb-2">
                 Connect to VixPic
               </h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Paste your API key. It stays in your browser and never leaves
                 your device.
               </p>
@@ -385,10 +385,10 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <h3 className="font-semibold text-white text-lg mb-2">
+              <h3 className="font-semibold text-foreground text-lg mb-2">
                 Start Creating
               </h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Generate unlimited images. Pay the provider directly at API
                 cost.
               </p>
@@ -404,7 +404,7 @@ export default function Home() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
               Supported AI Providers
             </h2>
-            <p className="text-stone-400 max-w-2xl mx-auto text-lg">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Use the best model for each job. Switch providers anytime.
             </p>
           </div>
@@ -417,8 +417,8 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <div className="font-semibold text-white">OpenAI</div>
-              <div className="text-sm text-stone-500 mt-0.5">DALL-E 3</div>
+              <div className="font-semibold text-foreground">OpenAI</div>
+              <div className="text-sm text-muted-foreground mt-0.5">DALL-E 3</div>
             </div>
             <div className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center hover:border-[#c9a87c]/15 hover:bg-white/[0.04] transition-all duration-300">
               <div className="w-12 h-12 rounded-xl bg-[#c9a87c]/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -428,8 +428,8 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <div className="font-semibold text-white">Replicate</div>
-              <div className="text-sm text-stone-500 mt-0.5">FLUX, SDXL</div>
+              <div className="font-semibold text-foreground">Replicate</div>
+              <div className="text-sm text-muted-foreground mt-0.5">FLUX, SDXL</div>
             </div>
             <div className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center hover:border-[#c9a87c]/15 hover:bg-white/[0.04] transition-all duration-300">
               <div className="w-12 h-12 rounded-xl bg-[#c9a87c]/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -439,8 +439,8 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <div className="font-semibold text-white">FAL.ai</div>
-              <div className="text-sm text-stone-500 mt-0.5">FLUX, Fast</div>
+              <div className="font-semibold text-foreground">FAL.ai</div>
+              <div className="text-sm text-muted-foreground mt-0.5">FLUX, Fast</div>
             </div>
             <div className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center hover:border-[#c9a87c]/15 hover:bg-white/[0.04] transition-all duration-300">
               <div className="w-12 h-12 rounded-xl bg-[#c9a87c]/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -450,8 +450,8 @@ export default function Home() {
                   strokeWidth={1.5}
                 />
               </div>
-              <div className="font-semibold text-white">Together AI</div>
-              <div className="text-sm text-stone-500 mt-0.5">Open Models</div>
+              <div className="font-semibold text-foreground">Together AI</div>
+              <div className="text-sm text-muted-foreground mt-0.5">Open Models</div>
             </div>
           </div>
         </div>
@@ -464,7 +464,7 @@ export default function Home() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
               Calculate Your Savings
             </h2>
-            <p className="text-stone-400 max-w-2xl mx-auto text-lg">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               See exactly how much you&apos;d save by switching from expensive
               subscriptions to BYOK.
             </p>
@@ -480,7 +480,7 @@ export default function Home() {
             <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
               Simple, One-Time Pricing
             </h2>
-            <p className="text-stone-400 text-lg">
+            <p className="text-muted-foreground text-lg">
               Pay once, use forever. No subscriptions, no hidden fees.
             </p>
           </div>
@@ -488,15 +488,15 @@ export default function Home() {
             {/* Starter */}
             <Card className="bg-white/[0.03] border-white/[0.06] rounded-2xl">
               <CardHeader>
-                <CardTitle className="text-white">Starter</CardTitle>
-                <CardDescription className="text-stone-400">
+                <CardTitle className="text-foreground">Starter</CardTitle>
+                <CardDescription className="text-muted-foreground">
                   Perfect for hobbyists
                 </CardDescription>
                 <div className="mt-4">
-                  <span className="text-4xl font-display font-bold text-white">
+                  <span className="text-4xl font-display font-bold text-foreground">
                     $29
                   </span>
-                  <span className="text-stone-500 ml-2">one-time</span>
+                  <span className="text-muted-foreground ml-2">one-time</span>
                 </div>
               </CardHeader>
               <CardContent>
@@ -514,14 +514,14 @@ export default function Home() {
                         className="text-[#c9a87c] shrink-0 mt-0.5"
                         strokeWidth={2.5}
                       />
-                      <span className="text-stone-300 text-sm">{feature}</span>
+                      <span className="text-muted-foreground text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
               <CardFooter>
                 <Button
-                  className="w-full border-white/10 bg-white/[0.04] text-stone-300 hover:bg-white/[0.08] hover:text-white"
+                  className="w-full border-white/10 bg-white/[0.04] text-muted-foreground hover:bg-white/[0.08] hover:text-foreground"
                   variant="outline"
                 >
                   Get Starter
@@ -540,15 +540,15 @@ export default function Home() {
                 </span>
               </div>
               <CardHeader className="pt-10">
-                <CardTitle className="text-white">Pro</CardTitle>
-                <CardDescription className="text-stone-400">
+                <CardTitle className="text-foreground">Pro</CardTitle>
+                <CardDescription className="text-muted-foreground">
                   For serious creators
                 </CardDescription>
                 <div className="mt-4">
-                  <span className="text-4xl font-display font-bold text-white">
+                  <span className="text-4xl font-display font-bold text-foreground">
                     $59
                   </span>
-                  <span className="text-stone-500 ml-2">one-time</span>
+                  <span className="text-muted-foreground ml-2">one-time</span>
                 </div>
               </CardHeader>
               <CardContent>
@@ -567,7 +567,7 @@ export default function Home() {
                         className="text-[#c9a87c] shrink-0 mt-0.5"
                         strokeWidth={2.5}
                       />
-                      <span className="text-stone-300 text-sm">{feature}</span>
+                      <span className="text-muted-foreground text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -582,15 +582,15 @@ export default function Home() {
             {/* Team */}
             <Card className="bg-white/[0.03] border-white/[0.06] rounded-2xl">
               <CardHeader>
-                <CardTitle className="text-white">Team</CardTitle>
-                <CardDescription className="text-stone-400">
+                <CardTitle className="text-foreground">Team</CardTitle>
+                <CardDescription className="text-muted-foreground">
                   For agencies & teams
                 </CardDescription>
                 <div className="mt-4">
-                  <span className="text-4xl font-display font-bold text-white">
+                  <span className="text-4xl font-display font-bold text-foreground">
                     $149
                   </span>
-                  <span className="text-stone-500 ml-2">5 seats</span>
+                  <span className="text-muted-foreground ml-2">5 seats</span>
                 </div>
               </CardHeader>
               <CardContent>
@@ -609,14 +609,14 @@ export default function Home() {
                         className="text-[#c9a87c] shrink-0 mt-0.5"
                         strokeWidth={2.5}
                       />
-                      <span className="text-stone-300 text-sm">{feature}</span>
+                      <span className="text-muted-foreground text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
               <CardFooter>
                 <Button
-                  className="w-full border-white/10 bg-white/[0.04] text-stone-300 hover:bg-white/[0.08] hover:text-white"
+                  className="w-full border-white/10 bg-white/[0.04] text-muted-foreground hover:bg-white/[0.08] hover:text-foreground"
                   variant="outline"
                 >
                   Get Team
@@ -624,7 +624,7 @@ export default function Home() {
               </CardFooter>
             </Card>
           </div>
-          <div className="flex items-center justify-center gap-2 text-sm text-stone-500 mt-8">
+          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-8">
             <CreditCardIcon size={16} strokeWidth={1.5} />
             Secure payment via Stripe · 14-day money-back guarantee
           </div>
@@ -644,10 +644,10 @@ export default function Home() {
               value="item-1"
               className="border border-white/[0.06] rounded-xl px-6 bg-white/[0.02] data-[state=open]:bg-white/[0.04]"
             >
-              <AccordionTrigger className="text-white hover:no-underline py-5">
+              <AccordionTrigger className="text-foreground hover:no-underline py-5">
                 What is BYOK (Bring Your Own Key)?
               </AccordionTrigger>
-              <AccordionContent className="text-stone-400 pb-5">
+              <AccordionContent className="text-muted-foreground pb-5">
                 BYOK means you use your own API keys from providers like OpenAI,
                 Replicate, or Together AI. You pay the provider directly at
                 their rates — no markup, no middleman. Your API key never leaves
@@ -659,10 +659,10 @@ export default function Home() {
               value="item-2"
               className="border border-white/[0.06] rounded-xl px-6 bg-white/[0.02] data-[state=open]:bg-white/[0.04]"
             >
-              <AccordionTrigger className="text-white hover:no-underline py-5">
+              <AccordionTrigger className="text-foreground hover:no-underline py-5">
                 How much will API costs be?
               </AccordionTrigger>
-              <AccordionContent className="text-stone-400 pb-5">
+              <AccordionContent className="text-muted-foreground pb-5">
                 It depends on the model and provider, but typical costs are:
                 <ul className="mt-3 space-y-1.5 ml-1">
                   <li className="flex items-center gap-2 text-sm">
@@ -688,10 +688,10 @@ export default function Home() {
               value="item-3"
               className="border border-white/[0.06] rounded-xl px-6 bg-white/[0.02] data-[state=open]:bg-white/[0.04]"
             >
-              <AccordionTrigger className="text-white hover:no-underline py-5">
+              <AccordionTrigger className="text-foreground hover:no-underline py-5">
                 Is my data private?
               </AccordionTrigger>
-              <AccordionContent className="text-stone-400 pb-5">
+              <AccordionContent className="text-muted-foreground pb-5">
                 Yes, 100%. VixPic runs entirely in your browser. Your API key is
                 stored locally (never sent to our servers), and your images are
                 processed directly with your chosen provider. We can&apos;t see
@@ -702,10 +702,10 @@ export default function Home() {
               value="item-4"
               className="border border-white/[0.06] rounded-xl px-6 bg-white/[0.02] data-[state=open]:bg-white/[0.04]"
             >
-              <AccordionTrigger className="text-white hover:no-underline py-5">
+              <AccordionTrigger className="text-foreground hover:no-underline py-5">
                 Do I get lifetime updates?
               </AccordionTrigger>
-              <AccordionContent className="text-stone-400 pb-5">
+              <AccordionContent className="text-muted-foreground pb-5">
                 Yes! Your one-time purchase includes all future updates. As we
                 add new providers, features, and improvements, you&apos;ll get
                 them automatically at no extra cost.
@@ -715,10 +715,10 @@ export default function Home() {
               value="item-5"
               className="border border-white/[0.06] rounded-xl px-6 bg-white/[0.02] data-[state=open]:bg-white/[0.04]"
             >
-              <AccordionTrigger className="text-white hover:no-underline py-5">
+              <AccordionTrigger className="text-foreground hover:no-underline py-5">
                 Can I get a refund?
               </AccordionTrigger>
-              <AccordionContent className="text-stone-400 pb-5">
+              <AccordionContent className="text-muted-foreground pb-5">
                 Absolutely. We offer a 14-day money-back guarantee, no questions
                 asked. If VixPic isn&apos;t right for you, just email us and
                 we&apos;ll refund your purchase.
@@ -728,10 +728,10 @@ export default function Home() {
               value="item-6"
               className="border border-white/[0.06] rounded-xl px-6 bg-white/[0.02] data-[state=open]:bg-white/[0.04]"
             >
-              <AccordionTrigger className="text-white hover:no-underline py-5">
+              <AccordionTrigger className="text-foreground hover:no-underline py-5">
                 What if I don&apos;t have an API key yet?
               </AccordionTrigger>
-              <AccordionContent className="text-stone-400 pb-5">
+              <AccordionContent className="text-muted-foreground pb-5">
                 No problem! We&apos;ll guide you through getting one. Most
                 providers offer free credits to start:
                 <ul className="mt-3 space-y-1.5 ml-1">
@@ -768,7 +768,7 @@ export default function Home() {
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-5">
             Ready to Create Without Limits?
           </h2>
-          <p className="text-xl text-stone-400 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
             Join thousands of creators who switched from expensive subscriptions
             to BYOK.
           </p>
@@ -781,7 +781,7 @@ export default function Home() {
               <ArrowRightIcon size={18} className="ml-2" />
             </Button>
           </Link>
-          <p className="text-sm text-stone-500 mt-5">
+          <p className="text-sm text-muted-foreground mt-5">
             No credit card required · 14-day money-back guarantee
           </p>
         </div>
@@ -797,51 +797,51 @@ export default function Home() {
               </div>
               <span className="font-display font-bold text-lg">VixPic</span>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-stone-500">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
               <a
                 href="#features"
-                className="hover:text-white transition-colors"
+                className="hover:text-foreground transition-colors"
               >
                 Features
               </a>
               <a
                 href="#pricing"
-                className="hover:text-white transition-colors"
+                className="hover:text-foreground transition-colors"
               >
                 Pricing
               </a>
-              <a href="#faq" className="hover:text-white transition-colors">
+              <a href="#faq" className="hover:text-foreground transition-colors">
                 FAQ
               </a>
               <Link
                 href="/blog"
-                className="hover:text-white transition-colors"
+                className="hover:text-foreground transition-colors"
               >
                 Blog
               </Link>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-foreground transition-colors">
                 Privacy
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-foreground transition-colors">
                 Terms
               </a>
             </div>
             <div className="flex items-center gap-3">
               <a
                 href="#"
-                className="text-stone-600 hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
               </a>
               <a
                 href="#"
-                className="text-stone-600 hover:text-white transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" /></svg>
               </a>
             </div>
           </div>
-          <div className="text-center text-sm text-stone-600 mt-8">
+          <div className="text-center text-sm text-muted-foreground mt-8">
             &copy; 2026 VixPic. All rights reserved. Part of Zaanix Studio.
           </div>
         </div>

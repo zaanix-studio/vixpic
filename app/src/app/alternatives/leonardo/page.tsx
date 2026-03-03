@@ -57,23 +57,23 @@ export default function LeonardoAlternativePage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             🎮 No Daily Token Limits
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             The Best{" "}
-            <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-success to-info bg-clip-text text-transparent">
               Leonardo.ai Alternative
             </span>
             {" "}in 2026
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Tired of daily token resets and credit anxiety? 
             VixPic gives you unlimited generation with BYOK pricing — pay only for what you use.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-emerald-500 to-teal-500">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-success to-info">
                 Try VixPic Free
               </Button>
             </Link>
@@ -87,9 +87,9 @@ export default function LeonardoAlternativePage() {
       </section>
 
       {/* Pain Points */}
-      <section className="py-16 px-4 bg-red-50">
+      <section className="py-16 px-4 bg-destructive/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-red-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-destructive">
             Common Frustrations with Leonardo.ai
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -125,10 +125,10 @@ export default function LeonardoAlternativePage() {
                 desc: "Free tier can't use images commercially. Even paying customers have license limitations."
               },
             ].map((pain, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-red-200">
+              <div key={i} className="bg-card p-6 rounded-xl border border-destructive/20">
                 <div className="text-3xl mb-3">{pain.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{pain.title}</h3>
-                <p className="text-gray-600">{pain.desc}</p>
+                <p className="text-muted-foreground">{pain.desc}</p>
               </div>
             ))}
           </div>
@@ -138,7 +138,7 @@ export default function LeonardoAlternativePage() {
       {/* VixPic Solutions */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-green-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-success-muted-foreground">
             How VixPic Solves These Problems
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -174,10 +174,10 @@ export default function LeonardoAlternativePage() {
                 desc: "Your images, your business. Use everything you generate commercially from day one."
               },
             ].map((solution, i) => (
-              <div key={i} className="bg-green-50 p-6 rounded-xl border border-green-200">
+              <div key={i} className="bg-success-muted/50 p-6 rounded-xl border border-success/20">
                 <div className="text-3xl mb-3">{solution.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{solution.title}</h3>
-                <p className="text-gray-600">{solution.desc}</p>
+                <p className="text-muted-foreground">{solution.desc}</p>
               </div>
             ))}
           </div>
@@ -185,29 +185,29 @@ export default function LeonardoAlternativePage() {
       </section>
 
       {/* Feature Comparison Table */}
-      <section id="comparison" className="py-16 px-4 bg-gray-50">
+      <section id="comparison" className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">VixPic vs Leonardo.ai: Full Comparison</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             An honest look at how VixPic compares across all major features.
           </p>
           <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl shadow-sm">
+            <table className="w-full bg-card rounded-xl shadow-sm">
               <thead>
                 <tr className="border-b-2">
                   <th className="py-4 px-6 text-left">Feature</th>
                   <th className="py-4 px-6 text-center">Leonardo.ai</th>
-                  <th className="py-4 px-6 text-center bg-purple-50">VixPic</th>
+                  <th className="py-4 px-6 text-center bg-brand-muted/50">VixPic</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonData.map((row, i) => (
                   <tr key={i} className="border-b last:border-b-0">
                     <td className="py-4 px-6 font-medium">{row.feature}</td>
-                    <td className={`py-4 px-6 text-center ${row.winner === 'leonardo' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center ${row.winner === 'leonardo' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.leonardo}
                     </td>
-                    <td className={`py-4 px-6 text-center bg-purple-50 ${row.winner === 'vixpic' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center bg-brand-muted/50 ${row.winner === 'vixpic' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.vixpic}
                     </td>
                   </tr>
@@ -215,7 +215,7 @@ export default function LeonardoAlternativePage() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-gray-500 mt-4 text-center">
+          <p className="text-sm text-muted-foreground mt-4 text-center">
             VixPic wins on pricing flexibility. Leonardo excels in game asset workflows.
           </p>
         </div>
@@ -225,49 +225,49 @@ export default function LeonardoAlternativePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Real Cost Comparison</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             How much does it actually cost to generate images?
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="border-2">
               <CardHeader className="text-center">
                 <CardTitle className="text-lg">Free Tier User</CardTitle>
-                <p className="text-sm text-gray-600">150 tokens/day max</p>
+                <p className="text-sm text-muted-foreground">150 tokens/day max</p>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-500">Leonardo Free</p>
+                    <p className="text-sm text-muted-foreground">Leonardo Free</p>
                     <p className="text-2xl font-bold">$0/mo</p>
-                    <p className="text-xs text-gray-400">(~50 images/day cap)</p>
+                    <p className="text-xs text-muted-foreground">(~50 images/day cap)</p>
                   </div>
                   <div className="border-t pt-4">
-                    <p className="text-sm text-gray-500">VixPic (50/day equiv)</p>
-                    <p className="text-2xl font-bold text-green-600">~$60/mo</p>
+                    <p className="text-sm text-muted-foreground">VixPic (50/day equiv)</p>
+                    <p className="text-2xl font-bold text-success">~$60/mo</p>
                   </div>
-                  <div className="bg-emerald-100 text-emerald-800 py-2 px-4 rounded-lg font-semibold">
+                  <div className="bg-success-muted text-success-muted-foreground py-2 px-4 rounded-lg font-semibold">
                     Leonardo free tier wins
                   </div>
                 </div>
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-purple-300 shadow-lg">
-              <CardHeader className="text-center bg-purple-50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
+            <Card className="border-2 border-brand/30 shadow-lg">
+              <CardHeader className="text-center bg-brand-muted/50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
                 <CardTitle className="text-lg">Regular Creator</CardTitle>
-                <p className="text-sm text-gray-600">~300 images/month</p>
+                <p className="text-sm text-muted-foreground">~300 images/month</p>
               </CardHeader>
               <CardContent className="text-center pt-6">
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-500">Leonardo Artisan</p>
+                    <p className="text-sm text-muted-foreground">Leonardo Artisan</p>
                     <p className="text-2xl font-bold">$24/mo</p>
                   </div>
                   <div className="border-t pt-4">
-                    <p className="text-sm text-gray-500">VixPic (BYOK)</p>
-                    <p className="text-2xl font-bold text-green-600">~$12/mo</p>
+                    <p className="text-sm text-muted-foreground">VixPic (BYOK)</p>
+                    <p className="text-2xl font-bold text-success">~$12/mo</p>
                   </div>
-                  <div className="bg-green-100 text-green-800 py-2 px-4 rounded-lg font-semibold">
+                  <div className="bg-success-muted text-success-muted-foreground py-2 px-4 rounded-lg font-semibold">
                     Save $144/year
                   </div>
                 </div>
@@ -277,68 +277,68 @@ export default function LeonardoAlternativePage() {
             <Card className="border-2">
               <CardHeader className="text-center">
                 <CardTitle className="text-lg">Power User</CardTitle>
-                <p className="text-sm text-gray-600">~1000 images/month</p>
+                <p className="text-sm text-muted-foreground">~1000 images/month</p>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-500">Leonardo Unbound</p>
+                    <p className="text-sm text-muted-foreground">Leonardo Unbound</p>
                     <p className="text-2xl font-bold">$60/mo</p>
                   </div>
                   <div className="border-t pt-4">
-                    <p className="text-sm text-gray-500">VixPic (BYOK)</p>
-                    <p className="text-2xl font-bold text-green-600">~$40/mo</p>
+                    <p className="text-sm text-muted-foreground">VixPic (BYOK)</p>
+                    <p className="text-2xl font-bold text-success">~$40/mo</p>
                   </div>
-                  <div className="bg-green-100 text-green-800 py-2 px-4 rounded-lg font-semibold">
+                  <div className="bg-success-muted text-success-muted-foreground py-2 px-4 rounded-lg font-semibold">
                     Save $240/year
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
-          <p className="text-sm text-gray-500 mt-6 text-center">
+          <p className="text-sm text-muted-foreground mt-6 text-center">
             If you only use 150 tokens/day, Leonardo&apos;s free tier is unbeatable. Beyond that, BYOK wins.
           </p>
         </div>
       </section>
 
       {/* When Leonardo Is Better */}
-      <section className="py-16 px-4 bg-orange-50">
+      <section className="py-16 px-4 bg-warning-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
             Honest Take: When Leonardo.ai Is Better
           </h2>
-          <div className="bg-white p-8 rounded-xl border border-orange-200">
-            <p className="text-gray-700 mb-6">
+          <div className="bg-card p-8 rounded-xl border border-warning/20">
+            <p className="text-foreground mb-6">
               We believe in honesty. Here&apos;s when Leonardo might be the better choice:
             </p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You need game-specific assets</strong> — Leonardo was built for game developers. Their models excel at RPG characters, items, environments, and concept art. If that&apos;s your focus, they&apos;re optimized for it.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You want to train custom models</strong> — Leonardo&apos;s fine-tuning lets you create models trained on your style. VixPic doesn&apos;t offer this yet.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>150 tokens/day is enough</strong> — If you generate casually and never hit the daily limit, Leonardo&apos;s free tier is genuinely excellent value.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You need the canvas editor</strong> — Leonardo&apos;s integrated canvas with inpainting and outpainting is more advanced than VixPic&apos;s current tools.
                 </div>
               </li>
             </ul>
-            <p className="text-gray-700 mt-6">
+            <p className="text-foreground mt-6">
               That said, if you regularly hit daily limits or want predictable costs — VixPic is the answer.
             </p>
           </div>
@@ -353,9 +353,9 @@ export default function LeonardoAlternativePage() {
           </h2>
           <div className="space-y-6">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white border rounded-xl p-6">
+              <div key={i} className="bg-card border rounded-xl p-6">
                 <h3 className="font-bold text-lg mb-3">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+                <p className="text-muted-foreground">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -363,7 +363,7 @@ export default function LeonardoAlternativePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-success to-info text-success-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for Unlimited AI Generation?</h2>
           <p className="text-xl opacity-90 mb-8">
@@ -376,7 +376,7 @@ export default function LeonardoAlternativePage() {
               </Button>
             </Link>
             <Link href="/alternatives">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-success-foreground text-success-foreground hover:bg-background/10">
                 Compare Other Alternatives
               </Button>
             </Link>

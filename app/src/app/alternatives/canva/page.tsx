@@ -57,23 +57,23 @@ export default function CanvaAlternativePage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-cyan-100 text-cyan-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-info-muted text-info-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             🎯 No Magic Media Limits
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Beyond{" "}
-            <span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-info to-brand bg-clip-text text-transparent">
               Canva AI
             </span>
             {" "}Limits
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Hit your 500 Magic Media limit? Need better AI models than Canva offers? 
             VixPic gives you unlimited DALL-E 3 and Flux generation at a fraction of the cost.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-cyan-500 to-blue-500">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-info to-brand">
                 Try VixPic Free
               </Button>
             </Link>
@@ -87,9 +87,9 @@ export default function CanvaAlternativePage() {
       </section>
 
       {/* The Problem */}
-      <section className="py-16 px-4 bg-cyan-50">
+      <section className="py-16 px-4 bg-info-muted/50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-cyan-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-info-muted-foreground">
             The Canva AI Problem
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -125,10 +125,10 @@ export default function CanvaAlternativePage() {
                 desc: "Need text in your images? Canva's AI struggles. DALL-E 3 excels at text — it's not even close."
               },
             ].map((pain, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-cyan-200">
+              <div key={i} className="bg-card p-6 rounded-xl border border-info/20">
                 <div className="text-3xl mb-3">{pain.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{pain.title}</h3>
-                <p className="text-gray-600">{pain.desc}</p>
+                <p className="text-muted-foreground">{pain.desc}</p>
               </div>
             ))}
           </div>
@@ -138,7 +138,7 @@ export default function CanvaAlternativePage() {
       {/* VixPic Solutions */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-green-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-success-muted-foreground">
             VixPic: Unlimited AI Generation
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -174,10 +174,10 @@ export default function CanvaAlternativePage() {
                 desc: "Generate in VixPic, finish in Canva. Best of both worlds — unlimited AI plus Canva's design tools."
               },
             ].map((solution, i) => (
-              <div key={i} className="bg-green-50 p-6 rounded-xl border border-green-200">
+              <div key={i} className="bg-success-muted/50 p-6 rounded-xl border border-success/20">
                 <div className="text-3xl mb-3">{solution.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{solution.title}</h3>
-                <p className="text-gray-600">{solution.desc}</p>
+                <p className="text-muted-foreground">{solution.desc}</p>
               </div>
             ))}
           </div>
@@ -185,29 +185,29 @@ export default function CanvaAlternativePage() {
       </section>
 
       {/* Feature Comparison Table */}
-      <section id="comparison" className="py-16 px-4 bg-gray-50">
+      <section id="comparison" className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">VixPic vs Canva AI: Full Comparison</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             An honest look at how VixPic compares for AI image generation.
           </p>
           <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl shadow-sm">
+            <table className="w-full bg-card rounded-xl shadow-sm">
               <thead>
                 <tr className="border-b-2">
                   <th className="py-4 px-6 text-left">Feature</th>
                   <th className="py-4 px-6 text-center">Canva AI</th>
-                  <th className="py-4 px-6 text-center bg-purple-50">VixPic</th>
+                  <th className="py-4 px-6 text-center bg-brand-muted/50">VixPic</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonData.map((row, i) => (
                   <tr key={i} className="border-b last:border-b-0">
                     <td className="py-4 px-6 font-medium">{row.feature}</td>
-                    <td className={`py-4 px-6 text-center ${row.winner === 'canva' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center ${row.winner === 'canva' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.canva}
                     </td>
-                    <td className={`py-4 px-6 text-center bg-purple-50 ${row.winner === 'vixpic' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center bg-brand-muted/50 ${row.winner === 'vixpic' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.vixpic}
                     </td>
                   </tr>
@@ -215,7 +215,7 @@ export default function CanvaAlternativePage() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-gray-500 mt-4 text-center">
+          <p className="text-sm text-muted-foreground mt-4 text-center">
             VixPic wins on AI generation. Canva excels as a full design platform.
           </p>
         </div>
@@ -225,11 +225,11 @@ export default function CanvaAlternativePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">The Real Cost of Canva AI</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             What are you actually paying for AI image generation?
           </p>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-2 border-cyan-200">
+            <Card className="border-2 border-info/20">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <span className="text-2xl">🎯</span>
@@ -244,7 +244,7 @@ export default function CanvaAlternativePage() {
                   </div>
                   <div className="flex justify-between">
                     <span>Annual cost</span>
-                    <span className="font-semibold text-cyan-600">$155/year</span>
+                    <span className="font-semibold text-info">$155/year</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Magic Media limit</span>
@@ -254,7 +254,7 @@ export default function CanvaAlternativePage() {
                     <span>Cost per image</span>
                     <span className="font-semibold">$0.26</span>
                   </div>
-                  <div className="border-t pt-4 mt-4 text-sm text-gray-600">
+                  <div className="border-t pt-4 mt-4 text-sm text-muted-foreground">
                     <p>If you max out credits, $155/yr ÷ 6,000 images = $0.026/image</p>
                     <p className="mt-2">But you also pay for the design platform.</p>
                   </div>
@@ -262,8 +262,8 @@ export default function CanvaAlternativePage() {
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-green-300 shadow-lg">
-              <CardHeader className="bg-green-50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
+            <Card className="border-2 border-success/30 shadow-lg">
+              <CardHeader className="bg-success-muted/50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
                 <CardTitle className="flex items-center gap-3">
                   <span className="text-2xl">🟢</span>
                   VixPic (BYOK)
@@ -273,25 +273,25 @@ export default function CanvaAlternativePage() {
                 <div className="space-y-4">
                   <div className="flex justify-between">
                     <span>LTD (one-time)</span>
-                    <span className="font-semibold text-green-600">$29-149</span>
+                    <span className="font-semibold text-success">$29-149</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Annual cost</span>
-                    <span className="font-semibold text-green-600">$0</span>
+                    <span className="font-semibold text-success">$0</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Generation limit</span>
-                    <span className="font-semibold text-green-600">Unlimited</span>
+                    <span className="font-semibold text-success">Unlimited</span>
                   </div>
                   <div className="flex justify-between">
                     <span>API cost per image</span>
                     <span className="font-semibold">~$0.02-0.08</span>
                   </div>
                   <div className="border-t pt-4 mt-4">
-                    <p className="text-sm text-green-800 font-medium">
+                    <p className="text-sm text-success-muted-foreground font-medium">
                       Generate 500 images: ~$10-40 total
                     </p>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-sm text-muted-foreground mt-1">
                       vs $155/year Canva Pro subscription
                     </p>
                   </div>
@@ -299,54 +299,54 @@ export default function CanvaAlternativePage() {
               </CardContent>
             </Card>
           </div>
-          <div className="mt-8 bg-blue-50 p-6 rounded-xl text-center">
+          <div className="mt-8 bg-info-muted/50 p-6 rounded-xl text-center">
             <p className="text-lg">
               <strong>The Math:</strong> At BYOK rates (~$0.04/image), you can generate 3,875 images before you match Canva Pro&apos;s annual cost.
               <br/>
-              <span className="text-gray-600">That&apos;s 6.5x Canva&apos;s monthly limit — with better quality models.</span>
+              <span className="text-muted-foreground">That&apos;s 6.5x Canva&apos;s monthly limit — with better quality models.</span>
             </p>
           </div>
         </div>
       </section>
 
       {/* The Combo Play */}
-      <section className="py-16 px-4 bg-gradient-to-r from-cyan-50 to-purple-50">
+      <section className="py-16 px-4 bg-gradient-to-r from-info-muted/50 to-brand-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
             The Power Combo: VixPic + Canva
           </h2>
-          <div className="bg-white p-8 rounded-xl border shadow-sm">
-            <p className="text-gray-700 mb-6 text-lg text-center">
+          <div className="bg-card p-8 rounded-xl border shadow-sm">
+            <p className="text-foreground mb-6 text-lg text-center">
               You don&apos;t have to choose. Many creators use both:
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
+                <div className="w-16 h-16 bg-brand-muted rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
                   1️⃣
                 </div>
                 <h3 className="font-bold mb-2">Generate in VixPic</h3>
-                <p className="text-gray-600 text-sm">Use DALL-E 3 or Flux for premium AI generation. No limits.</p>
+                <p className="text-muted-foreground text-sm">Use DALL-E 3 or Flux for premium AI generation. No limits.</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
+                <div className="w-16 h-16 bg-brand-muted rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
                   2️⃣
                 </div>
                 <h3 className="font-bold mb-2">Download & Import</h3>
-                <p className="text-gray-600 text-sm">Get your high-quality images and bring them into Canva.</p>
+                <p className="text-muted-foreground text-sm">Get your high-quality images and bring them into Canva.</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
+                <div className="w-16 h-16 bg-brand-muted rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4">
                   3️⃣
                 </div>
                 <h3 className="font-bold mb-2">Design in Canva</h3>
-                <p className="text-gray-600 text-sm">Use Canva&apos;s templates, text tools, and design features to finish.</p>
+                <p className="text-muted-foreground text-sm">Use Canva&apos;s templates, text tools, and design features to finish.</p>
               </div>
             </div>
             <div className="text-center">
-              <p className="text-gray-600 mb-4">
+              <p className="text-muted-foreground mb-4">
                 <strong>Result:</strong> Unlimited high-quality AI images + Canva&apos;s design power
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-muted-foreground">
                 Works with Canva Free too — save $155/year and get better AI.
               </p>
             </div>
@@ -355,42 +355,42 @@ export default function CanvaAlternativePage() {
       </section>
 
       {/* When Canva Is Better */}
-      <section className="py-16 px-4 bg-cyan-50">
+      <section className="py-16 px-4 bg-info-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
             Honest Take: When Canva AI Is Better
           </h2>
-          <div className="bg-white p-8 rounded-xl border border-cyan-200">
-            <p className="text-gray-700 mb-6">
+          <div className="bg-card p-8 rounded-xl border border-info/20">
+            <p className="text-foreground mb-6">
               We believe in honesty. Here&apos;s when Canva is the right choice:
             </p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="text-cyan-500 font-bold">→</span>
+                <span className="text-info font-bold">→</span>
                 <div>
                   <strong>You use Canva for everything</strong> — If Canva is your main design tool, Magic Media&apos;s integration is seamless. Generate → design in one place.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-500 font-bold">→</span>
+                <span className="text-info font-bold">→</span>
                 <div>
                   <strong>500 generations is plenty for you</strong> — Casual users rarely hit the limit. If you generate 10-20 images/week, Canva Pro&apos;s limit is fine.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-500 font-bold">→</span>
+                <span className="text-info font-bold">→</span>
                 <div>
                   <strong>You need the full platform</strong> — Templates, Brand Kit, team features, presentations, social scheduling — Canva Pro includes everything. VixPic is just images.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-cyan-500 font-bold">→</span>
+                <span className="text-info font-bold">→</span>
                 <div>
                   <strong>You&apos;re non-technical</strong> — Canva is dead simple. VixPic&apos;s BYOK setup requires getting API keys, which takes 5 minutes but may feel technical to some.
                 </div>
               </li>
             </ul>
-            <p className="text-gray-700 mt-6">
+            <p className="text-foreground mt-6">
               For power users who hit limits, want better quality, or need API access — VixPic is the clear winner.
             </p>
           </div>
@@ -405,9 +405,9 @@ export default function CanvaAlternativePage() {
           </h2>
           <div className="space-y-6">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white border rounded-xl p-6">
+              <div key={i} className="bg-card border rounded-xl p-6">
                 <h3 className="font-bold text-lg mb-3">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+                <p className="text-muted-foreground">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -415,7 +415,7 @@ export default function CanvaAlternativePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-info to-brand text-info-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for Unlimited AI Generation?</h2>
           <p className="text-xl opacity-90 mb-8">
@@ -428,7 +428,7 @@ export default function CanvaAlternativePage() {
               </Button>
             </Link>
             <Link href="/alternatives">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-info-foreground text-info-foreground hover:bg-background/10">
                 Compare Other Alternatives
               </Button>
             </Link>

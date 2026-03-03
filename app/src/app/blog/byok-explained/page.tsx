@@ -10,18 +10,18 @@ export default function BYOKExplainedPost() {
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm font-medium px-3 py-1 bg-purple-100 text-purple-700 rounded-full">
+            <span className="text-sm font-medium px-3 py-1 bg-brand-muted text-brand-muted-foreground rounded-full">
               Guide
             </span>
-            <span className="text-sm text-gray-500">5 min read</span>
+            <span className="text-sm text-muted-foreground">5 min read</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             BYOK Explained: Why Bring Your Own Key Changes Everything
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-xl text-muted-foreground mb-6">
             Learn how BYOK (Bring Your Own Key) AI tools save you money and give you full control over your image generation.
           </p>
-          <div className="flex items-center gap-4 text-sm text-gray-500 border-t border-b py-4">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground border-t border-b py-4">
             <span>February 28, 2026</span>
             <span>•</span>
             <span>By VixPic Team</span>
@@ -74,24 +74,24 @@ export default function BYOKExplainedPost() {
                       <th className="pb-3 font-semibold">Savings</th>
                     </tr>
                   </thead>
-                  <tbody className="text-gray-600">
+                  <tbody className="text-muted-foreground">
                     <tr className="border-b">
                       <td className="py-3">Midjourney</td>
                       <td className="py-3">$30/mo</td>
                       <td className="py-3">~$0.04/image</td>
-                      <td className="py-3 text-green-600 font-medium">Up to 90%</td>
+                      <td className="py-3 text-success font-medium">Up to 90%</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-3">DALL-E 3</td>
                       <td className="py-3">$20/mo (ChatGPT Plus)</td>
                       <td className="py-3">$0.04/image</td>
-                      <td className="py-3 text-green-600 font-medium">Up to 85%</td>
+                      <td className="py-3 text-success font-medium">Up to 85%</td>
                     </tr>
                     <tr>
                       <td className="py-3">Stable Diffusion XL</td>
                       <td className="py-3">Various ($10-30/mo)</td>
                       <td className="py-3">~$0.01/image</td>
-                      <td className="py-3 text-green-600 font-medium">Up to 95%</td>
+                      <td className="py-3 text-success font-medium">Up to 95%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -180,14 +180,14 @@ export default function BYOKExplainedPost() {
 
           <p>The whole process takes about 5 minutes.</p>
 
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8 my-12">
+          <div className="bg-gradient-to-r from-brand-muted/50 to-info-muted/50 rounded-xl p-8 my-12">
             <h3 className="text-xl font-bold mb-3">Ready to Try BYOK?</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               VixPic makes BYOK simple. One interface for DALL-E, Stable Diffusion, Flux, and more. 
               Pay only for what you generate.
             </p>
             <Link href="/generate">
-              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+              <Button className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90">
                 Start Creating Free →
               </Button>
             </Link>
@@ -206,10 +206,10 @@ export default function BYOKExplainedPost() {
             to pay subscription prices anymore.
           </p>
 
-          <p className="text-gray-500 mt-8 pt-8 border-t">
+          <p className="text-muted-foreground mt-8 pt-8 border-t">
             <em>
               Questions about BYOK? Check our{" "}
-              <Link href="/providers" className="text-purple-600 hover:underline">
+              <Link href="/providers" className="text-brand hover:underline">
                 provider setup guides
               </Link>{" "}
               or reach out on Twitter.
@@ -219,25 +219,25 @@ export default function BYOKExplainedPost() {
       </article>
 
       {/* Related Posts */}
-      <section className="border-t py-12 px-4 bg-gray-50">
+      <section className="border-t py-12 px-4 bg-muted">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Link href="/blog/save-money-ai-images">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Guide</span>
+                  <span className="text-xs font-medium text-brand">Guide</span>
                   <h3 className="font-semibold mt-2">How to Save 80% on AI Image Generation</h3>
-                  <p className="text-sm text-gray-500 mt-2">Detailed cost breakdown with real numbers.</p>
+                  <p className="text-sm text-muted-foreground mt-2">Detailed cost breakdown with real numbers.</p>
                 </CardContent>
               </Card>
             </Link>
             <Link href="/blog/api-keys-security-guide">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Guide</span>
+                  <span className="text-xs font-medium text-brand">Guide</span>
                   <h3 className="font-semibold mt-2">Keeping Your API Keys Safe</h3>
-                  <p className="text-sm text-gray-500 mt-2">Non-technical security guide for BYOK users.</p>
+                  <p className="text-sm text-muted-foreground mt-2">Non-technical security guide for BYOK users.</p>
                 </CardContent>
               </Card>
             </Link>

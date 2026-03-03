@@ -129,19 +129,19 @@ export default function ColorPickerTool() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900">Tools</Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Color Picker</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground">Tools</Link>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Color Picker</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/tools">
@@ -159,13 +159,13 @@ export default function ColorPickerTool() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-4">
               ✨ Free • No Upload • 100% Private
             </div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
               Color Picker
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Extract colors from any image. Click anywhere to pick colors and get HEX, RGB, and HSL values instantly.
             </p>
           </div>
@@ -177,7 +177,7 @@ export default function ColorPickerTool() {
                 <CardContent className="p-6">
                   {!image ? (
                     <div
-                      className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-purple-400 transition-colors cursor-pointer"
+                      className="border-2 border-dashed border-input rounded-xl p-12 text-center hover:border-brand transition-colors cursor-pointer"
                       onDrop={handleDrop}
                       onDragOver={(e) => e.preventDefault()}
                       onClick={() => document.getElementById("fileInput")?.click()}
@@ -189,18 +189,18 @@ export default function ColorPickerTool() {
                         onChange={handleFileSelect}
                         className="hidden"
                       />
-                      <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center text-3xl">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-brand-muted rounded-full flex items-center justify-center text-3xl">
                         🎨
                       </div>
                       <h3 className="font-semibold text-lg mb-2">Drop image here or click to upload</h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Supports PNG, JPG, WebP • Max 10MB • 100% client-side
                       </p>
                     </div>
                   ) : (
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-muted-foreground">
                           {isPickerActive ? "👆 Click anywhere on the image to pick colors" : ""}
                         </p>
                         <Button variant="outline" size="sm" onClick={clearAll}>
@@ -242,27 +242,27 @@ export default function ColorPickerTool() {
                       <div className="space-y-2">
                         <button
                           onClick={() => copyToClipboard(currentColor.hex, "hex")}
-                          className="w-full flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                          className="w-full flex items-center justify-between p-3 bg-muted rounded-lg hover:bg-muted transition-colors text-left"
                         >
-                          <span className="text-sm text-gray-500">HEX</span>
+                          <span className="text-sm text-muted-foreground">HEX</span>
                           <span className="font-mono font-semibold">
                             {copied === "hex" ? "✓ Copied!" : currentColor.hex}
                           </span>
                         </button>
                         <button
                           onClick={() => copyToClipboard(currentColor.rgb, "rgb")}
-                          className="w-full flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                          className="w-full flex items-center justify-between p-3 bg-muted rounded-lg hover:bg-muted transition-colors text-left"
                         >
-                          <span className="text-sm text-gray-500">RGB</span>
+                          <span className="text-sm text-muted-foreground">RGB</span>
                           <span className="font-mono font-semibold text-sm">
                             {copied === "rgb" ? "✓ Copied!" : currentColor.rgb}
                           </span>
                         </button>
                         <button
                           onClick={() => copyToClipboard(currentColor.hsl, "hsl")}
-                          className="w-full flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors text-left"
+                          className="w-full flex items-center justify-between p-3 bg-muted rounded-lg hover:bg-muted transition-colors text-left"
                         >
-                          <span className="text-sm text-gray-500">HSL</span>
+                          <span className="text-sm text-muted-foreground">HSL</span>
                           <span className="font-mono font-semibold text-sm">
                             {copied === "hsl" ? "✓ Copied!" : currentColor.hsl}
                           </span>
@@ -270,7 +270,7 @@ export default function ColorPickerTool() {
                       </div>
                     </div>
                   ) : (
-                    <div className="text-center py-8 text-gray-400">
+                    <div className="text-center py-8 text-muted-foreground">
                       <div className="text-4xl mb-2">🖱️</div>
                       <p className="text-sm">Click on an image to pick colors</p>
                     </div>
@@ -286,7 +286,7 @@ export default function ColorPickerTool() {
                     {colorHistory.length > 0 && (
                       <button
                         onClick={() => setColorHistory([])}
-                        className="text-xs text-gray-400 hover:text-gray-600"
+                        className="text-xs text-muted-foreground hover:text-muted-foreground"
                       >
                         Clear
                       </button>
@@ -308,7 +308,7 @@ export default function ColorPickerTool() {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-sm text-gray-400 text-center py-4">
+                    <p className="text-sm text-muted-foreground text-center py-4">
                       Picked colors will appear here
                     </p>
                   )}
@@ -318,10 +318,10 @@ export default function ColorPickerTool() {
           </div>
 
           {/* Tips Section */}
-          <Card className="mt-8 border-2 bg-gradient-to-r from-purple-50 to-blue-50">
+          <Card className="mt-8 border-2 bg-gradient-to-r from-brand-muted to-info-muted/50">
             <CardContent className="p-6">
               <h3 className="font-semibold mb-3">💡 Pro Tips</h3>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-muted-foreground">
                 <div>
                   <strong>Click any value</strong> to copy it instantly to your clipboard.
                 </div>
@@ -339,9 +339,9 @@ export default function ColorPickerTool() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 

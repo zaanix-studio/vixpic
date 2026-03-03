@@ -15,10 +15,10 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+          <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
           <span className="font-bold text-xl">VixPic</span>
         </Link>
         <div className="flex items-center gap-4">
@@ -33,8 +33,8 @@ export function SiteHeader() {
                 href={href}
                 className={
                   isActive
-                    ? "text-purple-600 font-medium hidden sm:block"
-                    : "text-gray-600 hover:text-gray-900 hidden sm:block"
+                    ? "text-brand font-medium hidden sm:block"
+                    : "text-muted-foreground hover:text-foreground hidden sm:block"
                 }
               >
                 {label}

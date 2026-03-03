@@ -181,22 +181,22 @@ export default function ImageResizer() {
   const finalDims = getFinalDimensions();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       <canvas ref={canvasRef} className="hidden" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Free Tools</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Free Tools</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground hidden sm:block">
               All Tools
             </Link>
             <Link href="/generate">
@@ -209,20 +209,20 @@ export default function ImageResizer() {
       {/* Hero */}
       <section className="pt-28 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             ✨ 100% Free • No API Key Needed • Client-Side
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Resize Images{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               To Any Size
             </span>
           </h1>
-          <p className="text-lg text-gray-600 mb-2 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-2 max-w-2xl mx-auto">
             Resize images by pixels, percentage, or social media presets. 
             Everything happens in your browser — nothing is uploaded.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             Free forever • Works offline
           </p>
         </div>
@@ -239,16 +239,16 @@ export default function ImageResizer() {
                   onDrop={handleDrop}
                   onDragOver={(e) => e.preventDefault()}
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center cursor-pointer hover:border-purple-400 hover:bg-purple-50/50 transition-colors"
+                  className="border-2 border-dashed border-input rounded-lg p-12 text-center cursor-pointer hover:border-brand hover:bg-brand-muted/50 transition-colors"
                 >
                   <div className="text-5xl mb-4">📐</div>
-                  <p className="text-lg font-medium text-gray-700 mb-2">
+                  <p className="text-lg font-medium text-foreground mb-2">
                     Drop your image here
                   </p>
-                  <p className="text-sm text-gray-500 mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     or click to browse
                   </p>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-muted-foreground">
                     PNG, JPG, WEBP up to 25MB
                   </p>
                   <input
@@ -265,13 +265,13 @@ export default function ImageResizer() {
               {selectedImage && (
                 <div className="space-y-6">
                   {/* Mode Tabs */}
-                  <div className="flex gap-2 p-1 bg-gray-100 rounded-lg w-fit">
+                  <div className="flex gap-2 p-1 bg-muted rounded-lg w-fit">
                     <button
                       onClick={() => setResizeMode("dimensions")}
                       className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                         resizeMode === "dimensions"
-                          ? "bg-white shadow text-purple-600"
-                          : "text-gray-600 hover:text-gray-900"
+                          ? "bg-card shadow text-brand"
+                          : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
                       Dimensions
@@ -280,8 +280,8 @@ export default function ImageResizer() {
                       onClick={() => setResizeMode("percentage")}
                       className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                         resizeMode === "percentage"
-                          ? "bg-white shadow text-purple-600"
-                          : "text-gray-600 hover:text-gray-900"
+                          ? "bg-card shadow text-brand"
+                          : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
                       Percentage
@@ -290,8 +290,8 @@ export default function ImageResizer() {
                       onClick={() => setResizeMode("preset")}
                       className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                         resizeMode === "preset"
-                          ? "bg-white shadow text-purple-600"
-                          : "text-gray-600 hover:text-gray-900"
+                          ? "bg-card shadow text-brand"
+                          : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
                       Presets
@@ -300,10 +300,10 @@ export default function ImageResizer() {
 
                   {/* Dimensions Mode */}
                   {resizeMode === "dimensions" && (
-                    <div className="p-4 bg-gray-50 rounded-lg space-y-4">
+                    <div className="p-4 bg-muted rounded-lg space-y-4">
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <Label className="text-sm text-gray-600">Width (px)</Label>
+                          <Label className="text-sm text-muted-foreground">Width (px)</Label>
                           <Input
                             type="number"
                             value={targetWidth}
@@ -312,7 +312,7 @@ export default function ImageResizer() {
                           />
                         </div>
                         <div>
-                          <Label className="text-sm text-gray-600">Height (px)</Label>
+                          <Label className="text-sm text-muted-foreground">Height (px)</Label>
                           <Input
                             type="number"
                             value={targetHeight}
@@ -326,19 +326,19 @@ export default function ImageResizer() {
                           type="checkbox"
                           checked={maintainAspectRatio}
                           onChange={(e) => setMaintainAspectRatio(e.target.checked)}
-                          className="w-4 h-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500"
+                          className="w-4 h-4 rounded border-input text-brand focus:ring-brand/60"
                         />
-                        <span className="text-sm text-gray-600">Maintain aspect ratio</span>
+                        <span className="text-sm text-muted-foreground">Maintain aspect ratio</span>
                       </label>
                     </div>
                   )}
 
                   {/* Percentage Mode */}
                   {resizeMode === "percentage" && (
-                    <div className="p-4 bg-gray-50 rounded-lg space-y-4">
+                    <div className="p-4 bg-muted rounded-lg space-y-4">
                       <div className="flex items-center gap-4">
                         <div className="flex-1">
-                          <Label className="text-sm text-gray-600">Scale</Label>
+                          <Label className="text-sm text-muted-foreground">Scale</Label>
                           <Input
                             type="number"
                             value={percentage}
@@ -348,7 +348,7 @@ export default function ImageResizer() {
                             max={500}
                           />
                         </div>
-                        <span className="text-xl font-bold text-gray-400 mt-6">%</span>
+                        <span className="text-xl font-bold text-muted-foreground mt-6">%</span>
                       </div>
                       <div className="flex gap-2 flex-wrap">
                         {[25, 50, 75, 100, 150, 200].map((p) => (
@@ -357,15 +357,15 @@ export default function ImageResizer() {
                             onClick={() => setPercentage(p)}
                             className={`px-3 py-1 rounded-full text-sm border ${
                               percentage === p
-                                ? "bg-purple-100 border-purple-300 text-purple-700"
-                                : "bg-white border-gray-200 text-gray-600 hover:border-purple-300"
+                                ? "bg-brand-muted border-brand/30 text-brand-muted-foreground"
+                                : "bg-card border-border text-muted-foreground hover:border-brand"
                             }`}
                           >
                             {p}%
                           </button>
                         ))}
                       </div>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Result: {Math.round(originalDimensions.width * (percentage / 100))} × {Math.round(originalDimensions.height * (percentage / 100))} px
                       </p>
                     </div>
@@ -373,17 +373,17 @@ export default function ImageResizer() {
 
                   {/* Preset Mode */}
                   {resizeMode === "preset" && (
-                    <div className="p-4 bg-gray-50 rounded-lg">
+                    <div className="p-4 bg-muted rounded-lg">
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         {presets.map((preset) => (
                           <button
                             key={preset.name}
                             onClick={() => applyPreset(preset)}
-                            className="p-3 bg-white border rounded-lg hover:border-purple-300 hover:shadow-sm transition-all text-left"
+                            className="p-3 bg-card border rounded-lg hover:border-brand hover:shadow-sm transition-all text-left"
                           >
                             <p className="font-medium text-sm">{preset.name}</p>
-                            <p className="text-xs text-gray-500">{preset.width} × {preset.height}</p>
-                            <p className="text-xs text-gray-400 mt-1">{preset.description}</p>
+                            <p className="text-xs text-muted-foreground">{preset.width} × {preset.height}</p>
+                            <p className="text-xs text-muted-foreground mt-1">{preset.description}</p>
                           </button>
                         ))}
                       </div>
@@ -395,12 +395,12 @@ export default function ImageResizer() {
                     {/* Original */}
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <Label className="text-sm text-gray-500">Original</Label>
-                        <span className="text-sm font-mono text-gray-600">
+                        <Label className="text-sm text-muted-foreground">Original</Label>
+                        <span className="text-sm font-mono text-muted-foreground">
                           {originalDimensions.width} × {originalDimensions.height}
                         </span>
                       </div>
-                      <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 border-dashed border-gray-200">
+                      <div className="relative aspect-square bg-muted rounded-lg overflow-hidden border-2 border-dashed border-border">
                         <img
                           src={selectedImage}
                           alt="Original"
@@ -412,12 +412,12 @@ export default function ImageResizer() {
                     {/* Result */}
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <Label className="text-sm text-gray-500">Result</Label>
+                        <Label className="text-sm text-muted-foreground">Result</Label>
                         <span className="text-sm font-mono">
-                          <span className="text-purple-600">{finalDims.width} × {finalDims.height}</span>
+                          <span className="text-brand">{finalDims.width} × {finalDims.height}</span>
                         </span>
                       </div>
-                      <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 border-purple-200">
+                      <div className="relative aspect-square bg-muted rounded-lg overflow-hidden border-2 border-brand/20">
                         {resizedImage ? (
                           <img
                             src={resizedImage}
@@ -426,13 +426,13 @@ export default function ImageResizer() {
                           />
                         ) : processing ? (
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="animate-spin w-12 h-12 border-4 border-purple-600 border-t-transparent rounded-full" />
+                            <div className="animate-spin w-12 h-12 border-4 border-brand border-t-transparent rounded-full" />
                           </div>
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center">
                             <div className="text-center">
-                              <p className="text-gray-400">Preview after resize</p>
-                              <p className="text-xs text-gray-300 mt-1">
+                              <p className="text-muted-foreground">Preview after resize</p>
+                              <p className="text-xs text-muted-foreground mt-1">
                                 {finalDims.width} × {finalDims.height} px
                               </p>
                             </div>
@@ -448,7 +448,7 @@ export default function ImageResizer() {
                       <Button 
                         onClick={resizeImage}
                         disabled={processing || finalDims.width <= 0 || finalDims.height <= 0}
-                        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                        className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
                         size="lg"
                       >
                         {processing ? "Resizing..." : "Resize Image"}
@@ -458,7 +458,7 @@ export default function ImageResizer() {
                       <>
                         <Button 
                           onClick={downloadImage}
-                          className="bg-green-600 hover:bg-green-700"
+                          className="bg-success hover:bg-success/90"
                           size="lg"
                         >
                           Download Resized
@@ -484,7 +484,7 @@ export default function ImageResizer() {
       </section>
 
       {/* Features */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Resize Methods</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -492,7 +492,7 @@ export default function ImageResizer() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📏</div>
                 <h3 className="font-semibold mb-2">Custom Dimensions</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Enter exact pixel dimensions with optional aspect ratio lock.
                 </p>
               </CardContent>
@@ -501,7 +501,7 @@ export default function ImageResizer() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📊</div>
                 <h3 className="font-semibold mb-2">Percentage Scale</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Scale up or down by percentage. Great for batch consistency.
                 </p>
               </CardContent>
@@ -510,7 +510,7 @@ export default function ImageResizer() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📱</div>
                 <h3 className="font-semibold mb-2">Social Presets</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   One-click sizes for Instagram, Twitter, Facebook, and more.
                 </p>
               </CardContent>
@@ -530,10 +530,10 @@ export default function ImageResizer() {
               { icon: "🖼️", title: "Printing", desc: "Scale for print" },
               { icon: "📧", title: "Email", desc: "Fit email limits" },
             ].map((item) => (
-              <div key={item.title} className="p-4 bg-gray-50 rounded-lg">
+              <div key={item.title} className="p-4 bg-muted rounded-lg">
                 <div className="text-3xl mb-2">{item.icon}</div>
                 <h3 className="font-medium">{item.title}</h3>
-                <p className="text-sm text-gray-500">{item.desc}</p>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -541,8 +541,8 @@ export default function ImageResizer() {
       </section>
 
       {/* Upsell */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-brand to-info">
+        <div className="max-w-4xl mx-auto text-center text-brand-foreground">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Need AI-Powered Image Editing?
           </h2>
@@ -560,9 +560,9 @@ export default function ImageResizer() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            Part of <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            Part of <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/convert" className="hover:underline">Converter</Link> •

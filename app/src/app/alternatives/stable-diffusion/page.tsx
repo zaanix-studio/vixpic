@@ -57,22 +57,22 @@ export default function StableDiffusionAlternativePage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-warning-muted text-warning-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             🚀 Stable Diffusion Without the Hassle
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-warning to-destructive bg-clip-text text-transparent">
               Stable Diffusion
             </span>
             {" "}Quality, Zero Setup
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Love SDXL but hate the Python setup, GPU requirements, and model management?
             VixPic gives you the same quality through a simple web interface.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-orange-500 to-red-500">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-warning to-destructive">
                 Try SDXL Instantly
               </Button>
             </Link>
@@ -86,9 +86,9 @@ export default function StableDiffusionAlternativePage() {
       </section>
 
       {/* Pain Points */}
-      <section className="py-16 px-4 bg-red-50">
+      <section className="py-16 px-4 bg-destructive/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-red-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-destructive">
             The Stable Diffusion Setup Struggle
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -124,10 +124,10 @@ export default function StableDiffusionAlternativePage() {
                 desc: "Slow card? Slow generations. Want to batch 100 images? Hope you don't need your computer."
               },
             ].map((pain, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-red-200">
+              <div key={i} className="bg-card p-6 rounded-xl border border-destructive/20">
                 <div className="text-3xl mb-3">{pain.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{pain.title}</h3>
-                <p className="text-gray-600">{pain.desc}</p>
+                <p className="text-muted-foreground">{pain.desc}</p>
               </div>
             ))}
           </div>
@@ -137,7 +137,7 @@ export default function StableDiffusionAlternativePage() {
       {/* VixPic Solutions */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-green-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-success-muted-foreground">
             VixPic: SDXL Quality, Zero Friction
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -173,10 +173,10 @@ export default function StableDiffusionAlternativePage() {
                 desc: "SDXL, Flux, DALL-E 3, and more. Switch between models in one click. Compare results."
               },
             ].map((solution, i) => (
-              <div key={i} className="bg-green-50 p-6 rounded-xl border border-green-200">
+              <div key={i} className="bg-success-muted/50 p-6 rounded-xl border border-success/20">
                 <div className="text-3xl mb-3">{solution.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{solution.title}</h3>
-                <p className="text-gray-600">{solution.desc}</p>
+                <p className="text-muted-foreground">{solution.desc}</p>
               </div>
             ))}
           </div>
@@ -184,29 +184,29 @@ export default function StableDiffusionAlternativePage() {
       </section>
 
       {/* Feature Comparison Table */}
-      <section id="comparison" className="py-16 px-4 bg-gray-50">
+      <section id="comparison" className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">VixPic vs Local Stable Diffusion</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             An honest comparison for different use cases.
           </p>
           <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl shadow-sm">
+            <table className="w-full bg-card rounded-xl shadow-sm">
               <thead>
                 <tr className="border-b-2">
                   <th className="py-4 px-6 text-left">Feature</th>
                   <th className="py-4 px-6 text-center">Local SD</th>
-                  <th className="py-4 px-6 text-center bg-purple-50">VixPic</th>
+                  <th className="py-4 px-6 text-center bg-brand-muted/50">VixPic</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonData.map((row, i) => (
                   <tr key={i} className="border-b last:border-b-0">
                     <td className="py-4 px-6 font-medium">{row.feature}</td>
-                    <td className={`py-4 px-6 text-center ${row.winner === 'sd' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center ${row.winner === 'sd' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.sd}
                     </td>
-                    <td className={`py-4 px-6 text-center bg-purple-50 ${row.winner === 'vixpic' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center bg-brand-muted/50 ${row.winner === 'vixpic' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.vixpic}
                     </td>
                   </tr>
@@ -214,7 +214,7 @@ export default function StableDiffusionAlternativePage() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-gray-500 mt-4 text-center">
+          <p className="text-sm text-muted-foreground mt-4 text-center">
             VixPic wins on convenience. Local SD wins on customization and privacy.
           </p>
         </div>
@@ -224,7 +224,7 @@ export default function StableDiffusionAlternativePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">The Real Cost Calculation</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             When does local SD actually make financial sense?
           </p>
           <div className="grid md:grid-cols-2 gap-8">
@@ -251,10 +251,10 @@ export default function StableDiffusionAlternativePage() {
                   </div>
                   <div className="flex justify-between">
                     <span>Per image (after setup)</span>
-                    <span className="font-semibold text-green-600">$0.00</span>
+                    <span className="font-semibold text-success">$0.00</span>
                   </div>
                   <div className="border-t pt-4 mt-4">
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-muted-foreground">
                       Break-even vs VixPic: ~17,500 images<br/>
                       (at $0.04/image)
                     </p>
@@ -263,8 +263,8 @@ export default function StableDiffusionAlternativePage() {
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-purple-300 shadow-lg">
-              <CardHeader className="bg-purple-50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
+            <Card className="border-2 border-brand/30 shadow-lg">
+              <CardHeader className="bg-brand-muted/50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
                 <CardTitle className="flex items-center gap-3">
                   <span className="text-2xl">☁️</span>
                   VixPic (BYOK)
@@ -274,22 +274,22 @@ export default function StableDiffusionAlternativePage() {
                 <div className="space-y-4">
                   <div className="flex justify-between">
                     <span>GPU required</span>
-                    <span className="font-semibold text-green-600">$0</span>
+                    <span className="font-semibold text-success">$0</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Setup time</span>
-                    <span className="font-semibold text-green-600">2 minutes</span>
+                    <span className="font-semibold text-success">2 minutes</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Monthly minimum</span>
-                    <span className="font-semibold text-green-600">$0</span>
+                    <span className="font-semibold text-success">$0</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Per image (SDXL)</span>
                     <span className="font-semibold">~$0.04</span>
                   </div>
                   <div className="border-t pt-4 mt-4">
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-muted-foreground">
                       100 images/mo = ~$4/mo<br/>
                       500 images/mo = ~$20/mo
                     </p>
@@ -298,53 +298,53 @@ export default function StableDiffusionAlternativePage() {
               </CardContent>
             </Card>
           </div>
-          <div className="mt-8 bg-blue-50 p-6 rounded-xl text-center">
+          <div className="mt-8 bg-info-muted/50 p-6 rounded-xl text-center">
             <p className="text-lg">
               <strong>Bottom line:</strong> If you generate less than 15,000 images, VixPic is cheaper.
               <br/>
-              <span className="text-gray-600">Most creators generate 100-500/month. That&apos;s $4-20 vs $700+ upfront.</span>
+              <span className="text-muted-foreground">Most creators generate 100-500/month. That&apos;s $4-20 vs $700+ upfront.</span>
             </p>
           </div>
         </div>
       </section>
 
       {/* When Local SD Is Better */}
-      <section className="py-16 px-4 bg-orange-50">
+      <section className="py-16 px-4 bg-warning-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
             Honest Take: When Local SD Is Better
           </h2>
-          <div className="bg-white p-8 rounded-xl border border-orange-200">
-            <p className="text-gray-700 mb-6">
+          <div className="bg-card p-8 rounded-xl border border-warning/20">
+            <p className="text-foreground mb-6">
               We believe in honesty. Here&apos;s when local Stable Diffusion makes more sense:
             </p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You need custom models and LoRAs</strong> — If you&apos;re training your own models, fine-tuning, or using niche LoRAs, local is essential. VixPic only supports provider-available models.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You generate thousands of images</strong> — At 15,000+ images, local SD pays off. Professional studios or heavy researchers should invest in hardware.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>Maximum privacy is required</strong> — If images must never leave your machine (legal, medical, etc.), local is the only option. VixPic uses edge proxies but still routes through providers.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You enjoy tinkering</strong> — Some people love the process of optimizing, tweaking, and customizing. If that&apos;s you, local SD is a great hobby.
                 </div>
               </li>
             </ul>
-            <p className="text-gray-700 mt-6">
+            <p className="text-foreground mt-6">
               For everyone else — creators who want SDXL quality without the headache — VixPic is the faster, cheaper path.
             </p>
           </div>
@@ -359,9 +359,9 @@ export default function StableDiffusionAlternativePage() {
           </h2>
           <div className="space-y-6">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white border rounded-xl p-6">
+              <div key={i} className="bg-card border rounded-xl p-6">
                 <h3 className="font-bold text-lg mb-3">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+                <p className="text-muted-foreground">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -369,7 +369,7 @@ export default function StableDiffusionAlternativePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-orange-500 to-red-500 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-warning to-destructive text-warning-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for SDXL Without the Setup?</h2>
           <p className="text-xl opacity-90 mb-8">
@@ -382,7 +382,7 @@ export default function StableDiffusionAlternativePage() {
               </Button>
             </Link>
             <Link href="/alternatives">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-warning-foreground text-warning-foreground hover:bg-background/10">
                 Compare Other Alternatives
               </Button>
             </Link>

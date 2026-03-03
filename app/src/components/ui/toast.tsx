@@ -71,9 +71,9 @@ function ToastContainer() {
           className={`
             px-4 py-3 rounded-lg shadow-lg flex items-center gap-3
             animate-in slide-in-from-right-full duration-300
-            ${toast.type === 'success' ? 'bg-green-600 text-white' : ''}
-            ${toast.type === 'error' ? 'bg-red-600 text-white' : ''}
-            ${toast.type === 'info' ? 'bg-gray-800 text-white' : ''}
+            ${toast.type === 'success' ? 'bg-success text-success-foreground' : ''}
+            ${toast.type === 'error' ? 'bg-destructive text-inverted-foreground' : ''}
+            ${toast.type === 'info' ? 'bg-inverted text-inverted-foreground' : ''}
           `}
         >
           <span className="text-lg">
@@ -84,7 +84,7 @@ function ToastContainer() {
           <p className="flex-1 text-sm">{toast.message}</p>
           <button
             onClick={() => removeToast(toast.id)}
-            className="text-white/70 hover:text-white"
+            className="text-inverted-foreground/70 hover:text-inverted-foreground"
           >
             ×
           </button>

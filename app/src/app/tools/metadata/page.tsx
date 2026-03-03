@@ -153,22 +153,22 @@ export default function MetadataViewer() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       <canvas ref={canvasRef} className="hidden" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Free Tools</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Free Tools</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground hidden sm:block">
               All Tools
             </Link>
             <Link href="/generate">
@@ -181,20 +181,20 @@ export default function MetadataViewer() {
       {/* Hero */}
       <section className="pt-28 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             ✨ 100% Free • No API Key Needed • Client-Side
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Image{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Metadata Viewer
             </span>
           </h1>
-          <p className="text-lg text-gray-600 mb-2 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-2 max-w-2xl mx-auto">
             View image information and remove metadata for privacy. 
             See dimensions, file size, and more — then strip EXIF data if needed.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             Free forever • Works offline • No watermarks
           </p>
         </div>
@@ -211,16 +211,16 @@ export default function MetadataViewer() {
                   onDrop={handleDrop}
                   onDragOver={(e) => e.preventDefault()}
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center cursor-pointer hover:border-purple-400 hover:bg-purple-50/50 transition-colors"
+                  className="border-2 border-dashed border-input rounded-lg p-12 text-center cursor-pointer hover:border-brand hover:bg-brand-muted/50 transition-colors"
                 >
                   <div className="text-5xl mb-4">🔍</div>
-                  <p className="text-lg font-medium text-gray-700 mb-2">
+                  <p className="text-lg font-medium text-foreground mb-2">
                     Drop your image here
                   </p>
-                  <p className="text-sm text-gray-500 mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     or click to browse
                   </p>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-muted-foreground">
                     PNG, JPG, WEBP up to 25MB
                   </p>
                   <input
@@ -238,7 +238,7 @@ export default function MetadataViewer() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Image Preview */}
                   <div>
-                    <div className="bg-gray-100 rounded-lg p-4 flex items-center justify-center min-h-[300px]">
+                    <div className="bg-muted rounded-lg p-4 flex items-center justify-center min-h-[300px]">
                       <img
                         src={selectedImage}
                         alt="Preview"
@@ -257,14 +257,14 @@ export default function MetadataViewer() {
                       {metadata.map((entry, i) => (
                         <div 
                           key={i}
-                          className="flex justify-between items-center py-2 px-3 rounded hover:bg-gray-50 group"
+                          className="flex justify-between items-center py-2 px-3 rounded hover:bg-muted group"
                         >
-                          <span className="text-sm text-gray-500">{entry.label}</span>
+                          <span className="text-sm text-muted-foreground">{entry.label}</span>
                           <div className="flex items-center gap-2">
                             <span className="text-sm font-medium">{entry.value}</span>
                             <button
                               onClick={() => copyToClipboard(entry.value)}
-                              className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-gray-600 transition-opacity"
+                              className="opacity-0 group-hover:opacity-100 text-muted-foreground hover:text-muted-foreground transition-opacity"
                               title="Copy"
                             >
                               📋
@@ -275,12 +275,12 @@ export default function MetadataViewer() {
                     </div>
 
                     {/* Privacy Warning */}
-                    <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg mb-4">
+                    <div className="p-4 bg-warning-muted/50 border border-warning/20 rounded-lg mb-4">
                       <div className="flex items-start gap-2">
                         <span className="text-lg">⚠️</span>
                         <div>
-                          <p className="text-sm font-medium text-yellow-800">Privacy Notice</p>
-                          <p className="text-xs text-yellow-700 mt-1">
+                          <p className="text-sm font-medium text-warning-muted-foreground">Privacy Notice</p>
+                          <p className="text-xs text-warning-muted-foreground mt-1">
                             Images can contain hidden metadata like GPS location, camera model, 
                             and date taken. Strip metadata before sharing sensitive photos.
                           </p>
@@ -293,7 +293,7 @@ export default function MetadataViewer() {
                       <Button 
                         onClick={stripMetadata}
                         disabled={processing}
-                        className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                        className="w-full bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
                         size="lg"
                       >
                         {processing ? "Processing..." : "🛡️ Strip All Metadata"}
@@ -310,35 +310,35 @@ export default function MetadataViewer() {
               {strippedImage && (
                 <div className="space-y-6">
                   <div className="text-center mb-4">
-                    <span className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                    <span className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium">
                       ✓ Metadata removed successfully
                     </span>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="text-center">
-                      <p className="text-sm text-gray-500 mb-2">Original</p>
-                      <div className="bg-gray-100 rounded-lg p-4 inline-block">
+                      <p className="text-sm text-muted-foreground mb-2">Original</p>
+                      <div className="bg-muted rounded-lg p-4 inline-block">
                         <img
                           src={selectedImage!}
                           alt="Original"
                           className="max-w-full max-h-[250px] object-contain rounded"
                         />
                       </div>
-                      <p className="text-xs text-gray-400 mt-2">
+                      <p className="text-xs text-muted-foreground mt-2">
                         {formatFileSize(originalFile?.size || 0)}
                       </p>
                     </div>
                     <div className="text-center">
-                      <p className="text-sm text-gray-500 mb-2">Clean (No Metadata)</p>
-                      <div className="bg-gray-100 rounded-lg p-4 inline-block border-2 border-green-200">
+                      <p className="text-sm text-muted-foreground mb-2">Clean (No Metadata)</p>
+                      <div className="bg-muted rounded-lg p-4 inline-block border-2 border-success/20">
                         <img
                           src={strippedImage}
                           alt="Stripped"
                           className="max-w-full max-h-[250px] object-contain rounded"
                         />
                       </div>
-                      <p className="text-xs text-green-600 mt-2">
+                      <p className="text-xs text-success mt-2">
                         🛡️ Safe to share
                       </p>
                     </div>
@@ -347,7 +347,7 @@ export default function MetadataViewer() {
                   <div className="flex flex-wrap gap-3 justify-center">
                     <Button 
                       onClick={downloadStripped}
-                      className="bg-green-600 hover:bg-green-700"
+                      className="bg-success hover:bg-success/90"
                       size="lg"
                     >
                       Download Clean Image
@@ -364,7 +364,7 @@ export default function MetadataViewer() {
       </section>
 
       {/* Features */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">What Is Image Metadata?</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -372,7 +372,7 @@ export default function MetadataViewer() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📍</div>
                 <h3 className="font-semibold mb-2">Location Data</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   GPS coordinates can reveal where a photo was taken. Strip metadata before sharing location-sensitive images.
                 </p>
               </CardContent>
@@ -381,7 +381,7 @@ export default function MetadataViewer() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📷</div>
                 <h3 className="font-semibold mb-2">Camera Info</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Camera model, lens, settings (ISO, aperture, shutter speed) are often embedded in photos.
                 </p>
               </CardContent>
@@ -390,7 +390,7 @@ export default function MetadataViewer() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📅</div>
                 <h3 className="font-semibold mb-2">Timestamps</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Date and time the photo was taken, edited, and saved. Can reveal personal patterns.
                 </p>
               </CardContent>
@@ -410,10 +410,10 @@ export default function MetadataViewer() {
               { icon: "💼", title: "Professional", desc: "Clean client deliverables" },
               { icon: "📁", title: "File Size", desc: "Slightly smaller files" },
             ].map((item) => (
-              <div key={item.title} className="p-4 bg-gray-50 rounded-lg">
+              <div key={item.title} className="p-4 bg-muted rounded-lg">
                 <div className="text-3xl mb-2">{item.icon}</div>
                 <h3 className="font-medium">{item.title}</h3>
-                <p className="text-sm text-gray-500">{item.desc}</p>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -421,8 +421,8 @@ export default function MetadataViewer() {
       </section>
 
       {/* Upsell */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-brand to-info">
+        <div className="max-w-4xl mx-auto text-center text-brand-foreground">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Need More Image Tools?
           </h2>
@@ -439,9 +439,9 @@ export default function MetadataViewer() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            Part of <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            Part of <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/metadata" className="hover:underline">Metadata</Link> •

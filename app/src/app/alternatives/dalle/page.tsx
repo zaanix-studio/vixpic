@@ -57,23 +57,23 @@ export default function DalleAlternativePage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-muted text-brand-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             🤖 #1 DALL-E Alternative for Standalone Access
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             The Best{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               DALL-E Alternative
             </span>
             {" "}in 2026
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Don&apos;t want to pay $20/month for ChatGPT Plus just to use DALL-E? 
             VixPic gives you standalone access, multiple models, and BYOK pricing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-brand to-info">
                 Try VixPic Free
               </Button>
             </Link>
@@ -87,9 +87,9 @@ export default function DalleAlternativePage() {
       </section>
 
       {/* The Problem */}
-      <section className="py-16 px-4 bg-red-50">
+      <section className="py-16 px-4 bg-destructive/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-red-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-destructive">
             The Problem with DALL-E Access in 2026
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -125,10 +125,10 @@ export default function DalleAlternativePage() {
                 desc: "Images scattered across chat conversations. No proper organization, tagging, or bulk download."
               },
             ].map((pain, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-red-200">
+              <div key={i} className="bg-card p-6 rounded-xl border border-destructive/20">
                 <div className="text-3xl mb-3">{pain.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{pain.title}</h3>
-                <p className="text-gray-600">{pain.desc}</p>
+                <p className="text-muted-foreground">{pain.desc}</p>
               </div>
             ))}
           </div>
@@ -138,7 +138,7 @@ export default function DalleAlternativePage() {
       {/* The Solution */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-green-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-success-muted-foreground">
             How VixPic Solves These Problems
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -174,10 +174,10 @@ export default function DalleAlternativePage() {
                 desc: "All your images in one place. Search, filter, tag, bulk download. Never lose a generation again."
               },
             ].map((solution, i) => (
-              <div key={i} className="bg-green-50 p-6 rounded-xl border border-green-200">
+              <div key={i} className="bg-success-muted/50 p-6 rounded-xl border border-success/20">
                 <div className="text-3xl mb-3">{solution.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{solution.title}</h3>
-                <p className="text-gray-600">{solution.desc}</p>
+                <p className="text-muted-foreground">{solution.desc}</p>
               </div>
             ))}
           </div>
@@ -185,29 +185,29 @@ export default function DalleAlternativePage() {
       </section>
 
       {/* Feature Comparison */}
-      <section id="comparison" className="py-16 px-4 bg-gray-50">
+      <section id="comparison" className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">VixPic vs DALL-E: Full Comparison</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             An honest comparison of VixPic against DALL-E (via ChatGPT Plus and API).
           </p>
           <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl shadow-sm">
+            <table className="w-full bg-card rounded-xl shadow-sm">
               <thead>
                 <tr className="border-b-2">
                   <th className="py-4 px-6 text-left">Feature</th>
                   <th className="py-4 px-6 text-center">DALL-E (ChatGPT/API)</th>
-                  <th className="py-4 px-6 text-center bg-purple-50">VixPic</th>
+                  <th className="py-4 px-6 text-center bg-brand-muted/50">VixPic</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonData.map((row, i) => (
                   <tr key={i} className="border-b last:border-b-0">
                     <td className="py-4 px-6 font-medium">{row.feature}</td>
-                    <td className={`py-4 px-6 text-center ${row.winner === 'dalle' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center ${row.winner === 'dalle' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.dalle}
                     </td>
-                    <td className={`py-4 px-6 text-center bg-purple-50 ${row.winner === 'vixpic' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center bg-brand-muted/50 ${row.winner === 'vixpic' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.vixpic}
                     </td>
                   </tr>
@@ -215,7 +215,7 @@ export default function DalleAlternativePage() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-gray-500 mt-4 text-center">
+          <p className="text-sm text-muted-foreground mt-4 text-center">
             VixPic wins on 9 of 12 features. DALL-E excels in prompt understanding and built-in image editing.
           </p>
         </div>
@@ -225,16 +225,16 @@ export default function DalleAlternativePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Real Cost Breakdown</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             How much do you actually spend on AI image generation?
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* ChatGPT Plus Path */}
-            <Card className="border-2 border-gray-200">
-              <CardHeader className="text-center bg-gray-50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
+            <Card className="border-2 border-border">
+              <CardHeader className="text-center bg-muted -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
                 <CardTitle>ChatGPT Plus Path</CardTitle>
-                <p className="text-sm text-gray-600">Bundled access to DALL-E</p>
+                <p className="text-sm text-muted-foreground">Bundled access to DALL-E</p>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="space-y-4">
@@ -254,7 +254,7 @@ export default function DalleAlternativePage() {
                     <span>Cost per image (at max)</span>
                     <span>$0.013</span>
                   </div>
-                  <div className="flex justify-between py-2 text-orange-600">
+                  <div className="flex justify-between py-2 text-warning">
                     <span>Light user (50/mo)</span>
                     <span className="font-bold">$0.40/image 😬</span>
                   </div>
@@ -263,10 +263,10 @@ export default function DalleAlternativePage() {
             </Card>
 
             {/* VixPic Path */}
-            <Card className="border-2 border-purple-300 shadow-lg">
-              <CardHeader className="text-center bg-purple-50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
+            <Card className="border-2 border-brand/30 shadow-lg">
+              <CardHeader className="text-center bg-brand-muted/50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
                 <CardTitle>VixPic BYOK Path</CardTitle>
-                <p className="text-sm text-gray-600">Direct API access</p>
+                <p className="text-sm text-muted-foreground">Direct API access</p>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="space-y-4">
@@ -286,7 +286,7 @@ export default function DalleAlternativePage() {
                     <span>SDXL (Replicate)</span>
                     <span>$0.02-0.04/image</span>
                   </div>
-                  <div className="flex justify-between py-2 text-green-600">
+                  <div className="flex justify-between py-2 text-success">
                     <span>Light user (50/mo)</span>
                     <span className="font-bold">$1-4/mo 🎉</span>
                   </div>
@@ -296,7 +296,7 @@ export default function DalleAlternativePage() {
           </div>
 
           {/* Scenario Table */}
-          <div className="bg-white rounded-xl p-6 border">
+          <div className="bg-card rounded-xl p-6 border">
             <h3 className="font-bold text-lg mb-4">Monthly Cost by Usage Level</h3>
             <table className="w-full">
               <thead>
@@ -304,7 +304,7 @@ export default function DalleAlternativePage() {
                   <th className="py-3 text-left">Usage</th>
                   <th className="py-3 text-center">ChatGPT Plus</th>
                   <th className="py-3 text-center">DALL-E API Direct</th>
-                  <th className="py-3 text-center bg-purple-50">VixPic + SDXL</th>
+                  <th className="py-3 text-center bg-brand-muted/50">VixPic + SDXL</th>
                 </tr>
               </thead>
               <tbody>
@@ -312,29 +312,29 @@ export default function DalleAlternativePage() {
                   <td className="py-3">50 images</td>
                   <td className="py-3 text-center">$20</td>
                   <td className="py-3 text-center">$2-4</td>
-                  <td className="py-3 text-center bg-purple-50 text-green-600 font-medium">~$2</td>
+                  <td className="py-3 text-center bg-brand-muted/50 text-success font-medium">~$2</td>
                 </tr>
                 <tr className="border-b">
                   <td className="py-3">200 images</td>
                   <td className="py-3 text-center">$20</td>
                   <td className="py-3 text-center">$8-16</td>
-                  <td className="py-3 text-center bg-purple-50 text-green-600 font-medium">~$8</td>
+                  <td className="py-3 text-center bg-brand-muted/50 text-success font-medium">~$8</td>
                 </tr>
                 <tr className="border-b">
                   <td className="py-3">500 images</td>
                   <td className="py-3 text-center">$20</td>
                   <td className="py-3 text-center">$20-40</td>
-                  <td className="py-3 text-center bg-purple-50 text-green-600 font-medium">~$20</td>
+                  <td className="py-3 text-center bg-brand-muted/50 text-success font-medium">~$20</td>
                 </tr>
                 <tr>
                   <td className="py-3">1,500+ images</td>
                   <td className="py-3 text-center">Daily limits hit</td>
                   <td className="py-3 text-center">$60-120</td>
-                  <td className="py-3 text-center bg-purple-50 text-green-600 font-medium">~$60</td>
+                  <td className="py-3 text-center bg-brand-muted/50 text-success font-medium">~$60</td>
                 </tr>
               </tbody>
             </table>
-            <p className="text-sm text-gray-500 mt-4">
+            <p className="text-sm text-muted-foreground mt-4">
               ChatGPT Plus only makes sense if you max out daily limits AND use the chat features. 
               For most image-focused users, BYOK wins.
             </p>
@@ -343,36 +343,36 @@ export default function DalleAlternativePage() {
       </section>
 
       {/* When DALL-E Is Better */}
-      <section className="py-16 px-4 bg-orange-50">
+      <section className="py-16 px-4 bg-warning-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
             Honest Take: When DALL-E (via ChatGPT) Is Still Better
           </h2>
-          <div className="bg-white p-8 rounded-xl border border-orange-200">
-            <p className="text-gray-700 mb-6">
+          <div className="bg-card p-8 rounded-xl border border-warning/20">
+            <p className="text-foreground mb-6">
               We&apos;re honest about our limitations. DALL-E via ChatGPT might be better if:
             </p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You already pay for ChatGPT Plus</strong> — If you&apos;re using GPT-4 for chat anyway, DALL-E is a free bonus. Adding another tool doesn&apos;t save you money.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You need conversational refinement</strong> — ChatGPT lets you say &quot;make it more blue&quot; or &quot;add a dog on the left.&quot; VixPic requires explicit prompts.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You need image editing (inpainting)</strong> — DALL-E in ChatGPT can edit parts of existing images. VixPic doesn&apos;t support this yet.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You value text-in-image accuracy</strong> — DALL-E 3 handles text generation better than most models. If you need accurate text in images, it&apos;s the leader.
                 </div>
@@ -383,28 +383,28 @@ export default function DalleAlternativePage() {
       </section>
 
       {/* Use DALL-E Through VixPic */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
+      <section className="py-16 px-4 bg-gradient-to-r from-brand-muted/50 to-info-muted/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Fun Fact: You Can Use DALL-E Through VixPic</h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             VixPic supports OpenAI&apos;s API directly. Add your OpenAI key, select DALL-E 3, and generate — 
             same model, better interface, API pricing.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-xl border">
+            <div className="bg-card p-6 rounded-xl border">
               <div className="text-3xl mb-3">1️⃣</div>
               <h3 className="font-bold">Get OpenAI Key</h3>
-              <p className="text-sm text-gray-600">Create one at platform.openai.com</p>
+              <p className="text-sm text-muted-foreground">Create one at platform.openai.com</p>
             </div>
-            <div className="bg-white p-6 rounded-xl border">
+            <div className="bg-card p-6 rounded-xl border">
               <div className="text-3xl mb-3">2️⃣</div>
               <h3 className="font-bold">Add to VixPic</h3>
-              <p className="text-sm text-gray-600">Paste in Settings → API Keys</p>
+              <p className="text-sm text-muted-foreground">Paste in Settings → API Keys</p>
             </div>
-            <div className="bg-white p-6 rounded-xl border">
+            <div className="bg-card p-6 rounded-xl border">
               <div className="text-3xl mb-3">3️⃣</div>
               <h3 className="font-bold">Generate</h3>
-              <p className="text-sm text-gray-600">Select DALL-E 3 and create</p>
+              <p className="text-sm text-muted-foreground">Select DALL-E 3 and create</p>
             </div>
           </div>
         </div>
@@ -418,9 +418,9 @@ export default function DalleAlternativePage() {
           </h2>
           <div className="space-y-6">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white border rounded-xl p-6">
+              <div key={i} className="bg-card border rounded-xl p-6">
                 <h3 className="font-bold text-lg mb-3">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+                <p className="text-muted-foreground">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -428,7 +428,7 @@ export default function DalleAlternativePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand to-info text-brand-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for a Better DALL-E Experience?</h2>
           <p className="text-xl opacity-90 mb-8">
@@ -441,7 +441,7 @@ export default function DalleAlternativePage() {
               </Button>
             </Link>
             <Link href="/alternatives">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-brand-foreground text-brand-foreground hover:bg-background/10">
                 Compare Other Alternatives
               </Button>
             </Link>

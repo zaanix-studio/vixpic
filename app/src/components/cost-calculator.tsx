@@ -114,12 +114,12 @@ export function CostCalculator() {
       <div className="grid md:grid-cols-2 gap-4">
         <Card className="bg-white/[0.03] border-white/[0.06]">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg text-white">Your Usage</CardTitle>
+            <CardTitle className="text-lg text-foreground">Your Usage</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-sm font-medium text-stone-300">
+                <label className="text-sm font-medium text-muted-foreground">
                   Images per month
                 </label>
                 <span className="text-sm font-bold text-[#c9a87c]">
@@ -134,14 +134,14 @@ export function CostCalculator() {
                 step={50}
                 className="py-2"
               />
-              <div className="flex justify-between text-xs text-stone-500 mt-1">
+              <div className="flex justify-between text-xs text-muted-foreground mt-1">
                 <span>50</span>
                 <span>5,000</span>
               </div>
             </div>
 
             <div>
-              <label className="text-sm font-medium text-stone-300 block mb-2">
+              <label className="text-sm font-medium text-muted-foreground block mb-2">
                 Current subscription
               </label>
               <Select
@@ -167,11 +167,11 @@ export function CostCalculator() {
 
         <Card className="bg-white/[0.03] border-white/[0.06]">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg text-white">VixPic Setup</CardTitle>
+            <CardTitle className="text-lg text-foreground">VixPic Setup</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <label className="text-sm font-medium text-stone-300 block mb-2">
+              <label className="text-sm font-medium text-muted-foreground block mb-2">
                 AI Model
               </label>
               <Select
@@ -194,7 +194,7 @@ export function CostCalculator() {
             </div>
 
             <div>
-              <label className="text-sm font-medium text-stone-300 block mb-2">
+              <label className="text-sm font-medium text-muted-foreground block mb-2">
                 VixPic License
               </label>
               <div className="flex gap-2">
@@ -205,7 +205,7 @@ export function CostCalculator() {
                     className={`flex-1 py-2 px-3 rounded-lg border text-sm font-medium transition-all ${
                       vixpicTier === tier
                         ? "border-[#c9a87c]/50 bg-[#c9a87c]/10 text-[#c9a87c]"
-                        : "border-white/[0.08] text-stone-400 hover:border-white/[0.15] hover:text-stone-300"
+                        : "border-white/[0.08] text-muted-foreground hover:border-white/[0.15] hover:text-muted-foreground"
                     }`}
                   >
                     ${tier}
@@ -219,37 +219,37 @@ export function CostCalculator() {
 
       {/* Results */}
       <div className="grid md:grid-cols-2 gap-4">
-        <Card className="border-red-500/20 bg-red-500/[0.04]">
+        <Card className="border-destructive/20 bg-destructive/5">
           <CardHeader>
-            <CardTitle className="text-red-400 flex items-center gap-2">
+            <CardTitle className="text-destructive flex items-center gap-2">
               <TrendingUpIcon size={20} strokeWidth={2} />
               Current Subscription
             </CardTitle>
-            <CardDescription className="text-stone-400">
+            <CardDescription className="text-muted-foreground">
               {SUBSCRIPTIONS[currentSub].name}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="flex justify-between text-stone-300">
+              <div className="flex justify-between text-muted-foreground">
                 <span>Monthly cost</span>
                 <span className="font-semibold">
                   {formatCurrency(calculations.subMonthly)}/mo
                 </span>
               </div>
               <div className="flex justify-between text-lg">
-                <span className="font-semibold text-stone-200">
+                <span className="font-semibold text-foreground">
                   Year 1 Total
                 </span>
-                <span className="font-bold text-red-400">
+                <span className="font-bold text-destructive">
                   {formatCurrency(calculations.subAnnual)}
                 </span>
               </div>
               <div className="flex justify-between text-lg">
-                <span className="font-semibold text-stone-200">
+                <span className="font-semibold text-foreground">
                   3-Year Total
                 </span>
-                <span className="font-bold text-red-400">
+                <span className="font-bold text-destructive">
                   {formatCurrency(calculations.sub3Year)}
                 </span>
               </div>
@@ -257,26 +257,26 @@ export function CostCalculator() {
           </CardContent>
         </Card>
 
-        <Card className="border-emerald-500/20 bg-emerald-500/[0.04]">
+        <Card className="border-success/20 bg-success/5">
           <CardHeader>
-            <CardTitle className="text-emerald-400 flex items-center gap-2">
+            <CardTitle className="text-success flex items-center gap-2">
               <TrendingDownIcon size={20} strokeWidth={2} />
               VixPic + BYOK
             </CardTitle>
-            <CardDescription className="text-stone-400">
+            <CardDescription className="text-muted-foreground">
               {BYOK_MODELS[byokModel].name} at{" "}
               {formatCurrencyPrecise(calculations.costPerImage)}/image
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="flex justify-between text-sm text-stone-300">
+              <div className="flex justify-between text-sm text-muted-foreground">
                 <span>VixPic license (one-time)</span>
                 <span className="font-semibold">
                   {formatCurrency(vixpicTier)}
                 </span>
               </div>
-              <div className="flex justify-between text-sm text-stone-300">
+              <div className="flex justify-between text-sm text-muted-foreground">
                 <span>
                   API costs ({imagesPerMonth.toLocaleString()} imgs/mo)
                 </span>
@@ -285,24 +285,24 @@ export function CostCalculator() {
                 </span>
               </div>
               <div className="flex justify-between text-lg pt-2 border-t border-white/[0.06]">
-                <span className="font-semibold text-stone-200">
+                <span className="font-semibold text-foreground">
                   Year 1 Total
                 </span>
-                <span className="font-bold text-emerald-400">
+                <span className="font-bold text-success">
                   {formatCurrency(calculations.byokYear1)}
                 </span>
               </div>
-              <div className="flex justify-between text-stone-300">
+              <div className="flex justify-between text-muted-foreground">
                 <span>Year 2+ (no license)</span>
-                <span className="font-semibold text-emerald-400">
+                <span className="font-semibold text-success">
                   {formatCurrency(calculations.byokYear2Plus)}/yr
                 </span>
               </div>
               <div className="flex justify-between text-lg pt-2 border-t border-white/[0.06]">
-                <span className="font-semibold text-stone-200">
+                <span className="font-semibold text-foreground">
                   3-Year Total
                 </span>
-                <span className="font-bold text-emerald-400">
+                <span className="font-bold text-success">
                   {formatCurrency(calculations.byok3Year)}
                 </span>
               </div>
@@ -344,10 +344,10 @@ export function CostCalculator() {
       {/* Model Comparison */}
       <Card className="bg-white/[0.03] border-white/[0.06]">
         <CardHeader>
-          <CardTitle className="text-lg text-white">
+          <CardTitle className="text-lg text-foreground">
             API Cost Reference
           </CardTitle>
-          <CardDescription className="text-stone-400">
+          <CardDescription className="text-muted-foreground">
             What you&apos;d pay directly to AI providers for{" "}
             {imagesPerMonth.toLocaleString()} images/month
           </CardDescription>
@@ -367,14 +367,14 @@ export function CostCalculator() {
                       : "border-white/[0.08] hover:border-white/[0.15]"
                   }`}
                 >
-                  <div className="font-semibold text-sm truncate text-stone-200">
+                  <div className="font-semibold text-sm truncate text-foreground">
                     {model.name}
                   </div>
-                  <div className="text-xs text-stone-500">{model.quality}</div>
+                  <div className="text-xs text-muted-foreground">{model.quality}</div>
                   <div className="text-lg font-bold mt-1 text-[#c9a87c]">
                     {formatCurrencyPrecise(monthlyCost)}
                   </div>
-                  <div className="text-xs text-stone-500">/month</div>
+                  <div className="text-xs text-muted-foreground">/month</div>
                 </button>
               );
             })}

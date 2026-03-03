@@ -57,22 +57,22 @@ export default function ReplicateProviderPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-info-muted text-info-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             🔄 Best for Price & Variety
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-info to-info bg-clip-text text-transparent">
               Replicate
             </span>
             {" "}— 1000+ AI Models
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Run open-source AI models via API. SDXL, Flux, anime models, artistic styles — 
             the largest selection at the lowest prices.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://replicate.com/signin" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-blue-600 to-indigo-600">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-info to-info">
                 Get Replicate API Key →
               </Button>
             </a>
@@ -86,7 +86,7 @@ export default function ReplicateProviderPage() {
       </section>
 
       {/* Why Replicate */}
-      <section className="py-16 px-4 bg-blue-50">
+      <section className="py-16 px-4 bg-info-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Why Choose Replicate?</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -122,10 +122,10 @@ export default function ReplicateProviderPage() {
                 desc: "Billed by compute time, not per image. Efficient prompts = lower costs. No subscription required."
               },
             ].map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-blue-200">
+              <div key={i} className="bg-card p-6 rounded-xl border border-info/20">
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <p className="text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -136,7 +136,7 @@ export default function ReplicateProviderPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Popular Models</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Replicate hosts thousands of models. Here are the highlights.
           </p>
           <div className="space-y-6">
@@ -146,29 +146,29 @@ export default function ReplicateProviderPage() {
                   <div className="flex items-center justify-between flex-wrap gap-2">
                     <CardTitle className="text-xl flex items-center gap-2">
                       {model.name}
-                      <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-sm font-normal">
+                      <span className="bg-muted text-muted-foreground px-2 py-1 rounded text-sm font-normal">
                         {model.creator}
                       </span>
                     </CardTitle>
-                    <span className="text-green-600 font-semibold">{model.cost}</span>
+                    <span className="text-success font-semibold">{model.cost}</span>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">{model.description}</p>
+                  <p className="text-muted-foreground mb-4">{model.description}</p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <p className="text-xs font-semibold text-gray-500 uppercase mb-2">Strengths</p>
+                      <p className="text-xs font-semibold text-muted-foreground uppercase mb-2">Strengths</p>
                       <ul className="space-y-1">
                         {model.strengths.map((s, j) => (
-                          <li key={j} className="text-sm text-gray-600 flex items-center gap-1">
-                            <span className="text-green-600">✓</span> {s}
+                          <li key={j} className="text-sm text-muted-foreground flex items-center gap-1">
+                            <span className="text-success">✓</span> {s}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-gray-500 uppercase mb-2">Best For</p>
-                      <p className="text-sm text-gray-600">{model.bestFor}</p>
+                      <p className="text-xs font-semibold text-muted-foreground uppercase mb-2">Best For</p>
+                      <p className="text-sm text-muted-foreground">{model.bestFor}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -179,14 +179,14 @@ export default function ReplicateProviderPage() {
       </section>
 
       {/* Pricing */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Pricing Calculator</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             SDXL via Replicate (~$0.01-0.02/image)
           </p>
           <div className="overflow-x-auto mb-8">
-            <table className="w-full bg-white rounded-xl shadow-sm">
+            <table className="w-full bg-card rounded-xl shadow-sm">
               <thead>
                 <tr className="border-b-2">
                   <th className="py-4 px-6 text-left">Monthly Usage</th>
@@ -201,7 +201,7 @@ export default function ReplicateProviderPage() {
                     <td className="py-4 px-6 font-medium">{tier.usage}</td>
                     <td className="py-4 px-6 text-center">{tier.monthlySpend}</td>
                     <td className="py-4 px-6 text-center">{tier.perImage}</td>
-                    <td className="py-4 px-6 text-center text-green-600 font-medium">
+                    <td className="py-4 px-6 text-center text-success font-medium">
                       {i === 0 ? "97% cheaper" : i === 1 ? "83% cheaper" : i === 2 ? "33% cheaper" : "3x more images"}
                     </td>
                   </tr>
@@ -209,7 +209,7 @@ export default function ReplicateProviderPage() {
               </tbody>
             </table>
           </div>
-          <div className="bg-blue-100 p-6 rounded-xl text-center">
+          <div className="bg-info-muted p-6 rounded-xl text-center">
             <p className="text-lg">
               <strong>At $0.015/image</strong>, generate 2,000 images before you spend what Midjourney costs in one month.
             </p>
@@ -221,53 +221,53 @@ export default function ReplicateProviderPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">5-Minute Setup Guide</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Get your Replicate API key and access 1000+ models.
           </p>
           <div className="space-y-6">
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold shrink-0">
+              <div className="w-10 h-10 bg-info-muted rounded-full flex items-center justify-center text-info-muted-foreground font-bold shrink-0">
                 1
               </div>
-              <div className="bg-white p-6 rounded-xl border flex-1">
+              <div className="bg-card p-6 rounded-xl border flex-1">
                 <h3 className="font-bold text-lg mb-2">Create Replicate Account</h3>
-                <p className="text-gray-600 mb-3">
-                  Go to <a href="https://replicate.com/signin" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">replicate.com/signin</a> and sign up with GitHub or email.
+                <p className="text-muted-foreground mb-3">
+                  Go to <a href="https://replicate.com/signin" target="_blank" rel="noopener noreferrer" className="text-info underline">replicate.com/signin</a> and sign up with GitHub or email.
                   Free to create, pay-as-you-go billing.
                 </p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold shrink-0">
+              <div className="w-10 h-10 bg-info-muted rounded-full flex items-center justify-center text-info-muted-foreground font-bold shrink-0">
                 2
               </div>
-              <div className="bg-white p-6 rounded-xl border flex-1">
+              <div className="bg-card p-6 rounded-xl border flex-1">
                 <h3 className="font-bold text-lg mb-2">Get API Token</h3>
-                <p className="text-gray-600 mb-3">
+                <p className="text-muted-foreground mb-3">
                   Go to <strong>Account Settings → API tokens</strong> and create a new token.
                   Copy it — this is your Replicate API key.
                 </p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold shrink-0">
+              <div className="w-10 h-10 bg-info-muted rounded-full flex items-center justify-center text-info-muted-foreground font-bold shrink-0">
                 3
               </div>
-              <div className="bg-white p-6 rounded-xl border flex-1">
+              <div className="bg-card p-6 rounded-xl border flex-1">
                 <h3 className="font-bold text-lg mb-2">Add Payment Method</h3>
-                <p className="text-gray-600 mb-3">
+                <p className="text-muted-foreground mb-3">
                   Go to <strong>Billing</strong> and add a card. You&apos;re only charged for what you use.
                   Set a spending limit to control costs.
                 </p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold shrink-0">
+              <div className="w-10 h-10 bg-info-muted rounded-full flex items-center justify-center text-info-muted-foreground font-bold shrink-0">
                 4
               </div>
-              <div className="bg-white p-6 rounded-xl border flex-1">
+              <div className="bg-card p-6 rounded-xl border flex-1">
                 <h3 className="font-bold text-lg mb-2">Paste into VixPic</h3>
-                <p className="text-gray-600 mb-3">
+                <p className="text-muted-foreground mb-3">
                   Open VixPic Settings, paste your API token in the Replicate field. 
                   Now you can access any Replicate model through VixPic.
                 </p>
@@ -281,7 +281,7 @@ export default function ReplicateProviderPage() {
       </section>
 
       {/* Model Zoo */}
-      <section className="py-16 px-4 bg-blue-50">
+      <section className="py-16 px-4 bg-info-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Explore the Model Zoo</h2>
           <div className="grid md:grid-cols-3 gap-4">
@@ -293,14 +293,14 @@ export default function ReplicateProviderPage() {
               { category: "Upscaling", examples: "Real-ESRGAN, GFPGAN, SwinIR" },
               { category: "Experimental", examples: "Flux, PixArt, Playground v2.5" },
             ].map((item, i) => (
-              <div key={i} className="bg-white p-4 rounded-xl border">
+              <div key={i} className="bg-card p-4 rounded-xl border">
                 <h3 className="font-bold mb-2">{item.category}</h3>
-                <p className="text-sm text-gray-600">{item.examples}</p>
+                <p className="text-sm text-muted-foreground">{item.examples}</p>
               </div>
             ))}
           </div>
-          <p className="text-center mt-8 text-gray-600">
-            <a href="https://replicate.com/explore" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+          <p className="text-center mt-8 text-muted-foreground">
+            <a href="https://replicate.com/explore" target="_blank" rel="noopener noreferrer" className="text-info underline">
               Browse all 1000+ models on Replicate →
             </a>
           </p>
@@ -312,59 +312,59 @@ export default function ReplicateProviderPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">When to Use Replicate</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-green-200">
+            <Card className="border-success/20">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-green-700">
+                <CardTitle className="flex items-center gap-2 text-success-muted-foreground">
                   ✅ Replicate Excels At
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>High-volume generation on a budget</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Anime, manga, and stylized art</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Accessing community fine-tunes and LoRAs</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Testing and iteration (cheap experiments)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Specific artistic styles not available elsewhere</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
-            <Card className="border-orange-200">
+            <Card className="border-warning/20">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-orange-700">
+                <CardTitle className="flex items-center gap-2 text-warning-muted-foreground">
                   ⚠️ Consider Alternatives For
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-600 mt-1">•</span>
+                    <span className="text-warning mt-1">•</span>
                     <span>Perfect text rendering (use OpenAI DALL-E 3)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-600 mt-1">•</span>
+                    <span className="text-warning mt-1">•</span>
                     <span>Guaranteed fast response (use FAL for speed-critical)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-600 mt-1">•</span>
+                    <span className="text-warning mt-1">•</span>
                     <span>Enterprise compliance needs (OpenAI has better safety)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-600 mt-1">•</span>
+                    <span className="text-warning mt-1">•</span>
                     <span>Cold start sensitivity (first requests can be slow)</span>
                   </li>
                 </ul>
@@ -375,7 +375,7 @@ export default function ReplicateProviderPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-info to-info text-info-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for 1000+ Models?</h2>
           <p className="text-xl opacity-90 mb-8">
@@ -388,7 +388,7 @@ export default function ReplicateProviderPage() {
               </Button>
             </a>
             <Link href="/providers">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-info-foreground text-info-foreground hover:bg-info-foreground/10">
                 Compare Other Providers
               </Button>
             </Link>

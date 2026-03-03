@@ -70,22 +70,22 @@ export default function FalProviderPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-muted text-brand-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             ⚡ Best for Speed
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-brand bg-clip-text text-transparent">
               FAL
             </span>
             {" "}— Lightning Fast AI
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             The fastest AI image API. Generate images in under a second with Flux Schnell, 
             or get DALL-E quality with Flux Pro. $10 free credits for new accounts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-pink-600">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-brand to-brand">
                 Get FAL API Key →
               </Button>
             </a>
@@ -99,7 +99,7 @@ export default function FalProviderPage() {
       </section>
 
       {/* Why FAL */}
-      <section className="py-16 px-4 bg-purple-50">
+      <section className="py-16 px-4 bg-brand-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Why Choose FAL?</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -135,10 +135,10 @@ export default function FalProviderPage() {
                 desc: "Auto-scaling infrastructure handles any load. Batch 1000 images or 1 — same speed per image."
               },
             ].map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-purple-200">
+              <div key={i} className="bg-card p-6 rounded-xl border border-brand/20">
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <p className="text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -149,11 +149,11 @@ export default function FalProviderPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Speed Comparison</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             FAL optimizes for speed at every level.
           </p>
           <div className="overflow-x-auto mb-8">
-            <table className="w-full bg-white rounded-xl shadow-sm">
+            <table className="w-full bg-card rounded-xl shadow-sm">
               <thead>
                 <tr className="border-b-2">
                   <th className="py-4 px-6 text-left">Model</th>
@@ -165,25 +165,25 @@ export default function FalProviderPage() {
               <tbody>
                 <tr className="border-b">
                   <td className="py-4 px-6 font-medium">Fastest option</td>
-                  <td className="py-4 px-6 text-center text-green-600 font-medium">&lt;1 second</td>
+                  <td className="py-4 px-6 text-center text-success font-medium">&lt;1 second</td>
                   <td className="py-4 px-6 text-center">2-5 seconds</td>
                   <td className="py-4 px-6 text-center">5-15 seconds</td>
                 </tr>
                 <tr className="border-b">
                   <td className="py-4 px-6 font-medium">Premium quality</td>
-                  <td className="py-4 px-6 text-center text-green-600 font-medium">3-6 seconds</td>
+                  <td className="py-4 px-6 text-center text-success font-medium">3-6 seconds</td>
                   <td className="py-4 px-6 text-center">5-10 seconds</td>
                   <td className="py-4 px-6 text-center">5-15 seconds</td>
                 </tr>
                 <tr className="border-b">
                   <td className="py-4 px-6 font-medium">Cold start</td>
-                  <td className="py-4 px-6 text-center text-green-600 font-medium">None</td>
+                  <td className="py-4 px-6 text-center text-success font-medium">None</td>
                   <td className="py-4 px-6 text-center">10-30 seconds</td>
                   <td className="py-4 px-6 text-center">None</td>
                 </tr>
                 <tr>
                   <td className="py-4 px-6 font-medium">Batch scaling</td>
-                  <td className="py-4 px-6 text-center text-green-600 font-medium">Instant</td>
+                  <td className="py-4 px-6 text-center text-success font-medium">Instant</td>
                   <td className="py-4 px-6 text-center">Variable</td>
                   <td className="py-4 px-6 text-center">Rate limited</td>
                 </tr>
@@ -194,10 +194,10 @@ export default function FalProviderPage() {
       </section>
 
       {/* Models */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Available Models</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             FAL focuses on the best models, optimized for speed.
           </p>
           <div className="space-y-6">
@@ -207,32 +207,32 @@ export default function FalProviderPage() {
                   <div className="flex items-center justify-between flex-wrap gap-2">
                     <CardTitle className="text-xl flex items-center gap-2">
                       {model.name}
-                      <span className="bg-purple-100 text-purple-600 px-2 py-1 rounded text-sm font-normal">
+                      <span className="bg-brand-muted text-brand px-2 py-1 rounded text-sm font-normal">
                         {model.type}
                       </span>
                     </CardTitle>
                     <div className="text-right">
-                      <span className="text-green-600 font-semibold block">{model.cost}</span>
-                      <span className="text-sm text-gray-500">{model.speed}</span>
+                      <span className="text-success font-semibold block">{model.cost}</span>
+                      <span className="text-sm text-muted-foreground">{model.speed}</span>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">{model.description}</p>
+                  <p className="text-muted-foreground mb-4">{model.description}</p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <p className="text-xs font-semibold text-gray-500 uppercase mb-2">Strengths</p>
+                      <p className="text-xs font-semibold text-muted-foreground uppercase mb-2">Strengths</p>
                       <ul className="space-y-1">
                         {model.strengths.map((s, j) => (
-                          <li key={j} className="text-sm text-gray-600 flex items-center gap-1">
-                            <span className="text-green-600">✓</span> {s}
+                          <li key={j} className="text-sm text-muted-foreground flex items-center gap-1">
+                            <span className="text-success">✓</span> {s}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-gray-500 uppercase mb-2">Best For</p>
-                      <p className="text-sm text-gray-600">{model.bestFor}</p>
+                      <p className="text-xs font-semibold text-muted-foreground uppercase mb-2">Best For</p>
+                      <p className="text-sm text-muted-foreground">{model.bestFor}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -246,11 +246,11 @@ export default function FalProviderPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Pricing Calculator</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Flux Dev average (~$0.025/image) — varies by model
           </p>
           <div className="overflow-x-auto mb-8">
-            <table className="w-full bg-white rounded-xl shadow-sm">
+            <table className="w-full bg-card rounded-xl shadow-sm">
               <thead>
                 <tr className="border-b-2">
                   <th className="py-4 px-6 text-left">Monthly Usage</th>
@@ -265,7 +265,7 @@ export default function FalProviderPage() {
                     <td className="py-4 px-6 font-medium">{tier.usage}</td>
                     <td className="py-4 px-6 text-center">{tier.monthlySpend}</td>
                     <td className="py-4 px-6 text-center">{tier.perImage}</td>
-                    <td className="py-4 px-6 text-center text-green-600 font-medium">
+                    <td className="py-4 px-6 text-center text-success font-medium">
                       {i === 0 ? "92% cheaper" : i === 1 ? "67% cheaper" : i === 2 ? "Similar" : "More volume"}
                     </td>
                   </tr>
@@ -273,67 +273,67 @@ export default function FalProviderPage() {
               </tbody>
             </table>
           </div>
-          <div className="bg-purple-100 p-6 rounded-xl text-center">
+          <div className="bg-brand-muted p-6 rounded-xl text-center">
             <p className="text-lg">
               <strong>$10 free credits</strong> = 200-500+ images depending on model choice.
               <br/>
-              <span className="text-gray-600">Enough to fully evaluate before spending a cent.</span>
+              <span className="text-muted-foreground">Enough to fully evaluate before spending a cent.</span>
             </p>
           </div>
         </div>
       </section>
 
       {/* Setup Guide */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">5-Minute Setup Guide</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Get your FAL API key and start generating instantly.
           </p>
           <div className="space-y-6">
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-700 font-bold shrink-0">
+              <div className="w-10 h-10 bg-brand-muted rounded-full flex items-center justify-center text-brand-muted-foreground font-bold shrink-0">
                 1
               </div>
-              <div className="bg-white p-6 rounded-xl border flex-1">
+              <div className="bg-card p-6 rounded-xl border flex-1">
                 <h3 className="font-bold text-lg mb-2">Create FAL Account</h3>
-                <p className="text-gray-600 mb-3">
-                  Go to <a href="https://fal.ai" target="_blank" rel="noopener noreferrer" className="text-purple-600 underline">fal.ai</a> and sign up with GitHub or email.
+                <p className="text-muted-foreground mb-3">
+                  Go to <a href="https://fal.ai" target="_blank" rel="noopener noreferrer" className="text-brand underline">fal.ai</a> and sign up with GitHub or email.
                   You&apos;ll get <strong>$10 free credits</strong> immediately.
                 </p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-700 font-bold shrink-0">
+              <div className="w-10 h-10 bg-brand-muted rounded-full flex items-center justify-center text-brand-muted-foreground font-bold shrink-0">
                 2
               </div>
-              <div className="bg-white p-6 rounded-xl border flex-1">
+              <div className="bg-card p-6 rounded-xl border flex-1">
                 <h3 className="font-bold text-lg mb-2">Get API Key</h3>
-                <p className="text-gray-600 mb-3">
-                  Go to <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noopener noreferrer" className="text-purple-600 underline">Dashboard → Keys</a> and create a new key.
+                <p className="text-muted-foreground mb-3">
+                  Go to <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noopener noreferrer" className="text-brand underline">Dashboard → Keys</a> and create a new key.
                   Copy it — this is your FAL API key.
                 </p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-700 font-bold shrink-0">
+              <div className="w-10 h-10 bg-brand-muted rounded-full flex items-center justify-center text-brand-muted-foreground font-bold shrink-0">
                 3
               </div>
-              <div className="bg-white p-6 rounded-xl border flex-1">
+              <div className="bg-card p-6 rounded-xl border flex-1">
                 <h3 className="font-bold text-lg mb-2">Start with Free Credits</h3>
-                <p className="text-gray-600 mb-3">
+                <p className="text-muted-foreground mb-3">
                   Your $10 free credits are already active. No payment method required to start.
                   Add a card later to continue past the free tier.
                 </p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-700 font-bold shrink-0">
+              <div className="w-10 h-10 bg-brand-muted rounded-full flex items-center justify-center text-brand-muted-foreground font-bold shrink-0">
                 4
               </div>
-              <div className="bg-white p-6 rounded-xl border flex-1">
+              <div className="bg-card p-6 rounded-xl border flex-1">
                 <h3 className="font-bold text-lg mb-2">Paste into VixPic</h3>
-                <p className="text-gray-600 mb-3">
+                <p className="text-muted-foreground mb-3">
                   Open VixPic Settings, paste your API key in the FAL field. 
                   Select a FAL model and experience the speed difference.
                 </p>
@@ -351,59 +351,59 @@ export default function FalProviderPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">When to Use FAL</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-green-200">
+            <Card className="border-success/20">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-green-700">
+                <CardTitle className="flex items-center gap-2 text-success-muted-foreground">
                   ✅ FAL Excels At
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Speed-critical applications and real-time generation</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Batch processing large numbers of images</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Interactive tools needing instant feedback</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>High-quality with Flux Pro (DALL-E 3 alternative)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-600 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Prototyping and iteration (sub-second with Schnell)</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
-            <Card className="border-orange-200">
+            <Card className="border-warning/20">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-orange-700">
+                <CardTitle className="flex items-center gap-2 text-warning-muted-foreground">
                   ⚠️ Consider Alternatives For
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-600 mt-1">•</span>
+                    <span className="text-warning mt-1">•</span>
                     <span>Perfect text rendering (use OpenAI DALL-E 3)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-600 mt-1">•</span>
+                    <span className="text-warning mt-1">•</span>
                     <span>Lowest possible cost (Replicate SDXL is cheaper)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-600 mt-1">•</span>
+                    <span className="text-warning mt-1">•</span>
                     <span>Anime-specific fine-tunes (Replicate has more variety)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-600 mt-1">•</span>
+                    <span className="text-warning mt-1">•</span>
                     <span>Maximum model variety (Replicate has 1000+)</span>
                   </li>
                 </ul>
@@ -414,7 +414,7 @@ export default function FalProviderPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand to-brand text-brand-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for Lightning Speed?</h2>
           <p className="text-xl opacity-90 mb-8">
@@ -427,7 +427,7 @@ export default function FalProviderPage() {
               </Button>
             </a>
             <Link href="/providers">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-brand-foreground text-brand-foreground hover:bg-brand-foreground/10">
                 Compare Other Providers
               </Button>
             </Link>

@@ -194,17 +194,17 @@ export default function FreeTools() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Free Tools</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Free Tools</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/">
@@ -220,13 +220,13 @@ export default function FreeTools() {
       {/* Hero */}
       <section className="pt-28 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             ✨ Free • No Login • BYOK
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Free AI Image Tools
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Professional image editing powered by AI. Use your own API keys for maximum privacy 
             and pay-per-use pricing. No subscriptions, no watermarks.
           </p>
@@ -241,21 +241,21 @@ export default function FreeTools() {
               <Card 
                 key={tool.href} 
                 className={`border-2 hover:shadow-lg transition-all ${
-                  tool.isPremium ? "border-purple-200" : "hover:border-purple-300"
+                  tool.isPremium ? "border-brand/20" : "hover:border-brand"
                 }`}
               >
                 <CardHeader>
                   <div className="flex items-start justify-between">
-                    <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-3xl">
+                    <div className="w-14 h-14 bg-brand-muted rounded-xl flex items-center justify-center text-3xl">
                       {tool.icon}
                     </div>
                     {tool.isPremium && (
-                      <span className="bg-purple-100 text-purple-700 text-xs font-medium px-2 py-1 rounded">
+                      <span className="bg-brand-muted text-brand-muted-foreground text-xs font-medium px-2 py-1 rounded">
                         Pro Feature
                       </span>
                     )}
                     {tool.isFree && (
-                      <span className="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">
+                      <span className="bg-success-muted text-success-muted-foreground text-xs font-medium px-2 py-1 rounded">
                         No API Key
                       </span>
                     )}
@@ -266,18 +266,18 @@ export default function FreeTools() {
                 <CardContent>
                   <ul className="space-y-2 mb-4">
                     {tool.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                        <span className="text-green-600">✓</span>
+                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span className="text-success">✓</span>
                         {feature}
                       </li>
                     ))}
                   </ul>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">{tool.cost}</span>
+                    <span className="text-sm text-muted-foreground">{tool.cost}</span>
                     <Link href={tool.href}>
                       <Button 
                         variant={tool.isPremium ? "default" : "outline"}
-                        className={tool.isPremium ? "bg-gradient-to-r from-purple-600 to-blue-600" : ""}
+                        className={tool.isPremium ? "bg-gradient-to-r from-brand to-info" : ""}
                       >
                         {tool.isPremium ? "Open App" : "Use Free"}
                       </Button>
@@ -291,33 +291,33 @@ export default function FreeTools() {
       </section>
 
       {/* Why BYOK */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">Why BYOK (Bring Your Own Key)?</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Unlike other &quot;free&quot; tools that add watermarks, limit usage, or sell your data — 
             our tools use YOUR API keys directly. You get:
           </p>
           <div className="grid md:grid-cols-4 gap-6 text-left">
-            <div className="p-4 bg-white rounded-lg border">
+            <div className="p-4 bg-card rounded-lg border">
               <div className="text-2xl mb-2">💰</div>
               <h3 className="font-semibold mb-1">API Pricing</h3>
-              <p className="text-sm text-gray-600">Pay pennies per image, not dollars.</p>
+              <p className="text-sm text-muted-foreground">Pay pennies per image, not dollars.</p>
             </div>
-            <div className="p-4 bg-white rounded-lg border">
+            <div className="p-4 bg-card rounded-lg border">
               <div className="text-2xl mb-2">🔐</div>
               <h3 className="font-semibold mb-1">100% Private</h3>
-              <p className="text-sm text-gray-600">Images never touch our servers.</p>
+              <p className="text-sm text-muted-foreground">Images never touch our servers.</p>
             </div>
-            <div className="p-4 bg-white rounded-lg border">
+            <div className="p-4 bg-card rounded-lg border">
               <div className="text-2xl mb-2">♾️</div>
               <h3 className="font-semibold mb-1">No Limits</h3>
-              <p className="text-sm text-gray-600">No daily caps or quotas.</p>
+              <p className="text-sm text-muted-foreground">No daily caps or quotas.</p>
             </div>
-            <div className="p-4 bg-white rounded-lg border">
+            <div className="p-4 bg-card rounded-lg border">
               <div className="text-2xl mb-2">🚫</div>
               <h3 className="font-semibold mb-1">No Watermarks</h3>
-              <p className="text-sm text-gray-600">Clean output, every time.</p>
+              <p className="text-sm text-muted-foreground">Clean output, every time.</p>
             </div>
           </div>
         </div>
@@ -329,11 +329,11 @@ export default function FreeTools() {
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Ready for the Full Experience?
           </h2>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-muted-foreground mb-6">
             VixPic Pro adds batch processing, style presets, project management, and more.
           </p>
           <Link href="/#pricing">
-            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+            <Button size="lg" className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90">
               See Pricing
             </Button>
           </Link>
@@ -342,9 +342,9 @@ export default function FreeTools() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 

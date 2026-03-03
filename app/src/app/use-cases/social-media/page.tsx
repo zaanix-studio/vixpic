@@ -123,22 +123,22 @@ export default function SocialMediaPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-muted text-brand-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             📱 Social Media Use Case
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Never Run Out of{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Social Content
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Generate scroll-stopping visuals for Instagram, Twitter, LinkedIn, and TikTok. 
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Generate scroll-stopping visuals for Instagram, Twitter, LinkedIn, and TikTok.
             Create a week's content in 30 minutes, at a fraction of designer costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-brand to-info">
                 Create Social Content
               </Button>
             </Link>
@@ -152,24 +152,24 @@ export default function SocialMediaPage() {
       </section>
 
       {/* Stats Banner */}
-      <section className="py-12 border-y bg-gray-50">
+      <section className="py-12 border-y bg-muted">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">50+</div>
-              <div className="text-sm text-gray-600">Posts Per Hour</div>
+              <div className="text-3xl font-bold text-brand">50+</div>
+              <div className="text-sm text-muted-foreground">Posts Per Hour</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">4</div>
-              <div className="text-sm text-gray-600">Platforms Supported</div>
+              <div className="text-3xl font-bold text-brand">4</div>
+              <div className="text-sm text-muted-foreground">Platforms Supported</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">$0.003</div>
-              <div className="text-sm text-gray-600">Per Image</div>
+              <div className="text-3xl font-bold text-brand">$0.003</div>
+              <div className="text-sm text-muted-foreground">Per Image</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">∞</div>
-              <div className="text-sm text-gray-600">Creative Ideas</div>
+              <div className="text-3xl font-bold text-brand">∞</div>
+              <div className="text-sm text-muted-foreground">Creative Ideas</div>
             </div>
           </div>
         </div>
@@ -179,13 +179,13 @@ export default function SocialMediaPage() {
       <section id="platforms" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Platform-Optimized Sizes</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            VixPic includes presets for every major social platform. 
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            VixPic includes presets for every major social platform.
             One click to set the perfect dimensions.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {platforms.map((platform) => (
-              <Card key={platform.name} className="border-2 hover:border-purple-200 transition-colors">
+              <Card key={platform.name} className="border-2 hover:border-brand/20 transition-colors">
                 <CardHeader>
                   <div className="text-4xl mb-2">{platform.icon}</div>
                   <CardTitle>{platform.name}</CardTitle>
@@ -193,12 +193,12 @@ export default function SocialMediaPage() {
                 <CardContent>
                   <div className="space-y-1 mb-4">
                     {platform.sizes.map((size) => (
-                      <div key={size} className="text-sm text-gray-600 font-mono bg-gray-100 px-2 py-1 rounded">
+                      <div key={size} className="text-sm text-muted-foreground font-mono bg-muted px-2 py-1 rounded">
                         {size}
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm text-gray-500">Best for: {platform.bestFor}</p>
+                  <p className="text-sm text-muted-foreground">Best for: {platform.bestFor}</p>
                 </CardContent>
               </Card>
             ))}
@@ -207,18 +207,18 @@ export default function SocialMediaPage() {
       </section>
 
       {/* Content Types */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Content Ideas</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            From quote graphics to product announcements, 
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            From quote graphics to product announcements,
             AI handles every type of social content.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {contentTypes.map((content) => (
-              <Card key={content.title} className="border-2 hover:border-purple-200 transition-colors">
+              <Card key={content.title} className="border-2 hover:border-brand/20 transition-colors">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-2xl mb-4">
+                  <div className="w-12 h-12 bg-brand-muted rounded-lg flex items-center justify-center text-2xl mb-4">
                     {content.icon}
                   </div>
                   <CardTitle className="text-lg">{content.title}</CardTitle>
@@ -227,7 +227,7 @@ export default function SocialMediaPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-xs text-gray-500 bg-gray-100 p-2 rounded font-mono">
+                  <div className="text-xs text-muted-foreground bg-muted p-2 rounded font-mono">
                     Prompt idea: "{content.prompt}"
                   </div>
                 </CardContent>
@@ -248,10 +248,10 @@ export default function SocialMediaPage() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="text-xl font-semibold mb-2">{workflow.title}</h3>
-                      <p className="text-gray-600">{workflow.description}</p>
+                      <p className="text-muted-foreground">{workflow.description}</p>
                     </div>
                     <div className="text-right flex-shrink-0 ml-4">
-                      <div className="text-purple-600 font-semibold">{workflow.time}</div>
+                      <div className="text-brand font-semibold">{workflow.time}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -262,35 +262,35 @@ export default function SocialMediaPage() {
       </section>
 
       {/* Target Audience */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Perfect For</h2>
           <div className="grid md:grid-cols-4 gap-6">
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">👤</div>
               <h3 className="font-semibold mb-2">Solo Creators</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Compete with agencies. Create professional content without a design team.
               </p>
             </Card>
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">🏢</div>
               <h3 className="font-semibold mb-2">Small Businesses</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Maintain active social presence without hiring a full-time designer.
               </p>
             </Card>
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">📊</div>
               <h3 className="font-semibold mb-2">Social Media Managers</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Handle multiple clients efficiently. Generate content at scale.
               </p>
             </Card>
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">🎯</div>
               <h3 className="font-semibold mb-2">Marketing Teams</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Rapid creative iteration. A/B test visuals without designer bottlenecks.
               </p>
             </Card>
@@ -306,7 +306,7 @@ export default function SocialMediaPage() {
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
                 <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-gray-600">
+                <AccordionContent className="text-muted-foreground">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -316,16 +316,16 @@ export default function SocialMediaPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand to-info text-brand-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Fill Your Content Calendar Today
           </h2>
-          <p className="text-xl text-purple-100 mb-8">
+          <p className="text-xl text-brand-muted mb-8">
             Start with free credits. Create a week's content in your first session.
           </p>
           <Link href="/generate">
-            <Button size="lg" className="text-lg px-8 py-6 bg-white text-purple-600 hover:bg-gray-100">
+            <Button size="lg" className="text-lg px-8 py-6 bg-background text-brand hover:bg-muted">
               Generate Social Content
             </Button>
           </Link>

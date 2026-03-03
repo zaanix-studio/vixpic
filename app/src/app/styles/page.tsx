@@ -100,17 +100,17 @@ export default function StylesPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Master{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               AI Image Styles
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Learn how to create stunning images in any style. From anime to photorealistic, 
             we cover prompting techniques, model recommendations, and real examples.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-brand to-info">
                 Try Free — No Card Required
               </Button>
             </Link>
@@ -119,7 +119,7 @@ export default function StylesPage() {
       </section>
 
       {/* Style Stats */}
-      <section className="py-12 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
+      <section className="py-12 px-4 bg-gradient-to-r from-brand-muted/50 to-info-muted/50">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-4 gap-6 text-center">
             {[
@@ -129,10 +129,10 @@ export default function StylesPage() {
               { value: "Free", label: "Style Guides" },
             ].map((stat, i) => (
               <div key={i}>
-                <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
                   {stat.value}
                 </div>
-                <p className="text-gray-600">{stat.label}</p>
+                <p className="text-muted-foreground">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -143,14 +143,14 @@ export default function StylesPage() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Explore AI Art Styles</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             Click any style to learn prompting techniques, see examples, and discover which AI models work best.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {styles.map((style) => (
               <Card 
                 key={style.slug}
-                className="border-2 hover:border-purple-200 transition-all hover:shadow-lg"
+                className="border-2 hover:border-brand transition-all hover:shadow-lg"
               >
                 <CardHeader className="pb-2">
                   <div className="text-4xl mb-2">{style.icon}</div>
@@ -160,31 +160,31 @@ export default function StylesPage() {
                 <CardContent className="space-y-4">
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-500">Difficulty</span>
+                      <span className="text-muted-foreground">Difficulty</span>
                       <span className={`font-medium ${
-                        style.difficulty === "Beginner" ? "text-green-600" :
-                        style.difficulty === "Intermediate" ? "text-yellow-600" :
-                        "text-red-600"
+                        style.difficulty === "Beginner" ? "text-success" :
+                        style.difficulty === "Intermediate" ? "text-warning" :
+                        "text-destructive"
                       }`}>{style.difficulty}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Popularity</span>
-                      <span className="font-medium text-purple-600">{style.popularity}</span>
+                      <span className="text-muted-foreground">Popularity</span>
+                      <span className="font-medium text-brand">{style.popularity}</span>
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 mb-2">Example prompts:</p>
+                    <p className="text-xs text-muted-foreground mb-2">Example prompts:</p>
                     <div className="flex flex-wrap gap-1">
                       {style.examples.slice(0, 2).map((ex, i) => (
-                        <span key={i} className="text-xs bg-gray-100 px-2 py-1 rounded">{ex}</span>
+                        <span key={i} className="text-xs bg-muted px-2 py-1 rounded">{ex}</span>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 mb-2">Best models:</p>
+                    <p className="text-xs text-muted-foreground mb-2">Best models:</p>
                     <div className="flex flex-wrap gap-1">
                       {style.models.slice(0, 2).map((model, i) => (
-                        <span key={i} className="text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded">{model}</span>
+                        <span key={i} className="text-xs bg-brand-muted/50 text-brand-muted-foreground px-2 py-1 rounded">{model}</span>
                       ))}
                     </div>
                   </div>
@@ -201,7 +201,7 @@ export default function StylesPage() {
       </section>
 
       {/* Style Tips Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Universal Prompting Tips</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -212,25 +212,25 @@ export default function StylesPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3 text-gray-600">
+                <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Be specific about style: "oil painting" beats "art"</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Include lighting: "soft morning light", "dramatic shadows"</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Reference artists: "in the style of Greg Rutkowski"</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Add quality modifiers: "highly detailed", "8k", "masterpiece"</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 mt-1">•</span>
+                    <span className="text-success mt-1">•</span>
                     <span>Specify composition: "portrait", "wide shot", "close-up"</span>
                   </li>
                 </ul>
@@ -243,25 +243,25 @@ export default function StylesPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3 text-gray-600">
+                <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
+                    <span className="text-destructive mt-1">•</span>
                     <span>Vague prompts: "nice picture" → no direction</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
+                    <span className="text-destructive mt-1">•</span>
                     <span>Contradicting styles: "photorealistic cartoon"</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
+                    <span className="text-destructive mt-1">•</span>
                     <span>Too many subjects: focus on one main element</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
+                    <span className="text-destructive mt-1">•</span>
                     <span>Negative language: say what you want, not what you don't</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-red-500 mt-1">•</span>
+                    <span className="text-destructive mt-1">•</span>
                     <span>Extremely long prompts: most models have sweet spots</span>
                   </li>
                 </ul>
@@ -275,13 +275,13 @@ export default function StylesPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Which Model for Which Style?</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Different AI models excel at different styles. Here&apos;s a quick reference.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b-2 border-gray-200">
+                <tr className="border-b-2 border-border">
                   <th className="text-left py-4 px-4 font-semibold">Style</th>
                   <th className="text-center py-4 px-4 font-semibold">DALL-E 3</th>
                   <th className="text-center py-4 px-4 font-semibold">Flux Pro</th>
@@ -297,7 +297,7 @@ export default function StylesPage() {
                   { style: "Oil Painting", dalle: "⭐⭐⭐⭐", flux: "⭐⭐⭐⭐⭐", sdxl: "⭐⭐⭐⭐⭐" },
                   { style: "3D Render", dalle: "⭐⭐⭐⭐⭐", flux: "⭐⭐⭐⭐", sdxl: "⭐⭐⭐" },
                 ].map((row, i) => (
-                  <tr key={i} className="border-b border-gray-100 hover:bg-gray-50">
+                  <tr key={i} className="border-b border-border hover:bg-muted">
                     <td className="py-4 px-4 font-medium">{row.style}</td>
                     <td className="py-4 px-4 text-center text-sm">{row.dalle}</td>
                     <td className="py-4 px-4 text-center text-sm">{row.flux}</td>
@@ -307,30 +307,30 @@ export default function StylesPage() {
               </tbody>
             </table>
           </div>
-          <p className="text-center text-gray-500 text-sm mt-6">
+          <p className="text-center text-muted-foreground text-sm mt-6">
             With VixPic, access all these models with your own API keys. No subscriptions required.
           </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand to-info">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-foreground mb-6">
             Ready to Create in Any Style?
           </h2>
-          <p className="text-xl text-white/80 mb-8">
-            Start generating images for free. When you&apos;re ready for more, add your own API keys 
+          <p className="text-xl text-brand-foreground/80 mb-8">
+            Start generating images for free. When you&apos;re ready for more, add your own API keys
             and unlock unlimited generation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-white text-purple-600 hover:bg-gray-100">
+              <Button size="lg" className="text-lg px-8 py-6 bg-background text-brand hover:bg-muted">
                 Start Free
               </Button>
             </Link>
             <Link href="/#pricing">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-brand-foreground text-brand-foreground hover:bg-brand-foreground/10">
                 View Pricing
               </Button>
             </Link>

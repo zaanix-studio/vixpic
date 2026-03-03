@@ -167,19 +167,19 @@ export default function WatermarkTool() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900">Tools</Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Watermark</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground">Tools</Link>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Watermark</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/tools">
@@ -197,13 +197,13 @@ export default function WatermarkTool() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-4">
               ✨ Free • No Upload • 100% Private
             </div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
               Add Watermark
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Protect your images with custom text watermarks. Choose position, size, color, and opacity. All processing happens in your browser.
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function WatermarkTool() {
                 <CardContent className="p-6">
                   {!image ? (
                     <div
-                      className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-purple-400 transition-colors cursor-pointer"
+                      className="border-2 border-dashed border-input rounded-xl p-12 text-center hover:border-brand transition-colors cursor-pointer"
                       onDrop={handleDrop}
                       onDragOver={(e) => e.preventDefault()}
                       onClick={() => document.getElementById("fileInput")?.click()}
@@ -227,11 +227,11 @@ export default function WatermarkTool() {
                         onChange={handleFileSelect}
                         className="hidden"
                       />
-                      <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center text-3xl">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-brand-muted rounded-full flex items-center justify-center text-3xl">
                         💧
                       </div>
                       <h3 className="font-semibold text-lg mb-2">Drop image here or click to upload</h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Supports PNG, JPG, WebP • Max 10MB • 100% client-side
                       </p>
                     </div>
@@ -243,7 +243,7 @@ export default function WatermarkTool() {
                         </Button>
                       </div>
                       
-                      <div className="relative rounded-lg overflow-hidden bg-gray-100">
+                      <div className="relative rounded-lg overflow-hidden bg-muted">
                         <img
                           src={image}
                           alt="Preview"
@@ -269,7 +269,7 @@ export default function WatermarkTool() {
                     value={watermarkText}
                     onChange={(e) => setWatermarkText(e.target.value)}
                     placeholder="Enter watermark text..."
-                    className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand/60"
                   />
                 </CardContent>
               </Card>
@@ -285,13 +285,13 @@ export default function WatermarkTool() {
                         onClick={() => setPosition(pos.value)}
                         className={`p-2 rounded-lg border-2 transition-all text-center ${
                           position === pos.value
-                            ? "border-purple-500 bg-purple-50"
-                            : "border-gray-200 hover:border-gray-300"
+                            ? "border-brand/60 bg-brand-muted/50"
+                            : "border-border hover:border-brand"
                         }`}
                         title={pos.label}
                       >
                         <div className="text-lg">{pos.icon}</div>
-                        <div className="text-xs text-gray-500 truncate">{pos.label}</div>
+                        <div className="text-xs text-muted-foreground truncate">{pos.label}</div>
                       </button>
                     ))}
                   </div>
@@ -305,7 +305,7 @@ export default function WatermarkTool() {
                   <div className="space-y-4">
                     {/* Font Size */}
                     <div>
-                      <label className="text-sm text-gray-600 mb-1 block">
+                      <label className="text-sm text-muted-foreground mb-1 block">
                         Font Size: {fontSize}px
                       </label>
                       <input
@@ -314,13 +314,13 @@ export default function WatermarkTool() {
                         max="72"
                         value={fontSize}
                         onChange={(e) => setFontSize(Number(e.target.value))}
-                        className="w-full accent-purple-600"
+                        className="w-full accent-brand"
                       />
                     </div>
 
                     {/* Opacity */}
                     <div>
-                      <label className="text-sm text-gray-600 mb-1 block">
+                      <label className="text-sm text-muted-foreground mb-1 block">
                         Opacity: {opacity}%
                       </label>
                       <input
@@ -329,13 +329,13 @@ export default function WatermarkTool() {
                         max="100"
                         value={opacity}
                         onChange={(e) => setOpacity(Number(e.target.value))}
-                        className="w-full accent-purple-600"
+                        className="w-full accent-brand"
                       />
                     </div>
 
                     {/* Color */}
                     <div>
-                      <label className="text-sm text-gray-600 mb-1 block">
+                      <label className="text-sm text-muted-foreground mb-1 block">
                         Color
                       </label>
                       <div className="flex gap-2">
@@ -351,7 +351,7 @@ export default function WatermarkTool() {
                               key={c}
                               onClick={() => setColor(c)}
                               className={`w-8 h-8 rounded border-2 ${
-                                color === c ? "border-purple-500" : "border-gray-200"
+                                color === c ? "border-brand/60" : "border-border"
                               }`}
                               style={{ backgroundColor: c }}
                             />
@@ -370,7 +370,7 @@ export default function WatermarkTool() {
                     <Button
                       onClick={applyWatermark}
                       disabled={!image || isProcessing || !watermarkText.trim()}
-                      className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                      className="w-full bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
                     >
                       {isProcessing ? "Processing..." : "Apply Watermark"}
                     </Button>
@@ -397,10 +397,10 @@ export default function WatermarkTool() {
           </div>
 
           {/* Tips Section */}
-          <Card className="mt-8 border-2 bg-gradient-to-r from-purple-50 to-blue-50">
+          <Card className="mt-8 border-2 bg-gradient-to-r from-brand-muted to-info-muted/50">
             <CardContent className="p-6">
               <h3 className="font-semibold mb-3">💡 Pro Tips</h3>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-muted-foreground">
                 <div>
                   <strong>Protect your work:</strong> Add copyright notices to prevent unauthorized use.
                 </div>
@@ -418,9 +418,9 @@ export default function WatermarkTool() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 

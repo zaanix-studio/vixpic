@@ -152,20 +152,20 @@ export default function ImageUpscaler() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Free Tools</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Free Tools</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/tools/background-remover" className="text-gray-600 hover:text-gray-900 hidden sm:block">
+            <Link href="/tools/background-remover" className="text-muted-foreground hover:text-foreground hidden sm:block">
               Background Remover
             </Link>
             <Link href="/generate">
@@ -178,20 +178,20 @@ export default function ImageUpscaler() {
       {/* Hero */}
       <section className="pt-28 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             ✨ Free Tool • No Login Required
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Upscale Images{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Up to 4x
             </span>
           </h1>
-          <p className="text-lg text-gray-600 mb-2 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-2 max-w-2xl mx-auto">
             AI-powered image upscaling with Real-ESRGAN. Enhance resolution while preserving detail.
             Uses your own Replicate API key.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             ~$0.01 per image via Replicate API
           </p>
         </div>
@@ -204,9 +204,9 @@ export default function ImageUpscaler() {
             <CardContent className="p-6">
               {/* API Key Input */}
               {showApiKeyInput && !apiKey && (
-                <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-                  <h3 className="font-semibold text-amber-800 mb-2">Enter Your Replicate API Key</h3>
-                  <p className="text-sm text-amber-700 mb-3">
+                <div className="mb-6 p-4 bg-warning-muted/50 border border-warning/20 rounded-lg">
+                  <h3 className="font-semibold text-warning-muted-foreground mb-2">Enter Your Replicate API Key</h3>
+                  <p className="text-sm text-warning-muted-foreground mb-3">
                     This tool uses your own API key for privacy. Get one free at{" "}
                     <a 
                       href="https://replicate.com/account/api-tokens" 
@@ -229,7 +229,7 @@ export default function ImageUpscaler() {
                       Save
                     </Button>
                   </div>
-                  <p className="text-xs text-amber-600 mt-2">
+                  <p className="text-xs text-warning mt-2">
                     🔒 Your key stays in your browser. Never sent to our servers.
                   </p>
                 </div>
@@ -241,16 +241,16 @@ export default function ImageUpscaler() {
                   onDrop={handleDrop}
                   onDragOver={(e) => e.preventDefault()}
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center cursor-pointer hover:border-purple-400 hover:bg-purple-50/50 transition-colors"
+                  className="border-2 border-dashed border-input rounded-lg p-12 text-center cursor-pointer hover:border-brand hover:bg-brand-muted/50 transition-colors"
                 >
                   <div className="text-5xl mb-4">🔍</div>
-                  <p className="text-lg font-medium text-gray-700 mb-2">
+                  <p className="text-lg font-medium text-foreground mb-2">
                     Drop your image here
                   </p>
-                  <p className="text-sm text-gray-500 mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     or click to browse
                   </p>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-muted-foreground">
                     PNG, JPG, WEBP up to 10MB
                   </p>
                   <input
@@ -280,7 +280,7 @@ export default function ImageUpscaler() {
                         </SelectContent>
                       </Select>
                       {originalSize && (
-                        <span className="text-sm text-gray-500">
+                        <span className="text-sm text-muted-foreground">
                           {originalSize.w}×{originalSize.h} → {getOutputSize()?.w}×{getOutputSize()?.h}
                         </span>
                       )}
@@ -290,10 +290,10 @@ export default function ImageUpscaler() {
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Original */}
                     <div>
-                      <Label className="text-sm text-gray-500 mb-2 block">
+                      <Label className="text-sm text-muted-foreground mb-2 block">
                         Original {originalSize && `(${originalSize.w}×${originalSize.h})`}
                       </Label>
-                      <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                      <div className="relative aspect-square bg-muted rounded-lg overflow-hidden">
                         <img
                           src={selectedImage}
                           alt="Original"
@@ -304,10 +304,10 @@ export default function ImageUpscaler() {
 
                     {/* Result */}
                     <div>
-                      <Label className="text-sm text-gray-500 mb-2 block">
+                      <Label className="text-sm text-muted-foreground mb-2 block">
                         Upscaled {processedImage && getOutputSize() && `(${getOutputSize()?.w}×${getOutputSize()?.h})`}
                       </Label>
-                      <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                      <div className="relative aspect-square bg-muted rounded-lg overflow-hidden">
                         {processedImage ? (
                           <img
                             src={processedImage}
@@ -315,16 +315,16 @@ export default function ImageUpscaler() {
                             className="w-full h-full object-contain"
                           />
                         ) : processingState === "processing" ? (
-                          <div className="absolute inset-0 flex items-center justify-center bg-white/80">
+                          <div className="absolute inset-0 flex items-center justify-center bg-background/80">
                             <div className="text-center">
-                              <div className="animate-spin w-12 h-12 border-4 border-purple-600 border-t-transparent rounded-full mx-auto mb-3" />
-                              <p className="text-sm text-gray-600">Upscaling image...</p>
-                              <p className="text-xs text-gray-400 mt-1">This may take 30-60 seconds</p>
+                              <div className="animate-spin w-12 h-12 border-4 border-brand border-t-transparent rounded-full mx-auto mb-3" />
+                              <p className="text-sm text-muted-foreground">Upscaling image...</p>
+                              <p className="text-xs text-muted-foreground mt-1">This may take 30-60 seconds</p>
                             </div>
                           </div>
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <p className="text-gray-400">Preview will appear here</p>
+                            <p className="text-muted-foreground">Preview will appear here</p>
                           </div>
                         )}
                       </div>
@@ -333,7 +333,7 @@ export default function ImageUpscaler() {
 
                   {/* Error */}
                   {error && (
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                    <div className="p-4 bg-destructive/5 border border-destructive/20 rounded-lg text-destructive">
                       <p className="font-medium">Error</p>
                       <p className="text-sm">{error}</p>
                     </div>
@@ -344,7 +344,7 @@ export default function ImageUpscaler() {
                     {!processedImage && processingState !== "processing" && (
                       <Button 
                         onClick={processImage}
-                        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                        className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
                         size="lg"
                       >
                         Upscale {scale}x
@@ -353,7 +353,7 @@ export default function ImageUpscaler() {
                     {processedImage && (
                       <Button 
                         onClick={downloadImage}
-                        className="bg-green-600 hover:bg-green-700"
+                        className="bg-success hover:bg-success/90"
                         size="lg"
                       >
                         Download HD Image
@@ -371,29 +371,29 @@ export default function ImageUpscaler() {
       </section>
 
       {/* Use Cases */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Perfect For</h2>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center p-4">
               <div className="text-4xl mb-3">📸</div>
               <h3 className="font-semibold mb-1">Old Photos</h3>
-              <p className="text-sm text-gray-600">Restore low-res memories</p>
+              <p className="text-sm text-muted-foreground">Restore low-res memories</p>
             </div>
             <div className="text-center p-4">
               <div className="text-4xl mb-3">🎨</div>
               <h3 className="font-semibold mb-1">AI Art</h3>
-              <p className="text-sm text-gray-600">Upscale generated images</p>
+              <p className="text-sm text-muted-foreground">Upscale generated images</p>
             </div>
             <div className="text-center p-4">
               <div className="text-4xl mb-3">🖼️</div>
               <h3 className="font-semibold mb-1">Print Ready</h3>
-              <p className="text-sm text-gray-600">Scale for large prints</p>
+              <p className="text-sm text-muted-foreground">Scale for large prints</p>
             </div>
             <div className="text-center p-4">
               <div className="text-4xl mb-3">🛒</div>
               <h3 className="font-semibold mb-1">E-commerce</h3>
-              <p className="text-sm text-gray-600">Enhance product photos</p>
+              <p className="text-sm text-muted-foreground">Enhance product photos</p>
             </div>
           </div>
         </div>
@@ -403,7 +403,7 @@ export default function ImageUpscaler() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">Why Use Your Own API Key?</h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-muted-foreground mb-8">
             Most upscaling tools charge premium prices. Here&apos;s why BYOK is smarter:
           </p>
           <div className="grid md:grid-cols-3 gap-6 text-left">
@@ -411,7 +411,7 @@ export default function ImageUpscaler() {
               <CardContent className="p-6">
                 <div className="text-3xl mb-3">💰</div>
                 <h3 className="font-semibold mb-2">~$0.01/Image</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   vs $0.10-1.00 on premium upscalers. 90%+ savings.
                 </p>
               </CardContent>
@@ -420,7 +420,7 @@ export default function ImageUpscaler() {
               <CardContent className="p-6">
                 <div className="text-3xl mb-3">🔐</div>
                 <h3 className="font-semibold mb-2">Your Privacy</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Images go directly to Replicate. We never store them.
                 </p>
               </CardContent>
@@ -429,7 +429,7 @@ export default function ImageUpscaler() {
               <CardContent className="p-6">
                 <div className="text-3xl mb-3">🚀</div>
                 <h3 className="font-semibold mb-2">No Limits</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Process as many images as you need. No daily caps.
                 </p>
               </CardContent>
@@ -439,8 +439,8 @@ export default function ImageUpscaler() {
       </section>
 
       {/* Upsell */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-brand to-info">
+        <div className="max-w-4xl mx-auto text-center text-brand-foreground">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Need More Image Tools?
           </h2>
@@ -458,9 +458,9 @@ export default function ImageUpscaler() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            Part of <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            Part of <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
             <Link href="/tools/upscaler" className="hover:underline">Image Upscaler</Link>
           </p>

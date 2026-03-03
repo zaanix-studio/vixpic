@@ -90,12 +90,12 @@ export default function GalleryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-muted">
       {/* Header */}
-      <header className="bg-white border-b sticky top-0 z-50">
+      <header className="bg-background border-b sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+            <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
             <span className="font-bold text-xl">VixPic</span>
           </Link>
           <div className="flex items-center gap-4">
@@ -118,14 +118,14 @@ export default function GalleryPage() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <div>
             <h1 className="text-2xl font-bold">Gallery</h1>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               {history.length} images • ${totalCost.toFixed(2)} total cost
             </p>
           </div>
           
           {history.length > 0 && (
             <div className="flex items-center gap-2">
-              <Badge variant="outline" className="text-green-600 border-green-200">
+              <Badge variant="outline" className="text-success border-success/20">
                 Saved ~${(history.length * 0.03 - totalCost).toFixed(2)} vs subscriptions
               </Badge>
             </div>
@@ -137,11 +137,11 @@ export default function GalleryPage() {
           <div className="text-center py-20">
             <div className="text-6xl mb-4">🖼️</div>
             <h2 className="text-xl font-semibold mb-2">No images yet</h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               Start generating to build your gallery
             </p>
             <Link href="/generate">
-              <Button className="bg-gradient-to-r from-purple-600 to-blue-600">
+              <Button className="bg-gradient-to-r from-brand to-info">
                 ✨ Generate Your First Image
               </Button>
             </Link>
@@ -185,7 +185,7 @@ export default function GalleryPage() {
 
             {/* Results count */}
             {search || providerFilter !== 'all' ? (
-              <p className="text-sm text-gray-500 mb-4">
+              <p className="text-sm text-muted-foreground mb-4">
                 Showing {filteredImages.length} of {history.length} images
               </p>
             ) : null}
@@ -208,7 +208,7 @@ export default function GalleryPage() {
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2">
                       <Badge 
                         variant="secondary" 
-                        className="text-xs bg-white/90"
+                        className="text-xs bg-background/90"
                       >
                         {getProviderName(image.provider)}
                       </Badge>
@@ -220,7 +220,7 @@ export default function GalleryPage() {
 
             {filteredImages.length === 0 && (search || providerFilter !== 'all') && (
               <div className="text-center py-12">
-                <p className="text-gray-500">No images match your filters</p>
+                <p className="text-muted-foreground">No images match your filters</p>
                 <Button 
                   variant="outline" 
                   size="sm" 
@@ -243,7 +243,7 @@ export default function GalleryPage() {
               <DialogHeader>
                 <DialogTitle className="flex items-center gap-2">
                   <Badge>{getProviderName(selectedImage.provider)}</Badge>
-                  <span className="text-sm font-normal text-gray-500">
+                  <span className="text-sm font-normal text-muted-foreground">
                     {formatDate(selectedImage.createdAt)}
                   </span>
                 </DialogTitle>
@@ -251,7 +251,7 @@ export default function GalleryPage() {
               
               <div className="space-y-4">
                 {/* Image */}
-                <div className="relative rounded-lg overflow-hidden bg-gray-100">
+                <div className="relative rounded-lg overflow-hidden bg-muted">
                   <img
                     src={selectedImage.url}
                     alt={selectedImage.prompt}
@@ -262,21 +262,21 @@ export default function GalleryPage() {
                 {/* Details */}
                 <div className="space-y-3">
                   <div>
-                    <label className="text-sm font-medium text-gray-500">Prompt</label>
-                    <p className="mt-1 text-gray-900">{selectedImage.prompt}</p>
+                    <label className="text-sm font-medium text-muted-foreground">Prompt</label>
+                    <p className="mt-1 text-foreground">{selectedImage.prompt}</p>
                   </div>
                   
                   <div className="flex flex-wrap gap-4 text-sm">
                     <div>
-                      <span className="text-gray-500">Model:</span>{' '}
+                      <span className="text-muted-foreground">Model:</span>{' '}
                       <span className="font-medium">{selectedImage.model}</span>
                     </div>
                     <div>
-                      <span className="text-gray-500">Size:</span>{' '}
+                      <span className="text-muted-foreground">Size:</span>{' '}
                       <span className="font-medium">{selectedImage.width}×{selectedImage.height}</span>
                     </div>
                     <div>
-                      <span className="text-gray-500">Cost:</span>{' '}
+                      <span className="text-muted-foreground">Cost:</span>{' '}
                       <span className="font-medium">${selectedImage.cost.toFixed(4)}</span>
                     </div>
                   </div>
@@ -304,7 +304,7 @@ export default function GalleryPage() {
                   </Link>
                   <Button
                     variant="outline"
-                    className="text-red-600 hover:text-red-700"
+                    className="text-destructive hover:text-destructive/90"
                     onClick={() => {
                       if (confirm('Delete this image from history?')) {
                         removeImage(selectedImage.id);

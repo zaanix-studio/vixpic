@@ -125,10 +125,10 @@ export default function OilPaintingStylePage() {
     <>
       {/* Breadcrumb */}
       <div className="pt-24 px-4 max-w-6xl mx-auto">
-        <div className="flex items-center gap-2 text-sm text-gray-500">
-          <Link href="/styles" className="hover:text-purple-600">Styles</Link>
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Link href="/styles" className="hover:text-brand">Styles</Link>
           <span>/</span>
-          <span className="text-gray-900">Oil Painting</span>
+          <span className="text-foreground">Oil Painting</span>
         </div>
       </div>
 
@@ -139,27 +139,27 @@ export default function OilPaintingStylePage() {
             <span className="text-6xl">🖼️</span>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-warning to-warning bg-clip-text text-transparent">
                   Oil Painting
                 </span>{" "}
                 Style Guide
               </h1>
-              <p className="text-gray-600 mt-2">Classical fine art aesthetics with AI</p>
+              <p className="text-muted-foreground mt-2">Classical fine art aesthetics with AI</p>
             </div>
           </div>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             Oil painting is one of the most timeless art forms, spanning from Renaissance 
             masters to modern expressionists. AI models can now recreate these classical 
             techniques with stunning accuracy.
           </p>
           <div className="flex flex-wrap gap-3">
-            <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-success-muted text-success-muted-foreground rounded-full text-sm font-medium">
               ✓ Beginner Friendly
             </span>
-            <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-brand-muted text-brand-muted-foreground rounded-full text-sm font-medium">
               High Popularity
             </span>
-            <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-warning-muted text-warning-muted-foreground rounded-full text-sm font-medium">
               Timeless Appeal
             </span>
           </div>
@@ -167,29 +167,29 @@ export default function OilPaintingStylePage() {
       </section>
 
       {/* Sub-Styles */}
-      <section className="py-16 px-4 bg-gradient-to-r from-amber-50 to-orange-50">
+      <section className="py-16 px-4 bg-gradient-to-r from-warning-muted/50 to-warning-muted/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Oil Painting Movements</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             Different eras and movements have distinct characteristics. Choose based on the mood you want.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {paintingSubStyles.map((style, i) => (
-              <Card key={i} className="border-2 hover:border-amber-200 transition-all">
+              <Card key={i} className="border-2 hover:border-warning transition-all">
                 <CardHeader>
                   <CardTitle className="text-lg">{style.name}</CardTitle>
                   <CardDescription>{style.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <p className="text-xs text-gray-500 mb-2 font-medium">Example prompts:</p>
+                    <p className="text-xs text-muted-foreground mb-2 font-medium">Example prompts:</p>
                     {style.prompts.map((prompt, j) => (
-                      <p key={j} className="text-sm bg-gray-50 p-2 rounded mb-2 font-mono text-gray-700">
+                      <p key={j} className="text-sm bg-muted p-2 rounded mb-2 font-mono text-foreground">
                         {prompt}
                       </p>
                     ))}
                   </div>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-muted-foreground">
                     <span className="font-medium">Artists:</span> {style.examples}
                   </p>
                 </CardContent>
@@ -203,7 +203,7 @@ export default function OilPaintingStylePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Best Models for Oil Painting</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Most modern AI models handle oil painting well. Here are the top choices.
           </p>
           <div className="space-y-4">
@@ -214,39 +214,39 @@ export default function OilPaintingStylePage() {
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="font-bold text-lg">{model.name}</h3>
-                        <span className="px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">
+                        <span className="px-2 py-1 bg-warning-muted text-warning-muted-foreground text-xs rounded-full">
                           {model.recommendation}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-500 mb-2">via {model.provider}</p>
+                      <p className="text-sm text-muted-foreground mb-2">via {model.provider}</p>
                       <div className="flex flex-wrap gap-2">
                         {model.strengths.map((s, j) => (
-                          <span key={j} className="text-xs bg-gray-100 px-2 py-1 rounded">
+                          <span key={j} className="text-xs bg-muted px-2 py-1 rounded">
                             {s}
                           </span>
                         ))}
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-amber-600">{model.cost}</p>
-                      <p className="text-xs text-gray-500">per image</p>
+                      <p className="text-2xl font-bold text-warning">{model.cost}</p>
+                      <p className="text-xs text-muted-foreground">per image</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-          <p className="text-center text-gray-500 text-sm mt-8">
+          <p className="text-center text-muted-foreground text-sm mt-8">
             All models accessible via VixPic with your own API keys. No subscriptions required.
           </p>
         </div>
       </section>
 
       {/* Example Prompts */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Copy-Paste Prompts</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Ready-to-use prompts for different oil painting styles.
           </p>
           <div className="space-y-6">
@@ -257,7 +257,7 @@ export default function OilPaintingStylePage() {
                     <CardTitle className="text-lg">{example.title}</CardTitle>
                     <div className="flex gap-2">
                       {example.tags.map((tag, j) => (
-                        <span key={j} className="text-xs bg-amber-50 text-amber-700 px-2 py-1 rounded">
+                        <span key={j} className="text-xs bg-warning-muted/50 text-warning-muted-foreground px-2 py-1 rounded">
                           {tag}
                         </span>
                       ))}
@@ -265,7 +265,7 @@ export default function OilPaintingStylePage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                  <div className="bg-inverted text-inverted-muted p-4 rounded-lg font-mono text-sm overflow-x-auto">
                     {example.prompt}
                   </div>
                   <div className="mt-3 flex justify-end">
@@ -285,13 +285,13 @@ export default function OilPaintingStylePage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Pro Tips for Oil Painting Style</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="border-2 border-green-200 bg-green-50">
+            <Card className="border-2 border-success/20 bg-success-muted/50">
               <CardHeader>
-                <CardTitle className="text-green-800 flex items-center gap-2">
+                <CardTitle className="text-success-muted-foreground flex items-center gap-2">
                   <span>💡</span> Quality Boosters
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-green-800">
+              <CardContent className="text-success-muted-foreground">
                 <ul className="space-y-2 text-sm">
                   <li>• Add &quot;oil on canvas&quot; for authentic texture</li>
                   <li>• Include artist names: &quot;in the style of Rembrandt&quot;</li>
@@ -301,13 +301,13 @@ export default function OilPaintingStylePage() {
                 </ul>
               </CardContent>
             </Card>
-            <Card className="border-2 border-red-200 bg-red-50">
+            <Card className="border-2 border-destructive/20 bg-destructive/5">
               <CardHeader>
-                <CardTitle className="text-red-800 flex items-center gap-2">
+                <CardTitle className="text-destructive flex items-center gap-2">
                   <span>⚠️</span> Common Mistakes
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-red-800">
+              <CardContent className="text-destructive">
                 <ul className="space-y-2 text-sm">
                   <li>• Mixing incompatible eras (Renaissance + Impressionist)</li>
                   <li>• Too many artist references → confused output</li>
@@ -318,13 +318,13 @@ export default function OilPaintingStylePage() {
               </CardContent>
             </Card>
           </div>
-          <Card className="mt-6 border-2 border-amber-200 bg-amber-50">
+          <Card className="mt-6 border-2 border-warning/20 bg-warning-muted/50">
             <CardHeader>
-              <CardTitle className="text-amber-800 flex items-center gap-2">
+              <CardTitle className="text-warning-muted-foreground flex items-center gap-2">
                 <span>🎨</span> Key Artistic Terms to Know
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-amber-800">
+            <CardContent className="text-warning-muted-foreground">
               <div className="grid md:grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="font-medium mb-2">Techniques:</p>
@@ -351,23 +351,23 @@ export default function OilPaintingStylePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-amber-500 to-orange-600">
+      <section className="py-20 px-4 bg-gradient-to-r from-warning to-warning">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-warning-foreground mb-6">
             Ready to Create Masterpieces?
           </h2>
-          <p className="text-xl text-white/80 mb-8">
-            Start generating oil painting style art for free. Add your API keys for unlimited 
+          <p className="text-xl text-warning-foreground/80 mb-8">
+            Start generating oil painting style art for free. Add your API keys for unlimited
             generation with the best models.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-white text-amber-600 hover:bg-gray-100">
+              <Button size="lg" className="text-lg px-8 py-6 bg-background text-warning hover:bg-muted">
                 Try Free Now
               </Button>
             </Link>
             <Link href="/styles">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-warning-foreground text-warning-foreground hover:bg-warning-foreground/10">
                 Explore More Styles
               </Button>
             </Link>

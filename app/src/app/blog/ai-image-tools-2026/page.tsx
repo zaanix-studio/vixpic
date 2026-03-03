@@ -10,18 +10,18 @@ export default function AIImageTools2026Post() {
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm font-medium px-3 py-1 bg-orange-100 text-orange-700 rounded-full">
+            <span className="text-sm font-medium px-3 py-1 bg-warning-muted text-warning-muted-foreground rounded-full">
               News
             </span>
-            <span className="text-sm text-gray-500">6 min read</span>
+            <span className="text-sm text-muted-foreground">6 min read</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             The State of AI Image Generation in 2026
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-xl text-muted-foreground mb-6">
             How the landscape has changed, what's working, and where things are headed for creators and businesses.
           </p>
-          <div className="flex items-center gap-4 text-sm text-gray-500 border-t border-b py-4">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground border-t border-b py-4">
             <span>March 1, 2026</span>
             <span>•</span>
             <span>By VixPic Team</span>
@@ -77,23 +77,23 @@ export default function AIImageTools2026Post() {
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Photorealism</span>
-                  <span className="text-purple-600">Flux Pro</span>
+                  <span className="text-brand">Flux Pro</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Artistic / Stylized</span>
-                  <span className="text-purple-600">Midjourney v7</span>
+                  <span className="text-brand">Midjourney v7</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Text in Images</span>
-                  <span className="text-purple-600">Ideogram / DALL-E 3</span>
+                  <span className="text-brand">Ideogram / DALL-E 3</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Speed / Iteration</span>
-                  <span className="text-purple-600">SDXL Turbo / LCM</span>
+                  <span className="text-brand">SDXL Turbo / LCM</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Commercial Safety</span>
-                  <span className="text-purple-600">Adobe Firefly</span>
+                  <span className="text-brand">Adobe Firefly</span>
                 </div>
               </div>
             </CardContent>
@@ -208,28 +208,28 @@ export default function AIImageTools2026Post() {
                 <span className="text-lg">📉</span>
                 <div>
                   <p className="font-semibold">More subscription services will shut down</p>
-                  <p className="text-sm text-gray-600">The middle-layer wrappers can't compete on price or features</p>
+                  <p className="text-sm text-muted-foreground">The middle-layer wrappers can't compete on price or features</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-lg">🎬</span>
                 <div>
                   <p className="font-semibold">Video generation will have its "moment"</p>
-                  <p className="text-sm text-gray-600">But adoption will be slower than images — higher costs, more complexity</p>
+                  <p className="text-sm text-muted-foreground">But adoption will be slower than images — higher costs, more complexity</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-lg">🏢</span>
                 <div>
                   <p className="font-semibold">Enterprise will dominate revenue</p>
-                  <p className="text-sm text-gray-600">Individual creators are cost-conscious; enterprises are value-focused</p>
+                  <p className="text-sm text-muted-foreground">Individual creators are cost-conscious; enterprises are value-focused</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-lg">🔑</span>
                 <div>
                   <p className="font-semibold">BYOK becomes mainstream</p>
-                  <p className="text-sm text-gray-600">The "bring your own key" model will move from niche to normal</p>
+                  <p className="text-sm text-muted-foreground">The "bring your own key" model will move from niche to normal</p>
                 </div>
               </div>
             </CardContent>
@@ -258,14 +258,14 @@ export default function AIImageTools2026Post() {
             </li>
           </ol>
 
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8 my-12">
+          <div className="bg-gradient-to-r from-brand-muted/50 to-info-muted/50 rounded-xl p-8 my-12">
             <h3 className="text-xl font-bold mb-3">Try the BYOK Approach</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               VixPic gives you one interface for DALL-E, Stable Diffusion, Flux, and more. 
               Pay only for what you generate. No subscriptions, no expiring credits.
             </p>
             <Link href="/generate">
-              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+              <Button className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90">
                 Start Free →
               </Button>
             </Link>
@@ -284,10 +284,10 @@ export default function AIImageTools2026Post() {
             Practical, cost-conscious, workflow-focused. That's where we're headed.
           </p>
 
-          <p className="text-gray-500 mt-8 pt-8 border-t">
+          <p className="text-muted-foreground mt-8 pt-8 border-t">
             <em>
               Want to understand the specific models? Read our{" "}
-              <Link href="/blog/dalle-vs-stable-diffusion-vs-flux" className="text-purple-600 hover:underline">
+              <Link href="/blog/dalle-vs-stable-diffusion-vs-flux" className="text-brand hover:underline">
                 DALL-E vs Stable Diffusion vs Flux comparison
               </Link>.
             </em>
@@ -296,25 +296,25 @@ export default function AIImageTools2026Post() {
       </article>
 
       {/* Related Posts */}
-      <section className="border-t py-12 px-4 bg-gray-50">
+      <section className="border-t py-12 px-4 bg-muted">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Link href="/blog/byok-explained">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Guide</span>
+                  <span className="text-xs font-medium text-brand">Guide</span>
                   <h3 className="font-semibold mt-2">BYOK Explained: Why It Changes Everything</h3>
-                  <p className="text-sm text-gray-500 mt-2">How BYOK saves money and gives you control.</p>
+                  <p className="text-sm text-muted-foreground mt-2">How BYOK saves money and gives you control.</p>
                 </CardContent>
               </Card>
             </Link>
             <Link href="/blog/save-money-ai-images">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Guide</span>
+                  <span className="text-xs font-medium text-brand">Guide</span>
                   <h3 className="font-semibold mt-2">How to Save 80% on AI Image Generation</h3>
-                  <p className="text-sm text-gray-500 mt-2">Detailed cost breakdown with real numbers.</p>
+                  <p className="text-sm text-muted-foreground mt-2">Detailed cost breakdown with real numbers.</p>
                 </CardContent>
               </Card>
             </Link>

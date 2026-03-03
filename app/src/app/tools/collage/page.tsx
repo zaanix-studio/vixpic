@@ -187,22 +187,22 @@ export default function CollageMaker() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       <canvas ref={canvasRef} className="hidden" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Free Tools</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Free Tools</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground hidden sm:block">
               All Tools
             </Link>
             <Link href="/generate">
@@ -215,21 +215,21 @@ export default function CollageMaker() {
       {/* Hero */}
       <section className="pt-28 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             ✨ 100% Free • No API Key Needed • Client-Side
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Create Photo{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Collages
             </span>{" "}
             Online
           </h1>
-          <p className="text-lg text-gray-600 mb-2 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-2 max-w-2xl mx-auto">
             Combine multiple photos into beautiful grid layouts. Perfect for social media,
             memories, and photo projects.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             Free forever • Works offline • No watermarks
           </p>
         </div>
@@ -260,12 +260,12 @@ export default function CollageMaker() {
                           }}
                           className={`p-3 rounded-lg border-2 transition-colors ${
                             layout === l.value
-                              ? "border-purple-600 bg-purple-50"
-                              : "border-gray-200 hover:border-gray-300"
+                              ? "border-brand bg-brand-muted/50"
+                              : "border-border hover:border-brand"
                           }`}
                         >
                           <div className="text-sm font-medium">{l.label}</div>
-                          <div className="text-xs text-gray-500">{l.cols * l.rows} photos</div>
+                          <div className="text-xs text-muted-foreground">{l.cols * l.rows} photos</div>
                         </button>
                       ))}
                     </div>
@@ -278,16 +278,16 @@ export default function CollageMaker() {
                     onClick={() => images.length < maxImages && fileInputRef.current?.click()}
                     className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
                       images.length < maxImages 
-                        ? "border-gray-300 cursor-pointer hover:border-purple-400 hover:bg-purple-50/50"
-                        : "border-gray-200 bg-gray-50"
+                        ? "border-input cursor-pointer hover:border-brand hover:bg-brand-muted/50"
+                        : "border-border bg-muted"
                     }`}
                   >
-                    <p className="text-sm font-medium text-gray-700">
+                    <p className="text-sm font-medium text-foreground">
                       {images.length < maxImages 
                         ? `Add photos (${images.length}/${maxImages})`
                         : `All ${maxImages} slots filled`}
                     </p>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-muted-foreground mt-1">
                       Drop images or click to browse
                     </p>
                     <input
@@ -314,7 +314,7 @@ export default function CollageMaker() {
                           </div>
                           <button
                             onClick={() => removeImage(img.id)}
-                            className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white rounded-full text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+                            className="absolute -top-2 -right-2 w-5 h-5 bg-destructive/50 text-inverted-foreground rounded-full text-xs opacity-0 group-hover:opacity-100 transition-opacity"
                           >
                             ✕
                           </button>
@@ -324,10 +324,10 @@ export default function CollageMaker() {
                   )}
 
                   {/* Gap */}
-                  <div className="p-4 bg-gray-50 rounded-lg">
+                  <div className="p-4 bg-muted rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <Label className="text-sm font-medium">Spacing</Label>
-                      <span className="text-sm font-mono text-purple-600">{gap}px</span>
+                      <span className="text-sm font-mono text-brand">{gap}px</span>
                     </div>
                     <Slider
                       value={[gap]}
@@ -340,10 +340,10 @@ export default function CollageMaker() {
                   </div>
 
                   {/* Border Radius */}
-                  <div className="p-4 bg-gray-50 rounded-lg">
+                  <div className="p-4 bg-muted rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <Label className="text-sm font-medium">Corner Radius</Label>
-                      <span className="text-sm font-mono text-purple-600">{borderRadius}px</span>
+                      <span className="text-sm font-mono text-brand">{borderRadius}px</span>
                     </div>
                     <Slider
                       value={[borderRadius]}
@@ -356,7 +356,7 @@ export default function CollageMaker() {
                   </div>
 
                   {/* Background Color */}
-                  <div className="p-4 bg-gray-50 rounded-lg">
+                  <div className="p-4 bg-muted rounded-lg">
                     <Label className="text-sm font-medium mb-2 block">Background Color</Label>
                     <div className="flex gap-2">
                       <input
@@ -371,7 +371,7 @@ export default function CollageMaker() {
                             key={color}
                             onClick={() => setBackgroundColor(color)}
                             className={`w-8 h-8 rounded border-2 transition-colors ${
-                              backgroundColor === color ? "border-purple-600" : "border-gray-200"
+                              backgroundColor === color ? "border-brand" : "border-border"
                             }`}
                             style={{ backgroundColor: color }}
                           />
@@ -385,7 +385,7 @@ export default function CollageMaker() {
                     <Button 
                       onClick={downloadCollage}
                       disabled={processing || images.length === 0}
-                      className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 flex-1"
+                      className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90 flex-1"
                       size="lg"
                     >
                       {processing ? "Creating..." : "Download Collage"}
@@ -397,7 +397,7 @@ export default function CollageMaker() {
                 </div>
 
                 {/* Right: Preview */}
-                <div className="bg-gray-100 rounded-lg p-4 flex items-center justify-center min-h-[400px]">
+                <div className="bg-muted rounded-lg p-4 flex items-center justify-center min-h-[400px]">
                   <canvas
                     ref={previewCanvasRef}
                     className="max-w-full max-h-[500px] rounded shadow-lg"
@@ -410,7 +410,7 @@ export default function CollageMaker() {
       </section>
 
       {/* Features */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Collage Features</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -418,7 +418,7 @@ export default function CollageMaker() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📐</div>
                 <h3 className="font-semibold mb-2">8 Layouts</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   From 2×1 to 3×3 grids. Perfect for any number of photos.
                 </p>
               </CardContent>
@@ -427,7 +427,7 @@ export default function CollageMaker() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">🎨</div>
                 <h3 className="font-semibold mb-2">Customizable</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Adjust spacing, corners, and background color to match your style.
                 </p>
               </CardContent>
@@ -436,7 +436,7 @@ export default function CollageMaker() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📱</div>
                 <h3 className="font-semibold mb-2">Social Ready</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   High-resolution export perfect for Instagram, Facebook, and more.
                 </p>
               </CardContent>
@@ -456,10 +456,10 @@ export default function CollageMaker() {
               { icon: "🎉", title: "Events", desc: "Party highlights" },
               { icon: "💼", title: "Portfolio", desc: "Project showcases" },
             ].map((item) => (
-              <div key={item.title} className="p-4 bg-gray-50 rounded-lg">
+              <div key={item.title} className="p-4 bg-muted rounded-lg">
                 <div className="text-3xl mb-2">{item.icon}</div>
                 <h3 className="font-medium">{item.title}</h3>
-                <p className="text-sm text-gray-500">{item.desc}</p>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -467,8 +467,8 @@ export default function CollageMaker() {
       </section>
 
       {/* Upsell */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-brand to-info">
+        <div className="max-w-4xl mx-auto text-center text-brand-foreground">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Need More Image Tools?
           </h2>
@@ -486,9 +486,9 @@ export default function CollageMaker() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            Part of <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            Part of <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/collage" className="hover:underline">Collage</Link> •

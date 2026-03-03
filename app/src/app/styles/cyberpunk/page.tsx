@@ -143,10 +143,10 @@ export default function CyberpunkStylePage() {
     <>
       {/* Breadcrumb */}
       <div className="pt-24 px-4 max-w-6xl mx-auto">
-        <div className="flex items-center gap-2 text-sm text-gray-500">
-          <Link href="/styles" className="hover:text-cyan-400">Styles</Link>
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Link href="/styles" className="hover:text-info">Styles</Link>
           <span>/</span>
-          <span className="text-cyan-400">Cyberpunk</span>
+          <span className="text-info">Cyberpunk</span>
         </div>
       </div>
 
@@ -157,27 +157,27 @@ export default function CyberpunkStylePage() {
             <span className="text-6xl">🌆</span>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-info to-brand bg-clip-text text-transparent">
                   Cyberpunk
                 </span>{" "}
-                <span className="text-white">Style Guide</span>
+                <span className="text-inverted-foreground">Style Guide</span>
               </h1>
-              <p className="text-gray-400 mt-2">Neon-lit dystopian futures with AI</p>
+              <p className="text-inverted-muted mt-2">Neon-lit dystopian futures with AI</p>
             </div>
           </div>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-inverted-muted mb-8">
             Cyberpunk is one of the most visually striking AI art styles — neon lights, 
             rain-slicked streets, and high-tech low-life aesthetics. From Blade Runner to 
             Ghost in the Shell, master the prompts that bring dystopian futures to life.
           </p>
           <div className="flex flex-wrap gap-3">
-            <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-success/20 text-success rounded-full text-sm font-medium">
               ✓ Beginner Friendly
             </span>
-            <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-brand/20 text-brand rounded-full text-sm font-medium">
               High Popularity
             </span>
-            <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-info/20 text-info rounded-full text-sm font-medium">
               Iconic Aesthetic
             </span>
           </div>
@@ -185,14 +185,14 @@ export default function CyberpunkStylePage() {
       </section>
 
       {/* Color Palettes */}
-      <section className="py-12 px-4 bg-gray-900/50">
+      <section className="py-12 px-4 bg-inverted/50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-white text-center mb-8">Signature Color Palettes</h2>
+          <h2 className="text-2xl font-bold text-inverted-foreground text-center mb-8">Signature Color Palettes</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {colorPalettes.map((palette, i) => (
-              <Card key={i} className="bg-gray-800 border-gray-700">
+              <Card key={i} className="bg-foreground/80 border-border/10">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-white text-lg">{palette.name}</CardTitle>
+                  <CardTitle className="text-inverted-foreground text-lg">{palette.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex gap-1 mb-3">
@@ -205,7 +205,7 @@ export default function CyberpunkStylePage() {
                       />
                     ))}
                   </div>
-                  <p className="text-gray-400 text-sm">{palette.description}</p>
+                  <p className="text-inverted-muted text-sm">{palette.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -216,27 +216,27 @@ export default function CyberpunkStylePage() {
       {/* Sub-Styles */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-white mb-4">Cyberpunk Sub-Styles</h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-inverted-foreground mb-4">Cyberpunk Sub-Styles</h2>
+          <p className="text-inverted-muted text-center mb-12 max-w-2xl mx-auto">
             Cyberpunk spans many aesthetics. Here are the most popular with prompting tips.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cyberpunkSubStyles.map((style, i) => (
-              <Card key={i} className="bg-gray-800 border-gray-700 hover:border-cyan-500/50 transition-all">
+              <Card key={i} className="bg-foreground/80 border-border/10 hover:border-info/50 transition-all">
                 <CardHeader>
-                  <CardTitle className="text-lg text-white">{style.name}</CardTitle>
-                  <CardDescription className="text-gray-400">{style.description}</CardDescription>
+                  <CardTitle className="text-lg text-inverted-foreground">{style.name}</CardTitle>
+                  <CardDescription className="text-inverted-muted">{style.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <p className="text-xs text-gray-500 mb-2 font-medium">Example prompts:</p>
+                    <p className="text-xs text-muted-foreground mb-2 font-medium">Example prompts:</p>
                     {style.prompts.map((prompt, j) => (
-                      <p key={j} className="text-sm bg-gray-900 p-2 rounded mb-2 font-mono text-gray-300">
+                      <p key={j} className="text-sm bg-inverted p-2 rounded mb-2 font-mono text-inverted-muted">
                         {prompt}
                       </p>
                     ))}
                   </div>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-muted-foreground">
                     <span className="font-medium">Reference:</span> {style.examples}
                   </p>
                 </CardContent>
@@ -247,36 +247,36 @@ export default function CyberpunkStylePage() {
       </section>
 
       {/* Best Models */}
-      <section className="py-16 px-4 bg-gray-900/50">
+      <section className="py-16 px-4 bg-inverted/50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-white mb-4">Best Models for Cyberpunk</h2>
-          <p className="text-gray-400 text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-inverted-foreground mb-4">Best Models for Cyberpunk</h2>
+          <p className="text-inverted-muted text-center mb-12">
             These models excel at cyberpunk&apos;s distinctive neon lighting and atmosphere.
           </p>
           <div className="space-y-4">
             {bestModels.map((model, i) => (
-              <Card key={i} className="bg-gray-800 border-gray-700">
+              <Card key={i} className="bg-foreground/80 border-border/10">
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="font-bold text-lg text-white">{model.name}</h3>
-                        <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full">
+                        <h3 className="font-bold text-lg text-inverted-foreground">{model.name}</h3>
+                        <span className="px-2 py-1 bg-info/20 text-info text-xs rounded-full">
                           {model.recommendation}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-500 mb-2">via {model.provider}</p>
+                      <p className="text-sm text-muted-foreground mb-2">via {model.provider}</p>
                       <div className="flex flex-wrap gap-2">
                         {model.strengths.map((s, j) => (
-                          <span key={j} className="text-xs bg-gray-700 text-gray-300 px-2 py-1 rounded">
+                          <span key={j} className="text-xs bg-foreground/60 text-inverted-muted px-2 py-1 rounded">
                             {s}
                           </span>
                         ))}
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-cyan-400">{model.cost}</p>
-                      <p className="text-xs text-gray-500">per image</p>
+                      <p className="text-2xl font-bold text-info">{model.cost}</p>
+                      <p className="text-xs text-muted-foreground">per image</p>
                     </div>
                   </div>
                 </CardContent>
@@ -289,19 +289,19 @@ export default function CyberpunkStylePage() {
       {/* Example Prompts */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-white mb-4">Copy-Paste Prompts</h2>
-          <p className="text-gray-400 text-center mb-12">
+          <h2 className="text-3xl font-bold text-center text-inverted-foreground mb-4">Copy-Paste Prompts</h2>
+          <p className="text-inverted-muted text-center mb-12">
             Ready-to-use prompts for different cyberpunk scenes.
           </p>
           <div className="space-y-6">
             {examplePrompts.map((example, i) => (
-              <Card key={i} className="bg-gray-800 border-gray-700">
+              <Card key={i} className="bg-foreground/80 border-border/10">
                 <CardHeader className="pb-2">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg text-white">{example.title}</CardTitle>
+                    <CardTitle className="text-lg text-inverted-foreground">{example.title}</CardTitle>
                     <div className="flex gap-2">
                       {example.tags.map((tag, j) => (
-                        <span key={j} className="text-xs bg-pink-500/20 text-pink-400 px-2 py-1 rounded">
+                        <span key={j} className="text-xs bg-brand-muted/20 text-brand px-2 py-1 rounded">
                           {tag}
                         </span>
                       ))}
@@ -309,11 +309,11 @@ export default function CyberpunkStylePage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-gray-900 text-cyan-300 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-cyan-500/20">
+                  <div className="bg-inverted text-info p-4 rounded-lg font-mono text-sm overflow-x-auto border border-info/20">
                     {example.prompt}
                   </div>
                   <div className="mt-3 flex justify-end">
-                    <Button variant="outline" size="sm" className="text-xs border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10">
+                    <Button variant="outline" size="sm" className="text-xs border-info/50 text-info hover:bg-info/10">
                       Copy Prompt
                     </Button>
                   </div>
@@ -325,17 +325,17 @@ export default function CyberpunkStylePage() {
       </section>
 
       {/* Tips Section */}
-      <section className="py-16 px-4 bg-gray-900/50">
+      <section className="py-16 px-4 bg-inverted/50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">Pro Tips for Cyberpunk</h2>
+          <h2 className="text-3xl font-bold text-center text-inverted-foreground mb-12">Pro Tips for Cyberpunk</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="bg-gray-800 border-green-500/30">
+            <Card className="bg-foreground/80 border-success/30">
               <CardHeader>
-                <CardTitle className="text-green-400 flex items-center gap-2">
+                <CardTitle className="text-success flex items-center gap-2">
                   <span>💡</span> Quality Boosters
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-gray-300">
+              <CardContent className="text-inverted-muted">
                 <ul className="space-y-2 text-sm">
                   <li>• Add &quot;cinematic lighting&quot; for dramatic effect</li>
                   <li>• Include &quot;rain&quot; and &quot;reflections&quot; for atmosphere</li>
@@ -345,13 +345,13 @@ export default function CyberpunkStylePage() {
                 </ul>
               </CardContent>
             </Card>
-            <Card className="bg-gray-800 border-red-500/30">
+            <Card className="bg-foreground/80 border-destructive/30">
               <CardHeader>
-                <CardTitle className="text-red-400 flex items-center gap-2">
+                <CardTitle className="text-destructive flex items-center gap-2">
                   <span>⚠️</span> Common Mistakes
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-gray-300">
+              <CardContent className="text-inverted-muted">
                 <ul className="space-y-2 text-sm">
                   <li>• Over-saturating colors → loses atmosphere</li>
                   <li>• Forgetting contrast → needs dark areas too</li>
@@ -362,20 +362,20 @@ export default function CyberpunkStylePage() {
               </CardContent>
             </Card>
           </div>
-          <Card className="mt-6 bg-gray-800 border-cyan-500/30">
+          <Card className="mt-6 bg-foreground/80 border-info/30">
             <CardHeader>
-              <CardTitle className="text-cyan-400 flex items-center gap-2">
+              <CardTitle className="text-info flex items-center gap-2">
                 <span>🎯</span> Atmospheric Keywords
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-gray-300">
+            <CardContent className="text-inverted-muted">
               <div className="flex flex-wrap gap-2 text-sm">
                 {[
                   "neon-lit", "rain-soaked", "smog", "holographic", "chrome",
                   "dystopian", "tech noir", "retrofuturistic", "megacity",
                   "underground", "corporate", "grimy", "high-tech low-life"
                 ].map((word, i) => (
-                  <span key={i} className="px-3 py-1 bg-gray-700 rounded-full">
+                  <span key={i} className="px-3 py-1 bg-foreground/60 rounded-full">
                     {word}
                   </span>
                 ))}
@@ -386,23 +386,23 @@ export default function CyberpunkStylePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-pink-600 to-cyan-600">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand to-info">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-inverted-foreground mb-6">
             Ready to Build Dystopia?
           </h2>
-          <p className="text-xl text-white/80 mb-8">
+          <p className="text-xl text-inverted-foreground/80 mb-8">
             Start generating cyberpunk art for free. Add your API keys for unlimited 
             generation with the best models.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-white text-gray-900 hover:bg-gray-100">
+              <Button size="lg" className="text-lg px-8 py-6 bg-background text-foreground hover:bg-muted">
                 Try Free Now
               </Button>
             </Link>
             <Link href="/styles">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-brand-foreground text-brand-foreground hover:bg-brand-foreground/10">
                 Explore More Styles
               </Button>
             </Link>

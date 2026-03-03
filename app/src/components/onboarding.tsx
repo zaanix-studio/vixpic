@@ -128,9 +128,9 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
     <Dialog open={true} onOpenChange={() => {}}>
       <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
         {/* Progress Bar */}
-        <div className="h-1 bg-gray-200 rounded-full overflow-hidden mb-6">
-          <div 
-            className="h-full bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300"
+        <div className="h-1 bg-border rounded-full overflow-hidden mb-6">
+          <div
+            className="h-full bg-gradient-to-r from-brand to-info transition-all duration-300"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -138,39 +138,39 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
         {/* Step: Welcome */}
         {step === 'welcome' && (
           <div className="text-center py-4">
-            <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+            <div className="w-20 h-20 bg-gradient-to-br from-brand to-info rounded-2xl mx-auto mb-6 flex items-center justify-center">
               <span className="text-4xl">✨</span>
             </div>
             <DialogHeader>
               <DialogTitle className="text-2xl">Welcome to VixPic!</DialogTitle>
             </DialogHeader>
-            <p className="text-gray-600 mt-4 mb-8">
-              Create stunning AI images with <strong>your own API keys</strong> — 
+            <p className="text-muted-foreground mt-4 mb-8">
+              Create stunning AI images with <strong>your own API keys</strong> —
               no subscriptions, no limits, no markup.
             </p>
             <div className="grid grid-cols-3 gap-4 mb-8 text-center">
               <div>
-                <div className="text-2xl font-bold text-purple-600">80%</div>
-                <div className="text-xs text-gray-500">Cheaper</div>
+                <div className="text-2xl font-bold text-brand">80%</div>
+                <div className="text-xs text-muted-foreground">Cheaper</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-blue-600">∞</div>
-                <div className="text-xs text-gray-500">No Limits</div>
+                <div className="text-2xl font-bold text-info">∞</div>
+                <div className="text-xs text-muted-foreground">No Limits</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-green-600">100%</div>
-                <div className="text-xs text-gray-500">Private</div>
+                <div className="text-2xl font-bold text-success">100%</div>
+                <div className="text-xs text-muted-foreground">Private</div>
               </div>
             </div>
             <Button 
               onClick={nextStep}
-              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+              className="w-full bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
             >
               Get Started →
             </Button>
             <button 
               onClick={onComplete}
-              className="text-sm text-gray-500 hover:text-gray-700 mt-4 block mx-auto"
+              className="text-sm text-muted-foreground hover:text-foreground mt-4 block mx-auto"
             >
               I&apos;ll set this up later
             </button>
@@ -185,44 +185,44 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
             </DialogHeader>
             <div className="mt-6 space-y-4">
               <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-lg shrink-0">
+                <div className="w-10 h-10 rounded-full bg-brand-muted flex items-center justify-center text-lg shrink-0">
                   1
                 </div>
                 <div>
                   <h4 className="font-semibold">Get your API key</h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Sign up with an AI provider (free) and copy your API key. 
                     Takes ~2 minutes.
                   </p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-lg shrink-0">
+                <div className="w-10 h-10 rounded-full bg-brand-muted flex items-center justify-center text-lg shrink-0">
                   2
                 </div>
                 <div>
                   <h4 className="font-semibold">Paste it in VixPic</h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Your key stays in your browser — we never see it or store it 
                     on our servers.
                   </p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-lg shrink-0">
+                <div className="w-10 h-10 rounded-full bg-brand-muted flex items-center justify-center text-lg shrink-0">
                   3
                 </div>
                 <div>
                   <h4 className="font-semibold">Create unlimited images</h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Pay only for what you use, directly to the AI provider. 
                     Typically $0.003-0.05 per image.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-              <p className="text-sm text-green-800">
+            <div className="mt-6 p-4 bg-success-muted/50 border border-success/20 rounded-lg">
+              <p className="text-sm text-success-muted-foreground">
                 <strong>💡 Example:</strong> 500 images/month with FLUX costs ~$1.50. 
                 That&apos;s 95% less than Midjourney&apos;s $30/month!
               </p>
@@ -233,7 +233,7 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
               </Button>
               <Button 
                 onClick={nextStep}
-                className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600"
+                className="flex-1 bg-gradient-to-r from-brand to-info"
               >
                 Choose Provider →
               </Button>
@@ -247,7 +247,7 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
             <DialogHeader>
               <DialogTitle className="text-xl">Choose Your Provider</DialogTitle>
             </DialogHeader>
-            <p className="text-sm text-gray-600 mt-2 mb-6">
+            <p className="text-sm text-muted-foreground mt-2 mb-6">
               Pick any provider to start. You can add more later.
             </p>
             <div className="space-y-3">
@@ -255,20 +255,20 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
                 <button
                   key={id}
                   onClick={() => handleProviderSelect(id)}
-                  className="w-full text-left p-4 rounded-xl border-2 hover:border-purple-300 hover:bg-purple-50 transition-all flex items-center gap-4"
+                  className="w-full text-left p-4 rounded-xl border-2 hover:border-brand/30 hover:bg-brand-muted/50 transition-all flex items-center gap-4"
                 >
                   <div className="text-3xl">{details.icon}</div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <span className="font-semibold capitalize">{id === 'fal' ? 'FAL.ai' : id === 'openai' ? 'OpenAI' : id}</span>
                       {details.recommended && (
-                        <Badge className="bg-purple-100 text-purple-700">Recommended</Badge>
+                        <Badge className="bg-brand-muted text-brand-muted-foreground">Recommended</Badge>
                       )}
                     </div>
-                    <p className="text-sm text-gray-500">{details.bestFor}</p>
-                    <p className="text-xs text-green-600 mt-1">{details.freeCredit}</p>
+                    <p className="text-sm text-muted-foreground">{details.bestFor}</p>
+                    <p className="text-xs text-success mt-1">{details.freeCredit}</p>
                   </div>
-                  <div className="text-gray-400">→</div>
+                  <div className="text-muted-foreground">→</div>
                 </button>
               ))}
             </div>
@@ -292,28 +292,28 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
             
             <div className="mt-6 space-y-6">
               {/* Step 1: Get API Key */}
-              <div className="p-4 bg-gray-50 rounded-lg">
+              <div className="p-4 bg-muted rounded-lg">
                 <h4 className="font-semibold mb-2 flex items-center gap-2">
-                  <span className="w-6 h-6 bg-purple-600 text-white rounded-full text-sm flex items-center justify-center">1</span>
+                  <span className="w-6 h-6 bg-brand text-brand-foreground rounded-full text-sm flex items-center justify-center">1</span>
                   Get your API key
                 </h4>
-                <p className="text-sm text-gray-600 mb-3">
+                <p className="text-sm text-muted-foreground mb-3">
                   Click below to open the API key page in a new tab:
                 </p>
                 <a 
                   href={getProviderLink(selectedProvider)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white border rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-card border rounded-lg hover:bg-muted transition-colors text-sm font-medium"
                 >
                   Open {selectedProvider === 'fal' ? 'FAL.ai' : selectedProvider === 'openai' ? 'OpenAI' : selectedProvider.charAt(0).toUpperCase() + selectedProvider.slice(1)} →
                 </a>
               </div>
 
               {/* Step 2: Paste Key */}
-              <div className="p-4 bg-gray-50 rounded-lg">
+              <div className="p-4 bg-muted rounded-lg">
                 <h4 className="font-semibold mb-2 flex items-center gap-2">
-                  <span className="w-6 h-6 bg-purple-600 text-white rounded-full text-sm flex items-center justify-center">2</span>
+                  <span className="w-6 h-6 bg-brand text-brand-foreground rounded-full text-sm flex items-center justify-center">2</span>
                   Paste your API key
                 </h4>
                 <Input
@@ -331,9 +331,9 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
                   className="font-mono"
                 />
                 {validationError && (
-                  <p className="text-sm text-red-600 mt-2">{validationError}</p>
+                  <p className="text-sm text-destructive mt-2">{validationError}</p>
                 )}
-                <p className="text-xs text-gray-500 mt-2">
+                <p className="text-xs text-muted-foreground mt-2">
                   🔒 Your key is stored only in your browser. We never see it.
                 </p>
               </div>
@@ -355,7 +355,7 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
               <Button 
                 onClick={validateAndSaveKey}
                 disabled={!apiKey.trim() || isValidating}
-                className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600"
+                className="flex-1 bg-gradient-to-r from-brand to-info"
               >
                 {isValidating ? (
                   <>
@@ -373,18 +373,18 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
         {/* Step: Ready */}
         {step === 'ready' && (
           <div className="text-center py-8">
-            <div className="w-20 h-20 bg-green-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+            <div className="w-20 h-20 bg-success-muted rounded-full mx-auto mb-6 flex items-center justify-center">
               <span className="text-4xl">🎉</span>
             </div>
             <DialogHeader>
               <DialogTitle className="text-2xl">You&apos;re all set!</DialogTitle>
             </DialogHeader>
-            <p className="text-gray-600 mt-4 mb-8">
+            <p className="text-muted-foreground mt-4 mb-8">
               Your API key is connected. Start creating amazing images!
             </p>
-            <div className="bg-purple-50 p-4 rounded-lg mb-8">
+            <div className="bg-brand-muted/50 p-4 rounded-lg mb-8">
               <h4 className="font-semibold mb-2">Quick Tips:</h4>
-              <ul className="text-sm text-gray-600 text-left space-y-2">
+              <ul className="text-sm text-muted-foreground text-left space-y-2">
                 <li className="flex items-start gap-2">
                   <span>💡</span>
                   <span>Use the <strong>Templates</strong> button for inspiration</span>
@@ -401,7 +401,7 @@ export function Onboarding({ onComplete, onAddKey, hasAnyKey }: OnboardingProps)
             </div>
             <Button 
               onClick={onComplete}
-              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+              className="w-full bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
               size="lg"
             >
               ✨ Start Creating

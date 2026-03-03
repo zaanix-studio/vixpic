@@ -152,19 +152,19 @@ export default function BlurSharpenTool() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900">Tools</Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Blur & Sharpen</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground">Tools</Link>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Blur & Sharpen</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/tools">
@@ -182,13 +182,13 @@ export default function BlurSharpenTool() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-4">
               ✨ Free • No Upload • 100% Private
             </div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
               Blur & Sharpen Tool
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Apply blur effects or sharpen images for better clarity. All processing happens in your browser—your images never leave your device.
             </p>
           </div>
@@ -200,7 +200,7 @@ export default function BlurSharpenTool() {
                 <CardContent className="p-6">
                   {!image ? (
                     <div
-                      className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-purple-400 transition-colors cursor-pointer"
+                      className="border-2 border-dashed border-input rounded-xl p-12 text-center hover:border-brand transition-colors cursor-pointer"
                       onDrop={handleDrop}
                       onDragOver={(e) => e.preventDefault()}
                       onClick={() => document.getElementById("fileInput")?.click()}
@@ -212,11 +212,11 @@ export default function BlurSharpenTool() {
                         onChange={handleFileSelect}
                         className="hidden"
                       />
-                      <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center text-3xl">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-brand-muted rounded-full flex items-center justify-center text-3xl">
                         🔍
                       </div>
                       <h3 className="font-semibold text-lg mb-2">Drop image here or click to upload</h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Supports PNG, JPG, WebP • Max 10MB • 100% client-side
                       </p>
                     </div>
@@ -225,7 +225,7 @@ export default function BlurSharpenTool() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           {compareMode && originalImage && (
-                            <span className="text-sm text-gray-500">
+                            <span className="text-sm text-muted-foreground">
                               👈 Original | Processed 👉
                             </span>
                           )}
@@ -245,7 +245,7 @@ export default function BlurSharpenTool() {
                         </div>
                       </div>
                       
-                      <div className={`relative rounded-lg overflow-hidden bg-gray-100 ${compareMode ? "grid grid-cols-2 gap-1" : ""}`}>
+                      <div className={`relative rounded-lg overflow-hidden bg-muted ${compareMode ? "grid grid-cols-2 gap-1" : ""}`}>
                         {compareMode && originalImage && (
                           <div className="relative">
                             <img
@@ -253,7 +253,7 @@ export default function BlurSharpenTool() {
                               alt="Original"
                               className="w-full h-auto"
                             />
-                            <div className="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                            <div className="absolute top-2 left-2 bg-inverted/60 text-inverted-foreground text-xs px-2 py-1 rounded">
                               Original
                             </div>
                           </div>
@@ -265,7 +265,7 @@ export default function BlurSharpenTool() {
                             className="w-full h-auto"
                           />
                           {compareMode && (
-                            <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                            <div className="absolute top-2 right-2 bg-inverted/60 text-inverted-foreground text-xs px-2 py-1 rounded">
                               {mode === "blur" ? "Blurred" : "Sharpened"}
                             </div>
                           )}
@@ -291,8 +291,8 @@ export default function BlurSharpenTool() {
                       onClick={() => setMode("blur")}
                       className={`p-4 rounded-lg border-2 transition-all ${
                         mode === "blur"
-                          ? "border-purple-500 bg-purple-50"
-                          : "border-gray-200 hover:border-gray-300"
+                          ? "border-brand/60 bg-brand-muted/50"
+                          : "border-border hover:border-brand"
                       }`}
                     >
                       <div className="text-2xl mb-1">🌫️</div>
@@ -302,8 +302,8 @@ export default function BlurSharpenTool() {
                       onClick={() => setMode("sharpen")}
                       className={`p-4 rounded-lg border-2 transition-all ${
                         mode === "sharpen"
-                          ? "border-purple-500 bg-purple-50"
-                          : "border-gray-200 hover:border-gray-300"
+                          ? "border-brand/60 bg-brand-muted/50"
+                          : "border-border hover:border-brand"
                       }`}
                     >
                       <div className="text-2xl mb-1">✨</div>
@@ -326,11 +326,11 @@ export default function BlurSharpenTool() {
                       max={mode === "blur" ? "20" : "15"}
                       value={intensity}
                       onChange={(e) => setIntensity(Number(e.target.value))}
-                      className="w-full accent-purple-600"
+                      className="w-full accent-brand"
                     />
-                    <div className="flex justify-between text-sm text-gray-500">
+                    <div className="flex justify-between text-sm text-muted-foreground">
                       <span>Low</span>
-                      <span className="font-medium text-purple-600">{intensity}</span>
+                      <span className="font-medium text-brand">{intensity}</span>
                       <span>High</span>
                     </div>
                   </div>
@@ -345,7 +345,7 @@ export default function BlurSharpenTool() {
                     <Button
                       onClick={processImage}
                       disabled={!image || isProcessing}
-                      className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                      className="w-full bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
                     >
                       {isProcessing ? "Processing..." : `Apply ${mode === "blur" ? "Blur" : "Sharpen"}`}
                     </Button>
@@ -372,10 +372,10 @@ export default function BlurSharpenTool() {
           </div>
 
           {/* Tips Section */}
-          <Card className="mt-8 border-2 bg-gradient-to-r from-purple-50 to-blue-50">
+          <Card className="mt-8 border-2 bg-gradient-to-r from-brand-muted to-info-muted/50">
             <CardContent className="p-6">
               <h3 className="font-semibold mb-3">💡 When to Use</h3>
-              <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+              <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
                 <div>
                   <strong>🌫️ Blur:</strong> Create depth of field effects, hide sensitive info, make backgrounds less distracting, or create dreamy aesthetics.
                 </div>
@@ -390,9 +390,9 @@ export default function BlurSharpenTool() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 

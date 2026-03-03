@@ -91,7 +91,7 @@ export default function BlogPage() {
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             VixPic Blog
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Tutorials, guides, and insights on AI image generation. 
             Learn to create better images, faster and cheaper.
           </p>
@@ -107,7 +107,7 @@ export default function BlogPage() {
                 key={category}
                 variant={category === "All" ? "default" : "outline"}
                 size="sm"
-                className={category === "All" ? "bg-purple-600 hover:bg-purple-700" : ""}
+                className={category === "All" ? "bg-brand hover:bg-brand/90" : ""}
               >
                 {category}
               </Button>
@@ -123,15 +123,15 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {featuredPosts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
-                <Card className="h-full border-2 hover:border-purple-300 transition-all hover:shadow-lg group">
+                <Card className="h-full border-2 hover:border-brand/30 transition-all hover:shadow-lg group">
                   <CardHeader>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-medium px-2 py-1 bg-purple-100 text-purple-700 rounded-full">
+                      <span className="text-xs font-medium px-2 py-1 bg-brand-muted text-brand-muted-foreground rounded-full">
                         {post.category}
                       </span>
-                      <span className="text-xs text-gray-500">{post.readTime} read</span>
+                      <span className="text-xs text-muted-foreground">{post.readTime} read</span>
                     </div>
-                    <CardTitle className="text-xl group-hover:text-purple-600 transition-colors">
+                    <CardTitle className="text-xl group-hover:text-brand transition-colors">
                       {post.title}
                     </CardTitle>
                     <CardDescription className="text-base">
@@ -139,7 +139,7 @@ export default function BlogPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-muted-foreground">
                       {new Date(post.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
@@ -161,15 +161,15 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {regularPosts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
-                <Card className="h-full hover:border-purple-200 transition-all hover:shadow-md group">
+                <Card className="h-full hover:border-brand/20 transition-all hover:shadow-md group">
                   <CardHeader>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-medium px-2 py-1 bg-gray-100 text-gray-600 rounded-full">
+                      <span className="text-xs font-medium px-2 py-1 bg-muted text-muted-foreground rounded-full">
                         {post.category}
                       </span>
-                      <span className="text-xs text-gray-500">{post.readTime}</span>
+                      <span className="text-xs text-muted-foreground">{post.readTime}</span>
                     </div>
-                    <CardTitle className="text-lg group-hover:text-purple-600 transition-colors">
+                    <CardTitle className="text-lg group-hover:text-brand transition-colors">
                       {post.title}
                     </CardTitle>
                     <CardDescription>
@@ -177,7 +177,7 @@ export default function BlogPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-muted-foreground">
                       {new Date(post.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
@@ -193,10 +193,10 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div className="max-w-2xl mx-auto text-center text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-brand to-info">
+        <div className="max-w-2xl mx-auto text-center text-brand-foreground">
           <h2 className="text-3xl font-bold mb-4">Get AI Image Tips Weekly</h2>
-          <p className="text-purple-100 mb-8">
+          <p className="text-inverted-muted mb-8">
             Join 2,000+ creators getting practical tips on AI image generation.
             No spam, unsubscribe anytime.
           </p>
@@ -204,9 +204,9 @@ export default function BlogPage() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder:text-gray-500"
+              className="flex-1 px-4 py-3 rounded-lg text-foreground placeholder:text-muted-foreground"
             />
-            <Button className="bg-white text-purple-600 hover:bg-gray-100 px-6">
+            <Button className="bg-background text-brand hover:bg-muted px-6">
               Subscribe
             </Button>
           </div>

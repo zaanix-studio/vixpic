@@ -132,10 +132,10 @@ export default function PhotorealisticStylePage() {
     <>
       {/* Breadcrumb */}
       <div className="pt-24 px-4 max-w-6xl mx-auto">
-        <div className="flex items-center gap-2 text-sm text-gray-500">
-          <Link href="/styles" className="hover:text-purple-600">Styles</Link>
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Link href="/styles" className="hover:text-brand">Styles</Link>
           <span>/</span>
-          <span className="text-gray-900">Photorealistic</span>
+          <span className="text-foreground">Photorealistic</span>
         </div>
       </div>
 
@@ -146,27 +146,27 @@ export default function PhotorealisticStylePage() {
             <span className="text-6xl">📸</span>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-info to-info bg-clip-text text-transparent">
                   Photorealistic
                 </span>{" "}
                 Style Guide
               </h1>
-              <p className="text-gray-600 mt-2">Create AI images indistinguishable from photographs</p>
+              <p className="text-muted-foreground mt-2">Create AI images indistinguishable from photographs</p>
             </div>
           </div>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             Photorealistic AI generation is about fooling the eye. Learn the specific techniques, 
             camera terminology, and model choices that produce images people can&apos;t tell aren&apos;t 
             real photographs.
           </p>
           <div className="flex flex-wrap gap-3">
-            <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-warning-muted text-warning-muted-foreground rounded-full text-sm font-medium">
               ⚡ Intermediate
             </span>
-            <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-brand-muted text-brand-muted-foreground rounded-full text-sm font-medium">
               Very High Popularity
             </span>
-            <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-info-muted text-info-muted-foreground rounded-full text-sm font-medium">
               Requires Specific Prompts
             </span>
           </div>
@@ -174,31 +174,31 @@ export default function PhotorealisticStylePage() {
       </section>
 
       {/* Key Principle */}
-      <section className="py-12 px-4 bg-gradient-to-r from-blue-50 to-cyan-50">
+      <section className="py-12 px-4 bg-gradient-to-r from-info-muted/50 to-info-muted/50">
         <div className="max-w-4xl mx-auto">
-          <Card className="border-2 border-blue-200">
+          <Card className="border-2 border-info/20">
             <CardHeader>
               <CardTitle className="text-2xl text-center">The #1 Rule for Photorealism</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg text-center text-gray-700 mb-6">
+              <p className="text-lg text-center text-foreground mb-6">
                 <strong>Speak like a photographer, not an artist.</strong>
               </p>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-red-50 p-4 rounded-lg">
-                  <p className="text-sm text-red-800 font-medium mb-2">❌ Avoid:</p>
-                  <p className="text-sm text-red-700 font-mono">
+                <div className="bg-destructive/5 p-4 rounded-lg">
+                  <p className="text-sm text-destructive font-medium mb-2">❌ Avoid:</p>
+                  <p className="text-sm text-destructive font-mono">
                     &quot;beautiful woman, realistic, detailed&quot;
                   </p>
                 </div>
-                <div className="bg-green-50 p-4 rounded-lg">
-                  <p className="text-sm text-green-800 font-medium mb-2">✅ Instead:</p>
-                  <p className="text-sm text-green-700 font-mono">
+                <div className="bg-success-muted/50 p-4 rounded-lg">
+                  <p className="text-sm text-success-muted-foreground font-medium mb-2">✅ Instead:</p>
+                  <p className="text-sm text-success-muted-foreground font-mono">
                     &quot;portrait photo, 85mm f/1.4, soft studio lighting, Canon 5D&quot;
                   </p>
                 </div>
               </div>
-              <p className="text-center text-gray-600 mt-6 text-sm">
+              <p className="text-center text-muted-foreground mt-6 text-sm">
                 Camera details, lens specs, and lighting setups trigger photographic training data.
               </p>
             </CardContent>
@@ -210,27 +210,27 @@ export default function PhotorealisticStylePage() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Photography Sub-Styles</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             Different photography genres need different approaches. Here are the most requested styles.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {photoSubStyles.map((style, i) => (
-              <Card key={i} className="border-2 hover:border-blue-200 transition-all">
+              <Card key={i} className="border-2 hover:border-info/20 transition-all">
                 <CardHeader>
                   <CardTitle className="text-lg">{style.name}</CardTitle>
                   <CardDescription>{style.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <p className="text-xs text-gray-500 mb-2 font-medium">Example prompts:</p>
+                    <p className="text-xs text-muted-foreground mb-2 font-medium">Example prompts:</p>
                     {style.prompts.map((prompt, j) => (
-                      <p key={j} className="text-sm bg-gray-50 p-2 rounded mb-2 font-mono text-gray-700">
+                      <p key={j} className="text-sm bg-muted p-2 rounded mb-2 font-mono text-foreground">
                         {prompt}
                       </p>
                     ))}
                   </div>
-                  <div className="bg-blue-50 p-2 rounded">
-                    <p className="text-xs text-blue-700">
+                  <div className="bg-info-muted/50 p-2 rounded">
+                    <p className="text-xs text-info-muted-foreground">
                       <span className="font-medium">💡 Tip:</span> {style.tips}
                     </p>
                   </div>
@@ -242,10 +242,10 @@ export default function PhotorealisticStylePage() {
       </section>
 
       {/* Best Models */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Best Models for Photorealism</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Some models are specifically tuned for realistic outputs.
           </p>
           <div className="space-y-4">
@@ -256,22 +256,22 @@ export default function PhotorealisticStylePage() {
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="font-bold text-lg">{model.name}</h3>
-                        <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
+                        <span className="px-2 py-1 bg-info-muted text-info-muted-foreground text-xs rounded-full">
                           {model.recommendation}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-500 mb-2">via {model.provider}</p>
+                      <p className="text-sm text-muted-foreground mb-2">via {model.provider}</p>
                       <div className="flex flex-wrap gap-2">
                         {model.strengths.map((s, j) => (
-                          <span key={j} className="text-xs bg-gray-100 px-2 py-1 rounded">
+                          <span key={j} className="text-xs bg-muted px-2 py-1 rounded">
                             {s}
                           </span>
                         ))}
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-blue-600">{model.cost}</p>
-                      <p className="text-xs text-gray-500">per image</p>
+                      <p className="text-2xl font-bold text-info">{model.cost}</p>
+                      <p className="text-xs text-muted-foreground">per image</p>
                     </div>
                   </div>
                 </CardContent>
@@ -289,9 +289,9 @@ export default function PhotorealisticStylePage() {
             <CardContent className="p-6">
               <div className="grid md:grid-cols-2 gap-4">
                 {technicalSettings.map((item, i) => (
-                  <div key={i} className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                  <div key={i} className="flex justify-between items-center p-3 bg-muted rounded">
                     <span className="font-medium">{item.setting}</span>
-                    <span className="text-sm text-gray-600">{item.recommendation}</span>
+                    <span className="text-sm text-muted-foreground">{item.recommendation}</span>
                   </div>
                 ))}
               </div>
@@ -301,10 +301,10 @@ export default function PhotorealisticStylePage() {
       </section>
 
       {/* Example Prompts */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Copy-Paste Prompts</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Production-ready prompts for common photorealistic use cases.
           </p>
           <div className="space-y-6">
@@ -315,7 +315,7 @@ export default function PhotorealisticStylePage() {
                     <CardTitle className="text-lg">{example.title}</CardTitle>
                     <div className="flex gap-2">
                       {example.tags.map((tag, j) => (
-                        <span key={j} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">
+                        <span key={j} className="text-xs bg-info-muted/50 text-info-muted-foreground px-2 py-1 rounded">
                           {tag}
                         </span>
                       ))}
@@ -323,7 +323,7 @@ export default function PhotorealisticStylePage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                  <div className="bg-inverted text-inverted-muted p-4 rounded-lg font-mono text-sm overflow-x-auto">
                     {example.prompt}
                   </div>
                   <div className="mt-3 flex justify-end">
@@ -368,10 +368,10 @@ export default function PhotorealisticStylePage() {
               <Card key={i} className="border-2">
                 <CardContent className="p-4">
                   <div className="flex gap-4">
-                    <span className="text-red-500 text-xl">⚠️</span>
+                    <span className="text-destructive text-xl">⚠️</span>
                     <div>
-                      <p className="font-medium text-gray-900">{item.issue}</p>
-                      <p className="text-sm text-gray-600 mt-1">{item.solution}</p>
+                      <p className="font-medium text-foreground">{item.issue}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{item.solution}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -382,23 +382,23 @@ export default function PhotorealisticStylePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-cyan-500">
+      <section className="py-20 px-4 bg-gradient-to-r from-info to-info">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-info-foreground mb-6">
             Create Photorealistic Images Now
           </h2>
-          <p className="text-xl text-white/80 mb-8">
-            Start with free generations. Add your API keys for unlimited access to 
+          <p className="text-xl text-info-foreground/80 mb-8">
+            Start with free generations. Add your API keys for unlimited access to
             DALL-E 3, Flux Pro, and specialized photorealistic models.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-gray-100">
+              <Button size="lg" className="text-lg px-8 py-6 bg-background text-info hover:bg-muted">
                 Try Free Now
               </Button>
             </Link>
             <Link href="/styles">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-info-foreground text-info-foreground hover:bg-info-foreground/10">
                 Explore More Styles
               </Button>
             </Link>

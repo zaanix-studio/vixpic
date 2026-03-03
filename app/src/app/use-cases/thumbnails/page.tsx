@@ -107,22 +107,22 @@ export default function ThumbnailsPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-muted text-brand-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             🎬 Thumbnails Use Case
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Thumbnails That{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Demand Clicks
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Generate scroll-stopping thumbnails for YouTube, blogs, and courses with AI. 
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Generate scroll-stopping thumbnails for YouTube, blogs, and courses with AI.
             A/B test dozens of variations. Find what converts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-brand to-info">
                 Create Thumbnails
               </Button>
             </Link>
@@ -136,14 +136,14 @@ export default function ThumbnailsPage() {
       </section>
 
       {/* Stats Banner */}
-      <section className="py-12 border-y bg-gray-50">
+      <section className="py-12 border-y bg-muted">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {testimonialStats.map((item) => (
               <div key={item.label}>
-                <div className="text-4xl font-bold text-purple-600 mb-1">{item.stat}</div>
+                <div className="text-4xl font-bold text-brand mb-1">{item.stat}</div>
                 <div className="font-semibold">{item.label}</div>
-                <div className="text-sm text-gray-500">{item.context}</div>
+                <div className="text-sm text-muted-foreground">{item.context}</div>
               </div>
             ))}
           </div>
@@ -154,18 +154,18 @@ export default function ThumbnailsPage() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Thumbnail Types</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             Optimized presets for every platform. One click to set the perfect dimensions.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {thumbnailTypes.map((type) => (
-              <Card key={type.title} className="border-2 hover:border-purple-200 transition-colors">
+              <Card key={type.title} className="border-2 hover:border-brand/20 transition-colors">
                 <CardHeader>
                   <div className="flex items-start justify-between">
-                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-2xl">
+                    <div className="w-12 h-12 bg-brand-muted rounded-lg flex items-center justify-center text-2xl">
                       {type.icon}
                     </div>
-                    <span className="text-sm font-mono bg-gray-100 px-2 py-1 rounded">
+                    <span className="text-sm font-mono bg-muted px-2 py-1 rounded">
                       {type.size}
                     </span>
                   </div>
@@ -175,12 +175,12 @@ export default function ThumbnailsPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-muted-foreground">
                     <span className="font-medium">Pro tips:</span>
                     <ul className="mt-2 space-y-1">
                       {type.tips.map((tip) => (
                         <li key={tip} className="flex items-center gap-2">
-                          <span className="text-purple-600">•</span>
+                          <span className="text-brand">•</span>
                           {tip}
                         </li>
                       ))}
@@ -194,11 +194,11 @@ export default function ThumbnailsPage() {
       </section>
 
       {/* CTR Factors */}
-      <section id="ctr-factors" className="py-20 px-4 bg-gray-50">
+      <section id="ctr-factors" className="py-20 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">CTR Science</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Research-backed thumbnail elements that drive clicks. 
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Research-backed thumbnail elements that drive clicks.
             VixPic makes it easy to incorporate all of them.
           </p>
           <div className="space-y-4">
@@ -208,9 +208,9 @@ export default function ThumbnailsPage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="font-semibold">{item.factor}</h3>
-                      <p className="text-sm text-gray-600">{item.description}</p>
+                      <p className="text-sm text-muted-foreground">{item.description}</p>
                     </div>
-                    <div className="text-xl font-bold text-green-600 flex-shrink-0 ml-4">
+                    <div className="text-xl font-bold text-success flex-shrink-0 ml-4">
                       {item.impact}
                     </div>
                   </div>
@@ -228,12 +228,12 @@ export default function ThumbnailsPage() {
           <div className="space-y-8">
             {workflows.map((item) => (
               <div key={item.step} className="flex gap-6 items-start">
-                <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                <div className="w-12 h-12 bg-brand text-brand-foreground rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
                   {item.step}
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <p className="text-muted-foreground">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -242,35 +242,35 @@ export default function ThumbnailsPage() {
       </section>
 
       {/* Perfect For */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Perfect For</h2>
           <div className="grid md:grid-cols-4 gap-6">
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">🎥</div>
               <h3 className="font-semibold mb-2">YouTubers</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Stop losing views to bad thumbnails. Test what actually works.
               </p>
             </Card>
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">✍️</div>
               <h3 className="font-semibold mb-2">Bloggers</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Professional featured images for every post. Boost social sharing.
               </p>
             </Card>
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">🎓</div>
               <h3 className="font-semibold mb-2">Course Creators</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Polished visuals that build trust and increase enrollments.
               </p>
             </Card>
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">🎙️</div>
               <h3 className="font-semibold mb-2">Podcasters</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Episode-specific artwork without a design subscription.
               </p>
             </Card>
@@ -282,7 +282,7 @@ export default function ThumbnailsPage() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Example Prompts</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Copy these proven prompts and customize for your content.
           </p>
           <div className="space-y-4">
@@ -292,7 +292,7 @@ export default function ThumbnailsPage() {
                   <span className="text-2xl">😱</span>
                   <div>
                     <h4 className="font-semibold mb-1">Reaction/Shock Thumbnail</h4>
-                    <p className="text-sm text-gray-600 font-mono bg-gray-100 p-2 rounded">
+                    <p className="text-sm text-muted-foreground font-mono bg-muted p-2 rounded">
                       "Shocked expression, wide eyes, open mouth, bright yellow background, 
                       dramatic studio lighting, high contrast, close-up portrait photo, 
                       professional YouTube thumbnail style"
@@ -307,7 +307,7 @@ export default function ThumbnailsPage() {
                   <span className="text-2xl">💡</span>
                   <div>
                     <h4 className="font-semibold mb-1">Tutorial/How-To Thumbnail</h4>
-                    <p className="text-sm text-gray-600 font-mono bg-gray-100 p-2 rounded">
+                    <p className="text-sm text-muted-foreground font-mono bg-muted p-2 rounded">
                       "Clean minimalist workspace, [product/topic] prominently displayed, 
                       soft natural lighting, modern aesthetic, professional flat lay, 
                       subtle gradient background, high-resolution detail shot"
@@ -322,7 +322,7 @@ export default function ThumbnailsPage() {
                   <span className="text-2xl">🔥</span>
                   <div>
                     <h4 className="font-semibold mb-1">Drama/Controversy Thumbnail</h4>
-                    <p className="text-sm text-gray-600 font-mono bg-gray-100 p-2 rounded">
+                    <p className="text-sm text-muted-foreground font-mono bg-muted p-2 rounded">
                       "Split composition, versus format, dramatic red and blue lighting, 
                       high tension atmosphere, bold contrast, cinematic movie poster style, 
                       dark moody background"
@@ -336,14 +336,14 @@ export default function ThumbnailsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           <Accordion className="w-full">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
                 <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-gray-600">
+                <AccordionContent className="text-muted-foreground">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -353,16 +353,16 @@ export default function ThumbnailsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand to-info text-brand-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Stop Leaving Views on the Table
           </h2>
-          <p className="text-xl text-purple-100 mb-8">
+          <p className="text-xl text-brand-muted mb-8">
             Great content deserves great thumbnails. Start generating now.
           </p>
           <Link href="/generate">
-            <Button size="lg" className="text-lg px-8 py-6 bg-white text-purple-600 hover:bg-gray-100">
+            <Button size="lg" className="text-lg px-8 py-6 bg-background text-brand hover:bg-muted">
               Create Your First Thumbnail
             </Button>
           </Link>

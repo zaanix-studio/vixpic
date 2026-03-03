@@ -93,22 +93,22 @@ export default function EcommercePage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-muted text-brand-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             🛍️ E-commerce Use Case
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Professional Product Photos{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Without the Photoshoot
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Generate stunning e-commerce product images with AI. White backgrounds, 
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Generate stunning e-commerce product images with AI. White backgrounds,
             lifestyle shots, and seasonal themes — all for a fraction of traditional photography costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-brand to-info">
                 Try Product Photo Generator
               </Button>
             </Link>
@@ -122,24 +122,24 @@ export default function EcommercePage() {
       </section>
 
       {/* Stats Banner */}
-      <section className="py-12 border-y bg-gray-50">
+      <section className="py-12 border-y bg-muted">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">90%</div>
-              <div className="text-sm text-gray-600">Cost Reduction</div>
+              <div className="text-3xl font-bold text-brand">90%</div>
+              <div className="text-sm text-muted-foreground">Cost Reduction</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">1000x</div>
-              <div className="text-sm text-gray-600">Faster Scaling</div>
+              <div className="text-3xl font-bold text-brand">1000x</div>
+              <div className="text-sm text-muted-foreground">Faster Scaling</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">∞</div>
-              <div className="text-sm text-gray-600">Variations</div>
+              <div className="text-3xl font-bold text-brand">∞</div>
+              <div className="text-sm text-muted-foreground">Variations</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600">$0.003</div>
-              <div className="text-sm text-gray-600">Per Image</div>
+              <div className="text-3xl font-bold text-brand">$0.003</div>
+              <div className="text-sm text-muted-foreground">Per Image</div>
             </div>
           </div>
         </div>
@@ -149,15 +149,15 @@ export default function EcommercePage() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">What You Can Create</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            From clean white backgrounds to immersive lifestyle scenes, 
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            From clean white backgrounds to immersive lifestyle scenes,
             AI handles every type of e-commerce imagery.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {features.map((feature) => (
-              <Card key={feature.title} className="border-2 hover:border-purple-200 transition-colors">
+              <Card key={feature.title} className="border-2 hover:border-brand/20 transition-colors">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-2xl mb-4">
+                  <div className="w-12 h-12 bg-brand-muted rounded-lg flex items-center justify-center text-2xl mb-4">
                     {feature.icon}
                   </div>
                   <CardTitle>{feature.title}</CardTitle>
@@ -172,18 +172,18 @@ export default function EcommercePage() {
       </section>
 
       {/* Workflow */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
           <div className="space-y-8">
             {workflows.map((item) => (
               <div key={item.step} className="flex gap-6 items-start">
-                <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
+                <div className="w-12 h-12 bg-brand text-brand-foreground rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
                   {item.step}
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <p className="text-muted-foreground">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -195,25 +195,25 @@ export default function EcommercePage() {
       <section id="comparison" className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Cost Comparison</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             See how VixPic compares to traditional product photography.
           </p>
           <Card className="overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-50 border-b">
+                <thead className="bg-muted border-b">
                   <tr>
                     <th className="text-left px-6 py-4 font-semibold">Item</th>
-                    <th className="text-center px-6 py-4 font-semibold text-red-600">Traditional</th>
-                    <th className="text-center px-6 py-4 font-semibold text-green-600">VixPic + AI</th>
+                    <th className="text-center px-6 py-4 font-semibold text-destructive">Traditional</th>
+                    <th className="text-center px-6 py-4 font-semibold text-success">VixPic + AI</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, i) => (
-                    <tr key={row.item} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    <tr key={row.item} className={i % 2 === 0 ? "bg-background" : "bg-muted"}>
                       <td className="px-6 py-4 font-medium">{row.item}</td>
-                      <td className="text-center px-6 py-4 text-red-600">{row.traditional}</td>
-                      <td className="text-center px-6 py-4 text-green-600 font-semibold">{row.vixpic}</td>
+                      <td className="text-center px-6 py-4 text-destructive">{row.traditional}</td>
+                      <td className="text-center px-6 py-4 text-success font-semibold">{row.vixpic}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -224,14 +224,14 @@ export default function EcommercePage() {
       </section>
 
       {/* Use Cases Detail */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Perfect For</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">🏪</div>
               <h3 className="text-xl font-semibold mb-2">Dropshippers</h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Create unique product images for items you never physically handle. 
                 Stand out from competitors using the same supplier photos.
               </p>
@@ -239,7 +239,7 @@ export default function EcommercePage() {
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">📦</div>
               <h3 className="text-xl font-semibold mb-2">Amazon Sellers</h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Generate Amazon-compliant white background images plus lifestyle 
                 shots for A+ Content. Scale across your entire catalog.
               </p>
@@ -247,7 +247,7 @@ export default function EcommercePage() {
             <Card className="text-center p-6">
               <div className="text-4xl mb-4">🎨</div>
               <h3 className="text-xl font-semibold mb-2">DTC Brands</h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Maintain consistent brand aesthetics across thousands of products. 
                 Quickly create seasonal campaigns and promotional imagery.
               </p>
@@ -264,7 +264,7 @@ export default function EcommercePage() {
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
                 <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-gray-600">
+                <AccordionContent className="text-muted-foreground">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -274,16 +274,16 @@ export default function EcommercePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand to-info text-brand-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Scale Your Product Imagery?
           </h2>
-          <p className="text-xl text-purple-100 mb-8">
+          <p className="text-xl text-brand-muted mb-8">
             Start with free credits from AI providers. No credit card required.
           </p>
           <Link href="/generate">
-            <Button size="lg" className="text-lg px-8 py-6 bg-white text-purple-600 hover:bg-gray-100">
+            <Button size="lg" className="text-lg px-8 py-6 bg-background text-brand hover:bg-muted">
               Generate Your First Product Photo
             </Button>
           </Link>

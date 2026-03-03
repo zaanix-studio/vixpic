@@ -10,18 +10,18 @@ export default function YouTubeThumbnailsPost() {
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm font-medium px-3 py-1 bg-orange-100 text-orange-700 rounded-full">
+            <span className="text-sm font-medium px-3 py-1 bg-warning-muted text-warning-muted-foreground rounded-full">
               Tutorial
             </span>
-            <span className="text-sm text-gray-500">10 min read</span>
+            <span className="text-sm text-muted-foreground">10 min read</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             50 YouTube Thumbnail Prompts That Get Clicks
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-xl text-muted-foreground mb-6">
             Battle-tested AI prompts for creating thumbnails that stand out. Organized by niche and style.
           </p>
-          <div className="flex items-center gap-4 text-sm text-gray-500 border-t border-b py-4">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground border-t border-b py-4">
             <span>February 23, 2026</span>
             <span>•</span>
             <span>By VixPic Team</span>
@@ -41,10 +41,10 @@ export default function YouTubeThumbnailsPost() {
             Copy, paste, customize — then test what works for your audience.
           </p>
 
-          <Card className="my-8 bg-yellow-50 border-yellow-200">
+          <Card className="my-8 bg-warning-muted/50 border-warning/20">
             <CardContent className="pt-6">
               <h3 className="font-bold mb-2">💡 Pro Tip: The 3-Second Test</h3>
-              <p className="text-sm text-gray-700">
+              <p className="text-sm text-foreground">
                 After generating a thumbnail, shrink it to mobile size and glance at it for 3 seconds. 
                 Can you tell what the video is about? If not, simplify.
               </p>
@@ -69,8 +69,8 @@ export default function YouTubeThumbnailsPost() {
           <Card className="my-6">
             <CardContent className="pt-6 space-y-4">
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #1 - The Shocked Reaction</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #1 - The Shocked Reaction</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Professional YouTube thumbnail, person with shocked expression looking at laptop screen, 
                   dramatic blue and orange lighting, clean background with subtle tech elements, 
                   negative space on right for text, 1280x720, high contrast
@@ -78,8 +78,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
               
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #2 - The Before/After Split</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #2 - The Before/After Split</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Split-screen YouTube thumbnail, left side messy chaotic code on screen, 
                   right side clean organized code, dramatic diagonal split, 
                   frustrated expression left vs confident smile right, vibrant colors, 1280x720
@@ -87,8 +87,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #3 - The Minimal Tool Focus</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #3 - The Minimal Tool Focus</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Clean minimal YouTube thumbnail, [TOOL NAME] logo large and centered, 
                   gradient background from dark blue to purple, subtle glow effect, 
                   professional tech aesthetic, 1280x720, no text
@@ -96,8 +96,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #4 - The Money Shot</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #4 - The Money Shot</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   YouTube thumbnail, person pointing at floating dollar signs and upward arrows, 
                   green money aesthetic, excited expression, laptop visible, 
                   clean gradient background, high energy composition, 1280x720
@@ -105,8 +105,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #5 - The Comparison Arrows</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #5 - The Comparison Arrows</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   YouTube thumbnail comparison layout, [ITEM A] logo on left vs [ITEM B] logo on right, 
                   large VS text in center with fire effects, dramatic red and blue opposing colors, 
                   battle aesthetic, 1280x720
@@ -121,8 +121,8 @@ export default function YouTubeThumbnailsPost() {
           <Card className="my-6">
             <CardContent className="pt-6 space-y-4">
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #6 - The Epic Moment</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #6 - The Epic Moment</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Dynamic gaming YouTube thumbnail, character in action pose, 
                   dramatic explosion and particle effects in background, 
                   intense red and orange color grading, cinematic lighting, 
@@ -131,8 +131,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #7 - The Reaction Face</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #7 - The Reaction Face</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Gaming YouTube thumbnail, gamer face extreme close-up with shocked expression, 
                   game screenshot blurred in background, neon green and purple lighting, 
                   RGB aesthetic, high contrast, 1280x720
@@ -140,8 +140,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #8 - The Loot/Rare Item</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #8 - The Loot/Rare Item</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Gaming thumbnail, rare glowing item centered with holy light rays from above, 
                   treasure chest scene, gold and purple legendary colors, 
                   sparkle effects, dramatic presentation, 1280x720
@@ -149,8 +149,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #9 - The Challenge Setup</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #9 - The Challenge Setup</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   YouTube thumbnail challenge format, person with determined/worried expression, 
                   game elements surrounding them threateningly, 
                   red warning colors, danger aesthetic, bold composition, 1280x720
@@ -165,8 +165,8 @@ export default function YouTubeThumbnailsPost() {
           <Card className="my-6">
             <CardContent className="pt-6 space-y-4">
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #10 - The Travel Hero Shot</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #10 - The Travel Hero Shot</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Travel YouTube thumbnail, person standing at iconic [LOCATION] landmark, 
                   golden hour lighting, arms spread in wonder pose, 
                   vibrant saturated colors, cinematic wide angle, 1280x720
@@ -174,8 +174,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #11 - The Luxury Tease</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #11 - The Luxury Tease</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Lifestyle thumbnail, person in luxury setting (private jet/yacht/penthouse), 
                   casual confident pose, warm golden lighting, 
                   aspirational but authentic vibe, subtle smile, 1280x720
@@ -183,8 +183,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #12 - The Transformation</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #12 - The Transformation</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Before and after thumbnail, dramatic transformation composition, 
                   left side tired/messy, right side polished/confident, 
                   arrow pointing from left to right, bright energetic colors, 1280x720
@@ -192,8 +192,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #13 - The Day in Life</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #13 - The Day in Life</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Vlog thumbnail, candid lifestyle shot, person mid-activity in aesthetic environment, 
                   morning light through window, coffee/breakfast visible, 
                   cozy but aspirational, soft warm tones, 1280x720
@@ -208,8 +208,8 @@ export default function YouTubeThumbnailsPost() {
           <Card className="my-6">
             <CardContent className="pt-6 space-y-4">
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #14 - The Whiteboard Explainer</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #14 - The Whiteboard Explainer</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Educational YouTube thumbnail, person pointing at whiteboard with diagrams, 
                   professional but approachable, clean background, 
                   key concept illustrated simply, warm lighting, 1280x720
@@ -217,8 +217,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #15 - The Mind-Blown Reveal</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #15 - The Mind-Blown Reveal</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Educational thumbnail, person with surprised enlightened expression, 
                   lightbulb moment, abstract knowledge visualization floating around head, 
                   purple and blue enlightenment colors, 1280x720
@@ -226,8 +226,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #16 - The Myth Buster</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #16 - The Myth Buster</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Thumbnail debunking myths, large red X over common misconception image, 
                   person with knowing smirk expression, 
                   dramatic red warning aesthetic, bold composition, 1280x720
@@ -235,8 +235,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #17 - The Step-by-Step</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #17 - The Step-by-Step</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Tutorial thumbnail, numbered steps 1-2-3 floating in space, 
                   clean gradient background, arrow progression, 
                   professional helpful aesthetic, clear visual hierarchy, 1280x720
@@ -251,8 +251,8 @@ export default function YouTubeThumbnailsPost() {
           <Card className="my-6">
             <CardContent className="pt-6 space-y-4">
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #18 - The Chart Success</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #18 - The Chart Success</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Finance YouTube thumbnail, green upward trending chart, 
                   person pointing confidently at the growth, 
                   money/currency symbols floating, success energy, 
@@ -261,8 +261,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #19 - The Mistake Warning</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #19 - The Mistake Warning</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Warning style thumbnail, person with concerned expression, 
                   red warning signs and X marks, money falling/escaping visualization, 
                   dramatic cautionary aesthetic, 1280x720
@@ -270,8 +270,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #20 - The Secret Reveal</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #20 - The Secret Reveal</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Thumbnail revealing secrets, person whispering or holding finger to lips, 
                   mysterious shadowy lighting, gold accents suggesting hidden value, 
                   intrigue and curiosity aesthetic, 1280x720
@@ -279,8 +279,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #21 - The Calculator Proof</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #21 - The Calculator Proof</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Finance proof thumbnail, calculator showing big number, 
                   person with surprised/excited expression, 
                   receipts or documents visible, authentic credibility aesthetic, 
@@ -296,8 +296,8 @@ export default function YouTubeThumbnailsPost() {
           <Card className="my-6">
             <CardContent className="pt-6 space-y-4">
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #22 - The Hero Dish</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #22 - The Hero Dish</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Food YouTube thumbnail, beautiful [DISH] perfectly plated, 
                   steam rising dramatically, warm appetizing lighting, 
                   rustic wooden surface, shallow depth of field, 
@@ -306,8 +306,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #23 - The Chef Taste Test</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #23 - The Chef Taste Test</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Cooking thumbnail, chef tasting food with exaggerated pleased expression, 
                   beautiful dish in foreground, professional kitchen background, 
                   warm inviting colors, authentic cooking moment, 1280x720
@@ -315,8 +315,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #24 - The Ingredient Spread</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #24 - The Ingredient Spread</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Recipe thumbnail, fresh ingredients artfully arranged overhead shot, 
                   colorful vegetables and proteins, clean white or marble surface, 
                   natural lighting, cookbook aesthetic, 1280x720
@@ -331,8 +331,8 @@ export default function YouTubeThumbnailsPost() {
           <Card className="my-6">
             <CardContent className="pt-6 space-y-4">
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #25 - The Power Pose</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #25 - The Power Pose</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Fitness YouTube thumbnail, athletic person in powerful exercise pose, 
                   dramatic gym lighting with shadows, sweat visible, 
                   motivational energy, bold dynamic angles, 1280x720
@@ -340,8 +340,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #26 - The Transformation Result</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #26 - The Transformation Result</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Fitness transformation thumbnail, confident pose showing physique, 
                   dramatic lighting highlighting muscles, 
                   clean dark background, aspirational but achievable look, 1280x720
@@ -349,8 +349,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #27 - The Workout Preview</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #27 - The Workout Preview</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Workout video thumbnail, person mid-exercise frozen in peak position, 
                   motion blur suggesting movement, 
                   timer or duration indicator visual, energetic colors, 1280x720
@@ -367,8 +367,8 @@ export default function YouTubeThumbnailsPost() {
           <Card className="my-6">
             <CardContent className="pt-6 space-y-4">
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #28 - Pure Shock</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #28 - Pure Shock</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   YouTube thumbnail, person with genuinely shocked expression, 
                   mouth open, eyes wide, hands on face, 
                   dramatic lighting, clean blurred background, 
@@ -377,8 +377,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #29 - Curiosity Hook</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #29 - Curiosity Hook</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Thumbnail curiosity expression, person with raised eyebrow and slight smirk, 
                   leaning toward camera, mysterious object partially visible, 
                   "I know something you don't" energy, 1280x720
@@ -386,8 +386,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div className="border-b pb-4">
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #30 - Frustrated Rant</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #30 - Frustrated Rant</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   Thumbnail frustrated expression, person with hands up in exasperation, 
                   annoyed but relatable look, 
                   problem/frustration source blurred in background, 
@@ -396,8 +396,8 @@ export default function YouTubeThumbnailsPost() {
               </div>
 
               <div>
-                <p className="text-sm text-purple-600 font-medium mb-1">Prompt #31 - Excited Celebration</p>
-                <code className="block text-sm bg-gray-100 p-3 rounded">
+                <p className="text-sm text-brand font-medium mb-1">Prompt #31 - Excited Celebration</p>
+                <code className="block text-sm bg-muted p-3 rounded">
                   YouTube thumbnail celebration, person with huge genuine smile, 
                   arms raised in victory, confetti or sparkle effects, 
                   bright joyful colors, high energy positive vibes, 1280x720
@@ -416,22 +416,22 @@ export default function YouTubeThumbnailsPost() {
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-purple-600">DALL-E 3</h4>
-                  <p className="text-sm text-gray-600">
+                  <h4 className="font-semibold text-brand">DALL-E 3</h4>
+                  <p className="text-sm text-muted-foreground">
                     Best for thumbnails with text elements. Add "YouTube thumbnail" and "1280x720" 
                     to prompts. Great at understanding complex scene descriptions.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-purple-600">Flux Pro</h4>
-                  <p className="text-sm text-gray-600">
+                  <h4 className="font-semibold text-brand">Flux Pro</h4>
+                  <p className="text-sm text-muted-foreground">
                     Best for photorealistic thumbnails. Excellent for product shots, 
                     realistic faces, and professional aesthetics.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-purple-600">Stable Diffusion XL</h4>
-                  <p className="text-sm text-gray-600">
+                  <h4 className="font-semibold text-brand">Stable Diffusion XL</h4>
+                  <p className="text-sm text-muted-foreground">
                     Best for stylized thumbnails. Use LoRAs for specific aesthetics. 
                     Cheapest for A/B testing multiple variations.
                   </p>
@@ -440,14 +440,14 @@ export default function YouTubeThumbnailsPost() {
             </CardContent>
           </Card>
 
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8 my-12">
+          <div className="bg-gradient-to-r from-brand-muted/50 to-info-muted/50 rounded-xl p-8 my-12">
             <h3 className="text-xl font-bold mb-3">Create Thumbnails That Click</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               VixPic gives you access to DALL-E, Flux, and SDXL in one interface. 
               Test multiple thumbnail variations without subscription limits.
             </p>
             <Link href="/generate">
-              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+              <Button className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90">
                 Start Creating Free →
               </Button>
             </Link>
@@ -480,14 +480,14 @@ export default function YouTubeThumbnailsPost() {
             That's nothing compared to the views you'll gain from a better-performing thumbnail.
           </p>
 
-          <p className="text-gray-500 mt-8 pt-8 border-t">
+          <p className="text-muted-foreground mt-8 pt-8 border-t">
             <em>
               Want more prompt inspiration? Check our{" "}
-              <Link href="/styles" className="text-purple-600 hover:underline">
+              <Link href="/styles" className="text-brand hover:underline">
                 style guides
               </Link>{" "}
               for specific aesthetics, or the{" "}
-              <Link href="/use-cases/thumbnails" className="text-purple-600 hover:underline">
+              <Link href="/use-cases/thumbnails" className="text-brand hover:underline">
                 thumbnails use case page
               </Link>{" "}
               for more tips.
@@ -497,25 +497,25 @@ export default function YouTubeThumbnailsPost() {
       </article>
 
       {/* Related Posts */}
-      <section className="border-t py-12 px-4 bg-gray-50">
+      <section className="border-t py-12 px-4 bg-muted">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Link href="/blog/dalle-vs-stable-diffusion-vs-flux">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-blue-600">Comparison</span>
+                  <span className="text-xs font-medium text-info">Comparison</span>
                   <h3 className="font-semibold mt-2">DALL-E vs SDXL vs Flux</h3>
-                  <p className="text-sm text-gray-500 mt-2">Which model is best for your needs?</p>
+                  <p className="text-sm text-muted-foreground mt-2">Which model is best for your needs?</p>
                 </CardContent>
               </Card>
             </Link>
             <Link href="/blog/perfect-prompts-product-photos">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-orange-600">Tutorial</span>
+                  <span className="text-xs font-medium text-warning">Tutorial</span>
                   <h3 className="font-semibold mt-2">Perfect Prompts for Product Photos</h3>
-                  <p className="text-sm text-gray-500 mt-2">E-commerce prompts that convert.</p>
+                  <p className="text-sm text-muted-foreground mt-2">E-commerce prompts that convert.</p>
                 </CardContent>
               </Card>
             </Link>

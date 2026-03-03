@@ -79,19 +79,19 @@ export default function ImageCompareTool() {
   const bothImagesLoaded = imageA && imageB;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900">Tools</Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Image Compare</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground">Tools</Link>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Image Compare</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/tools">
@@ -109,13 +109,13 @@ export default function ImageCompareTool() {
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-4">
               ✨ Free • No Upload • 100% Private
             </div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
               Image Compare
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Compare two images side by side with an interactive slider. Perfect for before/after edits, A/B testing, and quality comparisons.
             </p>
           </div>
@@ -131,7 +131,7 @@ export default function ImageCompareTool() {
                   </h3>
                   {!imageA ? (
                     <div
-                      className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-purple-400 transition-colors cursor-pointer"
+                      className="border-2 border-dashed border-input rounded-xl p-8 text-center hover:border-brand transition-colors cursor-pointer"
                       onDrop={handleDrop("A")}
                       onDragOver={(e) => e.preventDefault()}
                       onClick={() => document.getElementById("fileInputA")?.click()}
@@ -144,7 +144,7 @@ export default function ImageCompareTool() {
                         className="hidden"
                       />
                       <div className="text-4xl mb-2">📷</div>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Drop or click to upload
                       </p>
                     </div>
@@ -153,11 +153,11 @@ export default function ImageCompareTool() {
                       <img
                         src={imageA}
                         alt="Image A"
-                        className="w-full h-48 object-contain bg-gray-100 rounded-lg"
+                        className="w-full h-48 object-contain bg-muted rounded-lg"
                       />
                       <button
                         onClick={() => setImageA(null)}
-                        className="absolute top-2 right-2 bg-white/80 hover:bg-white rounded-full p-1 shadow"
+                        className="absolute top-2 right-2 bg-background/80 hover:bg-background rounded-full p-1 shadow"
                       >
                         ✕
                       </button>
@@ -174,7 +174,7 @@ export default function ImageCompareTool() {
                   </h3>
                   {!imageB ? (
                     <div
-                      className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-purple-400 transition-colors cursor-pointer"
+                      className="border-2 border-dashed border-input rounded-xl p-8 text-center hover:border-brand transition-colors cursor-pointer"
                       onDrop={handleDrop("B")}
                       onDragOver={(e) => e.preventDefault()}
                       onClick={() => document.getElementById("fileInputB")?.click()}
@@ -187,7 +187,7 @@ export default function ImageCompareTool() {
                         className="hidden"
                       />
                       <div className="text-4xl mb-2">📷</div>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Drop or click to upload
                       </p>
                     </div>
@@ -196,11 +196,11 @@ export default function ImageCompareTool() {
                       <img
                         src={imageB}
                         alt="Image B"
-                        className="w-full h-48 object-contain bg-gray-100 rounded-lg"
+                        className="w-full h-48 object-contain bg-muted rounded-lg"
                       />
                       <button
                         onClick={() => setImageB(null)}
-                        className="absolute top-2 right-2 bg-white/80 hover:bg-white rounded-full p-1 shadow"
+                        className="absolute top-2 right-2 bg-background/80 hover:bg-background rounded-full p-1 shadow"
                       >
                         ✕
                       </button>
@@ -224,8 +224,8 @@ export default function ImageCompareTool() {
                         onClick={() => setViewMode(mode)}
                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                           viewMode === mode
-                            ? "bg-purple-600 text-white"
-                            : "bg-gray-100 hover:bg-gray-200"
+                            ? "bg-brand text-brand-foreground"
+                            : "bg-muted hover:bg-muted"
                         }`}
                       >
                         {mode === "slider" && "Slider"}
@@ -247,7 +247,7 @@ export default function ImageCompareTool() {
                 {/* Onion Skin Opacity Control */}
                 {viewMode === "onionSkin" && (
                   <div className="mb-4">
-                    <label className="text-sm text-gray-600 block mb-2">
+                    <label className="text-sm text-muted-foreground block mb-2">
                       Overlay Opacity: {onionOpacity}%
                     </label>
                     <input
@@ -265,7 +265,7 @@ export default function ImageCompareTool() {
                 {viewMode === "slider" && (
                   <div
                     ref={containerRef}
-                    className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden cursor-col-resize select-none"
+                    className="relative w-full aspect-video bg-muted rounded-lg overflow-hidden cursor-col-resize select-none"
                     onMouseMove={handleMouseMove}
                     onMouseUp={() => setIsDragging(false)}
                     onMouseLeave={() => setIsDragging(false)}
@@ -297,21 +297,21 @@ export default function ImageCompareTool() {
 
                     {/* Slider Handle */}
                     <div
-                      className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-col-resize"
+                      className="absolute top-0 bottom-0 w-1 bg-background shadow-lg cursor-col-resize"
                       style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
                       onMouseDown={() => setIsDragging(true)}
                       onTouchStart={() => setIsDragging(true)}
                     >
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
-                        <span className="text-gray-600">⇔</span>
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-background rounded-full shadow-lg flex items-center justify-center">
+                        <span className="text-muted-foreground">⇔</span>
                       </div>
                     </div>
 
                     {/* Labels */}
-                    <div className="absolute bottom-4 left-4 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                    <div className="absolute bottom-4 left-4 bg-inverted/50 text-inverted-foreground text-xs px-2 py-1 rounded">
                       Before
                     </div>
-                    <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                    <div className="absolute bottom-4 right-4 bg-inverted/50 text-inverted-foreground text-xs px-2 py-1 rounded">
                       After
                     </div>
                   </div>
@@ -324,9 +324,9 @@ export default function ImageCompareTool() {
                       <img
                         src={imageA}
                         alt="Before"
-                        className="w-full aspect-video object-contain bg-gray-100 rounded-lg"
+                        className="w-full aspect-video object-contain bg-muted rounded-lg"
                       />
-                      <div className="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                      <div className="absolute bottom-2 left-2 bg-inverted/50 text-inverted-foreground text-xs px-2 py-1 rounded">
                         Before
                       </div>
                     </div>
@@ -334,9 +334,9 @@ export default function ImageCompareTool() {
                       <img
                         src={imageB}
                         alt="After"
-                        className="w-full aspect-video object-contain bg-gray-100 rounded-lg"
+                        className="w-full aspect-video object-contain bg-muted rounded-lg"
                       />
-                      <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                      <div className="absolute bottom-2 right-2 bg-inverted/50 text-inverted-foreground text-xs px-2 py-1 rounded">
                         After
                       </div>
                     </div>
@@ -345,7 +345,7 @@ export default function ImageCompareTool() {
 
                 {/* Onion Skin Mode */}
                 {viewMode === "onionSkin" && (
-                  <div className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                  <div className="relative w-full aspect-video bg-muted rounded-lg overflow-hidden">
                     <img
                       src={imageA}
                       alt="Before"
@@ -357,7 +357,7 @@ export default function ImageCompareTool() {
                       className="absolute inset-0 w-full h-full object-contain"
                       style={{ opacity: onionOpacity / 100 }}
                     />
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white text-xs px-3 py-1 rounded">
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-inverted/50 text-inverted-foreground text-xs px-3 py-1 rounded">
                       Before ← Opacity → After
                     </div>
                   </div>
@@ -367,10 +367,10 @@ export default function ImageCompareTool() {
           )}
 
           {/* Tips Section */}
-          <Card className="border-2 bg-gradient-to-r from-purple-50 to-blue-50">
+          <Card className="border-2 bg-gradient-to-r from-brand-muted to-info-muted/50">
             <CardContent className="p-6">
               <h3 className="font-semibold mb-3">💡 Pro Tips</h3>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-muted-foreground">
                 <div>
                   <strong>Slider mode</strong> is best for comparing specific details in the same location.
                 </div>
@@ -388,9 +388,9 @@ export default function ImageCompareTool() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 

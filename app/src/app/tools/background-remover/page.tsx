@@ -127,20 +127,20 @@ export default function BackgroundRemover() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Free Tools</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Free Tools</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/tools/upscaler" className="text-gray-600 hover:text-gray-900 hidden sm:block">
+            <Link href="/tools/upscaler" className="text-muted-foreground hover:text-foreground hidden sm:block">
               Upscaler
             </Link>
             <Link href="/generate">
@@ -153,20 +153,20 @@ export default function BackgroundRemover() {
       {/* Hero */}
       <section className="pt-28 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             ✨ Free Tool • No Login Required
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Remove Image Background{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Instantly
             </span>
           </h1>
-          <p className="text-lg text-gray-600 mb-2 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-2 max-w-2xl mx-auto">
             AI-powered background removal using your own Replicate API key. 
             No uploads to third parties, no watermarks, no limits.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             ~$0.005 per image via Replicate API
           </p>
         </div>
@@ -179,9 +179,9 @@ export default function BackgroundRemover() {
             <CardContent className="p-6">
               {/* API Key Input (shown when needed) */}
               {showApiKeyInput && !apiKey && (
-                <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-                  <h3 className="font-semibold text-amber-800 mb-2">Enter Your Replicate API Key</h3>
-                  <p className="text-sm text-amber-700 mb-3">
+                <div className="mb-6 p-4 bg-warning-muted/50 border border-warning/20 rounded-lg">
+                  <h3 className="font-semibold text-warning-muted-foreground mb-2">Enter Your Replicate API Key</h3>
+                  <p className="text-sm text-warning-muted-foreground mb-3">
                     This tool uses your own API key for privacy. Get one free at{" "}
                     <a 
                       href="https://replicate.com/account/api-tokens" 
@@ -204,7 +204,7 @@ export default function BackgroundRemover() {
                       Save
                     </Button>
                   </div>
-                  <p className="text-xs text-amber-600 mt-2">
+                  <p className="text-xs text-warning mt-2">
                     🔒 Your key stays in your browser. Never sent to our servers.
                   </p>
                 </div>
@@ -216,16 +216,16 @@ export default function BackgroundRemover() {
                   onDrop={handleDrop}
                   onDragOver={(e) => e.preventDefault()}
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center cursor-pointer hover:border-purple-400 hover:bg-purple-50/50 transition-colors"
+                  className="border-2 border-dashed border-input rounded-lg p-12 text-center cursor-pointer hover:border-brand hover:bg-brand-muted/50 transition-colors"
                 >
                   <div className="text-5xl mb-4">🖼️</div>
-                  <p className="text-lg font-medium text-gray-700 mb-2">
+                  <p className="text-lg font-medium text-foreground mb-2">
                     Drop your image here
                   </p>
-                  <p className="text-sm text-gray-500 mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     or click to browse
                   </p>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-muted-foreground">
                     PNG, JPG, WEBP up to 10MB
                   </p>
                   <input
@@ -244,8 +244,8 @@ export default function BackgroundRemover() {
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Original */}
                     <div>
-                      <Label className="text-sm text-gray-500 mb-2 block">Original</Label>
-                      <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                      <Label className="text-sm text-muted-foreground mb-2 block">Original</Label>
+                      <div className="relative aspect-square bg-muted rounded-lg overflow-hidden">
                         <img
                           src={selectedImage}
                           alt="Original"
@@ -256,7 +256,7 @@ export default function BackgroundRemover() {
 
                     {/* Result */}
                     <div>
-                      <Label className="text-sm text-gray-500 mb-2 block">Result</Label>
+                      <Label className="text-sm text-muted-foreground mb-2 block">Result</Label>
                       <div 
                         className="relative aspect-square rounded-lg overflow-hidden"
                         style={{
@@ -271,15 +271,15 @@ export default function BackgroundRemover() {
                             className="w-full h-full object-contain"
                           />
                         ) : processingState === "processing" ? (
-                          <div className="absolute inset-0 flex items-center justify-center bg-white/80">
+                          <div className="absolute inset-0 flex items-center justify-center bg-background/80">
                             <div className="text-center">
-                              <div className="animate-spin w-12 h-12 border-4 border-purple-600 border-t-transparent rounded-full mx-auto mb-3" />
-                              <p className="text-sm text-gray-600">Removing background...</p>
+                              <div className="animate-spin w-12 h-12 border-4 border-brand border-t-transparent rounded-full mx-auto mb-3" />
+                              <p className="text-sm text-muted-foreground">Removing background...</p>
                             </div>
                           </div>
                         ) : (
-                          <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
-                            <p className="text-gray-400">Preview will appear here</p>
+                          <div className="absolute inset-0 flex items-center justify-center bg-muted">
+                            <p className="text-muted-foreground">Preview will appear here</p>
                           </div>
                         )}
                       </div>
@@ -288,7 +288,7 @@ export default function BackgroundRemover() {
 
                   {/* Error */}
                   {error && (
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                    <div className="p-4 bg-destructive/5 border border-destructive/20 rounded-lg text-destructive">
                       <p className="font-medium">Error</p>
                       <p className="text-sm">{error}</p>
                     </div>
@@ -299,7 +299,7 @@ export default function BackgroundRemover() {
                     {!processedImage && processingState !== "processing" && (
                       <Button 
                         onClick={processImage}
-                        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                        className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
                         size="lg"
                       >
                         Remove Background
@@ -308,7 +308,7 @@ export default function BackgroundRemover() {
                     {processedImage && (
                       <Button 
                         onClick={downloadImage}
-                        className="bg-green-600 hover:bg-green-700"
+                        className="bg-success hover:bg-success/90"
                         size="lg"
                       >
                         Download PNG
@@ -326,34 +326,34 @@ export default function BackgroundRemover() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-14 h-14 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div className="w-14 h-14 bg-brand-muted text-brand rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 1
               </div>
               <h3 className="font-semibold mb-2">Get Replicate API Key</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Sign up at replicate.com. Free tier available.
               </p>
             </div>
             <div className="text-center">
-              <div className="w-14 h-14 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div className="w-14 h-14 bg-brand-muted text-brand rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 2
               </div>
               <h3 className="font-semibold mb-2">Upload Your Image</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Drag & drop or click to select any image.
               </p>
             </div>
             <div className="text-center">
-              <div className="w-14 h-14 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div className="w-14 h-14 bg-brand-muted text-brand rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 3
               </div>
               <h3 className="font-semibold mb-2">Download Result</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Get your transparent PNG instantly.
               </p>
             </div>
@@ -365,7 +365,7 @@ export default function BackgroundRemover() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">Why Use Your Own API Key?</h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-muted-foreground mb-8">
             Most &quot;free&quot; background removal tools have hidden costs. Here&apos;s why BYOK is better:
           </p>
           <div className="grid md:grid-cols-3 gap-6 text-left">
@@ -373,7 +373,7 @@ export default function BackgroundRemover() {
               <CardContent className="p-6">
                 <div className="text-3xl mb-3">💰</div>
                 <h3 className="font-semibold mb-2">Pay API Cost Only</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   ~$0.005/image vs $0.50+ on other tools. No markup.
                 </p>
               </CardContent>
@@ -382,7 +382,7 @@ export default function BackgroundRemover() {
               <CardContent className="p-6">
                 <div className="text-3xl mb-3">🔐</div>
                 <h3 className="font-semibold mb-2">100% Private</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Images go directly to Replicate. We never see them.
                 </p>
               </CardContent>
@@ -391,7 +391,7 @@ export default function BackgroundRemover() {
               <CardContent className="p-6">
                 <div className="text-3xl mb-3">♾️</div>
                 <h3 className="font-semibold mb-2">No Limits</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Process unlimited images. No daily caps.
                 </p>
               </CardContent>
@@ -401,8 +401,8 @@ export default function BackgroundRemover() {
       </section>
 
       {/* Upsell */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-brand to-info">
+        <div className="max-w-4xl mx-auto text-center text-brand-foreground">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Need More Than Background Removal?
           </h2>
@@ -420,9 +420,9 @@ export default function BackgroundRemover() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            Part of <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            Part of <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/background-remover" className="hover:underline">Background Remover</Link> • 
             <Link href="/tools/upscaler" className="hover:underline">Image Upscaler</Link>
           </p>

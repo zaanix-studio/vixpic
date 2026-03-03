@@ -57,23 +57,23 @@ export default function MidjourneyAlternativePage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-muted text-brand-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             🎨 #1 Midjourney Alternative for BYOK Users
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             The Best{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Midjourney Alternative
             </span>
             {" "}in 2026
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Tired of Discord commands, credit expiration, and $30/month subscriptions? 
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Tired of Discord commands, credit expiration, and $30/month subscriptions?
             VixPic gives you a modern web interface, BYOK pricing, and access to multiple AI models.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-brand to-info">
                 Try VixPic Free
               </Button>
             </Link>
@@ -87,9 +87,9 @@ export default function MidjourneyAlternativePage() {
       </section>
 
       {/* Pain Points */}
-      <section className="py-16 px-4 bg-red-50">
+      <section className="py-16 px-4 bg-destructive/5">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-red-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-destructive">
             Common Frustrations with Midjourney
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -125,10 +125,10 @@ export default function MidjourneyAlternativePage() {
                 desc: "Corporate content moderation. Banned words, restricted concepts, no control over your creative freedom."
               },
             ].map((pain, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl border border-red-200">
+              <div key={i} className="bg-card p-6 rounded-xl border border-destructive/20">
                 <div className="text-3xl mb-3">{pain.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{pain.title}</h3>
-                <p className="text-gray-600">{pain.desc}</p>
+                <p className="text-muted-foreground">{pain.desc}</p>
               </div>
             ))}
           </div>
@@ -138,7 +138,7 @@ export default function MidjourneyAlternativePage() {
       {/* VixPic Solutions */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8 text-green-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-success-muted-foreground">
             How VixPic Solves These Problems
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -174,10 +174,10 @@ export default function MidjourneyAlternativePage() {
                 desc: "Choose from SDXL, DALL-E, Flux, and more. Switch models based on your needs, not our limits."
               },
             ].map((solution, i) => (
-              <div key={i} className="bg-green-50 p-6 rounded-xl border border-green-200">
+              <div key={i} className="bg-success-muted/50 p-6 rounded-xl border border-success/20">
                 <div className="text-3xl mb-3">{solution.icon}</div>
                 <h3 className="font-bold text-lg mb-2">{solution.title}</h3>
-                <p className="text-gray-600">{solution.desc}</p>
+                <p className="text-muted-foreground">{solution.desc}</p>
               </div>
             ))}
           </div>
@@ -185,29 +185,29 @@ export default function MidjourneyAlternativePage() {
       </section>
 
       {/* Feature Comparison Table */}
-      <section id="comparison" className="py-16 px-4 bg-gray-50">
+      <section id="comparison" className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">VixPic vs Midjourney: Full Comparison</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             An honest look at how VixPic compares to Midjourney across all major features.
           </p>
           <div className="overflow-x-auto">
-            <table className="w-full bg-white rounded-xl shadow-sm">
+            <table className="w-full bg-card rounded-xl shadow-sm">
               <thead>
                 <tr className="border-b-2">
                   <th className="py-4 px-6 text-left">Feature</th>
                   <th className="py-4 px-6 text-center">Midjourney</th>
-                  <th className="py-4 px-6 text-center bg-purple-50">VixPic</th>
+                  <th className="py-4 px-6 text-center bg-brand-muted/50">VixPic</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonData.map((row, i) => (
                   <tr key={i} className="border-b last:border-b-0">
                     <td className="py-4 px-6 font-medium">{row.feature}</td>
-                    <td className={`py-4 px-6 text-center ${row.winner === 'midjourney' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center ${row.winner === 'midjourney' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.midjourney}
                     </td>
-                    <td className={`py-4 px-6 text-center bg-purple-50 ${row.winner === 'vixpic' ? 'text-green-600 font-medium' : 'text-gray-600'}`}>
+                    <td className={`py-4 px-6 text-center bg-brand-muted/50 ${row.winner === 'vixpic' ? 'text-success font-medium' : 'text-muted-foreground'}`}>
                       {row.vixpic}
                     </td>
                   </tr>
@@ -215,7 +215,7 @@ export default function MidjourneyAlternativePage() {
               </tbody>
             </table>
           </div>
-          <p className="text-sm text-gray-500 mt-4 text-center">
+          <p className="text-sm text-muted-foreground mt-4 text-center">
             VixPic wins on 10 of 12 features. Midjourney excels in artistic style and community size.
           </p>
         </div>
@@ -225,48 +225,48 @@ export default function MidjourneyAlternativePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Real Cost Comparison</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             How much does it actually cost to generate images? Let&apos;s compare.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="border-2">
               <CardHeader className="text-center">
                 <CardTitle className="text-lg">Casual User</CardTitle>
-                <p className="text-sm text-gray-600">~50 images/month</p>
+                <p className="text-sm text-muted-foreground">~50 images/month</p>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-500">Midjourney Basic</p>
+                    <p className="text-sm text-muted-foreground">Midjourney Basic</p>
                     <p className="text-2xl font-bold">$10/mo</p>
                   </div>
                   <div className="border-t pt-4">
-                    <p className="text-sm text-gray-500">VixPic (BYOK)</p>
-                    <p className="text-2xl font-bold text-green-600">~$2/mo</p>
+                    <p className="text-sm text-muted-foreground">VixPic (BYOK)</p>
+                    <p className="text-2xl font-bold text-success">~$2/mo</p>
                   </div>
-                  <div className="bg-green-100 text-green-800 py-2 px-4 rounded-lg font-semibold">
+                  <div className="bg-success-muted text-success-muted-foreground py-2 px-4 rounded-lg font-semibold">
                     Save $96/year
                   </div>
                 </div>
               </CardContent>
             </Card>
             
-            <Card className="border-2 border-purple-300 shadow-lg">
-              <CardHeader className="text-center bg-purple-50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
+            <Card className="border-2 border-brand/30 shadow-lg">
+              <CardHeader className="text-center bg-brand-muted/50 -mx-6 -mt-6 px-6 pt-6 rounded-t-lg">
                 <CardTitle className="text-lg">Regular Creator</CardTitle>
-                <p className="text-sm text-gray-600">~200 images/month</p>
+                <p className="text-sm text-muted-foreground">~200 images/month</p>
               </CardHeader>
               <CardContent className="text-center pt-6">
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-500">Midjourney Standard</p>
+                    <p className="text-sm text-muted-foreground">Midjourney Standard</p>
                     <p className="text-2xl font-bold">$30/mo</p>
                   </div>
                   <div className="border-t pt-4">
-                    <p className="text-sm text-gray-500">VixPic (BYOK)</p>
-                    <p className="text-2xl font-bold text-green-600">~$8/mo</p>
+                    <p className="text-sm text-muted-foreground">VixPic (BYOK)</p>
+                    <p className="text-2xl font-bold text-success">~$8/mo</p>
                   </div>
-                  <div className="bg-green-100 text-green-800 py-2 px-4 rounded-lg font-semibold">
+                  <div className="bg-success-muted text-success-muted-foreground py-2 px-4 rounded-lg font-semibold">
                     Save $264/year
                   </div>
                 </div>
@@ -276,62 +276,62 @@ export default function MidjourneyAlternativePage() {
             <Card className="border-2">
               <CardHeader className="text-center">
                 <CardTitle className="text-lg">Power User</CardTitle>
-                <p className="text-sm text-gray-600">~1000 images/month</p>
+                <p className="text-sm text-muted-foreground">~1000 images/month</p>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-500">Midjourney Pro</p>
+                    <p className="text-sm text-muted-foreground">Midjourney Pro</p>
                     <p className="text-2xl font-bold">$60/mo</p>
                   </div>
                   <div className="border-t pt-4">
-                    <p className="text-sm text-gray-500">VixPic (BYOK)</p>
-                    <p className="text-2xl font-bold text-green-600">~$40/mo</p>
+                    <p className="text-sm text-muted-foreground">VixPic (BYOK)</p>
+                    <p className="text-2xl font-bold text-success">~$40/mo</p>
                   </div>
-                  <div className="bg-green-100 text-green-800 py-2 px-4 rounded-lg font-semibold">
+                  <div className="bg-success-muted text-success-muted-foreground py-2 px-4 rounded-lg font-semibold">
                     Save $240/year
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
-          <p className="text-sm text-gray-500 mt-6 text-center">
+          <p className="text-sm text-muted-foreground mt-6 text-center">
             VixPic costs based on SDXL via Replicate (~$0.04/image). Actual costs vary by model and provider.
           </p>
         </div>
       </section>
 
       {/* When Midjourney Is Better */}
-      <section className="py-16 px-4 bg-orange-50">
+      <section className="py-16 px-4 bg-warning-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">
             Honest Take: When Midjourney Is Still Better
           </h2>
-          <div className="bg-white p-8 rounded-xl border border-orange-200">
-            <p className="text-gray-700 mb-6">
+          <div className="bg-card p-8 rounded-xl border border-warning/20">
+            <p className="text-foreground mb-6">
               We believe in honesty. Here&apos;s when Midjourney might be the better choice:
             </p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You love the Midjourney aesthetic</strong> — Their model has a unique artistic style that&apos;s hard to replicate. If that specific look is essential to your work, stick with MJ.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You enjoy the community</strong> — The Discord has millions of users sharing prompts, techniques, and inspiration. VixPic&apos;s community is smaller.
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-orange-500 font-bold">→</span>
+                <span className="text-warning font-bold">→</span>
                 <div>
                   <strong>You don&apos;t want to manage API keys</strong> — If &quot;bring your own key&quot; sounds like a hassle, Midjourney&apos;s all-in-one subscription is simpler.
                 </div>
               </li>
             </ul>
-            <p className="text-gray-700 mt-6">
+            <p className="text-foreground mt-6">
               That said, if cost, privacy, API access, or interface matter to you — VixPic wins.
             </p>
           </div>
@@ -346,9 +346,9 @@ export default function MidjourneyAlternativePage() {
           </h2>
           <div className="space-y-6">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-white border rounded-xl p-6">
+              <div key={i} className="bg-card border rounded-xl p-6">
                 <h3 className="font-bold text-lg mb-3">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+                <p className="text-muted-foreground">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -356,7 +356,7 @@ export default function MidjourneyAlternativePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand to-info text-brand-foreground">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Switch from Midjourney?</h2>
           <p className="text-xl opacity-90 mb-8">
@@ -369,7 +369,7 @@ export default function MidjourneyAlternativePage() {
               </Button>
             </Link>
             <Link href="/alternatives">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-brand-foreground text-brand-foreground hover:bg-background/10">
                 Compare Other Alternatives
               </Button>
             </Link>

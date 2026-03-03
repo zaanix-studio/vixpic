@@ -37,10 +37,10 @@ export default function GeneratePage() {
 
 function GeneratePageLoading() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+    <div className="min-h-screen bg-muted flex items-center justify-center">
       <div className="text-center">
-        <div className="w-8 h-8 border-2 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-gray-500">Loading...</p>
+        <div className="w-8 h-8 border-2 border-brand border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+        <p className="text-muted-foreground">Loading...</p>
       </div>
     </div>
   );
@@ -223,7 +223,7 @@ function GeneratePageContent() {
   const hasAnyKey = PROVIDERS.some(p => hasKey(p.id));
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-muted">
       {/* Onboarding Modal for first-time users */}
       {showOnboarding && (
         <Onboarding
@@ -236,10 +236,10 @@ function GeneratePageContent() {
         />
       )}
       {/* Header */}
-      <header className="bg-white border-b sticky top-0 z-50">
+      <header className="bg-background border-b sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+            <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
             <span className="font-bold text-xl">VixPic</span>
           </Link>
           <div className="flex items-center gap-4">
@@ -260,13 +260,13 @@ function GeneratePageContent() {
       <div className="max-w-7xl mx-auto px-4 py-6">
         {/* No API Keys Warning */}
         {configuredProviders.length === 0 && (
-          <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-            <h3 className="font-semibold text-amber-800 mb-1">No API Keys Configured</h3>
-            <p className="text-amber-700 text-sm mb-3">
+          <div className="mb-6 p-4 bg-warning-muted/50 border border-warning/20 rounded-lg">
+            <h3 className="font-semibold text-warning-muted-foreground mb-1">No API Keys Configured</h3>
+            <p className="text-warning-muted-foreground text-sm mb-3">
               You need to add at least one API key to start generating images.
             </p>
             <Link href="/settings">
-              <Button size="sm" className="bg-amber-600 hover:bg-amber-700">
+              <Button size="sm" className="bg-warning text-warning-foreground hover:bg-warning/90">
                 Configure API Keys →
               </Button>
             </Link>
@@ -277,7 +277,7 @@ function GeneratePageContent() {
           {/* Main Generation Panel */}
           <div className="space-y-6">
             {/* Prompt Input */}
-            <div className="bg-white rounded-xl p-6 shadow-sm">
+            <div className="bg-card rounded-xl p-6 shadow-sm">
               <div className="flex items-center justify-between mb-3">
                 <Label htmlFor="prompt" className="text-lg font-semibold">
                   Describe your image
@@ -293,7 +293,7 @@ function GeneratePageContent() {
               
               {/* Templates Panel */}
               {showTemplates && (
-                <div className="mb-4 p-4 bg-gray-50 rounded-lg border">
+                <div className="mb-4 p-4 bg-muted rounded-lg border">
                   <div className="flex gap-2 mb-3 overflow-x-auto pb-2">
                     {CATEGORIES.map(cat => (
                       <Button
@@ -314,10 +314,10 @@ function GeneratePageContent() {
                         <button
                           key={template.id}
                           onClick={() => applyTemplate(template)}
-                          className="text-left p-3 rounded-lg border bg-white hover:border-purple-300 hover:bg-purple-50 transition-colors"
+                          className="text-left p-3 rounded-lg border bg-card hover:border-brand/30 hover:bg-brand-muted/50 transition-colors"
                         >
                           <p className="font-medium text-sm">{template.name}</p>
-                          <p className="text-xs text-gray-500 line-clamp-2 mt-1">
+                          <p className="text-xs text-muted-foreground line-clamp-2 mt-1">
                             {template.prompt.slice(0, 80)}...
                           </p>
                         </button>
@@ -335,13 +335,13 @@ function GeneratePageContent() {
               />
               <div className="flex items-center justify-between mt-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-sm text-gray-500">{prompt.length} characters</span>
-                  <span className="text-xs text-gray-400 hidden sm:block">⌘/Ctrl + Enter to generate</span>
+                  <span className="text-sm text-muted-foreground">{prompt.length} characters</span>
+                  <span className="text-xs text-muted-foreground hidden sm:block">⌘/Ctrl + Enter to generate</span>
                 </div>
                 <Button
                   onClick={handleGenerate}
                   disabled={isGenerating || !hasProviderKey || !prompt.trim()}
-                  className="px-8 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                  className="px-8 bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
                 >
                   {isGenerating ? (
                     <>
@@ -356,17 +356,17 @@ function GeneratePageContent() {
             </div>
 
             {/* Generated Image Display */}
-            <div className="bg-white rounded-xl p-6 shadow-sm min-h-[400px] flex items-center justify-center">
+            <div className="bg-card rounded-xl p-6 shadow-sm min-h-[400px] flex items-center justify-center">
               {error && (
-                <div className="text-center text-red-600">
+                <div className="text-center text-destructive">
                   <p className="text-lg">⚠️ {error}</p>
                 </div>
               )}
               {isGenerating && (
                 <div className="text-center">
-                  <div className="w-16 h-16 border-4 border-purple-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                  <p className="text-gray-600 font-medium">{generationStatus || 'Creating your image...'}</p>
-                  <p className="text-sm text-gray-400 mt-2">This may take 5-30 seconds depending on the model</p>
+                  <div className="w-16 h-16 border-4 border-brand border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                  <p className="text-muted-foreground font-medium">{generationStatus || 'Creating your image...'}</p>
+                  <p className="text-sm text-muted-foreground mt-2">This may take 5-30 seconds depending on the model</p>
                 </div>
               )}
               {!isGenerating && !error && generatedImage && (
@@ -422,7 +422,7 @@ function GeneratePageContent() {
                 </div>
               )}
               {!isGenerating && !error && !generatedImage && (
-                <div className="text-center text-gray-400">
+                <div className="text-center text-muted-foreground">
                   <div className="text-6xl mb-4">🎨</div>
                   <p>Your generated image will appear here</p>
                 </div>
@@ -431,14 +431,14 @@ function GeneratePageContent() {
 
             {/* Recent History */}
             {history.length > 0 && (
-              <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="bg-card rounded-xl p-6 shadow-sm">
                 <h3 className="font-semibold mb-4">Recent Generations</h3>
                 <div className="grid grid-cols-4 gap-3">
                   {history.slice(0, 8).map(img => (
                     <button
                       key={img.id}
                       onClick={() => setGeneratedImage(img.url)}
-                      className="aspect-square rounded-lg overflow-hidden hover:ring-2 ring-purple-500 transition-all"
+                      className="aspect-square rounded-lg overflow-hidden hover:ring-2 ring-brand/60 transition-all"
                     >
                       <img src={img.url} alt={img.prompt} className="w-full h-full object-cover" />
                     </button>
@@ -458,7 +458,7 @@ function GeneratePageContent() {
                 <div className="space-y-4">
                   {/* Provider */}
                   <div>
-                    <Label className="text-sm text-gray-600">Provider</Label>
+                    <Label className="text-sm text-muted-foreground">Provider</Label>
                     <Select value={selectedProvider} onValueChange={(v) => v && handleProviderChange(v as Provider)}>
                       <SelectTrigger className="mt-1">
                         <SelectValue />
@@ -469,9 +469,9 @@ function GeneratePageContent() {
                             <span className="flex items-center gap-2">
                               {p.name}
                               {hasKey(p.id) ? (
-                                <Badge variant="outline" className="text-green-600 border-green-200">✓</Badge>
+                                <Badge variant="outline" className="text-success border-success/20">✓</Badge>
                               ) : (
-                                <Badge variant="outline" className="text-gray-400">No key</Badge>
+                                <Badge variant="outline" className="text-muted-foreground">No key</Badge>
                               )}
                             </span>
                           </SelectItem>
@@ -482,7 +482,7 @@ function GeneratePageContent() {
 
                   {/* Model */}
                   <div>
-                    <Label className="text-sm text-gray-600">Model</Label>
+                    <Label className="text-sm text-muted-foreground">Model</Label>
                     <Select value={selectedModel} onValueChange={(v) => v && setSelectedModel(v)}>
                       <SelectTrigger className="mt-1">
                         <SelectValue />
@@ -492,21 +492,21 @@ function GeneratePageContent() {
                           <SelectItem key={m.id} value={m.id}>
                             <span className="flex flex-col">
                               <span>{m.name}</span>
-                              <span className="text-xs text-gray-500">~${(m.costPer1k / 1000).toFixed(3)}/img</span>
+                              <span className="text-xs text-muted-foreground">~${(m.costPer1k / 1000).toFixed(3)}/img</span>
                             </span>
                           </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
                     {model && (
-                      <p className="text-xs text-gray-500 mt-1">{model.description}</p>
+                      <p className="text-xs text-muted-foreground mt-1">{model.description}</p>
                     )}
                   </div>
 
                   {/* Cost Estimate */}
-                  <div className="p-3 bg-gray-50 rounded-lg">
+                  <div className="p-3 bg-muted rounded-lg">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Estimated cost</span>
+                      <span className="text-sm text-muted-foreground">Estimated cost</span>
                       <span className="font-semibold">${estimatedCost}</span>
                     </div>
                   </div>
@@ -525,13 +525,13 @@ function GeneratePageContent() {
                       onClick={() => setAspectRatio(ar.id)}
                       className={`p-2 rounded-lg border-2 transition-all ${
                         aspectRatio === ar.id
-                          ? 'border-purple-500 bg-purple-50'
-                          : 'border-gray-200 hover:border-gray-300'
+                          ? 'border-brand/60 bg-brand-muted/50'
+                          : 'border-border hover:border-input'
                       }`}
                     >
                       <div
-                        className={`mx-auto bg-gray-300 rounded ${
-                          aspectRatio === ar.id ? 'bg-purple-400' : ''
+                        className={`mx-auto bg-border rounded ${
+                          aspectRatio === ar.id ? 'bg-brand/40' : ''
                         }`}
                         style={{
                           width: ar.id === '1:1' ? 24 : ar.id.startsWith('16') || ar.id.startsWith('4') ? 28 : 18,
@@ -542,7 +542,7 @@ function GeneratePageContent() {
                     </button>
                   ))}
                 </div>
-                <p className="text-xs text-gray-500 mt-2 text-center">
+                <p className="text-xs text-muted-foreground mt-2 text-center">
                   {dimensions.width} × {dimensions.height}px
                 </p>
               </CardContent>
@@ -561,7 +561,7 @@ function GeneratePageContent() {
                     <div>
                       <div className="flex justify-between mb-2">
                         <Label className="text-sm">Quality Steps</Label>
-                        <span className="text-sm text-gray-500">{steps}</span>
+                        <span className="text-sm text-muted-foreground">{steps}</span>
                       </div>
                       <Slider
                         value={[steps]}
@@ -576,7 +576,7 @@ function GeneratePageContent() {
                     <div>
                       <div className="flex justify-between mb-2">
                         <Label className="text-sm">Steps</Label>
-                        <span className="text-sm text-gray-500">{steps}</span>
+                        <span className="text-sm text-muted-foreground">{steps}</span>
                       </div>
                       <Slider
                         value={[steps]}
@@ -589,7 +589,7 @@ function GeneratePageContent() {
                     <div>
                       <div className="flex justify-between mb-2">
                         <Label className="text-sm">Guidance Scale</Label>
-                        <span className="text-sm text-gray-500">{guidance.toFixed(1)}</span>
+                        <span className="text-sm text-muted-foreground">{guidance.toFixed(1)}</span>
                       </div>
                       <Slider
                         value={[guidance]}
@@ -600,7 +600,7 @@ function GeneratePageContent() {
                       />
                     </div>
                     <div>
-                      <Label className="text-sm text-gray-600 block mb-2">Negative Prompt</Label>
+                      <Label className="text-sm text-muted-foreground block mb-2">Negative Prompt</Label>
                       <Textarea
                         placeholder="blurry, low quality, distorted..."
                         value={negativePrompt}

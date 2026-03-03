@@ -114,19 +114,19 @@ export default function TextExtractorTool() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900">Tools</Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Text Extractor (OCR)</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground">Tools</Link>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Text Extractor (OCR)</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/tools">
@@ -144,13 +144,13 @@ export default function TextExtractorTool() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-4">
               ✨ Free • No Upload • 100% Private
             </div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
               Text Extractor (OCR)
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Extract text from images, screenshots, scanned documents, and photos. Supports 100+ languages with AI-powered OCR.
             </p>
           </div>
@@ -171,7 +171,7 @@ export default function TextExtractorTool() {
                   
                   {!image ? (
                     <div
-                      className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-purple-400 transition-colors cursor-pointer"
+                      className="border-2 border-dashed border-input rounded-xl p-12 text-center hover:border-brand transition-colors cursor-pointer"
                       onDrop={handleDrop}
                       onDragOver={(e) => e.preventDefault()}
                       onClick={() => document.getElementById("fileInput")?.click()}
@@ -183,17 +183,17 @@ export default function TextExtractorTool() {
                         onChange={handleFileSelect}
                         className="hidden"
                       />
-                      <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center text-3xl">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-brand-muted rounded-full flex items-center justify-center text-3xl">
                         📝
                       </div>
                       <h3 className="font-semibold text-lg mb-2">Drop image here or click to upload</h3>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Supports PNG, JPG, WebP • Screenshots, scans, photos
                       </p>
                     </div>
                   ) : (
                     <div className="space-y-4">
-                      <div className="relative rounded-lg overflow-hidden bg-gray-100">
+                      <div className="relative rounded-lg overflow-hidden bg-muted">
                         <img
                           src={image}
                           alt="Source"
@@ -211,13 +211,13 @@ export default function TextExtractorTool() {
                   <h3 className="font-semibold mb-4">Settings</h3>
                   
                   <div className="mb-4">
-                    <label className="text-sm text-gray-600 block mb-2">
+                    <label className="text-sm text-muted-foreground block mb-2">
                       Document Language
                     </label>
                     <select
                       value={language}
                       onChange={(e) => setLanguage(e.target.value)}
-                      className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-brand/60 focus:border-transparent"
                     >
                       {languages.map((lang) => (
                         <option key={lang.code} value={lang.code}>
@@ -230,7 +230,7 @@ export default function TextExtractorTool() {
                   <Button
                     onClick={extractText}
                     disabled={!image || isProcessing}
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600"
+                    className="w-full bg-gradient-to-r from-brand to-info"
                   >
                     {isProcessing ? (
                       <>
@@ -244,20 +244,20 @@ export default function TextExtractorTool() {
 
                   {isProcessing && (
                     <div className="mt-4">
-                      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                      <div className="h-2 bg-border rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300"
+                          className="h-full bg-gradient-to-r from-brand to-info transition-all duration-300"
                           style={{ width: `${progress}%` }}
                         />
                       </div>
-                      <p className="text-xs text-gray-500 mt-2 text-center">
+                      <p className="text-xs text-muted-foreground mt-2 text-center">
                         First extraction may take longer (downloading language data)
                       </p>
                     </div>
                   )}
 
                   {error && (
-                    <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                    <div className="mt-4 p-3 bg-destructive/5 border border-destructive/20 rounded-lg text-destructive text-sm">
                       {error}
                     </div>
                   )}
@@ -296,16 +296,16 @@ export default function TextExtractorTool() {
                       <textarea
                         value={extractedText}
                         onChange={(e) => setExtractedText(e.target.value)}
-                        className="w-full h-80 p-4 border rounded-lg resize-none font-mono text-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full h-80 p-4 border rounded-lg resize-none font-mono text-sm focus:ring-2 focus:ring-brand/60 focus:border-transparent"
                         placeholder="Extracted text will appear here..."
                       />
-                      <div className="flex items-center justify-between text-sm text-gray-500">
+                      <div className="flex items-center justify-between text-sm text-muted-foreground">
                         <span>{extractedText.length} characters</span>
                         <span>{extractedText.split(/\s+/).filter(w => w).length} words</span>
                       </div>
                     </div>
                   ) : (
-                    <div className="h-80 flex items-center justify-center text-gray-400 border-2 border-dashed rounded-lg">
+                    <div className="h-80 flex items-center justify-center text-muted-foreground border-2 border-dashed rounded-lg">
                       <div className="text-center">
                         <div className="text-4xl mb-2">📄</div>
                         <p>Extracted text will appear here</p>
@@ -317,10 +317,10 @@ export default function TextExtractorTool() {
               </Card>
 
               {/* Tips */}
-              <Card className="border-2 bg-gradient-to-r from-purple-50 to-blue-50">
+              <Card className="border-2 bg-gradient-to-r from-brand-muted to-info-muted/50">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3">💡 Best Results Tips</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>• Use high-resolution, clear images</li>
                     <li>• Ensure good contrast between text and background</li>
                     <li>• Straighten skewed or rotated text first</li>
@@ -337,25 +337,25 @@ export default function TextExtractorTool() {
             <CardContent className="p-6">
               <h3 className="font-semibold mb-4">🎯 Common Use Cases</h3>
               <div className="grid md:grid-cols-4 gap-4">
-                <div className="p-4 bg-gray-50 rounded-lg text-center">
+                <div className="p-4 bg-muted rounded-lg text-center">
                   <div className="text-2xl mb-2">📸</div>
                   <h4 className="font-medium">Screenshots</h4>
-                  <p className="text-xs text-gray-500 mt-1">Extract text from app screenshots</p>
+                  <p className="text-xs text-muted-foreground mt-1">Extract text from app screenshots</p>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-lg text-center">
+                <div className="p-4 bg-muted rounded-lg text-center">
                   <div className="text-2xl mb-2">📄</div>
                   <h4 className="font-medium">Scanned Docs</h4>
-                  <p className="text-xs text-gray-500 mt-1">Digitize paper documents</p>
+                  <p className="text-xs text-muted-foreground mt-1">Digitize paper documents</p>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-lg text-center">
+                <div className="p-4 bg-muted rounded-lg text-center">
                   <div className="text-2xl mb-2">🖼️</div>
                   <h4 className="font-medium">Images</h4>
-                  <p className="text-xs text-gray-500 mt-1">Extract text from photos & memes</p>
+                  <p className="text-xs text-muted-foreground mt-1">Extract text from photos & memes</p>
                 </div>
-                <div className="p-4 bg-gray-50 rounded-lg text-center">
+                <div className="p-4 bg-muted rounded-lg text-center">
                   <div className="text-2xl mb-2">📋</div>
                   <h4 className="font-medium">Receipts</h4>
-                  <p className="text-xs text-gray-500 mt-1">Capture expense details</p>
+                  <p className="text-xs text-muted-foreground mt-1">Capture expense details</p>
                 </div>
               </div>
             </CardContent>
@@ -365,9 +365,9 @@ export default function TextExtractorTool() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 

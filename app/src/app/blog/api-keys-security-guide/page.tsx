@@ -10,18 +10,18 @@ export default function APIKeysSecurityGuidePost() {
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm font-medium px-3 py-1 bg-purple-100 text-purple-700 rounded-full">
+            <span className="text-sm font-medium px-3 py-1 bg-brand-muted text-brand-muted-foreground rounded-full">
               Guide
             </span>
-            <span className="text-sm text-gray-500">4 min read</span>
+            <span className="text-sm text-muted-foreground">4 min read</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Keeping Your API Keys Safe: A Non-Technical Guide
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-xl text-muted-foreground mb-6">
             Everything you need to know about API key security, explained simply. No developer background required.
           </p>
-          <div className="flex items-center gap-4 text-sm text-gray-500 border-t border-b py-4">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground border-t border-b py-4">
             <span>February 24, 2026</span>
             <span>•</span>
             <span>By VixPic Team</span>
@@ -63,10 +63,10 @@ export default function APIKeysSecurityGuidePost() {
             whatever they generate.
           </p>
 
-          <Card className="my-6 border-red-200 bg-red-50">
+          <Card className="my-6 border-destructive/20 bg-destructive/5">
             <CardContent className="pt-6">
-              <p className="font-semibold text-red-800 mb-2">⚠️ What to avoid:</p>
-              <ul className="list-disc pl-6 text-red-700 space-y-1">
+              <p className="font-semibold text-destructive mb-2">⚠️ What to avoid:</p>
+              <ul className="list-disc pl-6 text-destructive space-y-1">
                 <li>Posting API keys in Discord servers or forums</li>
                 <li>Sharing screenshots that show your key</li>
                 <li>Pasting keys in public GitHub repos</li>
@@ -81,15 +81,15 @@ export default function APIKeysSecurityGuidePost() {
             something goes wrong, you won't wake up to a $10,000 bill.
           </p>
 
-          <Card className="my-6 border-green-200 bg-green-50">
+          <Card className="my-6 border-success/20 bg-success-muted/50">
             <CardContent className="pt-6">
-              <p className="font-semibold text-green-800 mb-2">✓ How to set limits:</p>
-              <ul className="list-disc pl-6 text-green-700 space-y-1">
+              <p className="font-semibold text-success-muted-foreground mb-2">✓ How to set limits:</p>
+              <ul className="list-disc pl-6 text-success-muted-foreground space-y-1">
                 <li><strong>OpenAI:</strong> Settings → Billing → Usage limits</li>
                 <li><strong>Replicate:</strong> Account → Billing → Set monthly limit</li>
                 <li><strong>FAL:</strong> Dashboard → Budget alerts</li>
               </ul>
-              <p className="text-green-700 mt-3">
+              <p className="text-success-muted-foreground mt-3">
                 Start with a $10-20 limit. You can always increase it later.
               </p>
             </CardContent>
@@ -193,41 +193,41 @@ export default function APIKeysSecurityGuidePost() {
             <CardContent className="pt-6">
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">☐</span>
+                  <span className="text-success mt-1">☐</span>
                   <span>Set spending limits on all API providers ($10-20 to start)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">☐</span>
+                  <span className="text-success mt-1">☐</span>
                   <span>Create separate keys for each tool you use</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">☐</span>
+                  <span className="text-success mt-1">☐</span>
                   <span>Name your keys clearly (e.g., "VixPic - Feb 2026")</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">☐</span>
+                  <span className="text-success mt-1">☐</span>
                   <span>Check usage dashboard weekly</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">☐</span>
+                  <span className="text-success mt-1">☐</span>
                   <span>Enable billing alerts/notifications</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-green-500 mt-1">☐</span>
+                  <span className="text-success mt-1">☐</span>
                   <span>Never share keys publicly or in screenshots</span>
                 </li>
               </ul>
             </CardContent>
           </Card>
 
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8 my-12">
+          <div className="bg-gradient-to-r from-brand-muted/50 to-info-muted/50 rounded-xl p-8 my-12">
             <h3 className="text-xl font-bold mb-3">Ready to Get Started?</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               VixPic makes BYOK simple and secure. Your keys stay in your browser — we never 
               see them. Set up takes 5 minutes.
             </p>
             <Link href="/providers">
-              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+              <Button className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90">
                 View Setup Guides →
               </Button>
             </Link>
@@ -246,10 +246,10 @@ export default function APIKeysSecurityGuidePost() {
             you'll never want to go back to subscriptions.
           </p>
 
-          <p className="text-gray-500 mt-8 pt-8 border-t">
+          <p className="text-muted-foreground mt-8 pt-8 border-t">
             <em>
               Need help setting up your API keys? Check our{" "}
-              <Link href="/providers" className="text-purple-600 hover:underline">
+              <Link href="/providers" className="text-brand hover:underline">
                 provider guides
               </Link>{" "}
               for step-by-step instructions for OpenAI, Replicate, and FAL.
@@ -259,25 +259,25 @@ export default function APIKeysSecurityGuidePost() {
       </article>
 
       {/* Related Posts */}
-      <section className="border-t py-12 px-4 bg-gray-50">
+      <section className="border-t py-12 px-4 bg-muted">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Link href="/blog/byok-explained">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Guide</span>
+                  <span className="text-xs font-medium text-brand">Guide</span>
                   <h3 className="font-semibold mt-2">BYOK Explained: Why It Changes Everything</h3>
-                  <p className="text-sm text-gray-500 mt-2">Learn how BYOK saves money and gives you control.</p>
+                  <p className="text-sm text-muted-foreground mt-2">Learn how BYOK saves money and gives you control.</p>
                 </CardContent>
               </Card>
             </Link>
             <Link href="/blog/save-money-ai-images">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Guide</span>
+                  <span className="text-xs font-medium text-brand">Guide</span>
                   <h3 className="font-semibold mt-2">How to Save 80% on AI Image Generation</h3>
-                  <p className="text-sm text-gray-500 mt-2">Detailed cost breakdown with real numbers.</p>
+                  <p className="text-sm text-muted-foreground mt-2">Detailed cost breakdown with real numbers.</p>
                 </CardContent>
               </Card>
             </Link>

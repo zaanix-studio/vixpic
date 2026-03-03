@@ -10,18 +10,18 @@ export default function SaveMoneyPost() {
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm font-medium px-3 py-1 bg-purple-100 text-purple-700 rounded-full">
+            <span className="text-sm font-medium px-3 py-1 bg-brand-muted text-brand-muted-foreground rounded-full">
               Guide
             </span>
-            <span className="text-sm text-gray-500">6 min read</span>
+            <span className="text-sm text-muted-foreground">6 min read</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             How to Save 80% on AI Image Generation (Real Numbers)
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-xl text-muted-foreground mb-6">
             A detailed breakdown of AI image costs: subscriptions vs pay-per-use vs BYOK. The math might surprise you.
           </p>
-          <div className="flex items-center gap-4 text-sm text-gray-500 border-t border-b py-4">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground border-t border-b py-4">
             <span>February 26, 2026</span>
             <span>•</span>
             <span>By VixPic Team</span>
@@ -61,7 +61,7 @@ export default function SaveMoneyPost() {
                       <th className="pb-3 font-semibold">Per Image</th>
                     </tr>
                   </thead>
-                  <tbody className="text-gray-600">
+                  <tbody className="text-muted-foreground">
                     <tr className="border-b">
                       <td className="py-3">Midjourney Basic</td>
                       <td className="py-3">$10/mo</td>
@@ -94,7 +94,7 @@ export default function SaveMoneyPost() {
                     </tr>
                   </tbody>
                 </table>
-                <p className="text-xs text-gray-500 mt-2">
+                <p className="text-xs text-muted-foreground mt-2">
                   *ChatGPT Plus limits vary; DALL-E access is rate-limited within the subscription.
                 </p>
               </div>
@@ -118,19 +118,19 @@ export default function SaveMoneyPost() {
             I surveyed 50 creators using AI image tools. Here's what I found:
           </p>
 
-          <Card className="my-8 bg-red-50 border-red-200">
+          <Card className="my-8 bg-destructive/5 border-destructive/20">
             <CardContent className="pt-6">
               <ul className="space-y-3">
                 <li className="flex items-center gap-3">
-                  <span className="text-red-600 font-bold text-xl">67%</span>
+                  <span className="text-destructive font-bold text-xl">67%</span>
                   <span>use less than half their monthly credits</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-red-600 font-bold text-xl">43%</span>
+                  <span className="text-destructive font-bold text-xl">43%</span>
                   <span>forget to cancel subscriptions they rarely use</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="text-red-600 font-bold text-xl">$284</span>
+                  <span className="text-destructive font-bold text-xl">$284</span>
                   <span>average annual spend on unused AI credits</span>
                 </li>
               </ul>
@@ -159,35 +159,35 @@ export default function SaveMoneyPost() {
                       <th className="pb-3 font-semibold">Notes</th>
                     </tr>
                   </thead>
-                  <tbody className="text-gray-600">
+                  <tbody className="text-muted-foreground">
                     <tr className="border-b">
                       <td className="py-3">DALL-E 3 (1024x1024)</td>
                       <td className="py-3">OpenAI</td>
-                      <td className="py-3 text-green-600 font-medium">$0.040</td>
+                      <td className="py-3 text-success font-medium">$0.040</td>
                       <td className="py-3">Best text rendering</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-3">DALL-E 3 (1792x1024)</td>
                       <td className="py-3">OpenAI</td>
-                      <td className="py-3 text-green-600 font-medium">$0.080</td>
+                      <td className="py-3 text-success font-medium">$0.080</td>
                       <td className="py-3">HD quality</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-3">Stable Diffusion XL</td>
                       <td className="py-3">Replicate</td>
-                      <td className="py-3 text-green-600 font-medium">$0.008</td>
+                      <td className="py-3 text-success font-medium">$0.008</td>
                       <td className="py-3">Cheapest option</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-3">Flux Pro</td>
                       <td className="py-3">Replicate</td>
-                      <td className="py-3 text-green-600 font-medium">$0.030</td>
+                      <td className="py-3 text-success font-medium">$0.030</td>
                       <td className="py-3">Best photorealism</td>
                     </tr>
                     <tr>
                       <td className="py-3">Flux Schnell (fast)</td>
                       <td className="py-3">FAL</td>
-                      <td className="py-3 text-green-600 font-medium">$0.003</td>
+                      <td className="py-3 text-success font-medium">$0.003</td>
                       <td className="py-3">Ultra-cheap drafts</td>
                     </tr>
                   </tbody>
@@ -224,28 +224,28 @@ export default function SaveMoneyPost() {
                       <th className="pb-3 font-semibold">Per Image</th>
                     </tr>
                   </thead>
-                  <tbody className="text-gray-600">
+                  <tbody className="text-muted-foreground">
                     <tr className="border-b">
                       <td className="py-3">Midjourney Standard</td>
                       <td className="py-3">$30</td>
-                      <td className="py-3 text-red-600 font-medium">$180</td>
+                      <td className="py-3 text-destructive font-medium">$180</td>
                       <td className="py-3">$0.20*</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-3">Multiple subs (MJ + Leo)</td>
                       <td className="py-3">$54</td>
-                      <td className="py-3 text-red-600 font-medium">$324</td>
+                      <td className="py-3 text-destructive font-medium">$324</td>
                       <td className="py-3">$0.36*</td>
                     </tr>
-                    <tr className="border-b bg-green-50">
+                    <tr className="border-b bg-success-muted/50">
                       <td className="py-3 font-medium">BYOK (VixPic)</td>
                       <td className="py-3">~$6</td>
-                      <td className="py-3 text-green-600 font-bold">$36</td>
+                      <td className="py-3 text-success font-bold">$36</td>
                       <td className="py-3">$0.04</td>
                     </tr>
                   </tbody>
                 </table>
-                <p className="text-xs text-gray-500 mt-2">
+                <p className="text-xs text-muted-foreground mt-2">
                   *Actual cost per image based on my usage patterns (didn't use full allocation)
                 </p>
               </div>
@@ -307,12 +307,12 @@ export default function SaveMoneyPost() {
 
           <p>Here's a simple formula:</p>
 
-          <Card className="my-8 bg-purple-50 border-purple-200">
+          <Card className="my-8 bg-brand-muted/50 border-brand/20">
             <CardContent className="pt-6">
               <code className="block text-lg mb-4">
                 Annual Savings = (Current Sub × 12) - (Monthly Images × $0.03 × 12)
               </code>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Using $0.03 as average BYOK cost (mix of SDXL and DALL-E 3)
               </p>
             </CardContent>
@@ -325,19 +325,19 @@ export default function SaveMoneyPost() {
               <strong>Light user (50 images/mo):</strong><br />
               Sub: $10/mo × 12 = $120/year<br />
               BYOK: 50 × $0.03 × 12 = $18/year<br />
-              <span className="text-green-600 font-medium">Savings: $102/year (85%)</span>
+              <span className="text-success font-medium">Savings: $102/year (85%)</span>
             </li>
             <li>
               <strong>Medium user (200 images/mo):</strong><br />
               Sub: $30/mo × 12 = $360/year<br />
               BYOK: 200 × $0.03 × 12 = $72/year<br />
-              <span className="text-green-600 font-medium">Savings: $288/year (80%)</span>
+              <span className="text-success font-medium">Savings: $288/year (80%)</span>
             </li>
             <li>
               <strong>Heavy user (500 images/mo):</strong><br />
               Sub: $30/mo × 12 = $360/year<br />
               BYOK: 500 × $0.03 × 12 = $180/year<br />
-              <span className="text-green-600 font-medium">Savings: $180/year (50%)</span>
+              <span className="text-success font-medium">Savings: $180/year (50%)</span>
             </li>
           </ul>
 
@@ -364,14 +364,14 @@ export default function SaveMoneyPost() {
             </li>
           </ol>
 
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8 my-12">
+          <div className="bg-gradient-to-r from-brand-muted/50 to-info-muted/50 rounded-xl p-8 my-12">
             <h3 className="text-xl font-bold mb-3">Ready to Stop Overpaying?</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               VixPic makes BYOK simple. Pay only for images you generate, 
               never for credits you don't use.
             </p>
             <Link href="/generate">
-              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+              <Button className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90">
                 Start Saving Today →
               </Button>
             </Link>
@@ -394,14 +394,14 @@ export default function SaveMoneyPost() {
             The math is clear. The only question is why you're still subscribed.
           </p>
 
-          <p className="text-gray-500 mt-8 pt-8 border-t">
+          <p className="text-muted-foreground mt-8 pt-8 border-t">
             <em>
               Want to learn more about BYOK? Read our{" "}
-              <Link href="/blog/byok-explained" className="text-purple-600 hover:underline">
+              <Link href="/blog/byok-explained" className="text-brand hover:underline">
                 complete BYOK guide
               </Link>{" "}
               or check the{" "}
-              <Link href="/providers" className="text-purple-600 hover:underline">
+              <Link href="/providers" className="text-brand hover:underline">
                 provider setup tutorials
               </Link>.
             </em>
@@ -410,25 +410,25 @@ export default function SaveMoneyPost() {
       </article>
 
       {/* Related Posts */}
-      <section className="border-t py-12 px-4 bg-gray-50">
+      <section className="border-t py-12 px-4 bg-muted">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Link href="/blog/byok-explained">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Guide</span>
+                  <span className="text-xs font-medium text-brand">Guide</span>
                   <h3 className="font-semibold mt-2">BYOK Explained</h3>
-                  <p className="text-sm text-gray-500 mt-2">Why Bring Your Own Key changes everything.</p>
+                  <p className="text-sm text-muted-foreground mt-2">Why Bring Your Own Key changes everything.</p>
                 </CardContent>
               </Card>
             </Link>
             <Link href="/blog/dalle-vs-stable-diffusion-vs-flux">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-blue-600">Comparison</span>
+                  <span className="text-xs font-medium text-info">Comparison</span>
                   <h3 className="font-semibold mt-2">DALL-E vs SDXL vs Flux</h3>
-                  <p className="text-sm text-gray-500 mt-2">Complete model comparison for 2026.</p>
+                  <p className="text-sm text-muted-foreground mt-2">Complete model comparison for 2026.</p>
                 </CardContent>
               </Card>
             </Link>

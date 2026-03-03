@@ -134,10 +134,10 @@ export default function ThreeDRenderStylePage() {
     <>
       {/* Breadcrumb */}
       <div className="pt-24 px-4 max-w-6xl mx-auto">
-        <div className="flex items-center gap-2 text-sm text-gray-500">
-          <Link href="/styles" className="hover:text-purple-600">Styles</Link>
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Link href="/styles" className="hover:text-brand">Styles</Link>
           <span>/</span>
-          <span className="text-gray-900">3D Render</span>
+          <span className="text-foreground">3D Render</span>
         </div>
       </div>
 
@@ -148,27 +148,27 @@ export default function ThreeDRenderStylePage() {
             <span className="text-6xl">🎮</span>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                <span className="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
                   3D Render
                 </span>{" "}
                 Style Guide
               </h1>
-              <p className="text-gray-600 mt-2">Clean 3D visualization with AI</p>
+              <p className="text-muted-foreground mt-2">Clean 3D visualization with AI</p>
             </div>
           </div>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             3D renders are essential for product shots, app illustrations, and modern design. 
             AI models can now create Blender-quality renders instantly — from product visualization 
             to cute isometric scenes and abstract art.
           </p>
           <div className="flex flex-wrap gap-3">
-            <span className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-destructive/10 text-destructive rounded-full text-sm font-medium">
               ⚡ Advanced
             </span>
-            <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-brand-muted text-brand-muted-foreground rounded-full text-sm font-medium">
               High Popularity
             </span>
-            <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-info-muted text-info-muted-foreground rounded-full text-sm font-medium">
               Commercial Ready
             </span>
           </div>
@@ -176,7 +176,7 @@ export default function ThreeDRenderStylePage() {
       </section>
 
       {/* Material Quick Reference */}
-      <section className="py-12 px-4 bg-gradient-to-r from-violet-50 to-indigo-50">
+      <section className="py-12 px-4 bg-gradient-to-r from-brand-muted/50 to-info-muted/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Material Keywords</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -184,7 +184,7 @@ export default function ThreeDRenderStylePage() {
               <Card key={i} className="text-center">
                 <CardContent className="p-4">
                   <h3 className="font-semibold mb-2">{material.name}</h3>
-                  <p className="text-xs text-gray-600 font-mono">{material.prompt}</p>
+                  <p className="text-xs text-muted-foreground font-mono">{material.prompt}</p>
                 </CardContent>
               </Card>
             ))}
@@ -196,26 +196,26 @@ export default function ThreeDRenderStylePage() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">3D Render Sub-Styles</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             From product shots to abstract art — each has its own prompting techniques.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {renderSubStyles.map((style, i) => (
-              <Card key={i} className="border-2 hover:border-indigo-200 transition-all">
+              <Card key={i} className="border-2 hover:border-info transition-all">
                 <CardHeader>
                   <CardTitle className="text-lg">{style.name}</CardTitle>
                   <CardDescription>{style.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <p className="text-xs text-gray-500 mb-2 font-medium">Example prompts:</p>
+                    <p className="text-xs text-muted-foreground mb-2 font-medium">Example prompts:</p>
                     {style.prompts.map((prompt, j) => (
-                      <p key={j} className="text-sm bg-indigo-50 p-2 rounded mb-2 font-mono text-gray-700">
+                      <p key={j} className="text-sm bg-info-muted/50 p-2 rounded mb-2 font-mono text-foreground">
                         {prompt}
                       </p>
                     ))}
                   </div>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-muted-foreground">
                     <span className="font-medium">Reference:</span> {style.examples}
                   </p>
                 </CardContent>
@@ -226,10 +226,10 @@ export default function ThreeDRenderStylePage() {
       </section>
 
       {/* Best Models */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Best Models for 3D Renders</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             DALL-E 3 leads for 3D quality, but other options work well for specific styles.
           </p>
           <div className="space-y-4">
@@ -240,22 +240,22 @@ export default function ThreeDRenderStylePage() {
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="font-bold text-lg">{model.name}</h3>
-                        <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">
+                        <span className="px-2 py-1 bg-info-muted text-info-muted-foreground text-xs rounded-full">
                           {model.recommendation}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-500 mb-2">via {model.provider}</p>
+                      <p className="text-sm text-muted-foreground mb-2">via {model.provider}</p>
                       <div className="flex flex-wrap gap-2">
                         {model.strengths.map((s, j) => (
-                          <span key={j} className="text-xs bg-gray-100 px-2 py-1 rounded">
+                          <span key={j} className="text-xs bg-muted px-2 py-1 rounded">
                             {s}
                           </span>
                         ))}
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-indigo-600">{model.cost}</p>
-                      <p className="text-xs text-gray-500">per image</p>
+                      <p className="text-2xl font-bold text-info">{model.cost}</p>
+                      <p className="text-xs text-muted-foreground">per image</p>
                     </div>
                   </div>
                 </CardContent>
@@ -269,7 +269,7 @@ export default function ThreeDRenderStylePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Copy-Paste Prompts</h2>
-          <p className="text-gray-600 text-center mb-12">
+          <p className="text-muted-foreground text-center mb-12">
             Ready-to-use prompts for different 3D render types.
           </p>
           <div className="space-y-6">
@@ -280,7 +280,7 @@ export default function ThreeDRenderStylePage() {
                     <CardTitle className="text-lg">{example.title}</CardTitle>
                     <div className="flex gap-2">
                       {example.tags.map((tag, j) => (
-                        <span key={j} className="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded">
+                        <span key={j} className="text-xs bg-info-muted/50 text-info-muted-foreground px-2 py-1 rounded">
                           {tag}
                         </span>
                       ))}
@@ -288,7 +288,7 @@ export default function ThreeDRenderStylePage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                  <div className="bg-inverted text-inverted-muted p-4 rounded-lg font-mono text-sm overflow-x-auto">
                     {example.prompt}
                   </div>
                   <div className="mt-3 flex justify-end">
@@ -304,17 +304,17 @@ export default function ThreeDRenderStylePage() {
       </section>
 
       {/* Tips Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Pro Tips for 3D Renders</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="border-2 border-green-200 bg-green-50">
+            <Card className="border-2 border-success/20 bg-success-muted/50">
               <CardHeader>
-                <CardTitle className="text-green-800 flex items-center gap-2">
+                <CardTitle className="text-success-muted-foreground flex items-center gap-2">
                   <span>💡</span> Quality Boosters
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-green-800">
+              <CardContent className="text-success-muted-foreground">
                 <ul className="space-y-2 text-sm">
                   <li>• Add &quot;studio lighting&quot; for professional look</li>
                   <li>• Include &quot;soft shadows&quot; for depth</li>
@@ -324,13 +324,13 @@ export default function ThreeDRenderStylePage() {
                 </ul>
               </CardContent>
             </Card>
-            <Card className="border-2 border-red-200 bg-red-50">
+            <Card className="border-2 border-destructive/20 bg-destructive/5">
               <CardHeader>
-                <CardTitle className="text-red-800 flex items-center gap-2">
+                <CardTitle className="text-destructive flex items-center gap-2">
                   <span>⚠️</span> Common Mistakes
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-red-800">
+              <CardContent className="text-destructive">
                 <ul className="space-y-2 text-sm">
                   <li>• Missing lighting description → flat results</li>
                   <li>• Too complex scenes → confusing outputs</li>
@@ -341,13 +341,13 @@ export default function ThreeDRenderStylePage() {
               </CardContent>
             </Card>
           </div>
-          <Card className="mt-6 border-2 border-indigo-200 bg-indigo-50">
+          <Card className="mt-6 border-2 border-info/20 bg-info-muted/50">
             <CardHeader>
-              <CardTitle className="text-indigo-800 flex items-center gap-2">
+              <CardTitle className="text-info-muted-foreground flex items-center gap-2">
                 <span>📐</span> Composition Keywords
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-indigo-800">
+            <CardContent className="text-info-muted-foreground">
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div>
                   <p className="font-medium mb-2">Camera Angles:</p>
@@ -398,7 +398,7 @@ export default function ThreeDRenderStylePage() {
                   <span className="text-4xl">{useCase.icon}</span>
                   <div>
                     <h3 className="font-bold mb-1">{useCase.title}</h3>
-                    <p className="text-sm text-gray-600">{useCase.desc}</p>
+                    <p className="text-sm text-muted-foreground">{useCase.desc}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -408,23 +408,23 @@ export default function ThreeDRenderStylePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-violet-600 to-indigo-600">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand to-info">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-foreground mb-6">
             Ready to Create Stunning 3D Renders?
           </h2>
-          <p className="text-xl text-white/80 mb-8">
-            Start generating 3D style images for free. Add your API keys for unlimited 
+          <p className="text-xl text-brand-foreground/80 mb-8">
+            Start generating 3D style images for free. Add your API keys for unlimited
             generation with the best models.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-white text-indigo-600 hover:bg-gray-100">
+              <Button size="lg" className="text-lg px-8 py-6 bg-background text-info hover:bg-muted">
                 Try Free Now
               </Button>
             </Link>
             <Link href="/styles">
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-brand-foreground text-brand-foreground hover:bg-brand-foreground/10">
                 Explore More Styles
               </Button>
             </Link>

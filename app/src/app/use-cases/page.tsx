@@ -71,12 +71,12 @@ export default function UseCasesPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             AI Image Generation for{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               Every Use Case
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            From e-commerce product shots to social media content, VixPic helps you create 
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            From e-commerce product shots to social media content, VixPic helps you create
             professional images 10x faster and 80% cheaper than traditional methods.
           </p>
         </div>
@@ -89,17 +89,17 @@ export default function UseCasesPage() {
             {useCases.map((useCase) => (
               <Card 
                 key={useCase.href}
-                className={`border-2 hover:border-purple-200 transition-all hover:shadow-lg relative ${
+                className={`border-2 hover:border-brand/20 transition-all hover:shadow-lg relative ${
                   useCase.comingSoon ? "opacity-75" : ""
                 }`}
               >
                 {useCase.comingSoon && (
-                  <div className="absolute top-4 right-4 bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs font-medium">
+                  <div className="absolute top-4 right-4 bg-muted text-muted-foreground px-2 py-1 rounded text-xs font-medium">
                     Coming Soon
                   </div>
                 )}
                 <CardHeader>
-                  <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-3xl mb-4">
+                  <div className="w-14 h-14 bg-brand-muted rounded-xl flex items-center justify-center text-3xl mb-4">
                     {useCase.icon}
                   </div>
                   <CardTitle className="text-xl">{useCase.title}</CardTitle>
@@ -110,14 +110,14 @@ export default function UseCasesPage() {
                 <CardContent>
                   <ul className="space-y-2 mb-4">
                     {useCase.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                        <span className="text-green-600 mt-0.5">✓</span>
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-success mt-0.5">✓</span>
                         {benefit}
                       </li>
                     ))}
                   </ul>
                   <div className="flex items-center justify-between pt-4 border-t">
-                    <span className="text-sm font-semibold text-purple-600">{useCase.stats}</span>
+                    <span className="text-sm font-semibold text-brand">{useCase.stats}</span>
                     {!useCase.comingSoon && (
                       <Link href={useCase.href}>
                         <Button variant="outline" size="sm">Learn More →</Button>
@@ -132,15 +132,15 @@ export default function UseCasesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-muted">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Workflow?</h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             Join thousands of creators using AI to produce professional images at scale.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/generate">
-              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-purple-600 to-blue-600">
+              <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-brand to-info">
                 Start Creating Free
               </Button>
             </Link>

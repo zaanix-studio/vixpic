@@ -102,19 +102,19 @@ export default function QRGeneratorTool() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900">Tools</Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">QR Generator</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground">Tools</Link>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">QR Generator</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/tools">
@@ -132,13 +132,13 @@ export default function QRGeneratorTool() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-4">
               ✨ Free • No Upload • 100% Private
             </div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
               QR Code Generator
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Create custom QR codes for URLs, text, WiFi credentials, contact cards, and more. Download as PNG instantly.
             </p>
           </div>
@@ -156,7 +156,7 @@ export default function QRGeneratorTool() {
                       <button
                         key={preset.label}
                         onClick={() => setText(preset.value)}
-                        className="text-xs px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                        className="text-xs px-3 py-1.5 bg-muted hover:bg-muted rounded-full transition-colors"
                       >
                         {preset.label}
                       </button>
@@ -167,9 +167,9 @@ export default function QRGeneratorTool() {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Enter URL, text, or data..."
-                    className="w-full h-32 p-3 border rounded-lg resize-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full h-32 p-3 border rounded-lg resize-none focus:ring-2 focus:ring-brand/60 focus:border-transparent"
                   />
-                  <p className="text-xs text-gray-500 mt-2">
+                  <p className="text-xs text-muted-foreground mt-2">
                     {text.length} characters
                   </p>
                 </CardContent>
@@ -181,7 +181,7 @@ export default function QRGeneratorTool() {
                   
                   {/* Size */}
                   <div className="mb-4">
-                    <label className="text-sm text-gray-600 block mb-2">
+                    <label className="text-sm text-muted-foreground block mb-2">
                       Size: {size}px
                     </label>
                     <input
@@ -198,7 +198,7 @@ export default function QRGeneratorTool() {
                   {/* Colors */}
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label className="text-sm text-gray-600 block mb-2">
+                      <label className="text-sm text-muted-foreground block mb-2">
                         Foreground Color
                       </label>
                       <div className="flex items-center gap-2">
@@ -217,7 +217,7 @@ export default function QRGeneratorTool() {
                       </div>
                     </div>
                     <div>
-                      <label className="text-sm text-gray-600 block mb-2">
+                      <label className="text-sm text-muted-foreground block mb-2">
                         Background Color
                       </label>
                       <div className="flex items-center gap-2">
@@ -239,7 +239,7 @@ export default function QRGeneratorTool() {
 
                   {/* Error Correction */}
                   <div>
-                    <label className="text-sm text-gray-600 block mb-2">
+                    <label className="text-sm text-muted-foreground block mb-2">
                       Error Correction Level
                     </label>
                     <div className="flex gap-2">
@@ -249,15 +249,15 @@ export default function QRGeneratorTool() {
                           onClick={() => setErrorLevel(level)}
                           className={`flex-1 py-2 rounded-lg text-sm font-medium transition-colors ${
                             errorLevel === level
-                              ? "bg-purple-600 text-white"
-                              : "bg-gray-100 hover:bg-gray-200"
+                              ? "bg-brand text-brand-foreground"
+                              : "bg-muted hover:bg-muted"
                           }`}
                         >
                           {level}
                         </button>
                       ))}
                     </div>
-                    <p className="text-xs text-gray-500 mt-2">
+                    <p className="text-xs text-muted-foreground mt-2">
                       L = 7% • M = 15% • Q = 25% • H = 30% recovery
                     </p>
                   </div>
@@ -280,7 +280,7 @@ export default function QRGeneratorTool() {
                         style={{ width: size, height: size }}
                       />
                     ) : (
-                      <div className="text-gray-400 text-center py-12">
+                      <div className="text-muted-foreground text-center py-12">
                         <div className="text-4xl mb-2">📱</div>
                         <p>Enter content to generate QR code</p>
                       </div>
@@ -292,7 +292,7 @@ export default function QRGeneratorTool() {
                     <div className="flex gap-2 mt-4">
                       <Button
                         onClick={() => downloadQR("png")}
-                        className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600"
+                        className="flex-1 bg-gradient-to-r from-brand to-info"
                       >
                         Download PNG
                       </Button>
@@ -308,10 +308,10 @@ export default function QRGeneratorTool() {
               </Card>
 
               {/* Use Cases */}
-              <Card className="border-2 bg-gradient-to-r from-purple-50 to-blue-50">
+              <Card className="border-2 bg-gradient-to-r from-brand-muted to-info-muted/50">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3">💡 Common Use Cases</h3>
-                  <div className="space-y-2 text-sm text-gray-600">
+                  <div className="space-y-2 text-sm text-muted-foreground">
                     <div><strong>Website:</strong> https://yoursite.com</div>
                     <div><strong>Email:</strong> mailto:hello@example.com</div>
                     <div><strong>Phone:</strong> tel:+1234567890</div>
@@ -324,10 +324,10 @@ export default function QRGeneratorTool() {
           </div>
 
           {/* Tips Section */}
-          <Card className="mt-8 border-2 bg-gradient-to-r from-purple-50 to-blue-50">
+          <Card className="mt-8 border-2 bg-gradient-to-r from-brand-muted to-info-muted/50">
             <CardContent className="p-6">
               <h3 className="font-semibold mb-3">💡 Pro Tips</h3>
-              <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-muted-foreground">
                 <div>
                   <strong>Higher error correction</strong> allows logos/damage but creates denser codes.
                 </div>
@@ -345,9 +345,9 @@ export default function QRGeneratorTool() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> • 

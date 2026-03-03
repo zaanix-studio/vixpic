@@ -342,22 +342,22 @@ export default function ImageCropper() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-muted to-background">
       <canvas ref={canvasRef} className="hidden" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b z-50">
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg" />
+              <div className="w-8 h-8 bg-gradient-to-br from-brand to-info rounded-lg" />
               <span className="font-bold text-xl">VixPic</span>
             </Link>
-            <span className="text-gray-400 mx-2">/</span>
-            <span className="text-gray-600">Free Tools</span>
+            <span className="text-muted-foreground mx-2">/</span>
+            <span className="text-muted-foreground">Free Tools</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/tools" className="text-gray-600 hover:text-gray-900 hidden sm:block">
+            <Link href="/tools" className="text-muted-foreground hover:text-foreground hidden sm:block">
               All Tools
             </Link>
             <Link href="/generate">
@@ -370,20 +370,20 @@ export default function ImageCropper() {
       {/* Hero */}
       <section className="pt-28 pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             ✨ 100% Free • No API Key Needed • Client-Side
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Crop Images{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand to-info bg-clip-text text-transparent">
               With Precision
             </span>
           </h1>
-          <p className="text-lg text-gray-600 mb-2 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-2 max-w-2xl mx-auto">
             Crop images with custom aspect ratios or social media presets. 
             Everything happens in your browser — nothing is uploaded.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-muted-foreground">
             Free forever • Works offline • No watermarks
           </p>
         </div>
@@ -400,16 +400,16 @@ export default function ImageCropper() {
                   onDrop={handleDrop}
                   onDragOver={(e) => e.preventDefault()}
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center cursor-pointer hover:border-purple-400 hover:bg-purple-50/50 transition-colors"
+                  className="border-2 border-dashed border-input rounded-lg p-12 text-center cursor-pointer hover:border-brand hover:bg-brand-muted/50 transition-colors"
                 >
                   <div className="text-5xl mb-4">✂️</div>
-                  <p className="text-lg font-medium text-gray-700 mb-2">
+                  <p className="text-lg font-medium text-foreground mb-2">
                     Drop your image here
                   </p>
-                  <p className="text-sm text-gray-500 mb-4">
+                  <p className="text-sm text-muted-foreground mb-4">
                     or click to browse
                   </p>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-muted-foreground">
                     PNG, JPG, WEBP up to 25MB
                   </p>
                   <input
@@ -427,15 +427,15 @@ export default function ImageCropper() {
                 <div className="space-y-6">
                   {/* Aspect Ratio Options */}
                   <div className="flex flex-wrap gap-2 items-center">
-                    <Label className="text-sm text-gray-500 mr-2">Aspect Ratio:</Label>
+                    <Label className="text-sm text-muted-foreground mr-2">Aspect Ratio:</Label>
                     {aspectRatios.map((ratio) => (
                       <button
                         key={ratio.value}
                         onClick={() => handleAspectRatioChange(ratio.value)}
                         className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                           aspectRatio === ratio.value
-                            ? "bg-purple-100 text-purple-700 border border-purple-300"
-                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                            ? "bg-brand-muted text-brand-muted-foreground border border-brand/30"
+                            : "bg-muted text-muted-foreground hover:bg-muted"
                         }`}
                       >
                         {ratio.label}
@@ -444,17 +444,17 @@ export default function ImageCropper() {
                   </div>
 
                   {/* Preset Buttons */}
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <Label className="text-sm text-gray-500 mb-3 block">Quick Presets:</Label>
+                  <div className="p-4 bg-muted rounded-lg">
+                    <Label className="text-sm text-muted-foreground mb-3 block">Quick Presets:</Label>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
                       {presets.map((preset) => (
                         <button
                           key={preset.name}
                           onClick={() => applyPreset(preset)}
-                          className="p-2 bg-white border rounded-lg hover:border-purple-300 hover:shadow-sm transition-all text-left"
+                          className="p-2 bg-card border rounded-lg hover:border-brand hover:shadow-sm transition-all text-left"
                         >
                           <p className="font-medium text-xs">{preset.name}</p>
-                          <p className="text-xs text-gray-400">{preset.description}</p>
+                          <p className="text-xs text-muted-foreground">{preset.description}</p>
                         </button>
                       ))}
                     </div>
@@ -463,7 +463,7 @@ export default function ImageCropper() {
                   {/* Image with Crop Overlay */}
                   <div 
                     ref={imageContainerRef}
-                    className="relative bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center"
+                    className="relative bg-muted rounded-lg overflow-hidden flex items-center justify-center"
                     style={{ minHeight: "400px" }}
                   >
                     <div className="relative" style={{ width: displayDimensions.width, height: displayDimensions.height }}>
@@ -490,7 +490,7 @@ export default function ImageCropper() {
                       
                       {/* Crop Selection Box */}
                       <div
-                        className="absolute border-2 border-white shadow-lg cursor-move"
+                        className="absolute border-2 border-background shadow-lg cursor-move"
                         style={{
                           left: cropArea.x * scale,
                           top: cropArea.y * scale,
@@ -503,7 +503,7 @@ export default function ImageCropper() {
                         {/* Grid lines */}
                         <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 pointer-events-none">
                           {[...Array(9)].map((_, i) => (
-                            <div key={i} className="border border-white/30" />
+                            <div key={i} className="border border-background/30" />
                           ))}
                         </div>
                         
@@ -511,7 +511,7 @@ export default function ImageCropper() {
                         {["nw", "ne", "sw", "se"].map((handle) => (
                           <div
                             key={handle}
-                            className={`absolute w-4 h-4 bg-white rounded-sm border-2 border-purple-500 cursor-${
+                            className={`absolute w-4 h-4 bg-background rounded-sm border-2 border-brand/60 cursor-${
                               handle === "nw" || handle === "se" ? "nwse" : "nesw"
                             }-resize`}
                             style={{
@@ -528,17 +528,17 @@ export default function ImageCropper() {
                   </div>
 
                   {/* Crop Dimensions */}
-                  <div className="flex flex-wrap items-center justify-center gap-4 p-4 bg-gray-50 rounded-lg">
+                  <div className="flex flex-wrap items-center justify-center gap-4 p-4 bg-muted rounded-lg">
                     <div className="flex items-center gap-2">
-                      <Label className="text-sm text-gray-500">Crop:</Label>
-                      <span className="font-mono text-purple-600 font-medium">
+                      <Label className="text-sm text-muted-foreground">Crop:</Label>
+                      <span className="font-mono text-brand font-medium">
                         {cropArea.width} × {cropArea.height} px
                       </span>
                     </div>
-                    <div className="text-gray-300">|</div>
+                    <div className="text-muted-foreground">|</div>
                     <div className="flex items-center gap-2">
-                      <Label className="text-sm text-gray-500">Position:</Label>
-                      <span className="font-mono text-gray-600 text-sm">
+                      <Label className="text-sm text-muted-foreground">Position:</Label>
+                      <span className="font-mono text-muted-foreground text-sm">
                         X: {cropArea.x}, Y: {cropArea.y}
                       </span>
                     </div>
@@ -549,7 +549,7 @@ export default function ImageCropper() {
                     <Button 
                       onClick={cropImage}
                       disabled={processing}
-                      className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                      className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90"
                       size="lg"
                     >
                       {processing ? "Cropping..." : "Crop Image"}
@@ -565,7 +565,7 @@ export default function ImageCropper() {
               {croppedImage && (
                 <div className="space-y-6">
                   <div className="text-center mb-4">
-                    <span className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                    <span className="inline-flex items-center gap-2 bg-success-muted text-success-muted-foreground px-4 py-2 rounded-full text-sm font-medium">
                       ✓ Cropped to {cropArea.width} × {cropArea.height} px
                     </span>
                   </div>
@@ -583,7 +583,7 @@ export default function ImageCropper() {
                   <div className="flex flex-wrap gap-3 justify-center">
                     <Button 
                       onClick={downloadImage}
-                      className="bg-green-600 hover:bg-green-700"
+                      className="bg-success hover:bg-success/90"
                       size="lg"
                     >
                       Download Cropped
@@ -607,7 +607,7 @@ export default function ImageCropper() {
       </section>
 
       {/* Features */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-center mb-8">Cropping Made Easy</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -615,7 +615,7 @@ export default function ImageCropper() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📐</div>
                 <h3 className="font-semibold mb-2">Aspect Ratios</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Lock to 1:1, 16:9, 4:3, or any custom ratio for consistent results.
                 </p>
               </CardContent>
@@ -624,7 +624,7 @@ export default function ImageCropper() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">📱</div>
                 <h3 className="font-semibold mb-2">Social Presets</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   One-click presets for Instagram, Twitter, YouTube, and more.
                 </p>
               </CardContent>
@@ -633,7 +633,7 @@ export default function ImageCropper() {
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-3">🔒</div>
                 <h3 className="font-semibold mb-2">100% Private</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Images never leave your browser. Works offline too.
                 </p>
               </CardContent>
@@ -653,10 +653,10 @@ export default function ImageCropper() {
               { icon: "📱", title: "Social Posts", desc: "Instagram & Twitter" },
               { icon: "🖼️", title: "Product Images", desc: "E-commerce ready" },
             ].map((item) => (
-              <div key={item.title} className="p-4 bg-gray-50 rounded-lg">
+              <div key={item.title} className="p-4 bg-muted rounded-lg">
                 <div className="text-3xl mb-2">{item.icon}</div>
                 <h3 className="font-medium">{item.title}</h3>
-                <p className="text-sm text-gray-500">{item.desc}</p>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -664,8 +664,8 @@ export default function ImageCropper() {
       </section>
 
       {/* Upsell */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-blue-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-brand to-info">
+        <div className="max-w-4xl mx-auto text-center text-brand-foreground">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Need AI-Powered Image Editing?
           </h2>
@@ -683,9 +683,9 @@ export default function ImageCropper() {
 
       {/* Footer */}
       <footer className="border-t py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-sm text-gray-500">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
           <p>
-            Part of <Link href="/" className="text-purple-600 hover:underline">VixPic</Link> • 
+            Part of <Link href="/" className="text-brand hover:underline">VixPic</Link> • 
             Free Tools: <Link href="/tools/compress" className="hover:underline">Compressor</Link> • 
             <Link href="/tools/resize" className="hover:underline">Resizer</Link> •
             <Link href="/tools/crop" className="hover:underline">Cropper</Link> •

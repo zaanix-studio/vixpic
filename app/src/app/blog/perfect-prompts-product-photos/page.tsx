@@ -10,18 +10,18 @@ export default function ProductPhotoPromptsPost() {
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm font-medium px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
+            <span className="text-sm font-medium px-3 py-1 bg-info-muted text-info-muted-foreground rounded-full">
               Tutorial
             </span>
-            <span className="text-sm text-gray-500">7 min read</span>
+            <span className="text-sm text-muted-foreground">7 min read</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Perfect Prompts for E-commerce Product Photos
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-xl text-muted-foreground mb-6">
             Copy-paste prompt templates for product photography that actually converts. Works with any AI model.
           </p>
-          <div className="flex items-center gap-4 text-sm text-gray-500 border-t border-b py-4">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground border-t border-b py-4">
             <span>February 25, 2026</span>
             <span>•</span>
             <span>By VixPic Team</span>
@@ -46,7 +46,7 @@ export default function ProductPhotoPromptsPost() {
             Every great product photo prompt follows the same structure:
           </p>
 
-          <Card className="my-6 bg-gray-50">
+          <Card className="my-6 bg-muted">
             <CardContent className="pt-6">
               <code className="text-sm">
                 [Product] + [Background/Setting] + [Lighting] + [Style/Mood] + [Technical specs]
@@ -64,14 +64,14 @@ export default function ProductPhotoPromptsPost() {
             Perfect for marketplace listings where you need product-focused, distraction-free images.
           </p>
 
-          <Card className="my-6 border-purple-200">
+          <Card className="my-6 border-brand/20">
             <CardContent className="pt-6">
-              <p className="font-semibold text-purple-800 mb-3">Template:</p>
-              <p className="bg-white p-4 rounded border text-sm font-mono">
+              <p className="font-semibold text-brand-muted-foreground mb-3">Template:</p>
+              <p className="bg-background p-4 rounded border text-sm font-mono">
                 Professional product photography of [PRODUCT], centered on pure white background, 
                 soft studio lighting, sharp focus, high resolution, e-commerce style, 8k quality
               </p>
-              <p className="text-sm text-gray-600 mt-3">
+              <p className="text-sm text-muted-foreground mt-3">
                 <strong>Example:</strong> "Professional product photography of a matte black 
                 wireless earbuds case, centered on pure white background, soft studio lighting, 
                 sharp focus, high resolution, e-commerce style, 8k quality"
@@ -93,14 +93,14 @@ export default function ProductPhotoPromptsPost() {
             because customers can envision using the product.
           </p>
 
-          <Card className="my-6 border-purple-200">
+          <Card className="my-6 border-brand/20">
             <CardContent className="pt-6">
-              <p className="font-semibold text-purple-800 mb-3">Template:</p>
-              <p className="bg-white p-4 rounded border text-sm font-mono">
+              <p className="font-semibold text-brand-muted-foreground mb-3">Template:</p>
+              <p className="bg-background p-4 rounded border text-sm font-mono">
                 [PRODUCT] in use, [SETTING/CONTEXT], natural lighting, lifestyle photography, 
                 shallow depth of field, warm tones, candid feel, professional quality
               </p>
-              <p className="text-sm text-gray-600 mt-3">
+              <p className="text-sm text-muted-foreground mt-3">
                 <strong>Example:</strong> "Ceramic coffee mug in use, cozy home office desk 
                 by window, natural morning lighting, lifestyle photography, shallow depth of 
                 field, warm tones, candid feel, professional quality"
@@ -123,15 +123,15 @@ export default function ProductPhotoPromptsPost() {
             Perfect for accessories, jewelry, stationery, and products that look great from above.
           </p>
 
-          <Card className="my-6 border-purple-200">
+          <Card className="my-6 border-brand/20">
             <CardContent className="pt-6">
-              <p className="font-semibold text-purple-800 mb-3">Template:</p>
-              <p className="bg-white p-4 rounded border text-sm font-mono">
+              <p className="font-semibold text-brand-muted-foreground mb-3">Template:</p>
+              <p className="bg-background p-4 rounded border text-sm font-mono">
                 Flat lay product photography, top-down view of [PRODUCT], arranged on 
                 [SURFACE], surrounded by [COMPLEMENTARY ITEMS], soft diffused lighting, 
                 Instagram aesthetic, high resolution
               </p>
-              <p className="text-sm text-gray-600 mt-3">
+              <p className="text-sm text-muted-foreground mt-3">
                 <strong>Example:</strong> "Flat lay product photography, top-down view of 
                 leather wallet, arranged on marble surface, surrounded by watch, sunglasses, 
                 and car keys, soft diffused lighting, Instagram aesthetic, high resolution"
@@ -154,15 +154,15 @@ export default function ProductPhotoPromptsPost() {
             The big, dramatic shot for your homepage or ads. Make your product the star.
           </p>
 
-          <Card className="my-6 border-purple-200">
+          <Card className="my-6 border-brand/20">
             <CardContent className="pt-6">
-              <p className="font-semibold text-purple-800 mb-3">Template:</p>
-              <p className="bg-white p-4 rounded border text-sm font-mono">
+              <p className="font-semibold text-brand-muted-foreground mb-3">Template:</p>
+              <p className="bg-background p-4 rounded border text-sm font-mono">
                 Dramatic product hero shot of [PRODUCT], [BACKGROUND STYLE], cinematic 
                 lighting with [LIGHTING DIRECTION], [PROPS/ELEMENTS], premium advertising 
                 quality, hyperrealistic
               </p>
-              <p className="text-sm text-gray-600 mt-3">
+              <p className="text-sm text-muted-foreground mt-3">
                 <strong>Example:</strong> "Dramatic product hero shot of premium headphones, 
                 dark gradient background with blue accents, cinematic lighting with rim light, 
                 floating music notes and sound waves, premium advertising quality, hyperrealistic"
@@ -176,15 +176,15 @@ export default function ProductPhotoPromptsPost() {
             Help customers understand how big (or small) your product actually is.
           </p>
 
-          <Card className="my-6 border-purple-200">
+          <Card className="my-6 border-brand/20">
             <CardContent className="pt-6">
-              <p className="font-semibold text-purple-800 mb-3">Template:</p>
-              <p className="bg-white p-4 rounded border text-sm font-mono">
+              <p className="font-semibold text-brand-muted-foreground mb-3">Template:</p>
+              <p className="bg-background p-4 rounded border text-sm font-mono">
                 Product photography showing scale, [PRODUCT] held in human hand / next to 
                 [REFERENCE OBJECT], clean background, natural proportions, realistic, 
                 commercial photography style
               </p>
-              <p className="text-sm text-gray-600 mt-3">
+              <p className="text-sm text-muted-foreground mt-3">
                 <strong>Example:</strong> "Product photography showing scale, compact power 
                 bank held in human hand, clean white background, natural proportions, realistic, 
                 commercial photography style"
@@ -198,10 +198,10 @@ export default function ProductPhotoPromptsPost() {
             Refresh your listings for different seasons without reshooting.
           </p>
 
-          <Card className="my-6 border-purple-200">
+          <Card className="my-6 border-brand/20">
             <CardContent className="pt-6">
-              <p className="font-semibold text-purple-800 mb-3">Template:</p>
-              <p className="bg-white p-4 rounded border text-sm font-mono">
+              <p className="font-semibold text-brand-muted-foreground mb-3">Template:</p>
+              <p className="bg-background p-4 rounded border text-sm font-mono">
                 [PRODUCT] in [SEASON/HOLIDAY] setting, [SEASONAL ELEMENTS], festive atmosphere, 
                 [LIGHTING STYLE], gift-worthy presentation, commercial photography
               </p>
@@ -222,15 +222,15 @@ export default function ProductPhotoPromptsPost() {
             Show off craftsmanship, texture, and quality details that justify your price.
           </p>
 
-          <Card className="my-6 border-purple-200">
+          <Card className="my-6 border-brand/20">
             <CardContent className="pt-6">
-              <p className="font-semibold text-purple-800 mb-3">Template:</p>
-              <p className="bg-white p-4 rounded border text-sm font-mono">
+              <p className="font-semibold text-brand-muted-foreground mb-3">Template:</p>
+              <p className="bg-background p-4 rounded border text-sm font-mono">
                 Extreme close-up macro photography of [PRODUCT DETAIL], showing [TEXTURE/MATERIAL], 
                 sharp focus, soft bokeh background, studio lighting, revealing quality and 
                 craftsmanship, 8k detail
               </p>
-              <p className="text-sm text-gray-600 mt-3">
+              <p className="text-sm text-muted-foreground mt-3">
                 <strong>Example:</strong> "Extreme close-up macro photography of leather bag 
                 stitching, showing grain texture and thread detail, sharp focus, soft bokeh 
                 background, studio lighting, revealing quality and craftsmanship, 8k detail"
@@ -244,22 +244,22 @@ export default function ProductPhotoPromptsPost() {
             <CardContent className="pt-6">
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-purple-800">DALL-E 3</h4>
-                  <p className="text-sm text-gray-600 mt-1">
+                  <h4 className="font-semibold text-brand-muted-foreground">DALL-E 3</h4>
+                  <p className="text-sm text-muted-foreground mt-1">
                     Best for: Clean, commercial-quality images. Add "photorealistic" and 
                     "commercial photography" for best results. Handles text on products well.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-purple-800">Stable Diffusion XL</h4>
-                  <p className="text-sm text-gray-600 mt-1">
+                  <h4 className="font-semibold text-brand-muted-foreground">Stable Diffusion XL</h4>
+                  <p className="text-sm text-muted-foreground mt-1">
                     Best for: Stylized and artistic product shots. Use "product photography, 
                     8k uhd" in prompt. Consider ControlNet for specific compositions.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-purple-800">Flux</h4>
-                  <p className="text-sm text-gray-600 mt-1">
+                  <h4 className="font-semibold text-brand-muted-foreground">Flux</h4>
+                  <p className="text-sm text-muted-foreground mt-1">
                     Best for: Photorealistic lifestyle shots. Excellent at natural lighting. 
                     Add specific lighting descriptions for best control.
                   </p>
@@ -300,32 +300,32 @@ export default function ProductPhotoPromptsPost() {
           <Card className="my-6">
             <CardContent className="pt-6 space-y-4">
               <div>
-                <p className="font-semibold text-sm text-purple-700">Skincare/Beauty:</p>
-                <p className="text-sm bg-gray-50 p-3 rounded mt-1">
+                <p className="font-semibold text-sm text-brand-muted-foreground">Skincare/Beauty:</p>
+                <p className="text-sm bg-muted p-3 rounded mt-1">
                   Elegant skincare bottle product photography, minimalist white background, 
                   soft shadows, water droplets on surface, clean aesthetic, luxury brand style, 
                   high resolution commercial photography
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-sm text-purple-700">Electronics:</p>
-                <p className="text-sm bg-gray-50 p-3 rounded mt-1">
+                <p className="font-semibold text-sm text-brand-muted-foreground">Electronics:</p>
+                <p className="text-sm bg-muted p-3 rounded mt-1">
                   Modern tech product on dark reflective surface, gradient background from 
                   black to deep blue, dramatic rim lighting, floating angle, sleek minimalist 
                   style, Apple-inspired aesthetic, 8k detail
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-sm text-purple-700">Food/Beverage:</p>
-                <p className="text-sm bg-gray-50 p-3 rounded mt-1">
+                <p className="font-semibold text-sm text-brand-muted-foreground">Food/Beverage:</p>
+                <p className="text-sm bg-muted p-3 rounded mt-1">
                   Appetizing food photography, rustic wooden table setting, natural window 
                   light, fresh ingredients as props, shallow depth of field, warm color 
                   grading, restaurant menu quality
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-sm text-purple-700">Fashion Accessories:</p>
-                <p className="text-sm bg-gray-50 p-3 rounded mt-1">
+                <p className="font-semibold text-sm text-brand-muted-foreground">Fashion Accessories:</p>
+                <p className="text-sm bg-muted p-3 rounded mt-1">
                   Luxury fashion accessory flat lay, marble surface, gold accent props, 
                   soft diffused lighting, editorial style, Vogue aesthetic, high-end brand 
                   photography, perfect composition
@@ -334,14 +334,14 @@ export default function ProductPhotoPromptsPost() {
             </CardContent>
           </Card>
 
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8 my-12">
+          <div className="bg-gradient-to-r from-brand-muted/50 to-info-muted/50 rounded-xl p-8 my-12">
             <h3 className="text-xl font-bold mb-3">Try These Prompts Now</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               VixPic lets you use DALL-E, Stable Diffusion, and Flux — all in one place. 
               Test these prompts and find what works best for your products.
             </p>
             <Link href="/generate">
-              <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+              <Button className="bg-gradient-to-r from-brand to-info hover:from-brand/90 hover:to-info/90">
                 Start Generating →
               </Button>
             </Link>
@@ -360,14 +360,14 @@ export default function ProductPhotoPromptsPost() {
             a lot better — and a lot cheaper.
           </p>
 
-          <p className="text-gray-500 mt-8 pt-8 border-t">
+          <p className="text-muted-foreground mt-8 pt-8 border-t">
             <em>
               Want more prompts? Check out our{" "}
-              <Link href="/blog/youtube-thumbnail-prompts" className="text-purple-600 hover:underline">
+              <Link href="/blog/youtube-thumbnail-prompts" className="text-brand hover:underline">
                 YouTube thumbnail prompts guide
               </Link>{" "}
               or explore the{" "}
-              <Link href="/use-cases/ecommerce" className="text-purple-600 hover:underline">
+              <Link href="/use-cases/ecommerce" className="text-brand hover:underline">
                 e-commerce use case
               </Link>{" "}
               page.
@@ -377,25 +377,25 @@ export default function ProductPhotoPromptsPost() {
       </article>
 
       {/* Related Posts */}
-      <section className="border-t py-12 px-4 bg-gray-50">
+      <section className="border-t py-12 px-4 bg-muted">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6">Related Posts</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Link href="/blog/youtube-thumbnail-prompts">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-blue-600">Tutorial</span>
+                  <span className="text-xs font-medium text-info">Tutorial</span>
                   <h3 className="font-semibold mt-2">50 YouTube Thumbnail Prompts That Get Clicks</h3>
-                  <p className="text-sm text-gray-500 mt-2">Battle-tested prompts organized by niche.</p>
+                  <p className="text-sm text-muted-foreground mt-2">Battle-tested prompts organized by niche.</p>
                 </CardContent>
               </Card>
             </Link>
             <Link href="/blog/dalle-vs-stable-diffusion-vs-flux">
-              <Card className="hover:border-purple-200 transition-all">
+              <Card className="hover:border-brand/20 transition-all">
                 <CardContent className="pt-6">
-                  <span className="text-xs font-medium text-purple-600">Comparison</span>
+                  <span className="text-xs font-medium text-brand">Comparison</span>
                   <h3 className="font-semibold mt-2">DALL-E vs Stable Diffusion vs Flux</h3>
-                  <p className="text-sm text-gray-500 mt-2">Which model is best for your use case?</p>
+                  <p className="text-sm text-muted-foreground mt-2">Which model is best for your use case?</p>
                 </CardContent>
               </Card>
             </Link>
